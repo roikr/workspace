@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="22" version="2.0">
+<workbenchAdvisor/>
+<window height="774" width="1594" x="146" y="175">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
+</fastViewData>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="130" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.powerflasher.fdt.ui.CodingActionSet" itemType="typeToolBarContribution" x="126" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.powerflasher.fdt.ui.editor.ASEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1277819455893" focus="true" label="Workspace - Flash FDT">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.powerflasher.fdt.ui.editor.ASEditor" name="WorldUI.as" partName="WorldUI.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/UI/WorldUI.as" title="WorldUI.as" tooltip="ChatpetzWorld/UI/WorldUI.as" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/UI/WorldUI.as"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2248" selectionTopPixel="537"/>
+</editor>
+<editor activePart="true" focus="true" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzWorld.as" partName="ChatpetzWorld.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/src/ChatpetzWorld.as" title="ChatpetzWorld.as" tooltip="ChatpetzWorld/src/ChatpetzWorld.as" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2464" selectionTopPixel="15"/>
+</editor>
+<editor id="com.powerflasher.fdt.ui.editor.ASEditor" name="LoginScreen.as" partName="LoginScreen.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/UI/LoginScreen.as" title="LoginScreen.as" tooltip="ChatpetzWorld/UI/LoginScreen.as" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/UI/LoginScreen.as"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="396" selectionTopPixel="57"/>
+</editor>
+</editors>
+<views>
+<view id="com.powerflasher.fdt.ui.views.FlashExplorer" partName="Flash Explorer">
+<viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
+<filters>
+<filter element="*.jsfl" isEnabled="false"/>
+<filter element="*.fla" isEnabled="false"/>
+<filter element="*.htm" isEnabled="false"/>
+<filter element="*.html" isEnabled="false"/>
+<filter element="*.index" isEnabled="false"/>
+<filter element="*.swf" isEnabled="false"/>
+<filter element="*.aso" isEnabled="false"/>
+<filter element="*CVS" isEnabled="false"/>
+<filter element="*.svn" isEnabled="false"/>
+<filter element="*_svn" isEnabled="false"/>
+<filter element="*.class" isEnabled="false"/>
+<filter element="RemoteSystemsConnections" isEnabled="true"/>
+<filter element="RemoteSystemsTempFiles" isEnabled="true"/>
+<filter element=".*" isEnabled="false"/>
+<filter element="*.class" isEnabled="false"/>
+</filters>
+<expanded>
+<element path="/ChatpetzWorld"/>
+<element path="/ChatpetzWorld/GameInterfaces"/>
+<element path="/ChatpetzWorld/UI"/>
+<element path="/ChatpetzWorld/src"/>
+<element path="/ChatpetzWorld/.settings"/>
+<element path="/ChatpetzWorld/bin"/>
+<element path="/ChatpetzWorld/bin/avatar"/>
+</expanded>
+<selection>
+<element path="/ChatpetzWorld/UI/ChatpetzUILib.swc"/>
+</selection>
+</viewState>
+</view>
+<view id="com.powerflasher.fdt.ui.views.SWFView" partName="SWF Viewer">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.ant.ui.views.AntView" partName="Ant">
+<viewState>
+<filterInternalTargets value="false"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="324" org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.priorityField="40" org.eclipse.ui.ide.resourceField="114"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="com.powerflasher.fdt.ui.views.JavaDocView" partName="Javadoc View">
+<viewState/>
+</view>
+<view id="org.eclipse.help.ui.HelpView" partName="Help">
+<viewState BrowserPart.url="/com.powerflasher.fdt.doc.flash/Help/Flash_10.0/fl/controls/SelectableList.html#propertySummary" pageId="browser-page"/>
+</view>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
+</views>
+<perspectives activePart="com.powerflasher.fdt.ui.views.FlashExplorer" activePerspective="com.powerflasher.fdt.ui.Perspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.powerflasher.fdt.internal.ui.perspective.FlashPerspectiveFactory" id="com.powerflasher.fdt.ui.Perspective" label="Flash FDT"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.powerflasher.fdt.ui.welcome.helpActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.profileActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="com.powerflasher.fdt.ui.views.FlashExplorer"/>
+<show_view_action id="com.powerflasher.fdt.ui.views.SWFView"/>
+<show_view_action id="com.powerflasher.fdt.ui.views.JavaDocView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewMxmlClassWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewASClassWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewASInterfaceWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewVariableWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewFunctionWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewNamespaceWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewFlaWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewASPackageWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewASSourcefolderWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewPathVariableLibraryWizard"/>
+<new_wizard_action id="com.powerflasher.fdt.ui.wizards.NewASProjectWizard"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspectiv"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="com.powerflasher.fdt.ui.profiler.perspectives.Profiling"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.powerflasher.fdt.ui.views.FlashExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="com.powerflasher.fdt.ui.views.SWFView"/>
+<view id="com.powerflasher.fdt.ui.views.JavaDocView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ant.ui.views.AntView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.help.ui.HelpView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="com.powerflasher.fdt.ui.views.FlashExplorer" appearance="2" expanded="2">
+<page content="com.powerflasher.fdt.ui.views.FlashExplorer" label="Flash Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@dfbabd" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.20997587" ratioLeft="261" ratioRight="982" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.72740525" ratioLeft="499" ratioRight="187" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="com.powerflasher.fdt.ui.views.SWFView" label="SWF Viewer"/>
+<page content="com.powerflasher.fdt.ui.views.JavaDocView" label="Javadoc View"/>
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.console.ConsoleView:Console View #1" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info part="com.powerflasher.fdt.ui.swcOutline.SWCOutline" ratio="0.5" ratioLeft="376" ratioRight="376" relationship="2" relative="bottomRight"/>
+<info folder="true" part="bottomLeft" ratio="0.63555557" ratioLeft="429" ratioRight="246" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="Ant"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+<detachedWindow height="774" width="1175" x="1797" y="119">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.help.ui.HelpView" label="Help"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</detachedWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.powerflasher.fdt.ui.welcome.helpActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.profileActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.datatools.sqltools.result.resultView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<perspective_action id="org.eclipse.datatools.sqltools.sqleditor.perspectives.EditorPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.wst.jsdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.wst.xml.ui.perspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars>&#x0A;<fastViewBar fastViewLocation="131072" id="stickyFolderRight" orientation="512" selectedTabId="org.eclipse.help.ui.HelpView" style="0">&#x0A;<fastViews>&#x0A;<view id="org.eclipse.help.ui.HelpView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.74967146" ratioLeft="1141" ratioRight="381" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7653061" ratioLeft="525" ratioRight="161" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.datatools.sqltools.result.resultView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<page content="org.eclipse.wst.xsl.jaxp.debug.ui.view1" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.4229452" ratioLeft="247" ratioRight="337" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.74967146" ratioLeft="1141" ratioRight="381" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="761" ratioRight="761" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+<detachedWindow height="726" width="1099" x="1728" y="30">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</detachedWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/WorldUI.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.classpath"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.asDoc.prefs"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.sourceLocation.prefs"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/org.eclipse.core.resources.prefs"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/WorldUI.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/LoginScreen.as"/>
+</editors>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="873" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="1737" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="873" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="1653" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="873" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="1653" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="2346" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="18794" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="1">
+<position info="not_deleted" x="2346" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="18794" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="3935" y="3"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="17771" y="18"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position/>
+</item>
+<item historyLabel="com.powerflasher.fdt.classpath" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.core.prefs" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="org.eclipse.core.resources.prefs" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.core.prefs" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="com.powerflasher.fdt.classpath" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position/>
+</item>
+<item historyLabel="WorldUI.as" index="7">
+<position info="not_deleted" x="2320" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="7">
+<position info="not_deleted" x="2267" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="2464" y="0"/>
+</item>
+<item historyLabel="LoginScreen.as" index="8">
+<position info="not_deleted" x="396" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="2464" y="0"/>
+</item>
+<item historyLabel="LoginScreen.as" index="8">
+<position info="not_deleted" x="396" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="7">
+<position info="not_deleted" x="1711" y="0"/>
+</item>
+<item historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="2464" y="0"/>
+</item>
+<item historyLabel="LoginScreen.as" index="8">
+<position info="not_deleted" x="396" y="0"/>
+</item>
+<item historyLabel="WorldUI.as" index="7">
+<position info="not_deleted" x="2248" y="0"/>
+</item>
+<item active="true" historyLabel="ChatpetzWorld.as" index="0">
+<position info="not_deleted" x="2464" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+<trimItem IMemento.internal.id="bottomLeft"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottomRight"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="LoginScreen.as" tooltip="ChatpetzWorld/UI/LoginScreen.as">
+<persistable path="/ChatpetzWorld/UI/LoginScreen.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="org.eclipse.core.resources.prefs" tooltip="ChatpetzWorld/.settings/org.eclipse.core.resources.prefs">
+<persistable path="/ChatpetzWorld/.settings/org.eclipse.core.resources.prefs"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="com.powerflasher.fdt.ui.sourceLocation.prefs" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.ui.sourceLocation.prefs">
+<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.sourceLocation.prefs"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="com.powerflasher.fdt.ui.asDoc.prefs" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.ui.asDoc.prefs">
+<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.asDoc.prefs"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="com.powerflasher.fdt.core.prefs" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs">
+<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="com.powerflasher.fdt.classpath" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.classpath">
+<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.classpath"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzWorld.as" tooltip="ChatpetzWorld/src/ChatpetzWorld.as">
+<persistable path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="WorldUI.as" tooltip="ChatpetzWorld/UI/WorldUI.as">
+<persistable path="/ChatpetzWorld/UI/WorldUI.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzBeeps.as" tooltip="ChatpetzCodesLibrary/src/ChatpetzBeeps.as">
+<persistable path="/ChatpetzCodesLibrary/src/ChatpetzBeeps.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzManager.as" tooltip="ChatpetzWorld/src/ChatpetzManager.as">
+<persistable path="/ChatpetzWorld/src/ChatpetzManager.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="AvatarManager.as" tooltip="ChatpetzWorld/src/AvatarManager.as">
+<persistable path="/ChatpetzWorld/src/AvatarManager.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="DebugPanel.as" tooltip="ChatpetzWorld/src/DebugPanel.as">
+<persistable path="/ChatpetzWorld/src/DebugPanel.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="FlexUnitRunner.as" tooltip="ChatpetzWorld/src_test/FlexUnitRunner.as">
+<persistable path="/ChatpetzWorld/src_test/FlexUnitRunner.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="MCPlayer.as" tooltip="ChatpetzWorld/src/MCPlayer.as">
+<persistable path="/ChatpetzWorld/src/MCPlayer.as"/>
+</file>
+</mruList>
+</workbench>

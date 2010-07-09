@@ -1,0 +1,44 @@
+package {
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+
+	/**
+	 * @author roikr
+	 */
+	public class TilesGrid extends Sprite {
+		
+		private var client:TilesSimulator;
+		
+		public function TilesGrid(client:TilesSimulator) {
+			this.client = client;
+			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
+			graphics.beginFill(0xFFFFFF,0.1)
+			graphics.drawRect(0, 0, 840, 600)
+			graphics.endFill();
+		}
+		
+		private function getTileAt(x:int,y:int) : Sprite {
+			var sp:Sprite;
+			for (var i:int = 0;i<numChildren;i++) {
+				sp = getChildAt(i) as Sprite;
+				if (x>=sp.x && x<=sp.x+120 && y>=sp.y && y<=sp.y+120 )
+					break;
+			}
+			
+			return i<numChildren ? sp : null;
+		}
+		
+		private function onMouseDown(e:MouseEvent) : void {
+			trace("TilesGrid.onMouseDown")
+			switch (client.getCurrentTool) {
+				case ToolsMenu.TOOLBAR_CURSOR: 
+					if (var sp:Sprite = getTileAt(e.localX,e.localY))
+					var tile:Sprite = client.cloneCurrentTile();
+					tile.x = int(e.localX / 120) *120;
+					tile.y = int(e.localY / 120) * 120;
+					addChild(tile)
+					break;
+			}
+		}
+	}
+}

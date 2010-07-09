@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui",1278409924310
+started,bundle,com.powerflasher.fdt.ui.mxml,4.0.0.1077,"com.powerflasher.fdt.ui.mxml",1278409924310
+started,bundle,com.powerflasher.fdt.ui.professional,4.0.0.1077,"com.powerflasher.fdt.ui.professional",1278409924310
+os,sysinfo,,,"macosx",1278409924314
+arch,sysinfo,,,"x86",1278409924314
+ws,sysinfo,,,"cocoa",1278409924314
+locale,sysinfo,,,"en_US",1278409924314
+processors,sysinfo,,,"2",1278409924314
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1278409924314
+java.runtime.version,sysinfo,,,"1.6.0_20-b02-279-10M3065",1278409924314
+java.specification.name,sysinfo,,,"Java Platform API Specification",1278409924314
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278409924314
+java.specification.version,sysinfo,,,"1.6",1278409924314
+java.vendor,sysinfo,,,"Apple Inc.",1278409924314
+java.version,sysinfo,,,"1.6.0_20",1278409924314
+java.vm.info,sysinfo,,,"mixed mode",1278409924314
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1278409924314
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1278409924314
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278409924314
+java.vm.specification.version,sysinfo,,,"1.0",1278409924314
+java.vm.vendor,sysinfo,,,"Apple Inc.",1278409924314
+java.vm.version,sysinfo,,,"16.3-b01-279",1278409924314
+started,bundle,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console",1278409924379
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.0.v200906080500,"org.eclipse.jst.common.project.facet.core",1278409924795
+started,bundle,org.eclipse.mylyn.commons.ui,3.2.1.v20090722-0200-e3x,"org.eclipse.mylyn.commons.ui",1278409924962

@@ -1,0 +1,168 @@
+package {
+	import flash.display.Bitmap;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import flash.events.TimerEvent;
+	import flash.geom.Point;
+	import flash.utils.Timer;
+
+	/**
+	 * @author roikr
+	 */
+	public class Safari extends Sprite implements IChatpetzGame{
+		
+		private var background : Background;
+		private var camera : Camera;
+		
+		
+		private var interfaceBar:Interface;
+		private var photoBitmap1:Bitmap;
+		private var photoBitmap2:Bitmap;
+		private var score:Number;
+		private var feedback:Feedback;
+		private var timer:Timer;
+		
+		private var album:Album;
+		
+		private var instruction:Instruction;
+		
+		private var gameManager:IGameManager;
+		
+		private var currentAnimal:Animal;
+		
+		public function Safari() {
+		
+			addChild(background = new Background());
+			addChild(camera = new Camera(250,180,1.5,20));
+			addChild(interfaceBar = new Interface());
+			
+			score = 0;
+			interfaceBar.dtPoints.text = score.toString();
+			photoBitmap1 = new Bitmap();
+			photoBitmap2 = new Bitmap();
+			interfaceBar.photo1.addChild(photoBitmap1);
+			interfaceBar.photo2.addChild(photoBitmap2);
+			
+			instruction = new Instruction();
+			addChild(instruction);
+			instruction.bPlay.addEventListener(MouseEvent.CLICK,onPlay);
+			
+			feedback = new Feedback();
+			timer = new Timer(1000,1);
+			timer.addEventListener(TimerEvent.TIMER,onTimer);
+			
+		}
+		
+		private function onPlay(e:Event) : void{
+			e.stopImmediatePropagation();
+			start(null);
+		}
+		
+		public function start(manager:IGameManager) : void {
+			gameManager = manager;
+			//var instruction:Instruction  = (e.target as SimpleButton).parent as Instruction;
+			instruction.bPlay.removeEventListener(MouseEvent.CLICK,start);
+			removeChild(instruction); 
+			
+			//e.stopImmediatePropagation();
+			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			addEventListener(MouseEvent.CLICK,takeSnapshot);
+		}
+		
+		public function pause() : void {
+			
+		}
+		
+		public function help() : void {
+			
+		}
+		
+		public function exit() : void {
+			
+		}
+		
+		
+		
+		private function onEnterFrame(e:Event) : void {
+			camera.x = stage.mouseX;
+			camera.y = stage.mouseY;	
+			
+			if (currentAnimal) {
+				var p:Point = new Point (currentAnimal.x,currentAnimal.y);
+				p = currentAnimal.parent.localToGlobal(p);
+				//trace(p.x)
+				if (p.x<890) {
+					
+					currentAnimal.startAnimation();
+					currentAnimal = null;
+				} else if (p.x<0)
+					currentAnimal = null
+			}
+			
+			if (!currentAnimal) {
+				currentAnimal =  background.addAnimal();
+				trace(StripHolder.getAnimalCode(currentAnimal))
+			} 
+			
+			
+			camera.look(background);	
+		}
+		
+		private function takeSnapshot(e:Event) : void {
+			
+			
+			
+			if (camera.snapshot()) {	
+				var photo:Photo = camera.getPhoto(camera.getNumPhotos()-1);
+				photoBitmap2.bitmapData =  photo.getBitmapData();
+				if (camera.getNumPhotos() > 1 )
+					photoBitmap1.bitmapData =  camera.getPhoto(camera.getNumPhotos()-2).getBitmapData();
+				score += camera.getPhoto(camera.getNumPhotos()-1).getScore();
+				interfaceBar.dtPoints.text = score.toString();
+				
+				feedback.dtPoints.text  = photo.getScore().toString();
+				feedback.gotoAndStop(photo.getFeedbackFrame());
+				
+				if (photo.isPerfectShot() && gameManager)
+					gameManager.chooseAndPlayChatpetzCode(new Array(ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1,ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_2))
+				
+				if (timer.running) {
+					timer.reset();
+				} else {
+					addChild(feedback);
+				}
+				
+				timer.start();
+				
+				
+			}
+		}
+		
+		private function onTimer(e:TimerEvent) : void {
+			removeChild(feedback);
+			
+			if (camera.getNumPhotos() > 5) {
+				removeEventListener(Event.ENTER_FRAME,onEnterFrame);
+				removeEventListener(MouseEvent.CLICK,takeSnapshot);
+				removeChild(camera);
+				album = new PhotosAlbum();
+				addChild(album);
+				album.setPhotos(camera.getPhotos());
+				album.bPlayAgain.addEventListener(MouseEvent.CLICK,onPlayAgain);
+			}
+		}
+		
+		private function onPlayAgain(e:Event) : void {
+			camera.reset();
+			removeChild(album);
+			album = null;
+			
+			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			addEventListener(MouseEvent.CLICK,takeSnapshot);
+			addChild(camera);
+			
+		}
+		
+	}
+}

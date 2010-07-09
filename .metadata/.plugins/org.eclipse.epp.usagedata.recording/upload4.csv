@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.specification.name,sysinfo,,,"Java Platform API Specification",1277819458290
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1277819458290
+java.specification.version,sysinfo,,,"1.6",1277819458290
+java.vendor,sysinfo,,,"Apple Inc.",1277819458290
+java.version,sysinfo,,,"1.6.0_20",1277819458290
+java.vm.info,sysinfo,,,"mixed mode",1277819458290
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1277819458290
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1277819458290
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1277819458290
+java.vm.specification.version,sysinfo,,,"1.0",1277819458290
+java.vm.vendor,sysinfo,,,"Apple Inc.",1277819458290
+java.vm.version,sysinfo,,,"16.3-b01-279",1277819458290
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819460300
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277819460364
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819464826
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819466274
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819469387
+started,bundle,org.eclipse.jdt.core,3.5.0.v_963,"org.eclipse.jdt.core",1277819481908
+started,bundle,org.eclipse.jdt.core.manipulation,1.3.0.v20090603,"org.eclipse.jdt.core.manipulation",1277819482050
+started,bundle,org.eclipse.jdt.ui,3.5.0.v20090604,"org.eclipse.jdt.ui",1277819482060
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819482135
+started,bundle,com.powerflasher.fdt.core.swc,4.0.0.1077,"com.powerflasher.fdt.core.swc",1277819482605
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819487170
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277819523672
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.0.v200906080500,"org.eclipse.jst.common.project.facet.core",1277819524074

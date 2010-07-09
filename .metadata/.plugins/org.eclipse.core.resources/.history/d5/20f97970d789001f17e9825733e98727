@@ -1,0 +1,33 @@
+package {
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+
+	/**
+	 * @author roikr
+	 */
+	public class TriviaIntro {
+		private var intro:Intro;
+		private var game:ChatpetzTrivia;
+		
+		public function TriviaIntro(intro:Intro,game:ChatpetzTrivia) {
+			this.intro = intro;
+			this.game = game;
+			intro.bPlay.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
+			intro.addEventListener(Event.ENTER_FRAME, onEnterFrame)
+		}
+		
+		public function open() : void {
+			intro.gotoAndPlay("open")
+		}
+		
+		private function onMouseDown(e:Event) : void {
+			intro.gotoAndPlay("close");
+		}
+		
+		private function onEnterFrame(e:Event) : void {
+			if (intro.currentFrameLabel && intro.currentFrameLabel=="end") {
+				game.startSession();
+			}
+		}
+	}
+}

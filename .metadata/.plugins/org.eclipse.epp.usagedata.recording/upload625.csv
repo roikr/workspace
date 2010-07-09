@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599741671
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599760980
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599765228
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599786349
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599791260
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278599793311
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599859379
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599878210
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599921203
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278599936897
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278599942339
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278599959761
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278599960840
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278599962276
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278600145885
+error,log,,,"FDT log: No message gotten.",1278600153658
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278600170830
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278600172020
+executed,command,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.project.cleanAction",1278600172194
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278600181527
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278600181543
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278600187181
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278600202558
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278600202920
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278600202955

@@ -1,0 +1,13 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.jst.ws.consumption.ui,1.1.104.v200904211646,"org.eclipse.jst.ws.consumption.ui",1277932865157
+stopped,bundle,org.eclipse.jst.ws.consumption,1.0.407.v200905191120,"org.eclipse.jst.ws.consumption",1277932865186
+stopped,bundle,org.eclipse.jst.ws.uddiregistry,1.0.400.v200901261650,"org.eclipse.jst.ws.uddiregistry",1277932865188
+stopped,bundle,org.eclipse.jst.ws.ui,1.0.402.v200903111822,"org.eclipse.jst.ws.ui",1277932865190
+stopped,bundle,org.eclipse.jst.ws,1.0.407.v200905191120,"org.eclipse.jst.ws",1277932865193
+stopped,bundle,org.eclipse.wst.ws.explorer,1.0.407.v200903301628,"org.eclipse.wst.ws.explorer",1277932865446
+stopped,bundle,org.eclipse.wst.wsdl.ui,1.2.202.v200904271449,"org.eclipse.wst.wsdl.ui",1277932865579
+stopped,bundle,org.eclipse.wst.ws.ui,1.1.100.v200903112221,"org.eclipse.wst.ws.ui",1277932865659
+stopped,bundle,org.eclipse.wst.wsi.ui,1.0.500.v200901141851,"org.eclipse.wst.wsi.ui",1277932865705
+stopped,bundle,org.eclipse.wst.wsi,1.0.305.v200902181431,"org.eclipse.wst.wsi",1277932865775
+stopped,bundle,org.eclipse.wst.ws,1.1.103.v200903111822,"org.eclipse.wst.ws",1277932865778
+stopped,bundle,org.eclipse.jst.j2ee.webservice.ui,1.1.300.v200902052230,"org.eclipse.jst.j2ee.webservice.ui",1277932865825

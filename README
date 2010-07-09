@@ -1,0 +1,9 @@
+flash help files for FDT: /Library/Application Support/Adobe/Help/en_US/AS3LCR
+
+bugs in FDT4:
+1. when compling to library sometimes there is a bug. resolve by compling as application first
+
+Sounds Library:
+1. it is better to compose of 2 files:
+   a. library which store each file with a class in the same name;
+   b. const file to store the const and link to the classes name (good for auto completion)

@@ -1,0 +1,1 @@
+awk '{ printf "\t\tpublic static const %s : int = %s;\n",$1,$2}' sentences.txt > consts.txt

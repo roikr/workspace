@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.powerflasher.fdt.ui.CompcGroup">
+<stringAttribute key="OUTPUT" value="bin/CloudsSoundLibrary.swc"/>
+<stringAttribute key="PROJECT_NAME" value="CloudsSoundLibrary"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/CloudsSoundLibrary"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="process_factory_id" value="com.powerflasher.fdt.ui.launch.fcsh.ProcessFactory"/>
+</launchConfiguration>

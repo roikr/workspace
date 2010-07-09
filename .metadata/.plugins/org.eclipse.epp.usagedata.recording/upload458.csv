@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433348873
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278433351438
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(13): col: 15 Error: Interface method onClose in namespace IGameManager is implemented with an incompatible signature in class TestingGameManager.\n\n\tpublic class TestingGameManager extends Sprite implements IGameManager{\n\t             ^\n",1278433352162
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(13): col: 15 Error: Interface method onClose in namespace IGameManager is implemented with an incompatible signature in class TestingGameManager.\n\n\tpublic class TestingGameManager extends Sprite implements IGameManager{\n\t             ^\n",1278433352175
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(13): col: 15 Error: Interface method onClose in namespace IGameManager is implemented with an incompatible signature in class TestingGameManager.\n\n\tpublic class TestingGameManager extends Sprite implements IGameManager{\n\t             ^\n",1278433352205
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(13): col: 15 Error: Interface method onClose in namespace IGameManager is implemented with an incompatible signature in class TestingGameManager.\n\n\tpublic class TestingGameManager extends Sprite implements IGameManager{\n\t             ^\n",1278433352205
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278433359330
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433359475
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278433359601
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433367748
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278433401528
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278433406429
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278433431098
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433432598
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278433433851
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278433441246
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278433512703
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433512889
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433512918
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278433527719
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278433527900
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278433530246
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278433550181
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433550993
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278433551068

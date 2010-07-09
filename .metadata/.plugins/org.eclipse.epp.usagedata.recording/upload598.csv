@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580250482
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580268671
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278580290066
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278580291909
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278580292580
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580293203
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580303083
+error,log,,,"FDT log: 1",1278580311699
+error,log,,,"FDT log: 1",1278580315626
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278580318096
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278580319421
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580320200
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580330024
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278580347472
+started,bundle,org.eclipse.mylyn.java.tasks,3.2.1.v20090722-0200-e3x,"org.eclipse.mylyn.java.tasks",1278580347851
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278580349014
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278580350584
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278580353140
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580353819
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278580520355
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278580525060
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.undo",1278580527863
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278580530947
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278580533486
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278580540789

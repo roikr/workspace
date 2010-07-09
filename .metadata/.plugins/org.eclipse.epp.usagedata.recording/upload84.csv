@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277898797697
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277898842395
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1277898877322
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277898981120
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277898990270
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277898993319
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277898993331
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277898998494
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277899067084
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899070772
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277899070784
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899073532
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277899073667
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277899073735
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899074844
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277899074855
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899076863
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277899078849
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1277899078970
+error,log,,,"Unhandled event loop exception",1277899079448
+error,log,,,"Unhandled event loop exception",1277899079534
+error,log,,,"FDT log: No message gotten.",1277899079945
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1277899079946
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899082924
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277899082932

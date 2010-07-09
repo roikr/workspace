@@ -1,0 +1,10 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzVoicesTest extends Sprite {
+		ChatpetzCodes.play(ChatpetzCodes.FIRST_SENTENCE);
+	}
+}

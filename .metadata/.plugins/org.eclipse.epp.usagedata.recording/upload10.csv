@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820939103
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820939103
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820940220
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820940221
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820941471
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277820959747
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820960798
+error,log,,,"Unhandled event loop exception",1277820961255
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277820969392
+error,log,,,"Unhandled event loop exception",1277820969968
+error,log,,,"Waiting for children interrupted",1277820971649
+error,log,,,"Unexpected runtime error while computing a text hover",1277820971650
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277820972722
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277820992378
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277820998907
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277820999884
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277821004002
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277821014868
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277821015670
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277821034987
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277821036874
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277821150336
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277821155635
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277821189494
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277821189517

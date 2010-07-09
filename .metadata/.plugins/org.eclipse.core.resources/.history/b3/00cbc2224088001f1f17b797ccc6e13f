@@ -1,0 +1,22 @@
+package {
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzVoicesTest extends Sprite {
+		
+		public function ChatpetzVoicesTest():void {
+			super();
+			ChatpetzCodes.setTestChatpetz(true);
+			
+			stage.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
+		}
+		
+		private function onMouseDown(e:Event) : void {
+			ChatpetzCodes.play(ChatpetzCodes.AFRICA_CLICK_BUG);
+		}
+	}
+}

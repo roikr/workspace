@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1277910618325
+error,log,,,"Unhandled event loop exception",1277910618394
+error,log,,,"Unhandled event loop exception",1277910618601
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910620947
+opened,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.VariableView",1277910621511
+started,bundle,org.eclipse.help.base,3.4.0.v200906111540,"org.eclipse.help.base",1277910621638
+started,bundle,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui",1277910621713
+started,bundle,org.eclipse.equinox.http.jetty,2.0.0.v20090520-1800,"org.eclipse.equinox.http.jetty",1277910622358
+started,bundle,org.eclipse.ui.cheatsheets,3.3.200.v20090526,"org.eclipse.ui.cheatsheets",1277910622382
+started,bundle,org.eclipse.ui.intro,3.3.0.v20090526,"org.eclipse.ui.intro",1277910622419
+started,bundle,org.eclipse.equinox.http.servlet,1.0.200.v20090520-1800,"org.eclipse.equinox.http.servlet",1277910622573
+started,bundle,org.eclipse.equinox.http.registry,1.0.200.v20090520-1800,"org.eclipse.equinox.http.registry",1277910623620
+opened,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277910623933
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1277910624035
+activated,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1277910624337
+started,bundle,org.eclipse.help.webapp,3.4.0.v20090429_1800,"org.eclipse.help.webapp",1277910625112
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1277910630415
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277910631606
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1277910631672
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1277910634933
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1277910634957
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277910634975
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277910636306
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1277910636344
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277910664153

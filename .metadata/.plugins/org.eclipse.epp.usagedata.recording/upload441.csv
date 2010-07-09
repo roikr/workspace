@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+opened,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.VariableView",1278429947741
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1278429947878
+started,bundle,org.eclipse.help.base,3.4.0.v200906111540,"org.eclipse.help.base",1278429947951
+started,bundle,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui",1278429948040
+started,bundle,org.eclipse.ui.cheatsheets,3.3.200.v20090526,"org.eclipse.ui.cheatsheets",1278429948364
+started,bundle,org.eclipse.ui.intro,3.3.0.v20090526,"org.eclipse.ui.intro",1278429948528
+started,bundle,org.eclipse.equinox.http.jetty,2.0.0.v20090520-1800,"org.eclipse.equinox.http.jetty",1278429949113
+started,bundle,org.eclipse.equinox.http.servlet,1.0.200.v20090520-1800,"org.eclipse.equinox.http.servlet",1278429949249
+started,bundle,org.eclipse.equinox.http.registry,1.0.200.v20090520-1800,"org.eclipse.equinox.http.registry",1278429949910
+opened,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278429950574
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278429950988
+started,bundle,org.eclipse.help.webapp,3.4.0.v20090429_1800,"org.eclipse.help.webapp",1278429951127
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278429951251
+activated,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278429951292
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278429957336
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278429957649
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278429957719
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278429965341
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278429967433
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278429970066
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278429973237
+started,bundle,org.eclipse.wst.xsl.debug.ui,1.0.0.v200904240436,"org.eclipse.wst.xsl.debug.ui",1278429973243
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278429975827
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278429984077
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278429989186

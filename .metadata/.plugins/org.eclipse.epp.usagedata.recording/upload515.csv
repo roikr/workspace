@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527311137
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527313080
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278527314840
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278527314872
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278527315464
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527317004
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527327906
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278527328934
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278527335848
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278527341083
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527346467
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.run",1278527357669
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(84): col: 4 Error: Access of undefined property ChatpetzCodes.\n\n\t\t\tChatpetzCodes.play(code,probability)\n\t\t\t^\n\n",1278527361980
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(88): col: 4 Error: Access of undefined property ChatpetzCodes.\n\n\t\t\tChatpetzCodes.chooseAndPlay(arr,probability);\t\n\t\t\t^\n\n",1278527361988
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527401926
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527448273
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278527448498
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527449748
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527452290
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527458813
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527463956
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527467495
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527484288
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527493131
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278527504110

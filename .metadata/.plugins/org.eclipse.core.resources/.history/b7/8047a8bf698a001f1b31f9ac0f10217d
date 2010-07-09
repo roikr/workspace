@@ -1,0 +1,9 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public interface IGameUI {
+		 
+	}
+}

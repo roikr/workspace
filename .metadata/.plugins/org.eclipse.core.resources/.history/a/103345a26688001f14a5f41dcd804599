@@ -1,0 +1,11 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class ToolsMenu extends Sprite {
+		public function ToolsMenu() {
+		}
+	}
+}

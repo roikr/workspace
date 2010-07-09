@@ -1,0 +1,57 @@
+package {
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+
+	/**
+	 * @author roikr
+	 */
+	public class TilesGrid extends Sprite {
+		
+		private var client:TilesSimulator;
+		
+		public function TilesGrid(client:TilesSimulator) {
+			this.client = client;
+			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
+			graphics.beginFill(0xFFFFFF,0.1)
+			graphics.drawRect(0, 0, 840, 600)
+			graphics.endFill();
+		}
+		
+		private function getTileAt(p:Point) : Sprite {
+			var sp:Sprite;
+			for (var i:int = 0;i<numChildren;i++) {
+				sp = getChildAt(i) as Sprite;
+				if (p.x>=sp.x && p.x<=sp.x+120 && p.y>=sp.y && p.y<=sp.y+120 )
+					break;
+			}
+			
+			//trace(i<numChildren ? "tile exist": "tile does not exist")
+			
+			return i<numChildren ? sp : null;
+		}
+		
+		private function onMouseDown(e:MouseEvent) : void {
+			
+			trace("TilesGrid.onMouseDown")
+			switch (client.getCurrentTool()) {
+				case ToolsMenu.TOOLBAR_CURSOR: 
+					var p:Point = new Point(e.stageX,e.stageY);
+					p = this.globalToLocal(p);
+					var sp:Sprite = getTileAt(p)
+					if (sp) {
+						
+						p = new Point(sp.x,sp.y)
+						removeChild(sp);
+					}
+					else
+						p = new Point(int(e.localX / 120) *120,int(e.localY / 120) * 120)
+					var tile:Sprite = client.cloneCurrentTile();
+					tile.x = p.x;
+					tile.y = p.y;
+					addChild(tile)
+					break;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzSafariTest extends TestingGameManager {
+		public function ChatpetzSafariTest() {
+			super();
+			load("Safari.swf");
+			
+		}
+	}
+}

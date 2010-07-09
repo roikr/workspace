@@ -1,0 +1,11 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzVoicesTest extends Sprite {
+		ChatpetzCodes.setTestChatpetz(true);
+		ChatpetzCodes.play(ChatpetzCodes.AFRICA_CLICK_BUG);
+	}
+}

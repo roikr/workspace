@@ -1,0 +1,19 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class DebugPanel {
+		private var panel:DebugPanelAssets;
+		private var client:Object;
+		
+		public function DebugPanel(panel:DebugPanelAssets,client:Object) {
+			this.panel = panel;
+			this.client = client;
+			
+			panel.ti_username.setFocus();
+			panel.bt_login.addEventListener(MouseEvent.CLICK, onLoginBtClick);
+			
+		}
+	}
+}

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278604362408
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278604362540
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604365808
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604387056
+activated,perspective,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.Perspective",1278604388870
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278604388944
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604392826
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604526226
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604530994
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278604534705
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604537015
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278604538665
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604542848
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604543565
+executed,command,,,"AUTOGEN:::com.powerflasher.fdt.ui.editor.editorContribution/com.powerflasher.fdt.ui.editor.RulerDoubleClick",1278604543801
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604545428
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604565531
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604565538
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278604565596
+activated,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278604565613
+error,log,,,"Unhandled event loop exception",1278604565721
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604567506
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1278604567681
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604576998
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278604577184

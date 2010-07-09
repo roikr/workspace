@@ -1,0 +1,16 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzSafariTest extends TestingGameManager {
+		public function ChatpetzSafariTest() {
+			super();
+			ChatpetzCodes.setMainChatpet("PARPARA")
+			ChatpetzCodes.setTestChatpetz(true);
+			
+			load("Safari.swf");
+			
+		}
+	}
+}

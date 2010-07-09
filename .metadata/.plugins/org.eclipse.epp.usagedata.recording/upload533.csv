@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530321813
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530339187
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278530347323
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278530350209
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278530351551
+error,log,,,"/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(15): col: 30 Error: Type was not found or was not a compile-time constant: InterfaceAssets.\n\n\t\tpublic var gameInterface : InterfaceAssets;\n\t\t                           ^\n\n/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(20): col: 31 Error: Call to a possibly undefined method InterfaceAssets.\n\n\t\t\taddChild(gameInterface=new InterfaceAssets());\n\t\t\t                           ^\n\n",1278530355760
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278530360494
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278530372881
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530378987
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278530387326
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278530387428
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278530387490
+error,log,,,"Unhandled event loop exception",1278530387582
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530397220
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530400879
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530406283
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530406479
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278530414994
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530422653
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278530423874
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278530423921
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278530433550
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278530437438
+executed,command,,,"com.powerflasher.fdt.ui.launch.compcLaunchShortcut.run",1278530445389
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278530469455

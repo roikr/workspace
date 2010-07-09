@@ -1,0 +1,32 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class DummyGameManager implements IGameManager {
+		
+		public function load(url:String) : void {
+			
+		}
+		
+		public function unload() : void {
+			
+		}
+		
+		public function setScore(score : int) : void {
+		}
+		
+		public function setLevel(level : int) : void {
+		}
+		
+		public function sendChatpetCode(code : int,probability:Number=1.0) : void {
+		}
+		
+		public function onFinish() : void {
+		}
+		
+		public function onClose() : void {
+			
+		}
+	}
+}

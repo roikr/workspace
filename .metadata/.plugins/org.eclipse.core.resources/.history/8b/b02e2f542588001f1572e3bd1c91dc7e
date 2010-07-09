@@ -1,0 +1,9 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzVoicesTest extends Sprite{
+		ChatpetzCodes.play(ChatpetzCodes.FIRST_SENTENCE);
+	}
+}

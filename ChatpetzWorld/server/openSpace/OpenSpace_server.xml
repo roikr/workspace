@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+OpenSpace server-side configuration file
+Version 1.0
+
+NOTE: if this configuration file is missing, or if the AvatarTypes section is missing, OpenSpace server-side extension can't complete initialization.
+-->
+
+<OpenSpace>
+	
+	<!-- Enable OpenSpace extension activity logger (default: 1). -->
+	<EnableLog>1</EnableLog>	
+	
+	<!-- Pathfinder type: valid values are 'default' and 'concurrent'.
+	The 'concurrent' pathfinder makes use of multiple threads to optimize the path calculations, but it also uses more memory; 'default' pathfinder usage is recommended. -->
+	<PathfinderType>default</PathfinderType>
+	
+	<!-- If the pathfinding process exceeds this duration, a warning is logged.
+	Expressed in milliseconds; if set to 0, no warning is logged. Default value is 0. -->
+	<PfMaxTimeBeforeWarning>0</PfMaxTimeBeforeWarning>
+	
+	<!-- If the pathfinding process exceeds this duration, the process is interrupted and no path is returned to clients.
+	Expressed in milliseconds; if set to 0, the pathfinding process is never interrupted. Default value is 0. -->
+	<PfMaxTimeBeforeQuit>0</PfMaxTimeBeforeQuit>
+	
+	<!-- Log calculated path nodes and directions, for DEBUG purposes (default: 0). Logging must be enabled. -->
+	<DumpPathNodes>0</DumpPathNodes>
+	
+	<!--
+	List of available tile terrains.
+	The 'speed' attribute describes the avatar speed change on that terrain expressed as a percentage of the nominal avatar speed.
+	For example, 100 means that the avatar will have the nominal speed defined on the client side when walking on that terrain.
+	Valid values are greater than 0. If not set, the default value 100 is used.
+	Examples:
+	(1) <Terrain speed="40">sand</Terrain> The 'sand' terrain reduces the avatar speed to 40%.
+	(2) <Terrain speed="100">default</Terrain> The 'default' terrain doesn't affect avatar speed.
+	(3) <Terrain speed="120">ice</Terrain> The 'ice' terrain increases the avatar speed of 20%.
+	-->
+	<Terrains>
+		<Terrain speed="70">gravel</Terrain>
+		<Terrain speed="40">sand</Terrain>
+		<Terrain speed="100">water</Terrain>
+		<Terrain speed="120">ice</Terrain>
+		<Terrain speed="20">carpet</Terrain>
+	</Terrains>
+	
+	<!--
+	List of available avatar types.
+	This list is sent to the OpenSpace client during its initialization process.
+	If mandatory parameters are missing, the OpenSpace server-side extension can't complete initialization.
+	Parameters:
+		- use8Directions: avatars can move along 8 directions instead of 4 (default: 1)
+		- mainClass: linkage class name of the client-side avatar class used for main avatar rendering (mandatory)
+		- ghostClass: linkage class name of the client-side avatar class used to render the avatar ghost (optional)
+		- stature: height of the avatar, used to check if the avatar can walk under passages (default: 0)
+		- terrains: comma-separated list of terrains on which that avatar is allowed to walk (provided that the default tile walkability is set to true).
+		  Each listed terrain must exist in the <Terrains> tag, otherwise it will be ignored. An asterisk can be added to declare that the avatar can walk on tiles with no terrain assigned.
+		  If the attribute 'terrains' is not set or it is set to an empty value, the default tile walkability is considered during avatar movement.
+		  Examples:
+		  (1) <AvatarType ... terrains="road,sand">pedestrian</AvatarType> The 'pedestrian' avatar can walk on tiles with terrain set to 'road' and 'sand' only;
+		  (2) <AvatarType ... terrains="road,sand,*">pedestrian</AvatarType> The 'pedestrian' avatar can walk on tiles with terrain set to 'road' and 'sand', and on tiles with no terrain assigned;
+		  (3) <AvatarType ... terrains="*">pedestrian</AvatarType> The 'pedestrian' avatar can walk on tiles with no terrain assigned only.
+		  (4) <AvatarType ... terrains="">pedestrian</AvatarType> Empty terrain assigned: default tile walkability applied.
+		  (5) <AvatarType ...>pedestrian</AvatarType> No terrain assigned: default tile walkability applied.
+	-->
+	<AvatarTypes use8Directions="1">
+		<AvatarType mainClass="DemoAvatar" ghostClass="DemoGhost" stature="30">demo</AvatarType>
+		<AvatarType mainClass="DemoAvatar" stature="30" terrains="*">demo1</AvatarType>
+		<AvatarType mainClass="DemoAvatar" stature="40" terrains="carpet">demo4</AvatarType>
+		<AvatarType mainClass="DemoAvatar" stature="40" terrains="carpet,*">demo5</AvatarType>
+		<AvatarType mainClass="temp.testpackage.DemoAvatar" stature="30" terrains="rock">demo2</AvatarType>
+		<AvatarType mainClass="temp.testpackage.DemoAvatar" stature="30" terrains="*,rock">demo3</AvatarType>
+		<AvatarType mainClass="PedestrianAvatar" stature="30" terrains="gravel,sand,*">pedestrian</AvatarType>
+		<AvatarType mainClass="BoatAvatar" stature="50" terrains="water">boat</AvatarType>
+		<AvatarType mainClass="SledgeAvatar" stature="20" terrains="ice">sledge</AvatarType>
+        <AvatarType mainClass="ChatpetzAvatar" ghostClass="ChatpetzGhost" stature="30">chatpet</AvatarType>
+	</AvatarTypes>
+
+</OpenSpace>

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515515932
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515517256
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515518232
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515519107
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515520045
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515521832
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278515522012
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515523350
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.StepInto",1278515524520
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278515526857
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Resume",1278515527066
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278515529435
+activated,perspective,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.Perspective",1278515537974
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278515537978
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278515539710
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1278515543261
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278515544949
+error,log,,,"Unhandled event loop exception",1278515546273
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278515547795
+error,log,,,"Unhandled event loop exception",1278515548142
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278515549008
+executed,command,,,"AUTOGEN:::com.powerflasher.fdt.ui.editor.editorContribution/com.powerflasher.fdt.ui.editor.RulerDoubleClick",1278515549275
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Resume",1278515550848
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278515555010
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278515556192

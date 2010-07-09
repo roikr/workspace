@@ -1,0 +1,2 @@
+ls *mp3 | awk -F "." '{ printf "[Embed(source=\"../mp3/%s.mp3\")] private static var %s:Class;\n",$1,$1}' > library.txt
+

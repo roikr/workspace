@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+processors,sysinfo,,,"2",1278578433453
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1278578433453
+java.runtime.version,sysinfo,,,"1.6.0_20-b02-279-10M3065",1278578433453
+java.specification.name,sysinfo,,,"Java Platform API Specification",1278578433453
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278578433453
+java.specification.version,sysinfo,,,"1.6",1278578433453
+java.vendor,sysinfo,,,"Apple Inc.",1278578433453
+java.version,sysinfo,,,"1.6.0_20",1278578433453
+java.vm.info,sysinfo,,,"mixed mode",1278578433453
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1278578433453
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1278578433453
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278578433453
+java.vm.specification.version,sysinfo,,,"1.0",1278578433453
+java.vm.vendor,sysinfo,,,"Apple Inc.",1278578433453
+java.vm.version,sysinfo,,,"16.3-b01-279",1278578433453
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578437113
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578437329
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578439818
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578442954
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1278578448132
+started,bundle,org.eclipse.search,3.5.0.v20090526-2000,"org.eclipse.search",1278578451448
+started,bundle,com.powerflasher.fdt.core.swc,4.0.0.1077,"com.powerflasher.fdt.core.swc",1278578451611
+started,bundle,org.eclipse.compare.core,3.5.0.I20090430-0408,"org.eclipse.compare.core",1278578451682
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578452150
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278578452156

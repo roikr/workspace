@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.powerflasher.fdt.ui.enterprise:4.0.0.1077"/>
+		<item value="com.powerflasher.fdt.ui.professional:4.0.0.1077"/>
+		<item value="com.powerflasher.fdt.ui:4.0.0.1077"/>
+		<item value="org.eclipse.cvs:1.1.100.v20090514-7E79FEc9BJ99r9YFR6JOEF"/>
+		<item value="org.eclipse.datatools.common.doc.user:1.7.0.v200906111100-26-311A16321A3557"/>
+		<item value="org.eclipse.datatools.connectivity.doc.user:1.7.0.v200906111100-37D-7733L3D753L7BBF"/>
+		<item value="org.eclipse.datatools.connectivity.feature:1.7.0.v200906050400-7B7OAGEn1XeXjC4wj6KETrSOP8"/>
+		<item value="org.eclipse.datatools.connectivity.oda.designer.feature:1.7.0.v200906050400-7E7C6DZRDEBDsDSDijc"/>
+		<item value="org.eclipse.datatools.connectivity.oda.feature:1.7.0.v200906050400-7H791CcNBC0BjDNBddV"/>
+		<item value="org.eclipse.datatools.doc.user:1.7.0.v200906111100-47C-8w95ENAJ69EHJF7"/>
+		<item value="org.eclipse.datatools.enablement.apache.derby.feature:1.7.0.v200906050400-7768bBmKDLfMjGqHEHL7PAB"/>
+		<item value="org.eclipse.datatools.enablement.feature:1.7.0.v200906050400-7J8i0BWwPJNaz-Fe15qs9q203H-b"/>
+		<item value="org.eclipse.datatools.enablement.hsqldb.feature:1.7.0.v200906050400-67B0AqGBJVKbEmF3FJ7PAB"/>
+		<item value="org.eclipse.datatools.enablement.ibm.feature:1.7.0.v200906050400-7F47HFC7sRTNSjRsTNRR"/>
+		<item value="org.eclipse.datatools.enablement.ingres.feature:1.7.0.v200906050400-540AkF77g7VACAJJM"/>
+		<item value="org.eclipse.datatools.enablement.jdbc.feature:1.7.0.v200906050400-4-29oB55W5N6A6O9A"/>
+		<item value="org.eclipse.datatools.enablement.jdt.feature:1.7.0.v200906050400-2-07w311A17131A11"/>
+		<item value="org.eclipse.datatools.enablement.msft.feature:1.7.0.v200906050400-542AkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.mysql.feature:1.7.0.v200906050400-546AkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.oda.designer.feature:1.7.0.v200906050400-33-8s733L3D6C47AG"/>
+		<item value="org.eclipse.datatools.enablement.oda.feature:1.7.0.v200906050400-7A7T5DZRDEADiKjEbOs"/>
+		<item value="org.eclipse.datatools.enablement.oracle.feature:1.7.0.v200906050400-548aAkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.postgresql.feature:1.7.0.v200906050400-542AkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.sap.feature:1.7.0.v200906050400-540AkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.sqlite.feature:1.7.0.v200906050400-541AkF77g7V7F7g77"/>
+		<item value="org.eclipse.datatools.enablement.sybase.feature:1.7.0.v200906050400-7E45F9NiNWvOOVpNfUR"/>
+		<item value="org.eclipse.datatools.intro:1.7.0.v200906050400-26-7w311A17142212"/>
+		<item value="org.eclipse.datatools.modelbase.feature:1.7.0.v200906050400-77-3CcNBC0BkBNNN_0"/>
+		<item value="org.eclipse.datatools.sqldevtools.ddlgen.feature:1.7.0.v200906050400-7A-0F7RZHIXI6HZXnHX"/>
+		<item value="org.eclipse.datatools.sqldevtools.feature:1.7.0.v200906050400-7N7q-FDr_gSWLQCJJODUlz-1btbZ"/>
+		<item value="org.eclipse.datatools.sqldevtools.parsers.feature:1.7.0.v200906050400-602BgJ99q9_9OGXFJ"/>
+		<item value="org.eclipse.datatools.sqltools.doc.user:1.7.0.v200906111100-37D-7733L3D753L7BBF"/>
+		<item value="org.eclipse.draw2d:3.5.0.v20090422-2346-44-7w311A163902622"/>
+		<item value="org.eclipse.emf.codegen.ecore.ui:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.codegen.ecore:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.codegen.ui:2.4.0.v200906151043"/>
+		<item value="org.eclipse.emf.codegen:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.common.ui:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.common:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.converter:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.databinding.edit:1.1.0.v200906151043"/>
+		<item value="org.eclipse.emf.databinding:1.1.0.v200906151043"/>
+		<item value="org.eclipse.emf.ecore.edit:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.ecore.editor:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.ecore:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.edit.ui:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.edit:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.mapping.ecore.editor:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.mapping.ecore:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.mapping.ui:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf.mapping:2.5.0.v200906151043"/>
+		<item value="org.eclipse.emf:2.5.0.v200906151043"/>
+		<item value="org.eclipse.epp.package.jee.feature:1.2.0.20090621-0820"/>
+		<item value="org.eclipse.gef:3.5.0.v20090422-2346-7779-8192B6696L3ABD43733"/>
+		<item value="org.eclipse.help:1.1.0.v20090602-7e7eFAlFEx2XZoYqwI68e2F"/>
+		<item value="org.eclipse.jdt:3.5.0.v20090527-2000-7r88FEeFJePyvYeA33DjZ_c1"/>
+		<item value="org.eclipse.jpt.eclipselink.feature:2.2.0.v200905310000-65A7AkF77g7SGH7997"/>
+		<item value="org.eclipse.jpt.feature:2.2.0.v200906100220-7L7OAFFBBoPR9QNdMUt_f"/>
+		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.1.0.v200905220328-377-8s733L3F3J3D33"/>
+		<item value="org.eclipse.jst.enterprise_ui.feature:3.1.0.v200905242144-7_7EGr_FQRwRZSME08aqRiT1Skap"/>
+		<item value="org.eclipse.jst.ws.axis2tools.feature:1.1.0.v200905242110-78-FBpDZRDE6FdPdLYYe"/>
+		<item value="org.eclipse.mylyn.bugzilla_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn.context_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn.ide_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn.java_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn.team_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn.wikitext_feature:1.1.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.mylyn_feature:3.2.1.v20090722-0200-e3x"/>
+		<item value="org.eclipse.pde:3.5.0.v20090123-7Z7_F8NFE-z0VXhWiu-8Qb95"/>
+		<item value="org.eclipse.persistence.jpa:1.1.2.v20090612-r4475"/>
+		<item value="org.eclipse.persistence.moxy:1.1.2.v20090612-r4475"/>
+		<item value="org.eclipse.persistence.sdo:1.1.2.v20090612-r4475"/>
+		<item value="org.eclipse.platform:3.5.0.v20090611a-9gEeG1HFtQcmRThO4O3aR_fqSMvJR2sJ"/>
+		<item value="org.eclipse.rcp:3.5.0.v20090519-9SA0FwxFv6x089WEf-TWh11"/>
+		<item value="org.eclipse.rse.core:3.1.0.v200905272300-7a7CEoFC7sRTNS_oZt3fk"/>
+		<item value="org.eclipse.rse.dstore:3.1.0.v200905272300-7L6EoEVVFGMFvQtVaPU"/>
+		<item value="org.eclipse.rse.ftp:3.0.100.v200905272300-780A79oB55W5KBQBD9D"/>
+		<item value="org.eclipse.rse.local:2.1.100.v200905272300-7B4EoBgJ99r9YJhJO99"/>
+		<item value="org.eclipse.rse.ssh:3.0.0.v200905272300-7A2BgAkF77g7RFZFJ77"/>
+		<item value="org.eclipse.rse.telnet:2.2.0.v200905272300-773-AkF77g7RFZFIBF"/>
+		<item value="org.eclipse.rse.terminals:1.0.0.v200905272300-77--9uC6FSANEbEMAF4522"/>
+		<item value="org.eclipse.rse.useractions:1.1.100.v200905272300-31A78s733L3D7H7933"/>
+		<item value="org.eclipse.rse:3.1.0.v200905272300-7L5A78wqaCHMdrOqK3DvjpYKCnp3"/>
+		<item value="org.eclipse.team.svn:0.7.8.I20090506-1500"/>
+		<item value="org.eclipse.tm.terminal.ssh:2.0.100.v200905272300-3-8Z7w311A16383411"/>
+		<item value="org.eclipse.tm.terminal.telnet:2.0.100.v200905272300-3-8Z7w311A16383411"/>
+		<item value="org.eclipse.tm.terminal.view:2.0.100.v200905272300-3-8Z7w311A16383411"/>
+		<item value="org.eclipse.tm.terminal:3.0.0.v200905272300-4--7w311A16383411"/>
+		<item value="org.eclipse.wst.common.fproj:3.1.0.v200906080522-377-8s733L3F3J3DAB"/>
+		<item value="org.eclipse.wst.jsdt.feature:1.1.1.v200906091427-77-FGBCcNBC-BeMcEeOm"/>
+		<item value="org.eclipse.wst.web_ui.feature:3.1.0.v200905242131-7R77FShEVw2xUGpF1LiNxdVAELXy"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.1.0.v200905240756-7H6FMVDxtkM-5OgPGKK4xQocS5AL"/>
+		<item value="org.eclipse.wst.xsl.feature:1.0.0.v200905242203-7R7T7IFIhIehWfz064pz0YX1"/>
+		<item value="org.polarion.eclipse.team.svn.connector.svnkit:2.2.1.I20090708-1500"/>
+		<item value="org.polarion.eclipse.team.svn.connector:2.2.1.I20090708-1500"/>
+	</list>
+	<section name="ResourceNavigator">
+		<item value="" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="298" key="DIALOG_Y_ORIGIN"/>
+		<item value="606" key="DIALOG_X_ORIGIN"/>
+		<item value="356" key="DIALOG_HEIGHT"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+</section>

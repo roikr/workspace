@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277985437994
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277985442344
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277985476007
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277985478085
+error,log,,,"FDT log: Resource '/ChatpetzWorld/GameInterface' does not exist.",1277985478101
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1277985478108
+error,log,,,"FDT log: Resource '/ChatpetzWorld/GameInterface' does not exist.",1277985478151
+executed,command,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.project.cleanAction",1277985478163
+error,log,,,"Errors occurred during the build.",1277985478676
+error,log,,,"FDT log: Resource '/ChatpetzWorld/GameInterface' does not exist.",1277985478743
+error,log,,,"FDT log: Resource '/ChatpetzWorld/GameInterface' does not exist.",1277985479366
+error,log,,,"FDT log: Resource '/ChatpetzWorld/GameInterface' does not exist.",1277985479426
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277985493817
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1277985493828
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277985508276
+opened,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1277985510540
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1277985510607
+started,bundle,org.eclipse.core.variables,3.2.200.v20090521,"org.eclipse.core.variables",1277985511313
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277985516491
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277985521258
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277985523663
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1277985524795
+executed,command,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.project.cleanAction",1277985524854
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277985530320
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277985530341

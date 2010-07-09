@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277910282729
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1277910287106
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910297607
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910304278
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1277910311524
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910312705
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910412119
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1277910419984
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910420986
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910456278
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910459031
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910533545
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277910539564
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277910564247
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910570567
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910577737
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277910577777
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277910582447
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.run",1277910586211
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910592668
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910604955
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1277910609907
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277910614654
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1277910618139
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1277910618226

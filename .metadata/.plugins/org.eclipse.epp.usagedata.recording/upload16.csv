@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823576504
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1277823590214
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823590429
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1277823591984
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823592237
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1277823592712
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823592974
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1277823593688
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823593975
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277823600298
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1277823603936
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823604281
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823606693
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823612641
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277823615794
+error,log,,,"Unhandled event loop exception",1277823616321
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823618715
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1277823618832
+executed,command,,,"AUTOGEN:::com.powerflasher.fdt.ui.editor.editorContribution/com.powerflasher.fdt.ui.editor.RulerDoubleClick",1277823630959
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1277823633142
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Resume",1277823633268
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823634447
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823643957
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823646261
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277823647731

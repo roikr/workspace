@@ -1,0 +1,56 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzTrivia extends Sprite implements IChatpetzGame {
+		
+		private var gameAssets:WhoWantsGame;
+		private var gameManager:IGameManager;
+		private var intro:Intro;
+		private var game:Game;
+		private var correct:int;
+		
+		
+		public function ChatpetzTrivia() {
+			addChild(gameAssets = new WhoWantsGame())
+			gameAssets.mcLight.mouseEnabled = false;
+			intro = new Intro(gameAssets.mcIntro,this);
+			game = new Game(gameAssets.mcGame,this);
+	
+			start(null);
+		}
+		
+		public function start(manager : IGameManager) : void {
+			gameManager = manager;
+			intro.open();
+		}
+		
+		public function startSession() : void {
+			trace("startSession");
+			correct = 0;
+			game.open();
+		}
+		
+		public function onAnswer(answer:Boolean) : void {
+			if (answer)
+				correct+=1;
+			nextQuestion();
+		}
+		
+		public function nextQuestion() : void {
+			trace("nextQuestion");
+			game.open();
+		}
+
+		public function pause() : void {
+		}
+		
+		public function help() : void {
+		}
+		
+		public function exit() : void {
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class TestingGameUI extends Sprite {
+		private var gameUI:GameUI;
+		
+		public function TestingGameUI() {
+			addChild(gameUI = new GameUI())
+		}
+	}
+}

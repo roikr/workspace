@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Unhandled event loop exception",1278342780306
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342781502
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278342781521
+error,log,,,"Unhandled event loop exception",1278342781884
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278342786295
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278342786497
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278342786603
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278342795045
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278342795112
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342797216
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342837765
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278342864338
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278342867146
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342868549
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342905042
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278342906471
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278342907258
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278350187019
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278350191856
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278351630132
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278351630541
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278351630565
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278351630580
+closed,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278351630682
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.406.v200903031852,"org.eclipse.jst.ws.axis.creation.ui",1278351632747

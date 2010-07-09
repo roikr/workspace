@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+OpenSpace configuration file
+Version 2.0
+
+NOTE: if one of the following params is missing, default values are applied.
+-->
+
+<OpenSpace>
+
+	<!-- Engine parameters -->
+	<CustomParamsSeparator>|</CustomParamsSeparator> 			<!-- Separator used to separate skin custom parameters (default: |) -->
+	<ProcessedTilesPerFrame>60</ProcessedTilesPerFrame> 		<!-- Number of tiles processed at each frame during the map rendering process (default: 60) -->
+	<EditModeIdlePing>120</EditModeIdlePing>					<!-- Number of seconds between each "ping" sent to the server during Edit Mode, to avoid disconnection during map editing (default: 120, set to 0 for no ping)
+	
+	<!-- Tiles rendering parameters -->
+	<TileSize>150</TileSize> 									<!-- Isometric tile main diagonal length (tile width in orthogonal coordinates) -->
+	<TileRatio>0.2</TileRatio> 									<!-- Ratio between tile's width and height in orthogonal coordinates (valid values: 0.0->1.0) -->
+	<ShowTileElevation>1</ShowTileElevation> 					<!-- Show tile isometric elevation: set to 0 together with TileRatio = 1 for a top-down view -->
+	<ShowWireframe>0</ShowWireframe> 							<!-- Show tile wireframe (for debug purposes; default: 0) -->
+	<SolidWireframe>0</SolidWireframe> 							<!-- Render tile faces, to better visualize the tile when a skin is not applied (for debug purposes; default: 0) -->
+	<PlayModeOverSensor>0066FF;0</PlayModeOverSensor>			<!-- Default mouse sensor over color and alpha values (separated by a semicolon; default: 0066FF;0) -->
+	<EditModeOverSensor>0066FF;0</EditModeOverSensor>			<!-- Mouse sensor over color and alpha values (separated by a semicolon) during runtime map editing (default: 0066FF;0) -->
+	<ValidDropSensor>00FF00;0.3</ValidDropSensor>				<!-- Mouse sensor over color and alpha values (separated by a semicolon) during runtime map editing, when map item drop is allowed (default: 00FF00;0.3) -->
+	<InvalidDropSensor>FF0000;0.3</InvalidDropSensor>			<!-- Mouse sensor over color and alpha values (separated by a semicolon) during runtime map editing, when map item drop is not allowed (default: FF0000;0.3) -->
+	<DragProxyAlpha>0.8</DragProxyAlpha>						<!-- Alpha value of the dragged map item during runtime map editing (default: 0.8) -->
+	
+	<!-- Camera parameters -->
+	<FadeDuration>500</FadeDuration> 							<!-- Duration, in milliseconds, of the map fade in/out transition (default: 500; set to 0 for no transition effect) -->
+	<FadeEasingEq>Linear.easeNone</FadeEasingEq> 				<!-- Fade in/out easing equation, see the fl.motion.easing package (Flash) or mx.effects.easing (Flex) documentation (default: Linear.easeNone) -->
+	<CameraPanSpeed>400</CameraPanSpeed> 						<!-- Speed (pixel/sec) of camera panning (default: 400; set to 0 for discontinuous camera movement) -->
+	<PanEasingEq>Sine.easeOut</PanEasingEq> 					<!-- Camera pan easing equation, see the fl.motion.easing package (Flash) or mx.effects.easing (Flex) documentation (default: Sine.easeOut) -->
+	<BlurAmountOnCameraMove>1</BlurAmountOnCameraMove>			<!-- The amount of blur in the camera movement direction during scrolling or zooming (default: 10; set to 0 for no blur effect) -->
+	<BlurQuality>1</BlurQuality>								<!-- The quality of the scrolling blur (valid values: 1->3; default: 1) -->
+	<ZoomDuration>500</ZoomDuration> 							<!-- Duration, in milliseconds, of the zoom transition (default: 500; set to 0 for no transition effect) -->
+	<ZoomEasingEq>Sine.easeOut</ZoomEasingEq> 					<!-- Zoom easing equation, see the fl.motion.easing package (Flash) or mx.effects.easing (Flex) documentation (default: Sine.easeOut) -->
+	<StaticTransitionDuration>500</StaticTransitionDuration>	<!-- Duration, in milliseconds, of the fading transition displayed on discontinuous camera movements (for example on avatar teleporting; default: 500; set to 0 for no transition effect) -->
+	<StaticTransitionColor>FFFFFF</StaticTransitionColor>		<!-- The color of the fading transition on discontinuous camera movements (default: FFFFFF) -->
+	
+	<!-- User input controller parameters -->
+	<AvatarMouseControl>1</AvatarMouseControl> 					<!-- Use mouse click to control the avatar movement (default: 1); mouse control is always enabled for interaction with map objects and runtime map editing -->
+	<UseHandCursor>1</UseHandCursor> 							<!-- Show hand cursor over clickable tiles (default: 0; always set to 0 if AvatarMouseControl=0) -->
+	<AvatarKeyboardControl>1</AvatarKeyboardControl> 			<!-- Use keyboard's arrow keys to control the avatar movement (default: 0) -->
+	
+	<!-- Scrolling parameters -->
+	<ScrollOnPathCompletion>0</ScrollOnPathCompletion>			<!-- Scroll viewport when the avatar reaches the target tile only (or it becomes invisible during its movement) (default: 1) -->
+	<LeftScrollLimit>300</LeftScrollLimit> 						<!-- Scroll sensor area left limit: distance in pixel from the left viewport border (default: 80) -->
+	<LeftScrollAmount>600</LeftScrollAmount> 					<!-- Scroll amount when the avatar passes the scroll sensor area left limit; percentage of the whole scroll sensor area (default: 50) -->
+	<RightScrollLimit>300</RightScrollLimit> 					<!-- Scroll sensor area right limit: distance in pixel from the right viewport border (default: 80) -->
+	<RightScrollAmount>600</RightScrollAmount> 					<!-- Scroll amount when the avatar passes the scroll sensor area right limit; percentage of the whole scroll sensor area (default: 50) -->
+	<TopScrollLimit>60</TopScrollLimit> 						<!-- Scroll sensor area top limit: distance in pixel from the top viewport border (default: 60) -->
+	<TopScrollAmount>50</TopScrollAmount> 						<!-- Scroll amount when the avatar passes the scroll sensor area top limit; percentage of the whole scroll sensor area (default: 50) -->
+	<BottomScrollLimit>60</BottomScrollLimit> 					<!-- Scroll sensor area bottom limit: distance in pixel from the bottom viewport border (default: 60) -->
+	<BottomScrollAmount>50</BottomScrollAmount> 				<!-- Scroll amount when the avatar passes the scroll sensor area bottom limit; percentage of the whole scroll sensor area (default: 50) -->
+	<ScrollSpeed>400</ScrollSpeed> 								<!-- Speed (pixel/sec) of map scrolling (default: 400; set to 0 for discontinuous map movement); PanEasingEq parameter is used for scrolling easing equation -->
+	<ShowBlurOnScroll>0</ShowBlurOnScroll> 						<!-- Show blur effect during scrolling (default: 1); BlurAmountOnCameraMove and BlurQuality parameters are used -->
+	<EnableContinuousScrolling>1</EnableContinuousScrolling> 	<!-- Scroll map continuously (default: 0; when 1, ScrollOnPathCompletion, ScrollAmount, ScrollSpeed and PanEasingEq parameters have no effect) -->
+	
+	<!-- Avatar parameters -->
+	<EnableAvatarMouseEvents>1</EnableAvatarMouseEvents> 		<!-- Enable click/rollOver/rollOut mouse events on main avatar sprite (default: 1); independent from the selected controller type -->
+	<EnableBringGhostToFront>1</EnableBringGhostToFront>		<!-- Enable ghost avatar click to bring it to front with respect to overlapping ghosts (default: 1) -->
+	<EnablePixelCollisionCheck>0</EnablePixelCollisionCheck> 	<!-- (See documentation; default: 0) -->
+	<SortAvatarsOnTile>1</SortAvatarsOnTile>					<!-- Adjust z-sorting of avatars placed on the same tile, according to their y coordinate (default: 1) -->
+	
+</OpenSpace>

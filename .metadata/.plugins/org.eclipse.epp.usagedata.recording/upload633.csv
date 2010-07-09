@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Unhandled event loop exception",1278603047524
+error,log,,,"FDT log: No message gotten.",1278603048252
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278603048264
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278603051353
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603053168
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278603053371
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603053386
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603055984
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278603056151
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603056166
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603061410
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278603061504
+error,log,,,"FDT log: No message gotten.",1278603061776
+error,log,,,"Unable to create editor ID com.powerflasher.fdt.ui.editor.ASEditor: An unexpected exception was thrown.",1278603061876
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278603062051
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278603062129
+error,log,,,"FDT log: No message gotten.",1278603062191
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278603064400
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278603064400
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603066311
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603067667
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278603067670
+closed,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278603067879
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.406.v200903031852,"org.eclipse.jst.ws.axis.creation.ui",1278603071093
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.ui,1.0.405.v200901261650,"org.eclipse.jst.ws.axis.consumption.ui",1278603071148

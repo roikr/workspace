@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278514243384
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514267279
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514269244
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514269250
+error,log,,,"FDT log: No message gotten.",1278514269328
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514280679
+error,log,,,"FDT log: No message gotten.",1278514280831
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278514285678
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.undo",1278514286495
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278514304804
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278514305970
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514307354
+error,log,,,"FDT log: No message gotten.",1278514307541
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278514309319
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278514319672
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278514321775
+error,log,,,"FDT log: No message gotten.",1278514323913
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514324064
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514343233
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514360811
+error,log,,,"FDT log: No message gotten.",1278514360915
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278514363992
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278514369316
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514373513
+executed,command,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.project.cleanAction",1278514375923

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.wst.dtd.core,1.1.300.v200904181727,"org.eclipse.wst.dtd.core",1278578590497
+started,bundle,org.eclipse.wst.xsl.core,1.0.0.v200905071815,"org.eclipse.wst.xsl.core",1278578590502
+started,bundle,org.eclipse.wst.wsdl.validation,1.1.401.v200902271605,"org.eclipse.wst.wsdl.validation",1278578590530
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278578614543
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578624843
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578630444
+executed,command,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.project.cleanAction",1278578630475
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278578630690
+error,log,,,"Errors occurred during the build.",1278578630810
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578631137
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578631988
+error,log,,,"FDT log: Resource '/ChatpetzWorld/interface' does not exist.",1278578632119
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578649368
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278578650609
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278578680160
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278578682382
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578689542
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278578689805
+closed,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278578689865
+closed,editor,org.eclipse.jdt.ui,3.5.0.v20090604,"org.eclipse.jdt.ui.PropertiesFileEditor",1278578689930
+closed,editor,org.eclipse.jdt.ui,3.5.0.v20090604,"org.eclipse.jdt.ui.PropertiesFileEditor",1278578689948
+closed,editor,org.eclipse.jdt.ui,3.5.0.v20090604,"org.eclipse.jdt.ui.PropertiesFileEditor",1278578689971
+closed,editor,org.eclipse.jdt.ui,3.5.0.v20090604,"org.eclipse.jdt.ui.PropertiesFileEditor",1278578690005
+closed,editor,org.eclipse.wst.xml.ui,1.1.0.v200905242047,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1278578690050
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278578716278

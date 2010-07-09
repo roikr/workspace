@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278529455318
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529458634
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529459318
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529459527
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529459612
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529459674
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529461087
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529461267
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529649546
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529652409
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529658886
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529723808
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529723844
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278529782119
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529786590
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278529786913
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529790306
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529790503
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278529792599
+error,log,,,"Unhandled event loop exception",1278529792959
+error,log,,,"Unhandled event loop exception",1278529793109
+error,log,,,"FDT log: No message gotten.",1278529793408
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278529793409
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529796683
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278529796882

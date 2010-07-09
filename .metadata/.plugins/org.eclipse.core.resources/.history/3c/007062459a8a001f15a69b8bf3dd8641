@@ -1,0 +1,11 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class DebugPanel {
+		private var panel:DebugPanelAssets;
+		
+		public function DebugPanel(client:Object,panel:DebugPanelAssets)
+	}
+}

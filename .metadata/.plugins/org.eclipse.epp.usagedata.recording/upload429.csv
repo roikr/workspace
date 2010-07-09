@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278427900923
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278427994871
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278427999619
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1278428119583
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278428121117
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278428169309
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278428201140
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278428212303
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278428213445
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278428215173
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278428232214
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278428233532
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278428263039
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278428264039
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278428265655
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278428266739
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278428320122
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278428320625
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278428382382
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278428404074
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278428482203
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278428608434
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278428614081
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278428615295
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/StripHolder.as(159): col: 38 Error: Incorrect number of arguments.  Expected no more than 1.\n\n\t\t\t\treturn addAnimalToMarker(marker,0);\t\n\t\t\t\t                                 ^\n\n",1278428616055

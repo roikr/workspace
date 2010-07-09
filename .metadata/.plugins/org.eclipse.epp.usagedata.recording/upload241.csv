@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278003824510
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278003825450
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278003913724
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278003913726
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278003913867
+activated,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278003913892
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278003913898
+error,log,,,"Unhandled event loop exception",1278003913970
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278003935230
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1278003935363
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278003938792
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278003938924
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278003939169
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278003948432
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278004069662
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278004071289
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278004072196
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278004075218
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278004111755
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278004112015
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278004112044
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278004121343
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Resume",1278004121503
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278004122814
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278004140847

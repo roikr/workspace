@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.wst.common.project.facet.core,1.4.0.v200906080535,"org.eclipse.wst.common.project.facet.core",1278354737763
+started,bundle,org.eclipse.wst.web,1.1.300.v200901261500,"org.eclipse.wst.web",1278354737791
+started,bundle,com.powerflasher.fdt.core,4.0.0.1077,"com.powerflasher.fdt.core",1278354737791
+started,bundle,com.powerflasher.fdt.core.dom,4.0.0.1077,"com.powerflasher.fdt.core.dom",1278354737792
+started,bundle,com.powerflasher.fdt.core.mxml,4.0.0.1077,"com.powerflasher.fdt.core.mxml",1278354737801
+started,bundle,com.powerflasher.fdt.core.swc,4.0.0.1077,"com.powerflasher.fdt.core.swc",1278354737803
+started,bundle,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui",1278354737803
+started,bundle,com.powerflasher.fdt.ui.mxml,4.0.0.1077,"com.powerflasher.fdt.ui.mxml",1278354737804
+started,bundle,com.powerflasher.fdt.ui.professional,4.0.0.1077,"com.powerflasher.fdt.ui.professional",1278354737804
+os,sysinfo,,,"macosx",1278354737807
+arch,sysinfo,,,"x86",1278354737807
+ws,sysinfo,,,"cocoa",1278354737807
+locale,sysinfo,,,"en_US",1278354737807
+processors,sysinfo,,,"2",1278354737807
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1278354737807
+java.runtime.version,sysinfo,,,"1.6.0_20-b02-279-10M3065",1278354737807
+java.specification.name,sysinfo,,,"Java Platform API Specification",1278354737807
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278354737807
+java.specification.version,sysinfo,,,"1.6",1278354737807
+java.vendor,sysinfo,,,"Apple Inc.",1278354737807
+java.version,sysinfo,,,"1.6.0_20",1278354737807
+java.vm.info,sysinfo,,,"mixed mode",1278354737807
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1278354737807
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1278354737807
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278354737807

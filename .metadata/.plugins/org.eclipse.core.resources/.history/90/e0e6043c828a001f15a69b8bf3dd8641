@@ -1,0 +1,21 @@
+package {
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+
+	/**
+	 * @author roikr
+	 */
+	public class LoginScreen extends LoginScreenAssets {
+		private var client:Object;
+		
+		public function LoginScreen(client:Object,container:Sprite) {
+			this.client = client;
+			this.btLogin.addEventListener(MouseEvent.MOUSE_DOWN,onLoginButton)
+		}
+		
+		private function onLoginButton(e:Event) : void {
+			client.login(this.itName.text, this.itPassword.text);
+		}
+	}
+}

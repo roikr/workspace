@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSpaceEditor fileVersion="1.5">
+  <project>
+    <title>Chatpetz</title>
+    <id>chatpetz</id>
+    <avatarScale>100</avatarScale>
+    <tileSize>150</tileSize>
+    <tileRatio>0.2</tileRatio>
+    <showTileElevation>1</showTileElevation>
+    <customParamsSeparator>|</customParamsSeparator>
+  </project>
+  <skinLibraryFiles>
+    <swf>../bin/libraries/HomeSkins.swf</swf>
+    <swf>../bin/libraries/AfricaSkins.swf</swf>
+    <swf>../bin/libraries/Fg.swf</swf>
+    <swf>../bin/libraries/ob.swf</swf>
+    <swf>../bin/libraries/anim.swf</swf>
+  </skinLibraryFiles>
+  <bgLibraryFiles>
+    <swf>../bin/libraries/MoonBkg.swf</swf>
+    <swf>../bin/libraries/AfricaBkg.swf</swf>
+    <swf>../bin/libraries/HomeBkg.swf</swf>
+  </bgLibraryFiles>
+  <library>
+    <skins>
+      <skin id="s15" className="Tiger" title="Tiger" keywords="AfricaSkins"/>
+      <skin id="s11" className="MoonShake" hOffset="30" vOffset="-85" title="MoonShake"/>
+      <skin id="s6" className="MoonFg" hOffset="-511" vOffset="-160" title="MoonFg" keywords="Fg"/>
+      <skin id="s0" className="Tel" hOffset="-15" vOffset="-188" title="Tel" keywords="anim"/>
+      <skin id="s5" className="Tree" hOffset="-3" vOffset="72" title="Tree" keywords="AfricaSkins"/>
+      <skin id="s7" className="Freezer" hOffset="-1" vOffset="-254" title="FreezerSkin" keywords="FreezerSkin"/>
+      <skin id="s26" className="SpaceShipToMoon" hOffset="-55" vOffset="-289" title="EarthSpaceship"/>
+      <skin id="s10" className="Cave" hOffset="-18" vOffset="-308" title="Cave"/>
+      <skin id="s23" className="Bench" hOffset="-9" vOffset="-34" title="Bench" keywords="AfricaSkins"/>
+      <skin id="s18" className="Leaves" hOffset="51" vOffset="49" title="Leaves" keywords="AfricaSkins"/>
+      <skin id="s17" className="Raccon" hOffset="17" title="Raccon" keywords="AfricaSkins"/>
+      <skin id="s12" className="MoonStore" hOffset="14" vOffset="-6" title="MoonStore"/>
+      <skin id="s21" className="Bug" title="Bug" keywords="AfricaSkins"/>
+      <skin id="s27" className="Door" hOffset="63" vOffset="-23" title="Door" keywords="HomeSkins"/>
+      <skin id="s19" className="Giraffe" hOffset="-19" vOffset="2" title="Giraffe" keywords="AfricaSkins"/>
+      <skin id="s1" className="Solar" hOffset="11" vOffset="-123" title="Solar" keywords="anim"/>
+      <skin id="s22" className="Boat" title="Boat" keywords="AfricaSkins"/>
+      <skin id="s4" className="HomeSign" hOffset="15" vOffset="-178" title="HomeSkin" keywords="homeSkin"/>
+      <skin id="s24" className="Foreground" hOffset="-33" vOffset="2" title="Foreground" keywords="HomeSkins"/>
+      <skin id="s16" className="Termites" hOffset="7" vOffset="182" title="Termites" keywords="AfricaSkins"/>
+      <skin id="s14" className="Crab" hOffset="-114" vOffset="-56" title="Crab" keywords="anim"/>
+      <skin id="s25" className="Food" hOffset="72" vOffset="31" title="Food" keywords="HomeSkins"/>
+      <skin id="s2" className="Smoke" hOffset="58" vOffset="-43" title="Smoke" keywords="anim"/>
+      <skin id="s20" className="Card" hOffset="6" vOffset="-6" title="Card" keywords="AfricaSkins"/>
+      <skin id="s13" className="SpaceShip" hOffset="-69" vOffset="-281" title="SpaceShip"/>
+      <skin id="s3" className="EarthSkin" hOffset="73" vOffset="-273" title="EarthSkin" keywords="anim"/>
+    </skins>
+    <tiles>
+      <tile id="t27" title="FoodTile">
+        <skinInstances>
+          <skinInstance skinId="s25">
+            <triggers>
+              <trigger type="click" target="food" params=""/>
+              <trigger type="rollOver" target="food" params=""/>
+              <trigger type="rollOut" target="food" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t13" title="SolarTile">
+        <skinInstances>
+          <skinInstance skinId="s1"/>
+        </skinInstances>
+      </tile>
+      <tile id="t26" title="DoorTile">
+        <skinInstances>
+          <skinInstance skinId="s27">
+            <triggers>
+              <trigger type="click" target="door" params=""/>
+              <trigger type="rollOver" target="door" params=""/>
+              <trigger type="rollOut" target="door" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t28" title="HomeFgTile">
+        <skinInstances>
+          <skinInstance skinId="s24"/>
+        </skinInstances>
+      </tile>
+      <tile id="t5" title="HomeSign">
+        <skinInstances>
+          <skinInstance skinId="s4">
+            <triggers>
+              <trigger type="click" target="home" params=""/>
+              <trigger type="rollOver" target="home" params=""/>
+              <trigger type="rollOut" target="home" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t19" title="GiraffeTile">
+        <skinInstances>
+          <skinInstance skinId="s19"/>
+        </skinInstances>
+      </tile>
+      <tile id="t0" walkable="1" title="Walkable"/>
+      <tile id="t17" title="BugTile">
+        <skinInstances>
+          <skinInstance skinId="s21"/>
+        </skinInstances>
+      </tile>
+      <tile id="t12" title="CrabTile">
+        <skinInstances>
+          <skinInstance skinId="s14"/>
+        </skinInstances>
+      </tile>
+      <tile id="t4" title="CaveTile">
+        <skinInstances>
+          <skinInstance skinId="s10">
+            <triggers>
+              <trigger type="click" target="cave" params=""/>
+              <trigger type="rollOver" target="cave" params=""/>
+              <trigger type="rollOut" target="cave" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t21" title="RacoonTile">
+        <skinInstances>
+          <skinInstance skinId="s17"/>
+        </skinInstances>
+      </tile>
+      <tile id="t1" title="MoonShake">
+        <skinInstances>
+          <skinInstance skinId="s11">
+            <triggers>
+              <trigger type="click" target="shop" params=""/>
+              <trigger type="rollOver" target="shop" params=""/>
+              <trigger type="rollOut" target="shop" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t6" title="EarthTile">
+        <skinInstances>
+          <skinInstance skinId="s3"/>
+        </skinInstances>
+      </tile>
+      <tile id="t25" title="EarthSpaceshipTile">
+        <skinInstances>
+          <skinInstance skinId="s26">
+            <triggers>
+              <trigger type="click" target="earthSpaceship" params=""/>
+              <trigger type="rollOver" target="earthSpaceship" params=""/>
+              <trigger type="rollOut" target="earthSpaceship" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t18" title="CardTile">
+        <skinInstances>
+          <skinInstance skinId="s20">
+            <triggers>
+              <trigger type="click" target="speed" params=""/>
+              <trigger type="rollOver" target="speed" params=""/>
+              <trigger type="rollOut" target="speed" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t14" title="TelSkin">
+        <skinInstances>
+          <skinInstance skinId="s0"/>
+        </skinInstances>
+      </tile>
+      <tile id="t15" title="BenchTile">
+        <skinInstances>
+          <skinInstance skinId="s23"/>
+        </skinInstances>
+      </tile>
+      <tile id="t24" title="TreeTile">
+        <skinInstances>
+          <skinInstance skinId="s5"/>
+        </skinInstances>
+      </tile>
+      <tile id="t20" title="LeavesTile">
+        <skinInstances>
+          <skinInstance skinId="s18"/>
+        </skinInstances>
+      </tile>
+      <tile id="t23" title="TigerTile">
+        <skinInstances>
+          <skinInstance skinId="s15"/>
+        </skinInstances>
+      </tile>
+      <tile id="t2" title="MoonStore">
+        <skinInstances>
+          <skinInstance skinId="s12">
+            <triggers>
+              <trigger type="click" target="store" params=""/>
+              <trigger type="rollOver" target="store" params=""/>
+              <trigger type="rollOut" target="store" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t7" title="MoonFG">
+        <skinInstances>
+          <skinInstance skinId="s6"/>
+        </skinInstances>
+      </tile>
+      <tile id="t16" title="BoatTile">
+        <skinInstances>
+          <skinInstance skinId="s22">
+            <triggers>
+              <trigger type="click" target="safari" params=""/>
+              <trigger type="rollOver" target="safari" params=""/>
+              <trigger type="rollOut" target="safari" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t11" title="SmokeTile">
+        <skinInstances>
+          <skinInstance skinId="s2"/>
+        </skinInstances>
+      </tile>
+      <tile id="t22" title="TermitesTile">
+        <skinInstances>
+          <skinInstance skinId="s16"/>
+        </skinInstances>
+      </tile>
+      <tile id="t3" title="SpaceShip">
+        <skinInstances>
+          <skinInstance skinId="s13">
+            <triggers>
+              <trigger type="click" target="moonSpaceship" params=""/>
+              <trigger type="rollOver" target="moonSpaceship" params=""/>
+              <trigger type="rollOut" target="moonSpaceship" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+      <tile id="t8" title="FreezerTile">
+        <skinInstances>
+          <skinInstance skinId="s7">
+            <triggers>
+              <trigger type="click" target="freezer" params=""/>
+              <trigger type="rollOver" target="freezer" params=""/>
+              <trigger type="rollOut" target="freezer" params=""/>
+            </triggers>
+          </skinInstance>
+        </skinInstances>
+      </tile>
+    </tiles>
+    <superTiles/>
+    <backgrounds>
+      <background id="b0" columns="1" rows="1" colWidth="2500" rowHeight="500" cache="true" title="MoonBkg">
+        <parts>
+          <part col="0" row="0" className="MoonBkg"/>
+        </parts>
+      </background>
+      <background id="b2" columns="1" rows="1" colWidth="1800" rowHeight="500" cache="true" title="HomeBkg">
+        <parts>
+          <part col="0" row="0" className="HomeBkg"/>
+        </parts>
+      </background>
+      <background id="b1" columns="1" rows="1" colWidth="1970" rowHeight="500" cache="true" title="AfricaBkg">
+        <parts>
+          <part col="0" row="0" className="AfricaBkg"/>
+        </parts>
+      </background>
+    </backgrounds>
+    <maps>
+      <map id="m0" width="15" height="15" customLimits="-200,-200,2500,500" bgId="b0" bgHOffset="-200" bgVOffset="-200" title="Moon">
+        <tileInstances>
+          <tileInstance tileId="t13" px="2" py="0" pz="0"/>
+          <tileInstance tileId="t11" px="3" py="0" pz="0"/>
+          <tileInstance tileId="t4" px="10" py="1" pz="0" name="caveTile"/>
+          <tileInstance tileId="t2" px="6" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="14" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="14" py="3" pz="0"/>
+          <tileInstance tileId="t14" px="0" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="4" pz="0"/>
+          <tileInstance tileId="t1" px="3" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="7" pz="0"/>
+          <tileInstance tileId="t3" px="0" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="9" pz="0" isAccessPoint="1"/>
+          <tileInstance tileId="t0" px="5" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="9" pz="0"/>
+          <tileInstance tileId="t6" px="0" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="13" pz="0"/>
+          <tileInstance tileId="t5" px="0" py="14" pz="0"/>
+          <tileInstance tileId="t12" px="4" py="14" pz="0"/>
+          <tileInstance tileId="t7" px="14" py="14" pz="0"/>
+        </tileInstances>
+      </map>
+      <map id="m1" width="15" height="15" customLimits="0,-150,1970,500" bgId="b1" bgVOffset="-150" title="Africa">
+        <tileInstances>
+          <tileInstance tileId="t21" px="9" py="2" pz="0"/>
+          <tileInstance tileId="t16" px="11" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="6" pz="0"/>
+          <tileInstance tileId="t19" px="1" py="7" pz="0"/>
+          <tileInstance tileId="t18" px="7" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="7" pz="0"/>
+          <tileInstance tileId="t23" px="4" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="8" pz="0"/>
+          <tileInstance tileId="t15" px="6" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="10" pz="0"/>
+          <tileInstance tileId="t20" px="14" py="10" pz="0"/>
+          <tileInstance tileId="t25" px="0" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="13" pz="0" isAccessPoint="1"/>
+          <tileInstance tileId="t0" px="4" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="13" pz="0"/>
+          <tileInstance tileId="t22" px="0" py="14" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="14" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="14" pz="0"/>
+          <tileInstance tileId="t17" px="14" py="14" pz="0"/>
+        </tileInstances>
+      </map>
+      <map id="m2" width="15" height="15" customLimits="250,-200,1800,500" bgId="b2" bgHOffset="250" bgVOffset="-200" title="Home">
+        <tileInstances>
+          <tileInstance tileId="t0" px="12" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="2" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="14" py="3" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="14" py="4" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="14" py="5" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="13" py="6" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="7" pz="0"/>
+          <tileInstance tileId="t0" px="12" py="7" pz="0"/>
+          <tileInstance tileId="t8" px="5" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="11" py="8" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="10" py="9" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="10" pz="0"/>
+          <tileInstance tileId="t0" px="9" py="10" pz="0"/>
+          <tileInstance tileId="t26" px="3" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="8" py="11" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="12" pz="0" isAccessPoint="1"/>
+          <tileInstance tileId="t0" px="5" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="7" py="12" pz="0"/>
+          <tileInstance tileId="t28" px="13" py="12" pz="0"/>
+          <tileInstance tileId="t0" px="2" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="6" py="13" pz="0"/>
+          <tileInstance tileId="t0" px="3" py="14" pz="0"/>
+          <tileInstance tileId="t0" px="4" py="14" pz="0"/>
+          <tileInstance tileId="t0" px="5" py="14" pz="0"/>
+        </tileInstances>
+      </map>
+    </maps>
+  </library>
+  <inventory>
+    <items/>
+  </inventory>
+</OpenSpaceEditor>

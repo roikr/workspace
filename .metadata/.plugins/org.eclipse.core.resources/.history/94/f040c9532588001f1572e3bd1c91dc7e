@@ -1,0 +1,9 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzVoicesTest {
+		ChatpetzCodes.play(ChatpetzCodes.FIRST_SENTENCE);
+	}
+}

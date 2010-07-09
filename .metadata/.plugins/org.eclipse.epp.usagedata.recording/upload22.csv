@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.ui.intro,3.3.0.v20090526,"org.eclipse.ui.intro",1277824811233
+opened,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277824811521
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277824811557
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277824811880
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277824814505
+started,bundle,org.eclipse.equinox.http.jetty,2.0.0.v20090520-1800,"org.eclipse.equinox.http.jetty",1277824815417
+started,bundle,org.eclipse.equinox.http.servlet,1.0.200.v20090520-1800,"org.eclipse.equinox.http.servlet",1277824815629
+started,bundle,org.eclipse.equinox.http.registry,1.0.200.v20090520-1800,"org.eclipse.equinox.http.registry",1277824816240
+started,bundle,org.eclipse.help.webapp,3.4.0.v20090429_1800,"org.eclipse.help.webapp",1277824817007
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277824822285
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277824924787
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277824925767
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1277824927625
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277824930489
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1277824942117
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277824947092
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277824947617
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1277824970055
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277824971714
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277824972093
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277824974588
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1277824975514
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(123): col: 1 Error: Syntax error: extra characters found after end of program.\n\n}\n^\n",1277824975837
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(123): col: 1 Error: Syntax error: extra characters found after end of program.\n\n}\n^\n",1277824975839
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(123): col: 1 Error: Syntax error: extra characters found after end of program.\n\n}\n^\n",1277824975839

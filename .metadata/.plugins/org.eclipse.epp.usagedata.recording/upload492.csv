@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514050971
+error,log,,,"FDT log: No message gotten.",1278514051122
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514063320
+error,log,,,"FDT log: No message gotten.",1278514063449
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.actions.OrganizeImports",1278514066175
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514068045
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514069010
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514069016
+error,log,,,"FDT log: No message gotten.",1278514069999
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278514095841
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278514097289
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514102485
+error,log,,,"FDT log: No message gotten.",1278514102636
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514110050
+error,log,,,"FDT log: No message gotten.",1278514151367
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514151571
+error,log,,,"FDT log: No message gotten.",1278514159449
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514198368
+error,log,,,"FDT log: No message gotten.",1278514198396
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278514200958
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514236061
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278514236949
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278514236955
+error,log,,,"FDT log: No message gotten.",1278514237151
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278514239456

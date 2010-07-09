@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604577312
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604577325
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604577433
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278604577447
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604580479
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604580493
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604580569
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278604580585
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604583001
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604583013
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604583082
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278604583101
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604585048
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604585060
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604585129
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278604585172
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604587617
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604587635
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278604594568
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604594657
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604597947
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604599004
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.VariableView",1278604604320
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278604638709
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278604638821

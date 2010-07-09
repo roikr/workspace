@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1277826230419
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277826233204
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277826233664
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277826239020
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277826277161
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277826280635
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1277826281429
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281968
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281975
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281975
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281976
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281976
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281977
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281977
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281978
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzWorld/interface/GameInterface.as(94): col: 8 Error: Comparison between a value with static type String and a possibly unrelated type int.\n\n\t\t\tif (nextRemainder == 1) {\n\t\t\t    ^\n\n",1277826281979
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277826292689
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277826293982
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277826296165
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277826299206
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1277826316873
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277826318942
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277826326551
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277826337343
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277826338605

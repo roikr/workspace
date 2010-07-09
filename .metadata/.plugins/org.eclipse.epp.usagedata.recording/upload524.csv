@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529796898
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529799588
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529801567
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278529803483
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529803614
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278529803787
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529805382
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529814248
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278529814255
+closed,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278529814531
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.406.v200903031852,"org.eclipse.jst.ws.axis.creation.ui",1278529817352
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.ui,1.0.405.v200901261650,"org.eclipse.jst.ws.axis.consumption.ui",1278529817400
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.core,1.0.306.v200810082309,"org.eclipse.jst.ws.axis.consumption.core",1278529817408
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.ui,1.0.103.v200807162242,"org.eclipse.jst.ws.axis2.creation.ui",1278529817410
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.ui,1.0.102.v200807232000,"org.eclipse.jst.ws.axis2.consumption.ui",1278529817413
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.core,1.0.105.v200901220134,"org.eclipse.jst.ws.axis2.creation.core",1278529817415
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.core,1.0.104.v200810151442,"org.eclipse.jst.ws.axis2.consumption.core",1278529817423
+stopped,bundle,org.eclipse.jst.ws.axis2.ui,1.0.302.v200905260749,"org.eclipse.jst.ws.axis2.ui",1278529817423
+stopped,bundle,org.eclipse.jst.ws.axis2.core,1.0.104.v200810151442,"org.eclipse.jst.ws.axis2.core",1278529817426
+stopped,bundle,org.eclipse.jst.ws.creation.ui,1.0.408.v200904211646,"org.eclipse.jst.ws.creation.ui",1278529817493
+stopped,bundle,org.eclipse.jst.ws.consumption.ui,1.1.104.v200904211646,"org.eclipse.jst.ws.consumption.ui",1278529817575
+stopped,bundle,org.eclipse.jst.ws.consumption,1.0.407.v200905191120,"org.eclipse.jst.ws.consumption",1278529817616
+stopped,bundle,org.eclipse.jst.ws.uddiregistry,1.0.400.v200901261650,"org.eclipse.jst.ws.uddiregistry",1278529817627
+stopped,bundle,org.eclipse.jst.ws.ui,1.0.402.v200903111822,"org.eclipse.jst.ws.ui",1278529817630
+stopped,bundle,org.eclipse.jst.ws,1.0.407.v200905191120,"org.eclipse.jst.ws",1278529817633

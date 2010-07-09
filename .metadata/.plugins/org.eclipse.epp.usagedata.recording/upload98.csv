@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+processors,sysinfo,,,"2",1277899550128
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1277899550128
+java.runtime.version,sysinfo,,,"1.6.0_20-b02-279-10M3065",1277899550128
+java.specification.name,sysinfo,,,"Java Platform API Specification",1277899550128
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1277899550128
+java.specification.version,sysinfo,,,"1.6",1277899550128
+java.vendor,sysinfo,,,"Apple Inc.",1277899550128
+java.version,sysinfo,,,"1.6.0_20",1277899550128
+java.vm.info,sysinfo,,,"mixed mode",1277899550128
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1277899550128
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1277899550128
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1277899550128
+java.vm.specification.version,sysinfo,,,"1.0",1277899550128
+java.vm.vendor,sysinfo,,,"Apple Inc.",1277899550128
+java.vm.version,sysinfo,,,"16.3-b01-279",1277899550128
+opened,editor,com.powerflasher.fdt.ui.welcome,,"com.powerflasher.fdt.ui.welcome.welcomeScreenBrowser",1277899550238
+activated,editor,com.powerflasher.fdt.ui.welcome,,"com.powerflasher.fdt.ui.welcome.welcomeScreenBrowser",1277899550247
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277899553469
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277899553573
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1277899558881
+started,bundle,org.eclipse.search,3.5.0.v20090526-2000,"org.eclipse.search",1277899561415
+started,bundle,com.powerflasher.fdt.core.swc,4.0.0.1077,"com.powerflasher.fdt.core.swc",1277899561482
+started,bundle,org.eclipse.compare.core,3.5.0.I20090430-0408,"org.eclipse.compare.core",1277899561822
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277899562010
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.0.v200906080500,"org.eclipse.jst.common.project.facet.core",1277899562095

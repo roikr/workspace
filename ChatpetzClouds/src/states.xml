@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<states>
+    <Cloud>
+      <Umbrella goto="CloudUmbrella"/>
+      <Rain goto="CloudRain"/>
+      <Rainbow goto="CloudRainbow"/>
+      <Cherry goto="CloudCherry"/>
+      <Choclate goto="CloudChoclate"/>
+    </Cloud>
+</states>

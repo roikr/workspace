@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"An exception occurred while dispatching debug events.",1278313085194
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278313085237
+error,log,,,"An exception occurred while dispatching debug events.",1278313085238
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278313085238
+error,log,,,"An exception occurred while dispatching debug events.",1278313085238
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313091028
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278313091039
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1278313096398
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313112502
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313136724
+executed,command,,,"com.powerflasher.fdt.ui.launch.compcLaunchShortcut.run",1278313141806
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313155562
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278313165530
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313230668
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278313230696
+executed,command,,,"com.powerflasher.fdt.ui.launch.compcLaunchShortcut.run",1278313234770
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278313255125
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313297447
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313315576
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278313319314
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313332852
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313402325
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278313404135
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278313410016
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278313415061

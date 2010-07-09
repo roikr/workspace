@@ -1,0 +1,20 @@
+package {
+	import flash.events.KeyboardEvent;
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class TestingGameUI extends Sprite {
+		private var gameUI:GameUI;
+		
+		public function TestingGameUI() {
+			super();
+			addChild(gameUI = new GameUI(null));
+			gameUI.x = -100;
+			gameUI.open();
+			
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
+		}
+	}
+}

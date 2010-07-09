@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919430
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919438
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919439
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919439
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919457
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919458
+error,log,,,"/Users/roikr/Developer/FDT/ChatpetzSafari/src/Background.as(42): col: 16 Error: Comparison between a value with static type Function and a possibly unrelated type Number.\n\n\t\t\treturn Math.random>0.5 ? near.addAnimal() : river.addAnimal();\n\t\t\t            ^\n",1278425919475
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425922520
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278425922683
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425922770
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278425922794
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425922879
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1278425922896
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425925194
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278425925211
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278425929282
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278425930440
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278425931081
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425938241
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425957337
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278425971304
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425973640
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278425974462
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278425976813
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278426003137

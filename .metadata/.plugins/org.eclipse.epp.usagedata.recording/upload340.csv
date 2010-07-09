@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278339054055
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278339075181
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278339080490
+error,log,,,"FDT log: No message gotten.",1278339082374
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278339083101
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278339091302
+executed,command,,,"com.powerflasher.fdt.ui.launch.compcLaunchShortcut.run",1278339096712
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339170740
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339221362
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339225119
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278339226301
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278339226478
+error,log,,,"Unhandled event loop exception",1278339226982
+error,log,,,"Unhandled event loop exception",1278339227090
+error,log,,,"FDT log: No message gotten.",1278339227799
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278339227800
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278339233191
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339233621
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278339233632
+error,log,,,"Unhandled event loop exception",1278339236296
+error,log,,,"Unhandled event loop exception",1278339241671
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339247324
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1278339247429
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278339247581
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278339248437

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278418909502
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1278418960337
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278418965507
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278418966284
+opened,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278418978621
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278418978655
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278418981723
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278418992105
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278418992760
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278418993044
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278418996567
+executed,command,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.launch.mxmlcLaunchShortcut.debug",1278419000855
+started,bundle,com.powerflasher.fdt.core.debugger.adapter,4.0.0.1077,"com.powerflasher.fdt.core.debugger.adapter",1278419001078
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278419008547
+error,log,,,"Unhandled event loop exception",1278419013272
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278419019605
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278419019739
+opened,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.VariableView",1278419020021
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1278419020086
+started,bundle,org.eclipse.help.base,3.4.0.v200906111540,"org.eclipse.help.base",1278419020128
+started,bundle,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui",1278419020250
+started,bundle,org.eclipse.ui.cheatsheets,3.3.200.v20090526,"org.eclipse.ui.cheatsheets",1278419020538
+started,bundle,org.eclipse.ui.intro,3.3.0.v20090526,"org.eclipse.ui.intro",1278419020602
+started,bundle,org.eclipse.equinox.http.jetty,2.0.0.v20090520-1800,"org.eclipse.equinox.http.jetty",1278419021800
+started,bundle,org.eclipse.equinox.http.servlet,1.0.200.v20090520-1800,"org.eclipse.equinox.http.servlet",1278419021964

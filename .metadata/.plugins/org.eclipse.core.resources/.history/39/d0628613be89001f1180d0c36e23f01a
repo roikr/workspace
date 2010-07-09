@@ -1,0 +1,15 @@
+package {
+
+	/**
+	 * @author roikr
+	 */
+	public interface IGameManager {
+		function load(url:String) : void;
+		function unload() : void ;
+		function setScore(score:int) : void;
+		function setLevel(level:int) : void;
+		function playChatpetzCode(code:int,probability:Number=1.0) : void;
+		function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : void;
+		function onClose() : void;
+	}
+}

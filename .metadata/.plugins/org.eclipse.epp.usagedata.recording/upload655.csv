@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.emf.ecore.xmi,2.5.0.v200906151043,"org.eclipse.emf.ecore.xmi",1278612861964
+started,bundle,org.eclipse.jst.jee,1.0.200.v200905290632,"org.eclipse.jst.jee",1278612862245
+started,bundle,org.eclipse.jpt.core,2.2.0.v200906070220,"org.eclipse.jpt.core",1278612862399
+started,bundle,org.eclipse.jpt.eclipselink.core,1.2.0.v200905310000,"org.eclipse.jpt.eclipselink.core",1278612862431
+started,bundle,org.eclipse.wst.common.frameworks.ui,1.1.300.v200904160730,"org.eclipse.wst.common.frameworks.ui",1278612862557
+started,bundle,org.eclipse.wst.xml.core,1.1.400.v200904300540,"org.eclipse.wst.xml.core",1278612862575
+started,bundle,org.eclipse.wst.common.emfworkbench.integration,1.1.300.v200811200330,"org.eclipse.wst.common.emfworkbench.integration",1278612862809
+started,bundle,org.eclipse.wst.common.modulecore,1.1.300.v200904132230,"org.eclipse.wst.common.modulecore",1278612862842
+started,bundle,org.eclipse.wst.validation,1.2.102.v200905201610,"org.eclipse.wst.validation",1278612862886
+started,bundle,org.eclipse.jst.j2ee,1.1.300.v200905290632,"org.eclipse.jst.j2ee",1278612862936
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278612864139
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278612878698
+opened,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278612880638
+activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278612880688
+started,bundle,org.eclipse.core.variables,3.2.200.v20090521,"org.eclipse.core.variables",1278612881306
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278612898322
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278612902876
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278612905815
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278612905902
+error,log,,,"Unable to create editor ID com.powerflasher.fdt.ui.editor.ASEditor: Language null not supported",1278612906054
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278612906137
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278612906138
+closed,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278612906149
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278612909531
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278612910610

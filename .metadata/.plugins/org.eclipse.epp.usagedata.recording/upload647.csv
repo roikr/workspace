@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604718149
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604720042
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278604741490
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604743479
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604830437
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278604832375
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278604848147
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1278604852323
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604854263
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604873103
+opened,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278604873133
+activated,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278604873148
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.debug.core"".",1278604873185
+error,log,,,"Unhandled event loop exception",1278604873346
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604874916
+activated,perspective,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugPerspective",1278604875016
+activated,view,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.DebugView",1278604897001
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.Terminate",1278604897116
+closed,editor,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.sourcelookup.CommonSourceNotFoundEditor",1278604897231
+activated,perspective,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.Perspective",1278604906865
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.ProblemView",1278604906870
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278604909990
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604960171
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278604996631
+error,log,,,"Core exception while retrieving the content description",1278604998927

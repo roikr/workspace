@@ -1,0 +1,21 @@
+package {
+	import flash.display.Sprite;
+
+	/**
+	 * @author roikr
+	 */
+	public class TilesSimulator extends Sprite {
+		private var tilesGrid:TilesGrid;
+		private var tileEditor:TileEditor;
+		
+		public function TilesSimulator() {
+			addChild(tileEditor=new TileEditor());
+			addChild(tilesGrid = new TilesGrid(this));
+			tilesGrid.x+=120;
+		}
+		
+		public function cloneCurrentTile() : Sprite {
+			return tileEditor.cloneCurrentTile();
+		}
+	}
+}

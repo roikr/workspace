@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui.commands.DebugLast",1277890707931
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890709293
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890726002
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277890733329
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890738407
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277890739633
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890840812
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277890840821
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890853322
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277890853331
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890865603
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277890865612
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1277890866854
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.cut",1277890893951
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1277890895557
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1277890898388
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277890932847
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890937719
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277890939207
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890955136
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1277890955148
+error,log,,,"FDT log: Resource '/ChatpetzClouds/manager' does not exist.",1277890961208
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890966698
+activated,view,org.eclipse.help.ui,3.4.0.v20090528,"org.eclipse.help.ui.HelpView",1277890995804
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1277890999231

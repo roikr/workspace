@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>GameManager</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.powerflasher.fdt.core.FlashBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.powerflasher.fdt.core.FlashNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>ChatpetzCodes</name>
+			<type>2</type>
+			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/codes</location>
+		</link>
+		<link>
+			<name>ChatpetzCodesLibrary</name>
+			<type>2</type>
+			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/bin</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,86 @@
+package {
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
+
+	/**
+	 * @author roikr
+	 */
+	public class ChatpetzTrivia extends Sprite implements IChatpetzGame {
+		
+		private var gameAssets:WhoWantsGame;
+		private var gameManager:IGameManager;
+		
+		private var intro:Intro;
+		private var game:Game;
+		private var failure:Failure;
+		private var success:Success;
+		private var gameOver:GameOver;
+		
+		private var correct:int;
+		
+		private var timer:Timer;
+		
+		
+		public function ChatpetzTrivia() {
+			addChild(gameAssets = new WhoWantsGame())
+			gameAssets.mcLight.mouseEnabled = false;
+			intro = new Intro(gameAssets.mcIntro,this);
+			game = new Game(gameAssets.mcGame,this);
+			failure = new Failure(gameAssets.mcFailure,this);
+			gameOver = new GameOver(gameAssets.mcGameOver,this);
+			
+			timer = new Timer(500,100);
+			timer.addEventListener(TimerEvent.TIMER,onTimer);
+			timer.addEventListener(TimerEvent.TIMER_COMPLETE,onTimerComplete)
+			
+			start(null);
+		}
+		
+		private function onTimer(e:TimerEvent) : void {
+			if (gameManager)
+				gameManager.setTime(timer.currentCount);
+		}
+		
+		private function onTimerComplete(e:TimerEvent) : void {
+			if (correct>=10) {
+				
+			}
+				
+			
+			
+		}
+		
+		public function start(manager : IGameManager) : void {
+			gameManager = manager;
+			intro.open();
+		}
+		
+		public function startSession() : void {
+			trace("startSession");
+			correct = 0;
+			game.open();
+		}
+		
+		public function onAnswer(answer:Boolean) : void {
+			if (answer)
+				correct+=1;
+			nextQuestion();
+		}
+		
+		public function nextQuestion() : void {
+			trace("nextQuestion");
+			game.open();
+		}
+
+		public function pause() : void {
+		}
+		
+		public function help() : void {
+		}
+		
+		public function exit() : void {
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<SmartFoxClient>
+    <ip>chatpetz.com</ip>
+    <port>9339</port>
+    <zone>chatpetz</zone>
+    <debug>true</debug>
+    <smartConnect>false</smartConnect>
+</SmartFoxClient>
