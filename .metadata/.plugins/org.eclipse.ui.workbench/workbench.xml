@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
-<window height="774" width="1594" x="146" y="175">
+<window height="774" width="1594" x="86" y="175">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
 </fastViewData>
@@ -24,7 +24,7 @@
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.powerflasher.fdt.ui.editor.ASEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.powerflasher.fdt.ui.editor.ASEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -33,26 +33,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="com.powerflasher.fdt.ui.editor.ASEditor" name="WorldUI.as" partName="WorldUI.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/UI/WorldUI.as" title="WorldUI.as" tooltip="ChatpetzWorld/UI/WorldUI.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/UI/WorldUI.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2248" selectionTopPixel="537"/>
-</editor>
-<editor activePart="true" focus="true" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzWorld.as" partName="ChatpetzWorld.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/src/ChatpetzWorld.as" title="ChatpetzWorld.as" tooltip="ChatpetzWorld/src/ChatpetzWorld.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2464" selectionTopPixel="15"/>
-</editor>
-<editor id="com.powerflasher.fdt.ui.editor.ASEditor" name="LoginScreen.as" partName="LoginScreen.as" path="/Users/roikr/Developer/FDT/ChatpetzWorld/UI/LoginScreen.as" title="LoginScreen.as" tooltip="ChatpetzWorld/UI/LoginScreen.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ChatpetzWorld/UI/LoginScreen.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="396" selectionTopPixel="57"/>
-</editor>
 </editors>
 <views>
 <view id="com.powerflasher.fdt.ui.views.FlashExplorer" partName="Flash Explorer">
@@ -75,16 +59,12 @@
 <filter element="*.class" isEnabled="false"/>
 </filters>
 <expanded>
+<element path="/ChatpetzCodesLibrary"/>
+<element path="/ChatpetzSafari"/>
 <element path="/ChatpetzWorld"/>
-<element path="/ChatpetzWorld/GameInterfaces"/>
-<element path="/ChatpetzWorld/UI"/>
-<element path="/ChatpetzWorld/src"/>
-<element path="/ChatpetzWorld/.settings"/>
-<element path="/ChatpetzWorld/bin"/>
-<element path="/ChatpetzWorld/bin/avatar"/>
 </expanded>
 <selection>
-<element path="/ChatpetzWorld/UI/ChatpetzUILib.swc"/>
+<element path="/ChatpetzWorld"/>
 </selection>
 </viewState>
 </view>
@@ -252,7 +232,7 @@
 </folder>
 </info>
 </mainWindow>
-<detachedWindow height="774" width="1175" x="1797" y="119">
+<detachedWindow height="774" width="1175" x="1785" y="119">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.help.ui.HelpView" label="Help"/>
@@ -369,142 +349,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/WorldUI.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.classpath"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.asDoc.prefs"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/com.powerflasher.fdt.ui.sourceLocation.prefs"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ChatpetzWorld/.settings/org.eclipse.core.resources.prefs"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/WorldUI.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" path="/ChatpetzWorld/UI/LoginScreen.as"/>
-</editors>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="873" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="1737" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="873" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="1653" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="873" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="1653" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="2346" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="18794" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="1">
-<position info="not_deleted" x="2346" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="18794" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="3935" y="3"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="17771" y="18"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position/>
-</item>
-<item historyLabel="com.powerflasher.fdt.classpath" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.core.prefs" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="org.eclipse.core.resources.prefs" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.sourceLocation.prefs" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.ui.asDoc.prefs" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.core.prefs" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="com.powerflasher.fdt.classpath" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position/>
-</item>
-<item historyLabel="WorldUI.as" index="7">
-<position info="not_deleted" x="2320" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="7">
-<position info="not_deleted" x="2267" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="2464" y="0"/>
-</item>
-<item historyLabel="LoginScreen.as" index="8">
-<position info="not_deleted" x="396" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="2464" y="0"/>
-</item>
-<item historyLabel="LoginScreen.as" index="8">
-<position info="not_deleted" x="396" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="7">
-<position info="not_deleted" x="1711" y="0"/>
-</item>
-<item historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="2464" y="0"/>
-</item>
-<item historyLabel="LoginScreen.as" index="8">
-<position info="not_deleted" x="396" y="0"/>
-</item>
-<item historyLabel="WorldUI.as" index="7">
-<position info="not_deleted" x="2248" y="0"/>
-</item>
-<item active="true" historyLabel="ChatpetzWorld.as" index="0">
-<position info="not_deleted" x="2464" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="bottomLeft"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -512,11 +362,16 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomRight"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="StripHolder.as" tooltip="ChatpetzSafari/src/StripHolder.as">
+<persistable path="/ChatpetzSafari/src/StripHolder.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzBeeps.as" tooltip="ChatpetzCodesLibrary/src/ChatpetzBeeps.as">
+<persistable path="/ChatpetzCodesLibrary/src/ChatpetzBeeps.as"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="LoginScreen.as" tooltip="ChatpetzWorld/UI/LoginScreen.as">
 <persistable path="/ChatpetzWorld/UI/LoginScreen.as"/>
 </file>
@@ -540,9 +395,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="WorldUI.as" tooltip="ChatpetzWorld/UI/WorldUI.as">
 <persistable path="/ChatpetzWorld/UI/WorldUI.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzBeeps.as" tooltip="ChatpetzCodesLibrary/src/ChatpetzBeeps.as">
-<persistable path="/ChatpetzCodesLibrary/src/ChatpetzBeeps.as"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzManager.as" tooltip="ChatpetzWorld/src/ChatpetzManager.as">
 <persistable path="/ChatpetzWorld/src/ChatpetzManager.as"/>

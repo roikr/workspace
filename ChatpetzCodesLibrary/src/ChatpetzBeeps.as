@@ -10,6 +10,7 @@ package {
 	 */
 	public class ChatpetzBeeps {
 		
+		/*
 		[Embed(source="../assets/256/sn2_8_000.mp3")] private static var sn2_8_000:Class;
 		[Embed(source="../assets/256/sn2_8_001.mp3")] private static var sn2_8_001:Class;
 		[Embed(source="../assets/256/sn2_8_002.mp3")] private static var sn2_8_002:Class;
@@ -266,6 +267,123 @@ package {
 		[Embed(source="../assets/256/sn2_8_253.mp3")] private static var sn2_8_253:Class;
 		[Embed(source="../assets/256/sn2_8_254.mp3")] private static var sn2_8_254:Class;
 		[Embed(source="../assets/256/sn2_8_255.mp3")] private static var sn2_8_255:Class;
+		*/
+		
+		private static var importer:Array = [
+            sn2_8_033,
+			sn2_8_034,
+			sn2_8_035,
+			sn2_8_036,
+			sn2_8_037,
+			sn2_8_038,
+			sn2_8_039,
+			sn2_8_040,
+			sn2_8_041,
+			sn2_8_042,
+			sn2_8_043,
+			sn2_8_044,
+			sn2_8_100,
+			sn2_8_101,
+			sn2_8_102,
+			sn2_8_103,
+			sn2_8_104,
+			sn2_8_105,
+			sn2_8_106,
+			sn2_8_107,
+			sn2_8_108,
+			sn2_8_109,
+			sn2_8_110,
+			sn2_8_111,
+			sn2_8_112,
+			sn2_8_113,
+			sn2_8_114,
+			sn2_8_115,
+			sn2_8_116,
+			sn2_8_117,
+			sn2_8_118,
+			sn2_8_119,
+			sn2_8_120,
+			sn2_8_121,
+			sn2_8_122,
+			sn2_8_123,
+			sn2_8_124,
+			sn2_8_125,
+			sn2_8_126,
+			sn2_8_127,
+			sn2_8_128,
+			sn2_8_129,
+			sn2_8_130,
+			sn2_8_131,
+			sn2_8_132,
+			sn2_8_133,
+			sn2_8_134,
+			sn2_8_135,
+			sn2_8_136,
+			sn2_8_137,
+			sn2_8_138,
+			sn2_8_139,
+			sn2_8_140,
+			sn2_8_141,
+			sn2_8_142,
+			sn2_8_143,
+			sn2_8_144,
+			sn2_8_145,
+			sn2_8_146,
+			sn2_8_147,
+			sn2_8_148,
+			sn2_8_149,
+			sn2_8_150,
+			sn2_8_151,
+			sn2_8_152,
+			sn2_8_153,
+			sn2_8_154,
+			sn2_8_155,
+			sn2_8_156,
+			sn2_8_157,
+			sn2_8_158,
+			sn2_8_159,
+			sn2_8_160,
+			sn2_8_161,
+			sn2_8_162,
+			sn2_8_163,
+			sn2_8_164,
+			sn2_8_165,
+			sn2_8_166,
+			sn2_8_167,
+			sn2_8_168,
+			sn2_8_169,
+			sn2_8_170,
+			sn2_8_171,
+			sn2_8_172,
+			sn2_8_173,
+			sn2_8_174,
+			sn2_8_175,
+			sn2_8_176,
+			sn2_8_177,
+			sn2_8_178,
+			sn2_8_179,
+			sn2_8_180,
+			sn2_8_181,
+			sn2_8_182,
+			sn2_8_183,
+			sn2_8_184,
+			sn2_8_185,
+			sn2_8_186,
+			sn2_8_187,
+			sn2_8_188,
+			sn2_8_189,
+			sn2_8_190,
+			sn2_8_191,
+			sn2_8_192,
+			sn2_8_193,
+			sn2_8_194,
+			sn2_8_195,
+			sn2_8_196,
+			sn2_8_197,
+			sn2_8_198,
+			sn2_8_199
+            
+        ];
 		
 		private static var mainChatpet:String = "PIFF";
 		private static var _code:int;
@@ -288,7 +406,8 @@ package {
    			while( str.length < 3 )
       		 str="0" + str;
   		 	
-  		 	var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
+  		 	//var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
+    		var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
     		var sound:Sound = new Cls() as Sound;
     		var channel:SoundChannel = sound.play();
     		if (testChatpetz) {
@@ -351,7 +470,8 @@ package {
    			while( str.length < 3 )
       		 str="0" + str;
   		 	
-  		 	var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
+  		 	//var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
+  		 	var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
     		var sound:Sound = new Cls() as Sound;
     		sound.play();
   		}

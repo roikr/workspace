@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872034683
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872035611
+error,log,,,"Unable to create editor ID com.powerflasher.fdt.ui.editor.ASEditor: Language null not supported",1278872035651
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872035656
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872035904
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872035910
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872035910
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278872036910
+closed,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872036910
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872039706
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872044491
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872060804
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872060833
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872074898
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872075476
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278872075485
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278872081902
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278872087686
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278872091147
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.copy",1278872096905
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.edit.paste",1278872098237
+executed,command,org.eclipse.ui,3.5.0.I20090604-2000,"org.eclipse.ui.file.save",1278872103992
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872123362
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872135664
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278872139111

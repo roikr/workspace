@@ -1,0 +1,34 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Unhandled event loop exception",1278872278108
+error,log,,,"FDT log: No message gotten.",1278872278572
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1278872278574
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1278872282102
+error,log,,,"Unhandled event loop exception",1278872283950
+error,log,,,"Unhandled event loop exception",1278872286071
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872286334
+closed,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872286364
+activated,perspective,com.powerflasher.fdt.ui,,"com.powerflasher.fdt.ui.Perspective",1278872437131
+started,bundle,org.eclipse.osgi,3.5.0.v20090520,"org.eclipse.osgi",1278872437131
+started,bundle,org.eclipse.equinox.simpleconfigurator,1.0.100.v20090520-1905,"org.eclipse.equinox.simpleconfigurator",1278872437132
+started,bundle,com.ibm.icu,4.0.1.v20090415,"com.ibm.icu",1278872437132
+started,bundle,org.eclipse.core.contenttype,3.4.0.v20090429-1800,"org.eclipse.core.contenttype",1278872437133
+started,bundle,org.eclipse.core.databinding.observable,1.2.0.I20090604-2000,"org.eclipse.core.databinding.observable",1278872437134
+started,bundle,org.eclipse.core.expressions,3.4.100.v20090429-1800,"org.eclipse.core.expressions",1278872437134
+started,bundle,org.eclipse.core.filebuffers,3.5.0.v20090526-2000,"org.eclipse.core.filebuffers",1278872437134
+started,bundle,org.eclipse.core.filesystem,1.2.0.v20090507,"org.eclipse.core.filesystem",1278872437135
+started,bundle,org.eclipse.core.jobs,3.4.100.v20090429-1800,"org.eclipse.core.jobs",1278872437135
+started,bundle,org.eclipse.core.net,1.2.0.I20090522-1010,"org.eclipse.core.net",1278872437136
+started,bundle,org.eclipse.core.resources,3.5.0.v20090512,"org.eclipse.core.resources",1278872437138
+started,bundle,org.eclipse.core.runtime,3.5.0.v20090525,"org.eclipse.core.runtime",1278872437141
+started,bundle,org.eclipse.core.runtime.compatibility,3.2.0.v20090413,"org.eclipse.core.runtime.compatibility",1278872437142
+started,bundle,org.eclipse.core.runtime.compatibility.auth,3.2.100.v20090413,"org.eclipse.core.runtime.compatibility.auth",1278872437142
+started,bundle,org.eclipse.debug.core,3.5.0.v20090526-1600,"org.eclipse.debug.core",1278872437143
+started,bundle,org.eclipse.ecf,3.0.0.v20090604-1131,"org.eclipse.ecf",1278872437144
+started,bundle,org.eclipse.ecf.filetransfer,3.0.0.v20090604-1131,"org.eclipse.ecf.filetransfer",1278872437144
+started,bundle,org.eclipse.ecf.identity,3.0.0.v20090604-1131,"org.eclipse.ecf.identity",1278872437145
+started,bundle,org.eclipse.ecf.provider.filetransfer,3.0.0.v20090604-1131,"org.eclipse.ecf.provider.filetransfer",1278872437145
+started,bundle,org.eclipse.ecf.provider.filetransfer.httpclient,3.0.0.v20090604-1131,"org.eclipse.ecf.provider.filetransfer.httpclient",1278872437146
+started,bundle,org.eclipse.emf.common,2.5.0.v200906151043,"org.eclipse.emf.common",1278872437146
+started,bundle,org.eclipse.emf.ecore,2.5.0.v200906151043,"org.eclipse.emf.ecore",1278872437146
+started,bundle,org.eclipse.epp.usagedata.gathering,1.1.0.R200906100410,"org.eclipse.epp.usagedata.gathering",1278872437146
+started,bundle,org.eclipse.epp.usagedata.recording,1.1.0.R200906100410,"org.eclipse.epp.usagedata.recording",1278872437147
