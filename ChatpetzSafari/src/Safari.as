@@ -23,7 +23,7 @@ package {
 		private var feedback:Feedback;
 		private var feedbackTimer:Timer;
 		private var timer:Timer;
-		private var time:int;
+		
 		
 		private var album:Album;
 		

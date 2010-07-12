@@ -10,12 +10,12 @@ package {
 	 */
 	public class Customer {
 		
-		private var client:Object;
+		private var client:CustomersManager;
 		private var asset:MovieClip;
 		private var timer:Timer;
 		private var position:Position;
 		
-		public function Customer(client:Object,position:Position) {
+		public function Customer(client:CustomersManager,position:Position) {
 			this.client = client;
 			this.asset = Math.random()>0.5 ? new SpaceShipCustomer1() : new SpaceShipCustomer2();
 			position.pos.addChild(this.asset);
@@ -61,6 +61,8 @@ package {
 			asset.gotoAndPlay("leave");
 			asset.mcBubble.mcSign.gotoAndPlay("x");
 			SoundsLibrary.play(SoundsLibrary.COMIC_WRONG);
+			client.getClient().play(ChatpetzCodes.CLOUDS_GAME_UNSERVED);
+			
 		}
 
 		public function hitTest(obj:DisplayObject) : Boolean {

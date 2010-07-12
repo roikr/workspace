@@ -7,3 +7,7 @@ Sounds Library:
 1. it is better to compose of 2 files:
    a. library which store each file with a class in the same name;
    b. const file to store the const and link to the classes name (good for auto completion)
+
+
+Codes Library:
+1. when programming games, we are using the gamemanager API to call the beeps, because we don't want to link the beeps sounds to the game !

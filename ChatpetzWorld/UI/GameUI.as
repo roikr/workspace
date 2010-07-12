@@ -16,12 +16,13 @@ package {
 		private var queuedCloudsScore:int;
 		private var targetCloudsScore:int;
 		private var nextRemainder:int;
-		
+		private var bOpened:Boolean;
 		
 		
 		
 		public function GameUI(gameManager:IGameManager) {
 			this.gameManager = gameManager ;
+			bOpened = false;
 		}
 		
 		
@@ -38,6 +39,8 @@ package {
 			currentCloudsScore = 0;
 			targetCloudsScore = 0;
 			queuedCloudsScore = 0;
+			
+			bOpened = true;
 			
 			setScore(0);
 			setLevel(1);
@@ -74,6 +77,7 @@ package {
 			bClosePanel.addEventListener(MouseEvent.MOUSE_DOWN,onClosePanel);
 			if (gameManager)
 				gameManager.unload();
+			bOpened = false;
 		}
 
 		private function onEnterFrame(e:Event) : void {
@@ -106,6 +110,9 @@ package {
 		}
 		
 		public function setCloudsScore(cloudsScore:int) : void {
+			if (!bOpened)
+				return;
+			
 			cloudsScore = cloudsScore % 31;
 			if (cloudsScore < currentCloudsScore) {
 				resetClouds();
@@ -167,15 +174,18 @@ package {
 		}
 
 		public function setTime(time:int) : void {
-			this.mcLowerCreature.gotoAndStop(time);
+			if (bOpened)
+				this.mcLowerCreature.gotoAndStop(time);
 		}
 		
 		public function setScore(score:int) : void {
-			this.mcUpperCreature.dtScore.text =  score.toString();
+			if (bOpened)
+				this.mcUpperCreature.dtScore.text =  score.toString();
 		}
 
 		public function setLevel(level:int) : void {
-			this.mcLevelView.dtLevelText.text  =  level.toString();
+			if (bOpened)
+				this.mcLevelView.dtLevelText.text  =  level.toString();
 		}
 		
 		public function onHelp(e:Event) : void {

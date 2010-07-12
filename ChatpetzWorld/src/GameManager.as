@@ -67,7 +67,7 @@ package {
 		
 		
 		public function setStars(stars:Number) : void {
-			gameUI.setCloudsScore(stars*3);	
+			gameUI.setCloudsScore(stars);	
 		}
 
 		public function setScore(score:int) : void {

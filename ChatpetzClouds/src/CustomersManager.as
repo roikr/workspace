@@ -10,11 +10,11 @@ package {
 		
 		
 		private var positions:Array;
-		private var client:Object;
+		private var client:ChatpetzClouds;
 		private var timer:Timer;
 		
 	
-		public function CustomersManager(client:Object,assets:ChatpetzCloudsAssets) : void {
+		public function CustomersManager(client:ChatpetzClouds,assets:ChatpetzCloudsAssets) : void {
 			this.client = client;
 			positions = new Array();
 			positions.push(new Position(assets.mcPosition1));
@@ -68,9 +68,12 @@ package {
 					if (positions[i].customer) {
 						if (positions[i].customer.hitTest(bowl)) {
 							if (positions[i].customer.serve(bowl.currentFrameLabel)) {
-								client.cloudServed();
-								break;
-							}
+								client.cloudServed(true);
+								
+							} else
+								client.cloudServed(false);
+							
+							break;
 							
 						}
 					}
@@ -80,6 +83,11 @@ package {
 		
 		public function customerLeft(pos:Position) : void {
 			pos.customer = null;
+		}
+		
+		public function getClient():ChatpetzClouds {
+			return client;
+		
 		}
 	}
 }

@@ -23,6 +23,9 @@ package {
 		private var customersManager:CustomersManager;
 		
 		private var gameManager:IGameManager;
+		private var score:int;
+		private var level:int;
+		private var timer:Timer;
 		
 		
 		
@@ -35,6 +38,7 @@ package {
 			assets.mcPipe.addEventListener(Event.ENTER_FRAME,onPipeEnterFrame);
 			currentCloud = 1;
 			cloudsNumber = 5;
+			
 			
 			var i:int;
 			for (i = 1;i<=cloudsNumber;i++) {
@@ -62,9 +66,55 @@ package {
 			pipeTimer.start();
 			
 			SoundsLibrary.playMusic(SoundsLibrary.CLOUDS_MUSIC);
+			score = 0;
+			level = 1;
+			
+			timer = new Timer(500,100);
+			timer.addEventListener(TimerEvent.TIMER,onTimer);
+			timer.addEventListener(TimerEvent.TIMER_COMPLETE,onTimerComplete)
+		}
+		
+		private function updateDisplay() : void {
+			if (gameManager) {
+				gameManager.setLevel(level);
+				gameManager.setScore(score);
+				gameManager.setStars(cloudsServed*3);
+				gameManager.setTime(timer.currentCount);
+			}
+		}
+		
+		public function play(code:int,probability:Number=1.0) : void {
+			if (gameManager) {
+				gameManager.playChatpetzCode(code,probability);
+			}
+		}
+		
+		public function chooseAndPlay(arr:Array,probability:Number=1.0) : void {
+			if (gameManager) {
+				gameManager.chooseAndPlayChatpetzCode(arr,probability);
+			}
 		}
 		
 		
+		private function onTimer(e:TimerEvent) : void {
+			updateDisplay();
+			if (timer.currentCount == 90) 
+				chooseAndPlay(new Array(ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_1,ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_2));
+		}
+
+		private function onTimerComplete(e:TimerEvent) : void {
+			
+			if (cloudsServed>=5) {
+				level++;
+			}
+			
+			cloudsServed = 0;
+			
+			timer.reset();
+			timer.start();
+			updateDisplay();
+			
+		}
 		
 		
 		public function start(manager:IGameManager) : void {
@@ -73,6 +123,9 @@ package {
 			customersManager.start();
 			
 			cloudsServed = 0;
+			timer.start();
+			updateDisplay();
+			
 			//assets.dtClouds.text = cloudsServed.toString();
 		}
 		
@@ -90,8 +143,19 @@ package {
 			
 		}
 		
-		public function cloudServed() : void {
-			cloudsServed++;
+		public function cloudServed(bOK:Boolean) : void {
+			if (bOK) {
+				cloudsServed++;
+				score+=100;
+				updateDisplay();
+				chooseAndPlay(new Array(ChatpetzCodes.CLOUDS_GAME_SERVE_1,ChatpetzCodes.CLOUDS_GAME_SERVE_2));
+				
+				if (cloudsServed % 10 == 0)
+					play(ChatpetzCodes.CLOUDS_GAME_SERVE_10);
+			}
+			else
+				play(ChatpetzCodes.CLOUDS_WRONG_ORDER);
+				
 			//assets.dtClouds.text = cloudsServed.toString();
 		}
 		
@@ -164,10 +228,14 @@ package {
 					
 					if(ingredient.currentLabel=="N")
 						SoundsLibrary.play(SoundsLibrary.DROP_RAIN);
-					else if(ingredient.currentLabel=="R")
+					else if(ingredient.currentLabel=="R") {
 						SoundsLibrary.play(SoundsLibrary.DROP_RAINBOW);
-					else if(ingredient.currentLabel=="U")
+						play(ChatpetzCodes.CLOUDS_GAME_DROP_RAINBOW);
+					}
+					else if(ingredient.currentLabel=="U") {
 						SoundsLibrary.play(SoundsLibrary.DROP_UMBRELLA);
+						play(ChatpetzCodes.CLOUDS_GAME_DROP_UMBRELLA);
+					}
 					else if(ingredient.currentLabel=="H" || ingredient.currentLabel=="S")
 						SoundsLibrary.play(SoundsLibrary.DROP_ICECREAM);
 					
