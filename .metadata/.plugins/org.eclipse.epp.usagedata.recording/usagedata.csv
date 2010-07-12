@@ -1,26 +1,26 @@
 what,kind,bundleId,bundleVersion,description,time
-java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1278872437217
-java.runtime.version,sysinfo,,,"1.6.0_20-b02-279-10M3065",1278872437217
-java.specification.name,sysinfo,,,"Java Platform API Specification",1278872437217
-java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278872437217
-java.specification.version,sysinfo,,,"1.6",1278872437217
-java.vendor,sysinfo,,,"Apple Inc.",1278872437217
-java.version,sysinfo,,,"1.6.0_20",1278872437217
-java.vm.info,sysinfo,,,"mixed mode",1278872437217
-java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1278872437217
-java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1278872437217
-java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1278872437217
-java.vm.specification.version,sysinfo,,,"1.0",1278872437217
-java.vm.vendor,sysinfo,,,"Apple Inc.",1278872437217
-java.vm.version,sysinfo,,,"16.3-b01-279",1278872437217
-started,bundle,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui",1278872437257
-activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278872444639
-started,bundle,org.eclipse.compare.core,3.5.0.I20090430-0408,"org.eclipse.compare.core",1278872446294
-opened,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278872446316
-started,bundle,org.eclipse.jst.common.project.facet.core,1.4.0.v200906080500,"org.eclipse.jst.common.project.facet.core",1278872446350
-activated,editor,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.DefaultTextEditor",1278872446425
-started,bundle,org.eclipse.core.variables,3.2.200.v20090521,"org.eclipse.core.variables",1278872446815
-activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278872461776
-started,bundle,org.eclipse.search,3.5.0.v20090526-2000,"org.eclipse.search",1278872485134
-opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872485225
-activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278872485450
+java.vm.vendor,sysinfo,,,"Apple Inc.",1278925812915
+java.vm.version,sysinfo,,,"16.3-b01-279",1278925812915
+started,bundle,org.eclipse.ui.forms,3.4.0.v20090526,"org.eclipse.ui.forms",1278925812990
+started,bundle,org.eclipse.mylyn.tasks.ui,3.2.1.v20090722-0200-e3x,"org.eclipse.mylyn.tasks.ui",1278925813491
+started,bundle,org.eclipse.mylyn.team.ui,3.2.1.v20090722-0200-e3x,"org.eclipse.mylyn.team.ui",1278925813496
+started,bundle,org.eclipse.mylyn.monitor.ui,3.2.1.v20090722-0200-e3x,"org.eclipse.mylyn.monitor.ui",1278925813678
+started,bundle,org.eclipse.update.scheduler,3.2.200.v20081127,"org.eclipse.update.scheduler",1278925813782
+started,bundle,org.eclipse.update.core,3.2.300.v20090525,"org.eclipse.update.core",1278925813811
+started,bundle,org.eclipse.wst.ws.service.policy.ui,1.0.102.v200903070248,"org.eclipse.wst.ws.service.policy.ui",1278925813841
+started,bundle,com.powerflasher.fdt.ui.enterprise,4.0.0.1077,"com.powerflasher.fdt.ui.enterprise",1278925813850
+started,bundle,com.powerflasher.fdt.core.profiler,4.0.0.1077,"com.powerflasher.fdt.core.profiler",1278925813968
+started,bundle,com.powerflasher.fdt.ui.launch,4.0.0.1077,"com.powerflasher.fdt.ui.launch",1278925814012
+started,bundle,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui",1278925814330
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278925840276
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278925840603
+started,bundle,org.eclipse.wst.sse.core,1.1.400.v200905141750,"org.eclipse.wst.sse.core",1278925843836
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1278925846670
+started,bundle,com.powerflasher.fdt.core.swc,4.0.0.1077,"com.powerflasher.fdt.core.swc",1278925847261
+started,bundle,org.eclipse.search,3.5.0.v20090526-2000,"org.eclipse.search",1278925865516
+started,bundle,org.eclipse.compare.core,3.5.0.I20090430-0408,"org.eclipse.compare.core",1278925865805
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278925866033
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.0.v200906080500,"org.eclipse.jst.common.project.facet.core",1278925866183
+activated,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278925866463
+activated,view,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.views.FlashExplorer",1278925871215
+opened,editor,com.powerflasher.fdt.ui,4.0.0.1077,"com.powerflasher.fdt.ui.editor.ASEditor",1278925871581

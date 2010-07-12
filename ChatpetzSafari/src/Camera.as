@@ -6,6 +6,7 @@ package {
 	import flash.filters.BitmapFilterQuality;
 	import flash.filters.BlurFilter;
 	import flash.geom.Matrix;
+	import flash.geom.Point;
 
 	/**
 	 * @author roikr
@@ -76,7 +77,10 @@ package {
 			
 			var matrix:Matrix = new Matrix();
 			
-			matrix.translate(-stage.mouseX,-stage.mouseY);
+			var p:Point = new Point(stage.mouseX,stage.mouseY);
+			p = parent.globalToLocal(p);
+			
+			matrix.translate(-p.x,-p.y);
 			matrix.scale(zoom,zoom);
 			matrix.translate(bitmap.width/2,bitmap.height/2);
 			

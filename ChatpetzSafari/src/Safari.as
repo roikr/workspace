@@ -141,8 +141,10 @@ package {
 			background.update();
 			
 			if (bStarted) {
-				camera.x = stage.mouseX;
-				camera.y = stage.mouseY;
+				var camPos:Point = new Point(stage.mouseX,stage.mouseY);
+				camPos = this.globalToLocal(camPos);
+				camera.x = camPos.x;
+				camera.y = camPos.y;
 				if (currentAnimal) {
 					var p:Point = new Point (currentAnimal.x,currentAnimal.y);
 					p = currentAnimal.parent.localToGlobal(p);

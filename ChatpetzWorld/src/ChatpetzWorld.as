@@ -613,7 +613,7 @@ package {
 		public function onAvatarDown(chatpet:String) : void {
 			avatarManager.changePlayerAvatarSkin(chatpet);
 			ChatpetzBeeps.setMainChatpet(chatpet);
-			ChatpetzBeeps.chooseAndPlay(new Array(ChatpetzCodes.WORLD_SWITCH_CHATPET,ChatpetzCodes.WORLD_USE_CHATPET));
+			//ChatpetzBeeps.chooseAndPlay(new Array(ChatpetzCodes.WORLD_SWITCH_CHATPET,ChatpetzCodes.WORLD_USE_CHATPET));
 		}
 
 		public function sendMessage(msg:String) : void {

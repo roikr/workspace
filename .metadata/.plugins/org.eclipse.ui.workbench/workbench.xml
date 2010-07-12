@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="22" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
 <window height="774" width="1594" x="86" y="175">
 <fastViewData fastViewLocation="1024">
@@ -59,12 +59,11 @@
 <filter element="*.class" isEnabled="false"/>
 </filters>
 <expanded>
-<element path="/ChatpetzCodesLibrary"/>
 <element path="/ChatpetzSafari"/>
 <element path="/ChatpetzWorld"/>
 </expanded>
 <selection>
-<element path="/ChatpetzWorld"/>
+<element path="/ChatpetzSafari"/>
 </selection>
 </viewState>
 </view>
@@ -355,6 +354,10 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+<trimItem IMemento.internal.id="bottomLeft"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -362,10 +365,26 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottomRight"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzSafariTest.as" tooltip="ChatpetzSafari/src/ChatpetzSafariTest.as">
+<persistable path="/ChatpetzSafari/src/ChatpetzSafariTest.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="Safari.as" tooltip="ChatpetzSafari/src/Safari.as">
+<persistable path="/ChatpetzSafari/src/Safari.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="Camera.as" tooltip="ChatpetzSafari/src/Camera.as">
+<persistable path="/ChatpetzSafari/src/Camera.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzWorld.as" tooltip="ChatpetzWorld/src/ChatpetzWorld.as">
+<persistable path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="com.powerflasher.fdt.classpath" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.classpath">
+<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.classpath"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="StripHolder.as" tooltip="ChatpetzSafari/src/StripHolder.as">
 <persistable path="/ChatpetzSafari/src/StripHolder.as"/>
 </file>
@@ -387,12 +406,6 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="com.powerflasher.fdt.core.prefs" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs">
 <persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.core.prefs"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="com.powerflasher.fdt.classpath" tooltip="ChatpetzWorld/.settings/com.powerflasher.fdt.classpath">
-<persistable path="/ChatpetzWorld/.settings/com.powerflasher.fdt.classpath"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="ChatpetzWorld.as" tooltip="ChatpetzWorld/src/ChatpetzWorld.as">
-<persistable path="/ChatpetzWorld/src/ChatpetzWorld.as"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="WorldUI.as" tooltip="ChatpetzWorld/UI/WorldUI.as">
 <persistable path="/ChatpetzWorld/UI/WorldUI.as"/>
 </file>
@@ -401,15 +414,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="AvatarManager.as" tooltip="ChatpetzWorld/src/AvatarManager.as">
 <persistable path="/ChatpetzWorld/src/AvatarManager.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="DebugPanel.as" tooltip="ChatpetzWorld/src/DebugPanel.as">
-<persistable path="/ChatpetzWorld/src/DebugPanel.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="FlexUnitRunner.as" tooltip="ChatpetzWorld/src_test/FlexUnitRunner.as">
-<persistable path="/ChatpetzWorld/src_test/FlexUnitRunner.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.powerflasher.fdt.ui.editor.ASEditor" name="MCPlayer.as" tooltip="ChatpetzWorld/src/MCPlayer.as">
-<persistable path="/ChatpetzWorld/src/MCPlayer.as"/>
 </file>
 </mruList>
 </workbench>

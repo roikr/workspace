@@ -6933,3 +6933,179 @@ HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
 HandlerActivation(commandId=org.eclipse.wst.sse.ui.format,
 	handler=org.eclipse.wst.sse.ui.internal.handlers.FormatHandler,
 	expression=org.eclipse.core.internal.expressions.ReferenceExpression@d4f4315e,sourcePriority=1073741824)
+
+!ENTRY com.powerflasher.fdt.core 4 4 2010-07-11 21:32:39.115
+!MESSAGE /Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(15): col: 23 Error: Type was not found or was not a compile-time constant: TestingGameUIAssets.
+
+		public var testUI : TestingGameUIAssets;
+		                    ^
+
+
+!ENTRY com.powerflasher.fdt.core 4 4 2010-07-11 21:32:39.181
+!MESSAGE 
+/Users/roikr/Developer/FDT/GameManager/src/TestingGameManager.as(20): col: 24 Error: Call to a possibly undefined method TestingGameUIAssets.
+
+			addChild(testUI=new TestingGameUIAssets());
+			                    ^
+
+
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:12.604
+!MESSAGE Could not connect to the player, will try to connect for the next 72000 ms
+!STACK 0
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:20.748
+!MESSAGE Could not connect to the player, will try to connect for the next 64000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:28.879
+!MESSAGE Could not connect to the player, will try to connect for the next 56000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:36.994
+!MESSAGE Could not connect to the player, will try to connect for the next 48000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:45.107
+!MESSAGE Could not connect to the player, will try to connect for the next 40000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:42:53.338
+!MESSAGE Could not connect to the player, will try to connect for the next 32000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:43:01.525
+!MESSAGE Could not connect to the player, will try to connect for the next 24000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:43:15.953
+!MESSAGE Could not connect to the player, will try to connect for the next 72000 ms
+!STACK 0
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:365)
+	at java.net.ServerSocket.bind(ServerSocket.java:319)
+	at java.net.ServerSocket.<init>(ServerSocket.java:185)
+	at java.net.ServerSocket.<init>(ServerSocket.java:97)
+	at flash.tools.debugger.concrete.PlayerSessionManager.startListening(PlayerSessionManager.java:121)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:87)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:43:24.076
+!MESSAGE Could not connect to the player, will try to connect for the next 64000 ms
+!STACK 0
+java.net.SocketTimeoutException: Accept timed out
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+
+!ENTRY com.powerflasher.fdt.core.launch 1 0 2010-07-11 21:43:32.076
+!MESSAGE Could not connect to the player, will try to connect for the next 56000 ms
+!STACK 0
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:390)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:453)
+	at java.net.ServerSocket.accept(ServerSocket.java:421)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:693)
+	at flash.tools.debugger.concrete.PlayerSessionManager.accept(PlayerSessionManager.java:658)
+	at flex.tools.debugger.concrete.FlexDebugger.waitForPlayer(FlexDebugger.java:88)
+	at flex.tools.debugger.concrete.FlexDebugger.delayedConnectToPlayer(FlexDebugger.java:137)
+	at flex.tools.debugger.concrete.FlexDebugger$1.run(FlexDebugger.java:128)
+	at java.lang.Thread.run(Thread.java:637)
+!SESSION 2010-07-12 12:09:50.278 -----------------------------------------------
+eclipse.buildId=I20090611-1540
+java.version=1.6.0_20
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product com.powerflasher.fdt.product.product -keyring /Users/roikr/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product com.powerflasher.fdt.product.product -keyring /Users/roikr/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2010-07-12 12:10:10.194
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
