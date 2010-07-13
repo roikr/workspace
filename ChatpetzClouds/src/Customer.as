@@ -42,11 +42,11 @@ package {
 				client.customerLeft(position);
 				
 			} else if (asset.currentFrameLabel == "land") {
-				SoundsLibrary.play(SoundsLibrary.SPACESHIP_LAND);
+				SoundManager.playSound(CloudsSounds.SPACESHIP_LAND);
 			} else if (asset.currentFrameLabel == "takeoff") {
-				SoundsLibrary.play(SoundsLibrary.SPACESHIP_TAKEOFF);
+				SoundManager.playSound(CloudsSounds.SPACESHIP_TAKEOFF);
 			} else if (asset.currentFrameLabel == "blob") {
-				SoundsLibrary.play(SoundsLibrary.COMIC_BULB);
+				SoundManager.playSound(CloudsSounds.COMIC_BULB);
 			}
 			
 			
@@ -60,7 +60,7 @@ package {
 			timer.stop();
 			asset.gotoAndPlay("leave");
 			asset.mcBubble.mcSign.gotoAndPlay("x");
-			SoundsLibrary.play(SoundsLibrary.COMIC_WRONG);
+			SoundManager.playSound(CloudsSounds.COMIC_WRONG);
 			client.getClient().play(ChatpetzCodes.CLOUDS_GAME_UNSERVED);
 			
 		}

@@ -7,10 +7,9 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/shakeGame.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">manager</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">interfaces</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">CloudsSoundsLibrary</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">CloudsSoundsLibrary/CloudsSoundsLibrary.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">ChatpetzCodesLibrary</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">ChatpetzCodes</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">manager/TestingGameUILib.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">ChatpetzCodesLibrary/ChatpetzCodesLibrary.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">SoundManager</AS3Classpath>
 </AS3Classpath>

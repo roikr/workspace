@@ -65,7 +65,8 @@ package {
 			pipeTimer.addEventListener(TimerEvent.TIMER,onPipeStart);
 			pipeTimer.start();
 			
-			SoundsLibrary.playMusic(SoundsLibrary.CLOUDS_MUSIC);
+			SoundManager.setLibrary("CloudsSounds");
+			SoundManager.playMusic(CloudsSounds.CLOUDS_MUSIC);
 			score = 0;
 			level = 1;
 			
@@ -132,7 +133,7 @@ package {
 		public function exit() : void {
 			customersManager.stop();
 			pipeTimer.stop();
-			SoundsLibrary.stopMusic(SoundsLibrary.CLOUDS_MUSIC);
+			SoundManager.stopMusic(CloudsSounds.CLOUDS_MUSIC);
 		}
 		
 		public function help() : void {
@@ -172,7 +173,7 @@ package {
 				
 				var cloud:MovieClip = assets.getChildByName("mcCloudClip"+currentCloud.toString()) as MovieClip;	
 				cloud.gotoAndPlay("start");
-				SoundsLibrary.play(SoundsLibrary.CLOUD_OUT);
+				SoundManager.playSound(CloudsSounds.CLOUD_OUT);
 				cloud.visible = true;
 				currentCloud = (currentCloud % cloudsNumber) + 1;
 			}
@@ -190,13 +191,13 @@ package {
 			trace(str);
 			
 			if(str=="Cloud")
-				SoundsLibrary.play(SoundsLibrary.TAKE_CLOUD);
+				SoundManager.playSound(CloudsSounds.TAKE_CLOUD);
 			else if(str=="Umbrella")
-				SoundsLibrary.play(SoundsLibrary.TAKE_UMBRELLA);
+				SoundManager.playSound(CloudsSounds.TAKE_UMBRELLA);
 			else if(str=="Rain" || str=="Rainbow")
-				SoundsLibrary.play(SoundsLibrary.TAKE_RAIN_BOW);
+				SoundManager.playSound(CloudsSounds.TAKE_RAIN_BOW);
 			else if(str=="Cherry" || str=="Choclate")
-				SoundsLibrary.play(SoundsLibrary.TAKE_ICECREAM);
+				SoundManager.playSound(CloudsSounds.TAKE_ICECREAM);
 			
 			var p:Point = new Point(e.stageX,e.stageY);
 			p = this.globalToLocal(p);
@@ -227,17 +228,17 @@ package {
 				if (RKUtilities.hitTest(bowl, ingredient)) {
 					
 					if(ingredient.currentLabel=="N")
-						SoundsLibrary.play(SoundsLibrary.DROP_RAIN);
+						SoundManager.playSound(CloudsSounds.DROP_RAIN);
 					else if(ingredient.currentLabel=="R") {
-						SoundsLibrary.play(SoundsLibrary.DROP_RAINBOW);
+						SoundManager.playSound(CloudsSounds.DROP_RAINBOW);
 						play(ChatpetzCodes.CLOUDS_GAME_DROP_RAINBOW);
 					}
 					else if(ingredient.currentLabel=="U") {
-						SoundsLibrary.play(SoundsLibrary.DROP_UMBRELLA);
+						SoundManager.playSound(CloudsSounds.DROP_UMBRELLA);
 						play(ChatpetzCodes.CLOUDS_GAME_DROP_UMBRELLA);
 					}
 					else if(ingredient.currentLabel=="H" || ingredient.currentLabel=="S")
-						SoundsLibrary.play(SoundsLibrary.DROP_ICECREAM);
+						SoundManager.playSound(CloudsSounds.DROP_ICECREAM);
 					
 					var label:String = ingredient.getNextBowlState(bowl.currentLabel);	
 					if (label) {

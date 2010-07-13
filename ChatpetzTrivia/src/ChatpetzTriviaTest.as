@@ -7,7 +7,7 @@ package {
 		public function ChatpetzTriviaTest() {
 			super();
 			ChatpetzBeeps.setTestChatpetz(true)
-			ChatpetzBeeps.setMainChatpet("POPO")
+			ChatpetzBeeps.setMainChatpet("PARPARA")
 			load("ChatpetzTrivia.swf");
 			
 		}

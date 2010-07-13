@@ -26,6 +26,7 @@ package {
 			panel.cbLog.selected = false;
 			panel.cbVoices.selected = false;
 			
+			
 			panel.ta_log.visible = false;
 			panel.ta_trace.visible = false;
 			

@@ -74,6 +74,8 @@ package {
 		 */
 		private function init():void
 		{
+			SoundManager.setLibrary("WorldSounds");
+			
 			bInitialized = false;
 			addChild(container = new ContainerAsset());
 			MCPlayer.setContainer(container.spMCContainer);
@@ -127,7 +129,7 @@ package {
 			
 			
 			ChatpetzBeeps.setMainChatpet("PIFF")
-			ChatpetzBeeps.setTestChatpetz(true);
+			
 			
 			loginScreen = new LoginScreen(this,container.spLoginContainer);
 			loginScreen.open();
@@ -292,6 +294,8 @@ package {
 					
 					break;
 				case "Africa":
+					
+					
 					ChatpetzBeeps.play(ChatpetzCodes.WORLD_CLICK_AFRICA);
 					break;
 			}
@@ -307,6 +311,7 @@ package {
 		}
 		
 		public function getBack() : void {
+			SoundManager.setLibrary("WorldSounds");
 			openSpace.loadMap(currentMap);
 			worldUI.open();
 		}
@@ -426,6 +431,9 @@ package {
 				case "Moon":
 					ChatpetzBeeps.play(ChatpetzCodes.WORLD_CLICK_MOON);
 					break;
+				case "Africa":
+					SoundManager.playMusic(WorldSounds.AFRICA_MUSIC);
+					break;
 			}
 		}
 		
@@ -457,8 +465,8 @@ package {
 						gameManager.load("games/Safari.swf");
 					} else if (trigger.target == "speed") // Change map
 					{
-						//worldUI.close();
-						//gameInterface.open("speed");
+						worldUI.close();
+						gameManager.load("games/Speed.swf");
 					} else if (trigger.target == "shop") // Change map
 					{
 						worldUI.close();
@@ -620,10 +628,8 @@ package {
 			smartFox.sendPublicMessage(msg);
 		}
 		
-		// Game Manager
 		
-		public function returnToWorld() : void {
-			worldUI.open();
-		}
+		
+		
 	}
 }

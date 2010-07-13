@@ -48,6 +48,7 @@ package {
 			uiLoader.scaleContent = false;
 			uiLoader.addEventListener(ProgressEvent.PROGRESS, progressHandler);
 			uiLoader.addEventListener(Event.COMPLETE, completeHandler);
+			SoundManager.stopAllSounds();
 			uiLoader.load(req);
 			gameContainer.addChild(uiLoader);
 			//gameInterface.bStart.enabled = false;
@@ -101,6 +102,9 @@ package {
 		private function completeHandler(e:Event) : void {
 			//gameInterface.bStart.enabled = true;
 			//gameInterface.bStart.addEventListener(MouseEvent.MOUSE_DOWN,onStart);
+			
+			
+			
 			MCPlayer.stop();
 			
 			var uiLoader:UILoader = e.currentTarget as UILoader;

@@ -10,5 +10,5 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">ChatpetzCodesLibrary</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">ChatpetzCodes</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">ChatpetzCodesLibrary/ChatpetzCodesLibrary.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">manager/GameInterfaceAssets.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">manager/TestingGameUILib.swc</AS3Classpath>
 </AS3Classpath>

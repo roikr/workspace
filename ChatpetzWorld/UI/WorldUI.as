@@ -49,7 +49,7 @@ package {
 		private function onTextInput(e:TextEvent) : void {
 			//trace(e.text);
 			
-			var charExp:RegExp = /[a-zA-z0-9| ]/;   
+			var charExp:RegExp = /[a-zA-z0-9| |?|!]/;   
             //var numExp:RegExp = /[0-9]/;
 			e.preventDefault();
 			

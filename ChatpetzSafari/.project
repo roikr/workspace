@@ -26,6 +26,11 @@
 			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/bin</location>
 		</link>
 		<link>
+			<name>SoundManager</name>
+			<type>2</type>
+			<location>/Users/roikr/Developer/FDT/SoundManager/src</location>
+		</link>
+		<link>
 			<name>interfaces</name>
 			<type>2</type>
 			<location>/Users/roikr/Developer/FDT/GameManager/interfaces</location>

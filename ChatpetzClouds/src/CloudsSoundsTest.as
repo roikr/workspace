@@ -9,8 +9,8 @@ package {
 		 
 		 public function CloudsSoundsTest() : void {
 		 	
-		 	SoundsLibrary.play(SoundsLibrary.SPACESHIP_LAND);
-		 	SoundsLibrary.playMusic(SoundsLibrary.CLOUDS_MUSIC);
+		 	SoundManager.playSound(CloudsSounds.SPACESHIP_LAND);
+		 	SoundManager.playMusic(CloudsSounds.CLOUDS_MUSIC);
 		}
 	}
 }

@@ -11,3 +11,14 @@ Sounds Library:
 
 Codes Library:
 1. when programming games, we are using the gamemanager API to call the beeps, because we don't want to link the beeps sounds to the game !
+
+to create a class from a library we need to:
+1. add the swc to the source path
+2. mention its name in the place we want to import it (we can use Impoter array)
+3. solving namespace
+4. getQualifiedClass with :: ("com.chatpetz.speed::bird")
+
+
+git
+1. ls file: git ls-tree -r e3ef CloudsSoundsLibrary/
+

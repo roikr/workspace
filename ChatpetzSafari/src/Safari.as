@@ -38,7 +38,8 @@ package {
 		private var bStarted:Boolean;
 		
 		public function Safari() {
-		
+			SoundManager.setLibrary("SafariSounds");
+			SoundManager.playMusic(SafariSounds.SAFARI_MUSIC);
 			addChild(background = new Background());
 			
 			addChild(interfaceBar = new Interface());
@@ -63,10 +64,13 @@ package {
 			timer.addEventListener(TimerEvent.TIMER_COMPLETE,onTimerComplete)
 		}
 		
+		/*
 		private function onPlay(e:Event) : void{
 			e.stopImmediatePropagation();
 			start(null);
 		}
+		 * 
+		 */
 		
 		public function start(manager:IGameManager) : void {
 			gameManager = manager;
@@ -131,6 +135,8 @@ package {
 		public function exit() : void {
 			removeEventListener(Event.ENTER_FRAME,onEnterFrame)
 			feedbackTimer.stop();
+			timer.stop();
+			SoundManager.stopMusic(SafariSounds.SAFARI_MUSIC);
 		}
 		
 		

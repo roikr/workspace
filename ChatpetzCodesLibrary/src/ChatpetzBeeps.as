@@ -282,6 +282,7 @@ package {
 			sn2_8_042,
 			sn2_8_043,
 			sn2_8_044,
+			sn2_8_066,
 			sn2_8_100,
 			sn2_8_101,
 			sn2_8_102,
@@ -407,13 +408,19 @@ package {
       		 str="0" + str;
   		 	
   		 	//var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
-    		var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
-    		var sound:Sound = new Cls() as Sound;
-    		var channel:SoundChannel = sound.play();
-    		if (testChatpetz) {
-  				channel.addEventListener(Event.SOUND_COMPLETE,onSoundComplete);
-  				_code = code;
-    		}
+  		 	try {
+                var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
+    			var sound:Sound = new Cls() as Sound;
+    			var channel:SoundChannel = sound.play();
+    			if (testChatpetz) {
+  					channel.addEventListener(Event.SOUND_COMPLETE,onSoundComplete);
+  					_code = code;
+    			}
+            }
+            catch(e:ReferenceError) {
+                trace(e);
+            }
+    		
     		
   		}
   		
