@@ -132,8 +132,10 @@ package {
 		
 		public function exit() : void {
 			customersManager.stop();
+			assets.mcPipe.removeEventListener(Event.ENTER_FRAME,onPipeEnterFrame);
 			pipeTimer.stop();
 			SoundManager.stopMusic(CloudsSounds.CLOUDS_MUSIC);
+			timer.stop();
 		}
 		
 		public function help() : void {
