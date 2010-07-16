@@ -304,6 +304,8 @@ package {
 			}
 			
 			openSpace.loadMap(sfsRoomToJoin);
+			
+			
 		}
 		
 		public function unloadMap():void
@@ -415,6 +417,9 @@ package {
 		 */
 		private function onOpenSpaceMapRendered(evt:OpenSpaceEvent):void
 		{
+			if (container.spMCContainer.numChildren)
+				container.spMCContainer.removeChildAt(0);
+			
 			SoundManager.stopAllSounds();
 			logTrace("OpenSpace.MAP_RENDERED event received");
 			openSpace.mapScrollingEnabled = false;
@@ -454,15 +459,21 @@ package {
 		private function playMovie(movie:String) : void {
 			container.spMCContainer.addChild(new MoviePlayer(movie,this));
 		}
+		
+		private function playMC(mc:MovieClip) : void {
+			container.spMCContainer.addChild(mc);
+		}
+		
+		
 
 		public function exit(obj:Object) : void {
-			container.spMCContainer.removeChild(obj as DisplayObject);
+			
 			if (obj is MoviePlayer) {
-				
+				container.spMCContainer.removeChild(obj as DisplayObject);
 				switch ((obj as MoviePlayer).getMovieName()) {
 					case "MoonToEarthMC" :
 					case "EarthToMoonMC" :
-						container.spMCContainer.addChild(new EarthMap(this));
+						playMC(new EarthMap(this));
 						
 						break;
 				}
@@ -477,14 +488,22 @@ package {
 						
 				}
 				
-			} else if (obj is Freezer) {
-				
-			}
+			} else if (obj is Shop) {
+				worldUI.open();
+				loadMap("Moon");
+			} else
+				container.spMCContainer.removeChild(obj as DisplayObject);
+			
 		}
 		
 		
 		private function getMovieClipOnBackground(name:String) : MovieClip {
-			var arr:Array = openSpace.getBackgroundParts().toArray();
+			var arr2:Array2 = openSpace.getBackgroundParts();
+			if (!arr2)
+				return null;
+			var arr:Array = arr2.toArray();
+			if (!arr)
+				return null;
 			var bk:DisplayObjectContainer = arr[0];
 			return bk.getChildByName(name) as MovieClip;
 		}
@@ -515,14 +534,14 @@ package {
 				} else if (trigger.target == "door") // Change map
 				{
 					loadMap("Moon");
-				} else if (trigger.target == "safari") // Change map
+				} else if (trigger.target == "boat") // Change map
 				{
 					playGame("games/Safari.swf");
 					
-				} else if (trigger.target == "speed") // Change map
+				} else if (trigger.target == "card") // Change map
 				{
 					playGame("games/Speed.swf");
-				} else if (trigger.target == "shop") // Change map
+				} else if (trigger.target == "cloud") // Change map
 				{
 					playGame("games/ChatpetzClouds.swf");
 				} else if (trigger.target == "cave") 
@@ -530,16 +549,21 @@ package {
 					playGame("games/ChatpetzTrivia.swf");
 				} else if (trigger.target == "freezer") // Change map
 				{
-					container.spMCContainer.addChild(new Freezer(this));
+					playMC(new Freezer(this));
 					//var mc:MovieClip = openSpace.getSkinByName("feedmeTile", "feedmeSkin") as MovieClip;
 					
 					//mc.gotoAndPlay("open");
 					
 					//mc.mouseEnabled = true;
 					//mc.mouseChildren = true;
+				} else if (trigger.target == "shop") 
+				{ 
+					worldUI.close();
+					playMC(new Shop(this));
+					unloadMap();
 				} else if (trigger.target == "board") // Change map
 				{ 
-					container.spMCContainer.addChild(new Achievements(this));
+					playMC(new Achievements(this));
 				}
 				else if (trigger.target == "giraffe") 
 				{
