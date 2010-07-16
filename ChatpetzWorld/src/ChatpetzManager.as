@@ -18,6 +18,9 @@ package {
 			this.changeAvatar.Piff.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 			this.changeAvatar.Popo.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 			this.changeAvatar.Poggy.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			this.changeAvatar.Pammy.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			this.changeAvatar.Pizz.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			//this.changeAvatar.Parpara.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 		}
 		
 		public function onAvatarDown(e:Event) : void {

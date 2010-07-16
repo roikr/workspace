@@ -21,7 +21,7 @@ package {
 			
 		}
 		
-		public function open() : void {
+		public function open(question:int) : void {
 			game.gotoAndPlay("open")
 			game.bA.addEventListener(MouseEvent.MOUSE_DOWN,onAnswer);
 			game.bB.addEventListener(MouseEvent.MOUSE_DOWN,onAnswer);
@@ -31,6 +31,14 @@ package {
 			game.bSkip.addEventListener(MouseEvent.MOUSE_DOWN,onSkip);
 			game.mcRight.gotoAndStop(1);
 			game.mcWrong.gotoAndStop(1);
+			
+			new QuestionSynthesizer(question,this)
+			//SoundManager.playSound("QUIZ_Q1.mp3",this,true);
+		}
+		
+		public function onFinishQuestion() : void {
+			trace("finish question");
+			client.onFinishQuestion();
 		}
 		
 		private function onAnswer(e:Event) : void {

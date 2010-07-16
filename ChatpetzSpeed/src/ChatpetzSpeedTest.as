@@ -6,9 +6,9 @@ package {
 	public class ChatpetzSpeedTest extends TestingGameManager {
 		public function ChatpetzSpeedTest() {
 			super();
-			ChatpetzBeeps.setMainChatpet("PAMMY")
-			ChatpetzBeeps.setTestChatpetz(true);
-			
+			SoundManager.setTestChatpetz(true)
+			SoundManager.setMainChatpet("PAMMY")
+			new BeepsImporter();
 			load("Speed.swf");
 			
 		}

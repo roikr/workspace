@@ -42,14 +42,14 @@ package {
 
 		private function onVoicesChange(e:Event) : void {
 			
-			ChatpetzBeeps.setTestChatpetz(panel.cbVoices.selected);
+			SoundManager.setTestChatpetz(panel.cbVoices.selected);
 			
 		}
 		
 		private function onListChange(e:Event) : void {
 			var item:SimpleCollectionItem  = panel.list.selectedItem as SimpleCollectionItem;
 			if (item) {
-				ChatpetzBeeps.setMainChatpet(item.data);
+				SoundManager.setMainChatpet(item.data);
 				
 			}
 			

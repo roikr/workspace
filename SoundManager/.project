@@ -14,4 +14,11 @@
 	<natures>
 		<nature>com.powerflasher.fdt.core.FlashNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>beeps</name>
+			<type>2</type>
+			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/bin</location>
+		</link>
+	</linkedResources>
 </projectDescription>

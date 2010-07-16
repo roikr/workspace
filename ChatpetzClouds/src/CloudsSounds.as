@@ -17,7 +17,7 @@ package {
 		[Embed(source="../sounds/SWISH_02.mp3")] private static var SWISH_02:Class;
 		[Embed(source="../sounds/TAKE_CREAM_01.mp3")] private static var TAKE_CREAM_01:Class;
 		[Embed(source="../sounds/WRONG.mp3")] private static var WRONG:Class;
-		[Embed(source="../sounds/CLOUD_CREAM_GAME_01.mp3")] private static var CLOUD_CREAM_GAME_01:Class;
+		//[Embed(source="../sounds/CLOUD_CREAM_GAME_01.mp3")] private static var CLOUD_CREAM_GAME_01:Class;
 		
 		public static const DROP_RAINBOW : String = "CHAIMS_01";
 		public static const COMIC_BULB : String = "POP_01";

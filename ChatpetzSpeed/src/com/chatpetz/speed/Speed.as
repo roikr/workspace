@@ -33,7 +33,7 @@ package com.chatpetz.speed{
 		
 		public function Speed() {
 			SoundManager.setLibrary("SpeedSounds");
-			SoundManager.playMusic(SpeedSounds.SPEED_MUSIC_A);
+			SoundManager.playMusic(SpeedSounds.SPEED_MUSIC_C);
 			
 			addChild(new Background());
 			//addChild(interfaceBar = new Interface());

@@ -16,11 +16,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>ChatpetzCodes</name>
-			<type>2</type>
-			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/codes</location>
-		</link>
-		<link>
 			<name>ChatpetzCodesLibrary</name>
 			<type>2</type>
 			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/bin</location>

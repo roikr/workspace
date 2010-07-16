@@ -2,6 +2,8 @@ package {
 	import it.gotoandplay.smartfoxserver.SFSEvent;
 	import it.gotoandplay.smartfoxserver.SmartFoxClient;
 
+	import de.polygonal.ds.Array2;
+
 	import com.smartfoxserver.openspace.components.flash.OpenSpace;
 	import com.smartfoxserver.openspace.engine.control.events.MapInteractionEvent;
 	import com.smartfoxserver.openspace.engine.control.events.OpenSpaceEvent;
@@ -9,6 +11,7 @@ package {
 	import com.smartfoxserver.openspace.shared.model.other.Trigger;
 
 	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
 	import flash.display.Loader;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -54,7 +57,7 @@ package {
 		
 		private var avatarManager:AvatarManager;
 		
-		
+		private var skinsNames : Array = ["boat","card","cave","door","earthSpaceShip","moonSpaceShip","freezer","home","cloud","shop"];
 		
 		public function ChatpetzWorld() {
 			super();
@@ -75,7 +78,7 @@ package {
 		private function init():void
 		{
 			SoundManager.setLibrary("WorldSounds");
-			
+			new BeepsImporter();
 			bInitialized = false;
 			addChild(container = new ContainerAsset());
 			MCPlayer.setContainer(container.spMCContainer);
@@ -128,7 +131,7 @@ package {
 			//MCPlayer.play(new LoginScreen() as MovieClip);
 			
 			
-			ChatpetzBeeps.setMainChatpet("PIFF")
+			SoundManager.setMainChatpet("PIFF")
 			
 			
 			loginScreen = new LoginScreen(this,container.spLoginContainer);
@@ -232,7 +235,7 @@ package {
 		{
 			
 			
-				openSpace.addEventListener(OpenSpaceEvent.INITIALIZED, onOpenSpaceInitialized);
+			openSpace.addEventListener(OpenSpaceEvent.INITIALIZED, onOpenSpaceInitialized);
 			openSpace.addEventListener(OpenSpaceEvent.RESET, onOpenSpaceReset);
 			openSpace.addEventListener(OpenSpaceEvent.MAP_LOADED, onOpenSpaceMapLoaded);
 			openSpace.addEventListener(OpenSpaceEvent.MAP_CREATION_PROGRESS, onOpenSpaceMapProgress);
@@ -296,7 +299,7 @@ package {
 				case "Africa":
 					
 					
-					ChatpetzBeeps.play(ChatpetzCodes.WORLD_CLICK_AFRICA);
+					SoundManager.playBeep(ChatpetzCodes.WORLD_CLICK_AFRICA);
 					break;
 			}
 			
@@ -412,6 +415,7 @@ package {
 		 */
 		private function onOpenSpaceMapRendered(evt:OpenSpaceEvent):void
 		{
+			SoundManager.stopAllSounds();
 			logTrace("OpenSpace.MAP_RENDERED event received");
 			openSpace.mapScrollingEnabled = false;
 			//if (viewStack.selectedChild!=openSpaceCanvas)
@@ -426,85 +430,158 @@ package {
 			
 			switch (currentMap) {
 				case "Home":
-					ChatpetzBeeps.play(ChatpetzCodes.WORLD_ENTER_ROOM);
+					SoundManager.playBeep(ChatpetzCodes.WORLD_ENTER_ROOM);
 					break;
 				case "Moon":
-					ChatpetzBeeps.play(ChatpetzCodes.WORLD_CLICK_MOON);
+					SoundManager.playBeep(ChatpetzCodes.WORLD_CLICK_MOON);
 					break;
 				case "Africa":
+					
 					SoundManager.playMusic(WorldSounds.AFRICA_MUSIC);
 					break;
+			}
+			
+			
+		}
+		
+		
+		private function playGame(game:String) : void {
+			worldUI.close();
+			gameManager.load(game);
+			unloadMap();
+		}
+		
+		private function playMovie(movie:String) : void {
+			container.spMCContainer.addChild(new MoviePlayer(movie,this));
+		}
+
+		public function exit(obj:Object) : void {
+			container.spMCContainer.removeChild(obj as DisplayObject);
+			if (obj is MoviePlayer) {
+				
+				switch ((obj as MoviePlayer).getMovieName()) {
+					case "MoonToEarthMC" :
+					case "EarthToMoonMC" :
+						container.spMCContainer.addChild(new EarthMap(this));
+						
+						break;
+				}
+			} else if (obj is EarthMap) {
+				switch ((obj as EarthMap).getDestination()) {
+					case "Moon" :
+						loadMap("Moon");
+						break;
+					default:
+						loadMap("Africa");
+						break;
+						
+				}
+				
+			} else if (obj is Freezer) {
+				
 			}
 		}
 		
 		
+		private function getMovieClipOnBackground(name:String) : MovieClip {
+			var arr:Array = openSpace.getBackgroundParts().toArray();
+			var bk:DisplayObjectContainer = arr[0];
+			return bk.getChildByName(name) as MovieClip;
+		}
+		
 		private function onSkinInteraction(evt:MapInteractionEvent):void
+		{
+			var skin:DisplayObject = evt.params.skin;
+			var trigger:Trigger = evt.params.trigger;
+			
+			
+			
+			if (evt.type == MapInteractionEvent.SKIN_CLICK)
 			{
-				var skin:DisplayObject = evt.params.skin;
-				var trigger:Trigger = evt.params.trigger;
-				
-				
-				
-				if (evt.type == MapInteractionEvent.SKIN_CLICK)
-				{
-					if (trigger.target == "moonSpaceship") // Change map
-					{
-						loadMap("Africa");
-					} else if (trigger.target == "earthSpaceship") // Change map
-					{
-						loadMap("Moon");
-					} else if (trigger.target == "home") // Change map
-					{
-						loadMap("Home");
-					} else if (trigger.target == "door") // Change map
-					{
-						loadMap("Moon");
-					} else if (trigger.target == "safari") // Change map
-					{
-						worldUI.close();
-						gameManager.load("games/Safari.swf");
-					} else if (trigger.target == "speed") // Change map
-					{
-						worldUI.close();
-						gameManager.load("games/Speed.swf");
-					} else if (trigger.target == "shop") // Change map
-					{
-						worldUI.close();
-						gameManager.load("games/ChatpetzClouds.swf");
-					}else if (trigger.target == "freezer") // Change map
-					{
-						//var mc:MovieClip = openSpace.getSkinByName("feedmeTile", "feedmeSkin") as MovieClip;
-						
-						//mc.gotoAndPlay("open");
-						
-						//mc.mouseEnabled = true;
-						//mc.mouseChildren = true;
-					} else if (trigger.target == "cave") // Change map
-					{
-						worldUI.close();
-						gameManager.load("games/ChatpetzTrivia.swf");
-					} 
-				} else if (evt.type == MapInteractionEvent.SKIN_ROLL_OVER)
+				if (trigger.target == "moonSpaceShip") // Change map
 				{
 					
-					var mc1:MovieClip = skin as MovieClip;
+					playMovie("MoonToEarthMC")
+					unloadMap();
+					
+				} else if (trigger.target == "earthSpaceShip") // Change map
+				{
+					playMovie("EarthToMoonMC")
+					unloadMap();
+					
+				} else if (trigger.target == "home") // Change map
+				{
+					loadMap("Home");
+				} else if (trigger.target == "door") // Change map
+				{
+					loadMap("Moon");
+				} else if (trigger.target == "safari") // Change map
+				{
+					playGame("games/Safari.swf");
+					
+				} else if (trigger.target == "speed") // Change map
+				{
+					playGame("games/Speed.swf");
+				} else if (trigger.target == "shop") // Change map
+				{
+					playGame("games/ChatpetzClouds.swf");
+				} else if (trigger.target == "cave") 
+				{
+					playGame("games/ChatpetzTrivia.swf");
+				} else if (trigger.target == "freezer") // Change map
+				{
+					container.spMCContainer.addChild(new Freezer(this));
+					//var mc:MovieClip = openSpace.getSkinByName("feedmeTile", "feedmeSkin") as MovieClip;
+					
+					//mc.gotoAndPlay("open");
+					
+					//mc.mouseEnabled = true;
+					//mc.mouseChildren = true;
+				} else if (trigger.target == "board") // Change map
+				{ 
+					container.spMCContainer.addChild(new Achievements(this));
+				}
+				else if (trigger.target == "giraffe") 
+				{
+					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_GIRAFFE)
+					
+				} else if (trigger.target == "tiger") 
+				{
+					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TIGER)
+				} else if (trigger.target == "termites") 
+				{
+					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TERMITES)
+				} else if (trigger.target == "bug") 
+				{
+					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_BUG)
+				}
+			
+			} else if (evt.type == MapInteractionEvent.SKIN_ROLL_OVER)
+			{
+			
+				if (skinsNames.indexOf(trigger.target)!=-1) {
+					var mc1:MovieClip = getMovieClipOnBackground(trigger.target);
+					//if (!mc1)
+					//mc1 = skin as MovieClip;
 					mc1.gotoAndPlay("over"); 
-					
-				}
-				else if (evt.type == MapInteractionEvent.SKIN_ROLL_OUT)
-				{
-					
-					var mc2:MovieClip = skin as MovieClip;
-					mc2.gotoAndPlay("out"); 
-					
 				}
 				
-				
-				
-				
-				logTrace("\tTrigger target: " + trigger.target);
-				logTrace("\tTrigger params: " + trigger.params);
 			}
+			else if (evt.type == MapInteractionEvent.SKIN_ROLL_OUT)
+			{
+				if (skinsNames.indexOf(trigger.target)!=-1) 
+					(getMovieClipOnBackground(trigger.target) as MovieClip).gotoAndPlay("out");		
+			}
+			
+			
+			
+			
+			logTrace("\tTrigger target: " + trigger.target);
+			logTrace("\tTrigger params: " + trigger.params);
+		}
+		
+		
+		
 		
 		
 		
@@ -620,7 +697,7 @@ package {
 		 // ================ AVATAR CONTROLS ================
 		public function onAvatarDown(chatpet:String) : void {
 			avatarManager.changePlayerAvatarSkin(chatpet);
-			ChatpetzBeeps.setMainChatpet(chatpet);
+			SoundManager.setMainChatpet(chatpet);
 			//ChatpetzBeeps.chooseAndPlay(new Array(ChatpetzCodes.WORLD_SWITCH_CHATPET,ChatpetzCodes.WORLD_USE_CHATPET));
 		}
 

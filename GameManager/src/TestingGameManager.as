@@ -86,11 +86,11 @@ package {
 		}
 
 		public function playChatpetzCode(code : int,probability:Number=1.0) : void {
-			ChatpetzBeeps.play(code,probability)
+			SoundManager.playBeep(code,probability)
 		}
 		
 		public function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : void {
-			ChatpetzBeeps.chooseAndPlay(arr,probability);	
+			SoundManager.chooseAndPlayBeep(arr,probability);	
 		}
 		
 		

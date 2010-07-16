@@ -9,6 +9,8 @@ package {
 	 */
 	public class ChatpetzTrivia extends Sprite implements IChatpetzGame {
 		
+		public static const TRIVIA_MUSIC_A : String = "MOONIONER_01"
+		
 		private var gameAssets:WhoWantsGame;
 		private var gameManager:IGameManager;
 		
@@ -28,8 +30,14 @@ package {
 		private var rightAnswers:Array;
 		private var wrongAnswers:Array;
 		
+		private var question:int;
+		
 		
 		public function ChatpetzTrivia() {
+			
+			SoundManager.setLibrary("TriviaSounds");
+			SoundManager.playMusic(TRIVIA_MUSIC_A);
+			
 			addChild(gameAssets = new WhoWantsGame())
 			gameAssets.mcLight.mouseEnabled = false;
 			intro = new Intro(gameAssets.mcIntro,this);
@@ -62,6 +70,7 @@ package {
 			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_7)
 			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_8)
 			
+			question = 1;
 			//start(null);
 		}
 		
@@ -85,7 +94,11 @@ package {
 			//trace("startSession");
 			corrects= 0;
 			bFinished = false;
-			game.open();
+			game.open(question);
+			
+		}
+		
+		public function onFinishQuestion() : void {
 			timer.start();
 		}
 		
@@ -115,8 +128,9 @@ package {
 		
 		public function nextQuestion() : void {
 			//trace("nextQuestion");
+			question++;
 			if (!bFinished)
-				game.open(); 
+				game.open(question); 
 			else
 				gameOver.open();
 		}

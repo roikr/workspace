@@ -6,8 +6,9 @@ package {
 	public class ChatpetzCloudsTest extends TestingGameManager {
 		public function ChatpetzCloudsTest() {
 			super();
-			ChatpetzBeeps.setMainChatpet("POPO")
-			ChatpetzBeeps.setTestChatpetz(true);
+			SoundManager.setTestChatpetz(true)
+			SoundManager.setMainChatpet("POPO")
+			new BeepsImporter();
 			load("ChatpetzClouds.swf");
 			
 		}
