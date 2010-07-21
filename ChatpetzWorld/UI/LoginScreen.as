@@ -10,30 +10,24 @@ package {
 		private var client:Object;
 		
 		
-		public function LoginScreen(client:Object,container:DisplayObjectContainer) {
-			
+		public function LoginScreen(client:Object) {
+			this.itName.text = "";
+			this.itPassword.text = "";
 			this.client = client;
-			container.addChild(this);
-			visible = false;
-			
 			this.btLogin.addEventListener(MouseEvent.MOUSE_DOWN,onLoginButton);
 			
 		}
 		
-		public function open() : void {
-			this.itName.text = "";
-			this.itPassword.text = "";
-			visible = true;
-		}
-		
-		public function close() : void {
-			visible = false;
-		}
 		
 		private function onLoginButton(e:Event) : void {
 			if (itPassword.text == "8213496")
-				client.login(this.itName.text, this.itPassword.text);
+				
+				client.exit(this); //.itName.text, this.itPassword.text);
 			
+		}
+		
+		public function getUser() : String {
+			return this.itName.text;
 		}
 	}
 }

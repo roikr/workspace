@@ -36,7 +36,7 @@ package {
 // IGameManager
 		
 		public function load(url:String) : void {
-			MCPlayer.play(loadingMC);
+			gameContainer.addChild(loadingMC);
 			loadingMC.mcLoadingBar.gotoAndStop(1);
 			world.unloadMap();
 			gameUI.open();
@@ -50,7 +50,7 @@ package {
 			uiLoader.addEventListener(Event.COMPLETE, completeHandler);
 			SoundManager.stopAllSounds();
 			uiLoader.load(req);
-			gameContainer.addChild(uiLoader);
+			
 			//gameInterface.bStart.enabled = false;
 			//gameInterface.cbSound.selected = true;
 		}
@@ -103,11 +103,12 @@ package {
 			//gameInterface.bStart.enabled = true;
 			//gameInterface.bStart.addEventListener(MouseEvent.MOUSE_DOWN,onStart);
 			
+			gameContainer.removeChild(loadingMC)
 			
 			
-			MCPlayer.stop();
 			
 			var uiLoader:UILoader = e.currentTarget as UILoader;
+			gameContainer.addChild(uiLoader);
 			uiLoader.addEventListener(ProgressEvent.PROGRESS, progressHandler);
 			uiLoader.addEventListener(Event.COMPLETE, completeHandler);
 			game = uiLoader.content as IChatpetzGame;

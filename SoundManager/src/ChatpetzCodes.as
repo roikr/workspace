@@ -5,9 +5,6 @@ package {
 	 */
 	public class ChatpetzCodes {
 		
-		
-		
-		
 		public static const CONTROL_SELECT_PIFF : int = 193;
 		public static const CONTROL_SELECT_PARPARA : int = 194;
 		public static const CONTROL_SELECT_POPO : int = 195;

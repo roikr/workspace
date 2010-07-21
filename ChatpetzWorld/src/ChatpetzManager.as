@@ -9,11 +9,12 @@ package {
 	public class ChatpetzManager {
 		
 		private var changeAvatar:ChangeAvatar;
-		private var world:ChatpetzWorld;
+		private var worldUI:WorldUI;
 		
-		public function ChatpetzManager(changeAvatar:ChangeAvatar,world:ChatpetzWorld) : void {
+		public function ChatpetzManager(changeAvatar:ChangeAvatar,worldUI:WorldUI) : void {
+			
 			this.changeAvatar = changeAvatar;
-			this.world = world;
+			this.worldUI = worldUI;
 			
 			this.changeAvatar.Piff.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 			this.changeAvatar.Popo.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
@@ -21,11 +22,15 @@ package {
 			this.changeAvatar.Pammy.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 			this.changeAvatar.Pizz.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
 			this.changeAvatar.Parpara.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			
+			
 		}
 		
 		public function onAvatarDown(e:Event) : void {
 			var button:SimpleButton = e.currentTarget as SimpleButton;
-			world.onAvatarDown(button.name);
+			worldUI.onAvatarDown(button.name);
 		}
+		
+		
 	}
 }

@@ -1,4 +1,5 @@
 package {
+	import flash.events.MouseEvent;
 	import it.gotoandplay.smartfoxserver.SFSEvent;
 	import it.gotoandplay.smartfoxserver.SmartFoxClient;
 
@@ -28,7 +29,6 @@ package {
 		
 		
 		private var myUsername:String;
-		private var myIP:String;
 		private var smartFox:SmartFoxClient;
 		
 		private var loadCounter1:int;
@@ -43,106 +43,107 @@ package {
 		//private var nextRoom:String;
 		
 		private var currentMap:String;
-		
-		
 		private var worldUI:WorldUI;
 		private var gameManager:GameManager;
 		private var container:ContainerAsset;
 		private var debugPanel:DebugPanel;
-		private var loginScreen:LoginScreen;
-		
 		public var openSpace:OpenSpace;
-		
-		private var bInitialized:Boolean;
-		
+		private var bOpenSpaceInitialized:Boolean = false;
 		private var avatarManager:AvatarManager;
-		
 		private var skinsNames : Array = ["boat","card","cave","door","earthSpaceShip","moonSpaceShip","freezer","home","cloud","shop"];
 		
 		public function ChatpetzWorld() {
 			super();
-			init();
-			
-		}
-		
-		
-		
-		//-------------------------------------------------------
-		// 0. Initialize
-		//-------------------------------------------------------
-		
-		/**
-		 * Method called on application startup.
-		 * Event listeners are added to the SmartFoxClient instance provided by the Connector component.
-		 */
-		private function init():void
-		{
-			SoundManager.setLibrary("WorldSounds");
 			new BeepsImporter();
-			bInitialized = false;
-			addChild(container = new ContainerAsset());
-			MCPlayer.setContainer(container.spMCContainer);
-			
-			addChild(worldUI = new WorldUI(this));
-			addChild(gameManager = new GameManager(this,container));
-			debugPanel = new DebugPanel(container.spDebugPanel,this);
-			
-			
-			
-			openSpace = new OpenSpace();
-			container.spWorldContainer.addChild(openSpace);
-			openSpace.configPath = "config/OpenSpace_client.xml";
-			openSpace.xtName="__$OpenSpace$__";
-			openSpace.width = 890;
-			openSpace.height = 500;
-			
-			openSpace.traceEnabled = true;
-			
-			// Create SmartFoxClient instance and register event listeners
-			//smartFox = Connector.smartFox;
 			smartFox = new SmartFoxClient();
 			smartFox.addEventListener(SFSEvent.onConnection, onSFSConnection);
 			smartFox.addEventListener(SFSEvent.onConnectionLost, onSFSConnectionLost);
 			smartFox.addEventListener(SFSEvent.onLogin, onSFSLogin);
 			smartFox.addEventListener(SFSEvent.onRoomListUpdate, onSFSRoomListUpdate);
 			smartFox.defaultZone="chatpetz";
+			
+			openSpace = new OpenSpace();
+			openSpace.configPath = "config/OpenSpace_client.xml";
+			openSpace.xtName="__$OpenSpace$__";
+			openSpace.width = 890;
+			openSpace.height = 500;
+			openSpace.traceEnabled = true;
+			
+			container = new ContainerAsset();
+			container.spWorldContainer.addChild(openSpace);
+			debugPanel = new DebugPanel(container.spDebugPanel,this);
+			
+			avatarManager = new AvatarManager(this, openSpace);
+			avatarManager.loadAvatarsLibrary()
 		
-			
-			//enableOSControls(false);
-			//enableEditPanel(false);
-			
 			// Add an event listener to the RoomList to override the default behavior and load the maps properly
 			//rl_maps.addEventListener(BitEvent.ROOM_CHANGE, onMapSelected);
 			
+			SoundManager.setLibrary("WorldSounds");
 			
-			
-			//myIP = "192.168.0.187";
-			myIP = "chatpetz.com";
-			
-			
-			//smartFox.connect(myIP);
-			//loginPanel.bt_login.enabled = false;
-			//loginPanel.ti_username.enabled = false;
-			avatarManager = new AvatarManager(this, openSpace);
-			
-			
-			
-			avatarManager.loadAvatarsLibrary()
-			//MCPlayer.play(new LoginScreen() as MovieClip);
-			
-			
-			SoundManager.setMainChatpet("PIFF")
-			
-			
-			loginScreen = new LoginScreen(this,container.spLoginContainer);
-			loginScreen.open();
-			
-			
+			landingPage();
 		}
 		
-		public function login(user:String,pwd:String) : void {
-			myUsername = user;
-			smartFox.connect(myIP);
+		
+		
+		private function landingPage() : void {
+			var landingPage:LandingPage = new LandingPage();
+			landingPage.bPlay.addEventListener(MouseEvent.MOUSE_DOWN, onLandingClick)
+			addChild(landingPage);
+		}
+		
+		private function onLandingClick(e:Event) : void {
+			removeChild(e.currentTarget.parent);
+			container.spMCContainer.addChild(new VideoPlayer("intro.f4v",this));
+			
+			addChild(container);
+			addChild(worldUI = new WorldUI(this));
+			addChild(gameManager = new GameManager(this,container));	
+		}
+		
+
+		
+		
+		public function exit(obj:Object) : void {
+			
+			if (obj is VideoPlayer) {
+				container.spMCContainer.removeChild(obj as DisplayObject);
+				switch ((obj as VideoPlayer).getVideoName()) {
+					case "intro.f4v" :
+						container.spMCContainer.addChild(new LoginScreen(this));
+						
+						break;
+				}
+			} else if (obj is LoginScreen) {
+				myUsername = (obj as LoginScreen).getUser();
+				smartFox.connect("chatpetz.com");
+				
+				
+			} else  if (obj is MoviePlayer) {
+				container.spMCContainer.removeChild(obj as DisplayObject);
+				switch ((obj as MoviePlayer).getMovieName()) {
+					case "MoonToEarthMC" :
+					case "EarthToMoonMC" :
+						playMC(new EarthMap(this));
+						
+						break;
+				}
+			} else if (obj is EarthMap) {
+				switch ((obj as EarthMap).getDestination()) {
+					case "Moon" :
+						loadMap("Moon");
+						break;
+					default:
+						loadMap("Africa");
+						break;
+						
+				}
+				
+			} else if (obj is Shop) {
+				worldUI.open();
+				loadMap("Moon");
+			} else
+				container.spMCContainer.removeChild(obj as DisplayObject);
 		}
 		
 		
@@ -158,15 +159,14 @@ package {
 		{
 			if (evt.params.success)
 			{
-				logTrace("Connection successful, now performing login");
+				logTrace("Connection successful, now performaing login");
 				smartFox.login(smartFox.defaultZone, myUsername, "");
-				loginScreen.close();
+				
+				
 			}
 			else
 			{
-				loginScreen.open();
-				//loginPanel.bt_login.enabled = true;
-				//loginPanel.ti_username.enabled = true;
+				
 				logTrace("Can't connect to " + smartFox.ipAddress + ":" + smartFox.port);
 			}
 		}
@@ -177,13 +177,12 @@ package {
 		private function onSFSConnectionLost(evt:SFSEvent):void
 		{
 			logTrace("Connection lost");
-			loginScreen.open();
-			//loginPanel.bt_login.enabled = true;
-			//loginPanel.ti_username.enabled = true;
-			//loginPanel.ti_username.setFocus();
-			//bt_reload.enabled = false;
-			//bt_reset.enabled = false;
-			
+			if (worldUI.getIsOpen())
+				worldUI.close();
+			if (container.spMCContainer.numChildren) {
+				container.spMCContainer.removeChildAt(0);
+			}
+			container.spMCContainer.addChild(new LoginScreen(this));
 			// Map & edit controls are reset in the OpenSpaceEvent.RESET event handler
 		}
 		
@@ -195,9 +194,13 @@ package {
 		{
 			if (evt.params.success)
 			{
+				container.spMCContainer.removeChildAt(0);
 				myUsername = evt.params.name;
 				//loginPanel.ti_username.text = evt.params.name;
 				logTrace("Successfully logged in as " + myUsername);
+				
+			
+				SoundManager.setMainChatpet("PIFF");
 				
 				
 			}
@@ -220,8 +223,11 @@ package {
 			//bt_reload.enabled = true;
 			//bt_reset.enabled = true;
 			// Initialize OpenSpace
-			if (!bInitialized) {
-				bInitialized = true;
+			if (!worldUI.getIsOpen()) {
+				worldUI.open();
+			}
+			
+			if (!bOpenSpaceInitialized) {
 				initializeOpenSpace();
 			}
 			else
@@ -233,8 +239,7 @@ package {
 		
 		private function initializeOpenSpace():void
 		{
-			
-			
+				
 			openSpace.addEventListener(OpenSpaceEvent.INITIALIZED, onOpenSpaceInitialized);
 			openSpace.addEventListener(OpenSpaceEvent.RESET, onOpenSpaceReset);
 			openSpace.addEventListener(OpenSpaceEvent.MAP_LOADED, onOpenSpaceMapLoaded);
@@ -268,7 +273,6 @@ package {
 			
 			openSpace.init(smartFox); //, null);
 			
-			worldUI.open();
 			
 			
 			//worldInterface.configureListener();
@@ -289,6 +293,7 @@ package {
 		 */
 		public function loadMap(sfsRoomToJoin:String):void
 		{
+			
 			// Load map
 			currentMap = sfsRoomToJoin;
 			
@@ -336,8 +341,8 @@ package {
 		/**
 		 * OpenSpace initialization completed; nothing to do.
 		 */
-		private function onOpenSpaceInitialized(evt:OpenSpaceEvent):void
-		{
+		private function onOpenSpaceInitialized(evt:OpenSpaceEvent):void {
+			bOpenSpaceInitialized = true;
 			logTrace("OpenSpace.INITIALIZED event received");
 			loadMap("Home");
 		}
@@ -466,35 +471,7 @@ package {
 		
 		
 
-		public function exit(obj:Object) : void {
-			
-			if (obj is MoviePlayer) {
-				container.spMCContainer.removeChild(obj as DisplayObject);
-				switch ((obj as MoviePlayer).getMovieName()) {
-					case "MoonToEarthMC" :
-					case "EarthToMoonMC" :
-						playMC(new EarthMap(this));
-						
-						break;
-				}
-			} else if (obj is EarthMap) {
-				switch ((obj as EarthMap).getDestination()) {
-					case "Moon" :
-						loadMap("Moon");
-						break;
-					default:
-						loadMap("Africa");
-						break;
-						
-				}
-				
-			} else if (obj is Shop) {
-				worldUI.open();
-				loadMap("Moon");
-			} else
-				container.spMCContainer.removeChild(obj as DisplayObject);
-			
-		}
+		
 		
 		
 		private function getMovieClipOnBackground(name:String) : MovieClip {

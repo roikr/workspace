@@ -102,7 +102,11 @@ package {
   			playBeep(arr[index],probability);
   		 }
   		
-  		
+  		public static function getStreamLength() : int {
+  			
+            //var req:URLRequest = new URLRequest("mp3/" + mainChatpet + "/" + mainChatpet+_code.toString()+".mp3");
+  			return 0;
+  		}
   		
   		private static function onBeepComplete(e:Event) : void {
   			

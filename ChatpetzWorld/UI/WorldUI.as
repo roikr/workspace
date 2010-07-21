@@ -14,6 +14,7 @@ package {
 		public var textTimer : Timer;
 		public var emoticonTimer : Timer;
 		private var world:ChatpetzWorld;
+		private var bOpened:Boolean = false;
 		
 		public function WorldUI(world:ChatpetzWorld) {
 			textTimer = new Timer(1000,1);
@@ -31,7 +32,7 @@ package {
 			bText.addEventListener(MouseEvent.MOUSE_DOWN,onTextDown);
 			bEmot.addEventListener(MouseEvent.MOUSE_DOWN,onEmoticonDown);
 			Bfriends.addEventListener(MouseEvent.MOUSE_DOWN,onFriendsDown);
-			bAvatar.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			bAvatar.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarOpen);
 			
 			bScrollRight.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.scrollRight();});
 			bScrollLeft.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.scrollLeft();});
@@ -77,6 +78,7 @@ package {
 			gotoAndPlay("open");
 			
 			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			bOpened = true;
 		}
 		
 		private function onEnterFrame(e:Event) : void {
@@ -88,6 +90,11 @@ package {
 		
 		public function close() : void {
 			gotoAndPlay("close");
+			bOpened = false;
+		}
+		
+		public function getIsOpen() :Boolean {
+			return bOpened;
 		}
 
 		private function onCardDown(e:Event) : void {
@@ -201,17 +208,29 @@ package {
 			mcFriendsCard.mcPanel.bClose.removeEventListener(MouseEvent.MOUSE_DOWN, onFriendsClose);
 		}
 		
-		private function onAvatarDown(e:Event) : void {
+		private function onAvatarOpen(e:Event) : void {
 			mcSwitchAvatar.gotoAndPlay("open");
 			bAvatar.removeEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
+			
+			new ChatpetzManager(mcSwitchAvatar.mcPanel.spChangeAvatar,this);
 			mcSwitchAvatar.mcPanel.bClose.addEventListener(MouseEvent.MOUSE_DOWN, onAvatarClose);
-			new ChatpetzManager(mcSwitchAvatar.mcPanel.spChangeAvatar,world);
+		}
+		
+		private function onAvatarClose(e:Event) : void {
+			closeAvatar();
+		}
+		
+		public function onAvatarDown(name:String) : void {
+			closeAvatar();
+			world.onAvatarDown(name);
+		}
+		
+		private function closeAvatar() : void {
+			mcSwitchAvatar.gotoAndPlay("close");
+			mcSwitchAvatar.mcPanel.bClose.removeEventListener(MouseEvent.MOUSE_DOWN, onAvatarClose);
+			bAvatar.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarOpen);
 		}
 
-		private function onAvatarClose(e:Event) : void {
-			mcSwitchAvatar.gotoAndPlay("close");
-			bAvatar.addEventListener(MouseEvent.MOUSE_DOWN,onAvatarDown);
-			mcSwitchAvatar.mcPanel.bClose.removeEventListener(MouseEvent.MOUSE_DOWN, onAvatarClose);
-		}
+		
 	}
 }
