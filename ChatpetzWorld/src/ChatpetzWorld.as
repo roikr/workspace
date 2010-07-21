@@ -578,6 +578,9 @@ package {
 				} else if (trigger.target == "bug") 
 				{
 					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_BUG)
+				}  else if (trigger.target == "creatureRoom") 
+				{
+					SoundManager.chooseAndPlayBeep( new Array(ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_1,ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_2));
 				}
 			
 			} else if (evt.type == MapInteractionEvent.SKIN_ROLL_OVER)
