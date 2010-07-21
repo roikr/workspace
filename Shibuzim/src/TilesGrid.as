@@ -19,9 +19,9 @@ package {
 		public function TilesGrid(client:TilesSimulator) {
 			this.client = client;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
-			graphics.beginFill(0x2222FF,0.3)
-			graphics.drawRect(0, 0, 840, 600)
-			graphics.endFill();
+			//graphics.beginFill(0x2222FF,0.3)
+			//graphics.drawRect(0, 0, 840, 600)
+			//graphics.endFill();
 		}
 		
 		private function getTileAt(p:Point) : Sprite {

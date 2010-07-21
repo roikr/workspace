@@ -11,14 +11,29 @@ package {
 		
 		
 		public function TileView() {
-			
+			x = 6;
+			y = 6;
 		}
 		
+		/*
 		public function addTile(tileName:String) : void {
 			var Ref:Class = getDefinitionByName(tileName) as Class;
 			//trace(describeType(Ref));
 			var instance : Sprite = new Ref() as Sprite;
 			addChild(instance);
+		}*/
+		
+		public function addTile(color:uint) : void {
+			
+			if (this.numChildren)
+				this.removeChildAt(0);
+			
+			var tile:TileLayer = new TileLayer(0,color);
+			tile.scaleX = 0.3;
+			tile.scaleY = 0.3;
+			addChild(tile);
+			
+				
 		}
 		
 		public function removeTile(tileName:String) : void {
