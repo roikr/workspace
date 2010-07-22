@@ -52,21 +52,27 @@ package {
 			testUI.bStart.enabled = true;
 			testUI.bStart.addEventListener(MouseEvent.MOUSE_DOWN,onStart);
 			testUI.bClose.addEventListener(MouseEvent.MOUSE_DOWN,onClose);
+			testUI.bHelp.addEventListener(MouseEvent.MOUSE_DOWN,onHelp);
 			testUI.cbSound.addEventListener(Event.CHANGE, function() : void {SoundMixer.soundTransform = new SoundTransform(testUI.cbSound.selected ? 1 : 0);} );
 			game = testUI.uiLoader.content as IChatpetzGame;
 		}
 
 		private function onStart(e:Event) : void {
+			e.stopImmediatePropagation();
 			game.start(this);
 			testUI.bStart.enabled = false;	
 			testUI.bClose.enabled = true;		
 		}
 		
 		public function onClose(e:Event) : void {
+			e.stopImmediatePropagation();
 			unload();
 			close();
-			
-			
+		}
+		
+		public function onHelp(e:Event) : void {
+			e.stopImmediatePropagation();
+			game.help();
 		}
 		
 		public function setStars(stars:Number) : void {

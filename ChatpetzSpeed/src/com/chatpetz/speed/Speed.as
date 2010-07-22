@@ -47,7 +47,7 @@ package com.chatpetz.speed{
 			//interfaceBar.photo2.addChild(photoBitmap2);
 			
 			
-			
+			 
 			feedback = new Feedback();
 			prepareTimer = new Timer(1200,1);
 			prepareTimer.addEventListener(TimerEvent.TIMER,onPrepare);
@@ -126,6 +126,7 @@ package com.chatpetz.speed{
 				
 				//interfaceBar.clock.stop();
 				if (board.testAnimal(e.target as CardHolder)) {
+					feedback.gotoAndStop(1);
 					successes++;
 					score+=100;
 					updateDisplay();

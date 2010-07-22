@@ -1,0 +1,7 @@
+ls PAMMY/ | awk -F "." '{print $1}
+ls PAMMY/ | awk -F "([A-Z]*)|.w" '{print $0 " "$2}''
+awk ''
+
+awk 'BEGIN { for (i=0;i<=186;i++) print "exiftool -p \047$Duration\047 PAMMY/PAMMY" i ".wav" }' | sh > pammy.len
+
+

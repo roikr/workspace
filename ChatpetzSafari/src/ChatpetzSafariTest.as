@@ -6,8 +6,8 @@ package {
 	public class ChatpetzSafariTest extends TestingGameManager {
 		public function ChatpetzSafariTest() {
 			super();
-			SoundManager.setTestChatpetz(true)
-			SoundManager.setMainChatpet("PARPARA")
+			SoundManager.setTestChatpetz(false)
+			SoundManager.setMainChatpet("PIFF")
 			new BeepsImporter();
 			
 			load("Safari.swf");

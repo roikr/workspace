@@ -18,7 +18,7 @@ package {
 		
 		private var interfaceBar:Interface;
 		private var photoBitmap1:Bitmap;
-		private var photoBitmap2:Bitmap;
+		//private var photoBitmap2:Bitmap;
 		private var score:Number;
 		private var feedback:Feedback;
 		private var feedbackTimer:Timer;
@@ -47,9 +47,9 @@ package {
 			score = 0;
 			//interfaceBar.dtPoints.text = score.toString();
 			photoBitmap1 = new Bitmap();
-			photoBitmap2 = new Bitmap();
+			//photoBitmap2 = new Bitmap();
 			interfaceBar.photo1.addChild(photoBitmap1);
-			interfaceBar.photo2.addChild(photoBitmap2);
+			//interfaceBar.photo2.addChild(photoBitmap2);
 			
 			addEventListener(Event.ENTER_FRAME,onEnterFrame);
 			
@@ -188,13 +188,13 @@ package {
 			
 			if (camera.snapshot()) {	
 				var photo:Photo = camera.getPhoto(camera.getNumPhotos()-1);
-				photoBitmap2.bitmapData =  photo.getBitmapData();
-				if (camera.getNumPhotos() > 1 )
-					photoBitmap1.bitmapData =  camera.getPhoto(camera.getNumPhotos()-2).getBitmapData();
+				photoBitmap1.bitmapData =  photo.getBitmapData();
+				//if (camera.getNumPhotos() > 1 )
+					//photoBitmap1.bitmapData =  camera.getPhoto(camera.getNumPhotos()-2).getBitmapData();
 				score += camera.getPhoto(camera.getNumPhotos()-1).getScore();
 				//interfaceBar.dtPoints.text = score.toString();
 				
-				feedback.dtPoints.text  = photo.getScore().toString();
+				//feedback.dtPoints.text  = photo.getScore().toString();
 				feedback.gotoAndStop(photo.getFeedbackFrame());
 				
 				if (photo.isPerfectShot() && gameManager)
@@ -234,6 +234,8 @@ package {
 		}
 		
 		private function onPlayAgain(e:Event) : void {
+			e.stopImmediatePropagation();
+			album.bPlayAgain.removeEventListener(MouseEvent.CLICK,onPlayAgain);
 			replay();
 			
 			
