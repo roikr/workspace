@@ -42,7 +42,7 @@ package {
 		public static const INTERFACE_CLICK_PROFILE_2 : int = 142;
 		public static const WORLD_CAN_NO_GO_THERE : int = 151;
 		public static const INTERFACE_CLICK_EYE : int = 152;
-		public static const AFRICA_CLICK_BUG : int = 154;
+		public static const AFRICA_CLICK_BUG : int = 153;
 		public static const AFRICA_CLICK_TERMITES : int = 154;
 		public static const CLOUDS_GAME_SERVE_1 : int = 157;
 		public static const CLOUDS_GAME_SERVE_2 : int = 123;

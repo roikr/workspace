@@ -21,6 +21,7 @@ package com.chatpetz.speed{
 		private var score:int;
 		private var feedback:Feedback;
 		private var prepareTimer:Timer;
+		private var chatpetTimer:Timer;
 		private var clearTimer:Timer;
 		private var taskTimer:Timer;
 		private var level:int;
@@ -49,10 +50,16 @@ package com.chatpetz.speed{
 			
 			 
 			feedback = new Feedback();
+			
+			
 			prepareTimer = new Timer(1200,1);
 			prepareTimer.addEventListener(TimerEvent.TIMER,onPrepare);
 			
-			clearTimer = new Timer(3500,1);
+			chatpetTimer = new Timer(1090,1);
+			chatpetTimer.addEventListener(TimerEvent.TIMER,onChatpet)
+			
+			
+			clearTimer = new Timer(750,1);
 			clearTimer.addEventListener(TimerEvent.TIMER,onClear);
 			
 			taskTimer = new Timer(4000,1);
@@ -130,18 +137,25 @@ package com.chatpetz.speed{
 					successes++;
 					score+=100;
 					updateDisplay();
-					chooseAndPlay(rightAnswers);
+					chatpetTimer.delay = chooseAndPlay(rightAnswers);
 				} else {
 					feedback.gotoAndStop(3);
-					chooseAndPlay(wrongAnswers);
+					chatpetTimer.delay = chooseAndPlay(wrongAnswers);
 				}
 				
 				board.removeEventListener(MouseEvent.CLICK, onClick);
-				board.clear();
+				
 				taskTimer.stop();
-				clearTimer.start();
+				chatpetTimer.start();
+				
 			} 
 				
+		}
+		
+		private function onChatpet(e:TimerEvent) : void {
+			board.clear();
+			clearTimer.start();
+			
 		}
 		
 		private function onClear(e:TimerEvent) : void {
@@ -208,16 +222,18 @@ package com.chatpetz.speed{
 			}
 		}
 		
-		public function play(code:int,probability:Number=1.0) : void {
+		public function play(code:int,probability:Number=1.0) : int {
 			if (gameManager) {
-				gameManager.playChatpetzCode(code,probability);
+				return gameManager.playChatpetzCode(code,probability);
 			}
+			return 0;
 		}
 		
-		public function chooseAndPlay(arr:Array,probability:Number=1.0) : void {
+		public function chooseAndPlay(arr:Array,probability:Number=1.0) : int  {
 			if (gameManager) {
-				gameManager.chooseAndPlayChatpetzCode(arr,probability);
+				return gameManager.chooseAndPlayChatpetzCode(arr,probability);
 			}
+			return 0;
 		}
 		
 	}

@@ -50,7 +50,10 @@ package {
 		public var openSpace:OpenSpace;
 		private var bOpenSpaceInitialized:Boolean = false;
 		private var avatarManager:AvatarManager;
-		private var skinsNames : Array = ["boat","card","cave","door","earthSpaceShip","moonSpaceShip","freezer","home","cloud","shop"];
+		private var skinsNames : Array = ["boat","card","cave","door","earthSpaceShip","moonSpaceShip","freezer","home","cloud","shop","bug","tiger","giraffe","termites","board","creatureRoom"];
+		
+		
+		private var loadingMC:LoadingMC;
 		
 		public function ChatpetzWorld() {
 			super();
@@ -82,6 +85,8 @@ package {
 			SoundManager.setLibrary("WorldSounds");
 			
 			landingPage();
+			
+			loadingMC = new LoadingMC();
 		}
 		
 		
@@ -120,12 +125,18 @@ package {
 				
 				
 			} else  if (obj is MoviePlayer) {
-				container.spMCContainer.removeChild(obj as DisplayObject);
+				
 				switch ((obj as MoviePlayer).getMovieName()) {
+					
 					case "MoonToEarthMC" :
-					case "EarthToMoonMC" :
+						container.spMCContainer.removeChild(obj as DisplayObject);
 						playMC(new EarthMap(this));
 						
+						break;
+					case "EarthToMoonMC" :
+						container.spMCContainer.removeChild(obj as DisplayObject);
+						trace('container: ' + (container));
+						loadMap("Moon");
 						break;
 				}
 			} else if (obj is EarthMap) {
@@ -293,6 +304,11 @@ package {
 		 */
 		public function loadMap(sfsRoomToJoin:String):void
 		{
+			if (container.spMCContainer.numChildren)
+				container.spMCContainer.removeChildAt(0);
+			
+			container.spMCContainer.addChild(loadingMC);
+			loadingMC.gotoAndStop(1);
 			
 			// Load map
 			currentMap = sfsRoomToJoin;
@@ -362,6 +378,7 @@ package {
 		private function onOpenSpaceMapProgress(evt:OpenSpaceEvent):void
 		{
 			logTrace("Map generation progress: " + evt.params.percentage + "%");
+			loadingMC.gotoAndStop(evt.params.percentage);
 		}
 		
 		/**
@@ -482,6 +499,32 @@ package {
 			if (!arr)
 				return null;
 			var bk:DisplayObjectContainer = arr[0];
+			
+			var mc:MovieClip = bk.getChildByName(name) as MovieClip;
+			
+			if (mc==null) {
+				arr2 = openSpace.getForegroundParts();
+				if (!arr2)
+					return null;
+				arr= arr2.toArray();
+				if (!arr)
+					return null;
+				var fg:DisplayObjectContainer = arr[0];
+				mc = fg.getChildByName(name) as MovieClip;
+			
+			}
+ 			
+			return mc
+		}
+		
+		private function getMovieClipOnForeground(name:String) : MovieClip {
+			var arr2:Array2 = openSpace.getForegroundParts();
+			if (!arr2)
+				return null;
+			var arr:Array = arr2.toArray();
+			if (!arr)
+				return null;
+			var bk:DisplayObjectContainer = arr[0];
 			return bk.getChildByName(name) as MovieClip;
 		}
 		
@@ -567,7 +610,10 @@ package {
 					var mc1:MovieClip = getMovieClipOnBackground(trigger.target);
 					//if (!mc1)
 					//mc1 = skin as MovieClip;
-					mc1.gotoAndPlay("over"); 
+					if (mc1) 
+						mc1.gotoAndPlay("over"); 
+					else
+						trace(trigger.target+" not found")
 				}
 				
 			}

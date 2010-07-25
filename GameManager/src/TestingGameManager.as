@@ -91,12 +91,12 @@ package {
 			testUI.laTime.text = time.toString();
 		}
 
-		public function playChatpetzCode(code : int,probability:Number=1.0) : void {
-			SoundManager.playBeep(code,probability)
+		public function playChatpetzCode(code : int,probability:Number=1.0) : int {
+			return SoundManager.playBeep(code,probability)
 		}
 		
-		public function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : void {
-			SoundManager.chooseAndPlayBeep(arr,probability);	
+		public function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : int {
+			return  SoundManager.chooseAndPlayBeep(arr,probability);	
 		}
 		
 		

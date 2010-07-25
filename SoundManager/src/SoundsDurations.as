@@ -3,7 +3,7 @@ package {
 	/**
 	 * @author roikr
 	 */
-	public class SoundsLengths {
+	public class SoundsDurations {
 		
 		private static var pizz:Array = [
 			6500,
@@ -1150,7 +1150,7 @@ package {
 
 		];
 		
-		public static function getSoundLength(chatpet:String,soundNum:int) : int {
+		public static function duration(chatpet:String,soundNum:int) : int {
 			var res:int = 0;
 			switch (chatpet) {
 				case "PIZZ":

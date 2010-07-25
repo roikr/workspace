@@ -1,9 +1,11 @@
 package {
+	import flash.events.TimerEvent;
 	import flash.events.Event;
 	import flash.media.Sound;
 	import flash.media.SoundChannel;
 	import flash.net.URLRequest;
 	import flash.utils.Dictionary;
+	import flash.utils.Timer;
 	import flash.utils.getDefinitionByName;
 
 	/**
@@ -23,7 +25,9 @@ package {
 		private static var _code:int;
 		private static var testChatpetz:Boolean = false;
 		
-		
+		private static var bChatpetIsTalking : Boolean = false;
+		private static var timer:Timer;
+		private static var currentDuration:int;
 		/*
   		public static function getClass(name:String) : Class {
   			return  getDefinitionByName("SoundsLibrary_"+name) as Class;
@@ -71,10 +75,10 @@ package {
   		 * 
   		 */
   		 
-  		 public static function playBeep(code:int,probability:Number=1.0) : void {
+  		 public static function playBeep(code:int,probability:Number=1.0) : int {
   		 	
-  		 	if(probability<1 && Math.random() < probability)
-  		 		return;
+  		 	if(probability<1 && Math.random() < probability || getIsChatpetTaking())
+  		 		return 0;
   		 		
   		 	var str:String = ""+code.toString();
    			while( str.length < 3 )
@@ -93,20 +97,39 @@ package {
             catch(e:ReferenceError) {
                 trace(e);
             }
+            
+            //timer = new Timer()
     		
+    		currentDuration = 1090;
     		
+    		if (code<192) {
+    			currentDuration+=SoundsDurations.duration(mainChatpet, code);
+    		}
+    		timer = new Timer(currentDuration,1);
+    		timer.addEventListener(TimerEvent.TIMER,onTimer);
+    		timer.start();
+			bChatpetIsTalking = true;
+			trace("beep and talking has started for " + currentDuration);
+			return currentDuration
   		}
   		
-  		public static function chooseAndPlayBeep(arr:Array,probability:Number=1.0) : void {
+  		private static function onTimer(e:Event) : void {
+  			trace("beep and talking has finished");
+			bChatpetIsTalking = false;
+			timer = null;
+			//trace(timer); 
+		}
+  		
+  		public static function getIsChatpetTaking() : Boolean {
+			return bChatpetIsTalking;
+		}
+
+		public static function chooseAndPlayBeep(arr:Array,probability:Number=1.0) : int {
   			var index:int = Math.floor(Math.random()*arr.length);
-  			playBeep(arr[index],probability);
+  			return playBeep(arr[index],probability);
   		 }
   		
-  		public static function getStreamLength() : int {
-  			
-            //var req:URLRequest = new URLRequest("mp3/" + mainChatpet + "/" + mainChatpet+_code.toString()+".mp3");
-  			return 0;
-  		}
+  		
   		
   		private static function onBeepComplete(e:Event) : void {
   			
@@ -149,7 +172,10 @@ package {
 					code = ChatpetzCodes.CONTROL_SELECT_POPO;
 					break;	
 			}
+			
+			playBeep(code);
 				
+				/*
 			var str:String = ""+code.toString();
    			while( str.length < 3 )
       		 str="0" + str;
@@ -158,6 +184,8 @@ package {
   		 	var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
     		var sound:Sound = new Cls() as Sound;
     		sound.play();
+    		 
+    		 */
   		}
   		
   		public static function setTestChatpetz(test:Boolean) : void {

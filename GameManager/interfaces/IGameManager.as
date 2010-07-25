@@ -13,7 +13,7 @@ package {
 		function setLevel(level:int) : void;
 		function setTime(time:int) : void;
 		function setStars(stars:Number) : void;
-		function playChatpetzCode(code:int,probability:Number=1.0) : void;
-		function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : void;
+		function playChatpetzCode(code:int,probability:Number=1.0) : int;
+		function chooseAndPlayChatpetzCode(arr:Array,probability:Number=1.0) : int;
 	}
 }
