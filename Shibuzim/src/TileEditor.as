@@ -14,6 +14,7 @@ package {
         private var bitmap:Bitmap = new EditorPNG() ;
 		private var tileView:TileView;
 		private var colorPicker:ColorPicker;
+		private var shapesMenu:ShapesMenu;
 		
 		
 		public function TileEditor() {
@@ -24,7 +25,7 @@ package {
 			
 			//addChild(new TilesMenu(this));
 			addChild(colorPicker = new ColorPicker())
-			colorPicker.addEventListener(MouseEvent.MOUSE_DOWN,onColorPick);
+			addChild(shapesMenu = new ShapesMenu(this))
 			
 			addChild(tileView = new TileView());
 			
@@ -32,11 +33,17 @@ package {
 			//tileView.x+=240;
 		}
 		
+		public function onClient(obj:Object) : void {
+			if (obj is ShapesMenu) {
+				//var p:Point = new Point(e.stageX,e.stageY);
+				var p:Point = this.globalToLocal(colorPicker.pos);
+				var color : uint = bitmap.bitmapData.getPixel(p.x, p.y);
+				tileView.addTile(shapesMenu.shape,color);
+			}
+		}
+		
 		public function onColorPick(e:MouseEvent) : void {
-			var p:Point = new Point(e.stageX,e.stageY);
-			p = this.globalToLocal(p);
-			var color : uint = bitmap.bitmapData.getPixel(p.x, p.y);
-			tileView.addTile(color);
+			
 			
 			
 		}

@@ -111,8 +111,8 @@ package {
 			var p:Point = new Point(e.stageX,e.stageY);
 			p = this.globalToLocal(p);
 			
-			copyRow = client.getCurrentTool() == ToolsMenu.TOOLBAR_DUPLICATE_ROW ? copyRow : -1;
-			copyColumn = client.getCurrentTool() == ToolsMenu.TOOLBAR_DUPLICATE_COLUMN ? copyColumn : -1;
+			//copyRow = client.getCurrentTool() == ToolsMenu.TOOLBAR_DUPLICATE_ROW ? copyRow : -1;
+			//copyColumn = client.getCurrentTool() == ToolsMenu.TOOLBAR_DUPLICATE_COLUMN ? copyColumn : -1;
 			
 			trace("TilesGrid.onMouseDown")
 			switch (client.getCurrentTool()) {
@@ -126,6 +126,7 @@ package {
 					tile.y = int(p.y / 120) * 120;
 					addChild(tile)
 					break;
+					/*
 				case ToolsMenu.TOOLBAR_ERASER:
 					sp = getTileAt(p)
 					if (sp) 
@@ -149,7 +150,7 @@ package {
 				case ToolsMenu.TOOLBAR_SHIFT_RIGHT:
 					shift(p,new Point(1,0));
 					break;
-						
+					*/	
 			}
 		}
 	}

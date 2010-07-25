@@ -23,12 +23,12 @@ package {
 			addChild(instance);
 		}*/
 		
-		public function addTile(color:uint) : void {
+		public function addTile(shape:uint,color:uint) : void {
 			
 			if (this.numChildren)
 				this.removeChildAt(0);
 			
-			var tile:TileLayer = new TileLayer(0,color);
+			var tile:TileLayer = new TileLayer(shape,color);
 			tile.scaleX = 0.3;
 			tile.scaleY = 0.3;
 			addChild(tile);
