@@ -11,7 +11,7 @@ package {
         private var BackgroundPNG:Class;
         private var bitmap:Bitmap = new BackgroundPNG() ;
 		
-		private var tilesGrid:TilesGrid;
+		private var tilesGrid:Grid;
 		private var tileEditor:TileEditor;
 		private var toolsMenu:ToolsMenu;
 		
@@ -20,10 +20,9 @@ package {
 		public function TilesSimulator() {
 			addChild(bitmap);
 			addChild(tileEditor=new TileEditor());
-			addChild(tilesGrid = new TilesGrid(this));
+			addChild(tilesGrid = new Grid(this,37,4));
 			addChild(toolsMenu=new ToolsMenu())
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
-			tilesGrid.x+=200;
 			
 		}
 

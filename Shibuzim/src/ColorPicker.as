@@ -26,10 +26,16 @@ package {
 			
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			
+			
+			
+			_colorPos = new Point(39,470); // not connected to display list yet
+			
+			
 		}
 		
 		public function onMouseDown(e:MouseEvent) : void {
 			_colorPos = new Point(e.stageX,e.stageY);		
+			//trace(_colorPos);
 		}
 		
 		public function get pos () : Point {

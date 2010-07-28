@@ -50,7 +50,7 @@ package {
 			} else if (row<6) {
 				_shapeNum = 14 + (row-3) * 5 + column;
 			} else {
-				_shapeNum = 28 + (row-6) * 5 + column;
+				_shapeNum = 28 + (row-6) * 4 + column;
 			}
 			
 			//trace(_shapeNum);
