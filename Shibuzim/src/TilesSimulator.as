@@ -32,7 +32,7 @@ package {
 		
 		
 		
-		public function getCurrentTool() : int {
+		public function get currentTool() : int {
 			return toolsMenu.tool;
 		}
 	}

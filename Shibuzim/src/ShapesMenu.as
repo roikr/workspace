@@ -33,7 +33,7 @@ package {
 			
 			//this.buttonMode  = true;
 			//this.useHandCursor = true;
-			this.alpha = 0.25;
+			this.alpha = 0.0; // TODO: alpha for shapes menu
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			
 		}

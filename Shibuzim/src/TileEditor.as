@@ -12,7 +12,7 @@ package {
 		[Embed(source='../assets/editor.png')]
         private var EditorPNG:Class;
         private var bitmap:Bitmap = new EditorPNG() ;
-		private var tileView:TileView;
+		private var tile:Tile;
 		private var colorPicker:ColorPicker;
 		private var shapesMenu:ShapesMenu;
 		
@@ -24,10 +24,15 @@ package {
 			addChild(bitmap)
 			
 			//addChild(new TilesMenu(this));
-			addChild(colorPicker = new ColorPicker())
+			addChild(colorPicker = new ColorPicker(this))
 			addChild(shapesMenu = new ShapesMenu(this))
 			
-			addChild(tileView = new TileView());
+			addChild(tile = new Tile());
+			tile.x = 6;
+			tile.y = 6;
+			tile.scale = 0.3;
+			//tile.scaleX = 0.3;
+			//tile.scaleY = 0.3;
 			
 			
 			//tileView.x+=240;
@@ -36,17 +41,15 @@ package {
 		public function onClient(obj:Object) : void {
 			if (obj is ShapesMenu) {
 				//var p:Point = new Point(e.stageX,e.stageY);
-				var p:Point = this.globalToLocal(colorPicker.pos);
-				var color : uint = bitmap.bitmapData.getPixel(p.x, p.y);
-				tileView.addTile(shapesMenu.shape,color);
+				
+
+				tile.applyLayer(shapesMenu.shape,colorPicker.color);
+			} else if (obj is ColorPicker) {
+				tile.setColor(colorPicker.color)
 			}
 		}
 		
-		public function onColorPick(e:MouseEvent) : void {
-			
-			
-			
-		}
+		
 		
 		/*
 		public function onTileMenuDown(tileName:String) : void {
@@ -57,7 +60,7 @@ package {
 		}
 		*/
 		public function cloneCurrentTile() : Sprite {
-			return tileView.cloneCurrentTile();
+			return tile.cloneTile();
 		}
 		
 	}

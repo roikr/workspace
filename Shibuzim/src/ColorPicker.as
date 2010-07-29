@@ -1,45 +1,56 @@
 package {
-	import flash.display.Sprite;
+	import flash.display.BitmapData;
 	import flash.events.MouseEvent;
-	import flash.geom.Point;
 
 	/**
 	 * @author roikr
 	 */
-	public class ColorPicker extends Sprite {
+	public class ColorPicker extends ColorPickerMC {
 		
 		
-		private var _colorPos:Point;
+		private var client:Object;
+		private var bitmapData:BitmapData;
+		private var _color:uint;
 		
-		public function ColorPicker() {
-			x = 12;
-			y = 393;
+		
+		public function ColorPicker(client:Object) {
+			this.client = client;
+			x = 10; //12 
+			y = 392; //393
+			bitmapData = new BitmapData(this.width,this.height,false);
+			bitmapData.draw(this);
+			
+			/*
 			for (var i:int=0;i<5;i++) {
 				for (var j:int=0;j<10;j++) {
 					graphics.beginFill(0xFF0000);
 					graphics.drawRect(14*j, 14*i, 10, 10)
 				}
 			}
+			 * 
+			 */
 			//this.buttonMode  = true;
 			//this.useHandCursor = true;
-			this.alpha = 0;
+			//this.alpha = 0.5;
 			
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			
 			
-			
-			_colorPos = new Point(39,470); // not connected to display list yet
+			_color  =bitmapData.getPixel(2,2);	
+			//_colorPos = new Point(39,470); // not connected to display list yet
 			
 			
 		}
 		
-		public function onMouseDown(e:MouseEvent) : void {
-			_colorPos = new Point(e.stageX,e.stageY);		
+		private function onMouseDown(e:MouseEvent) : void {
+			
+			_color  =bitmapData.getPixel(e.localX,e.localY);	
+			client.onClient(this);
 			//trace(_colorPos);
 		}
 		
-		public function get pos () : Point {
-			return _colorPos;
+		public function get color () : uint {
+			return _color;
 		}
 	}
 }
