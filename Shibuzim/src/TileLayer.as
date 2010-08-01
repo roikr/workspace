@@ -16,6 +16,7 @@ package {
 		private var texture:Sprite;
 		private var _mask:Sprite;
 		private var bBlackNWhite:Boolean;
+		private var xml:XML;
 		
 		private static var shapes:Array = [Shape1,Shape2,Shape3,Shape4,Shape5,Shape6,Shape7,Shape8,Shape9,Shape10,Shape11,Shape12,Shape13,
 			Shape14,Shape15,Shape16,Shape17,Shape18,Shape19,Shape20,Shape21,Shape22,Shape23,Shape24,Shape25,Shape26,Shape27,Shape28,Shape29,Shape30,
@@ -28,6 +29,9 @@ package {
 			var ref:Class = shapes[_shapeNum] as Class;
 			var instance:Sprite = new ref();
 			
+			xml=<layer/>
+			xml.@color=color;
+			xml.@shape=shapeNum;
 			
 			switch (_shapeNum+1) {
 				case 29:
@@ -69,6 +73,7 @@ package {
 				texture.addChild(_mask);
 				texture.mask = _mask;
 				texture.filters = [new DropShadowFilter(1.0)];
+				xml.@color=color;
 			}
 		}
 		
@@ -96,5 +101,14 @@ package {
 			var ref:Class = shapes[shapeNum] as Class;
 			return new ref();
 		}
+		
+		public static function decode(xml:XML) : void{
+			
+		}
+		
+		public function encode() : XML {
+			return xml;
+		}
+		
 	}
 }

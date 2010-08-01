@@ -8,9 +8,11 @@ package {
 		
 		private var lastLayer:TileLayer = null;
 		private var _scale : Number = 1;
+		private var xml:XML;
 		
 		public function Tile() {
 			mouseChildren = false;
+			
 		}
 		
 		private function getLayer(shapeNum:uint) : TileLayer {
@@ -24,6 +26,7 @@ package {
 		}
 		
 		public function applyLayer(shapeNum:uint,color:uint = 0) : void {
+			xml = null;
 			var layer:TileLayer = getLayer(shapeNum);
 			if (layer) {
 				removeChild(layer)
@@ -85,8 +88,18 @@ package {
 			return tile;
 		}
 		
-		public function desribe() : XML {
-			return new XML;
+		public static function decode(xml:XML) : void{
+			
+		}
+		
+		public function encode() : XML {
+			if (xml==null) {
+				xml=<tile/>
+				for (var i:int=0;i<numChildren;i++) {
+					xml.appendChild((getChildAt(i) as TileLayer).encode());
+				}
+			}
+			return xml;
 		}
 	}
 }

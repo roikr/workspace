@@ -21,9 +21,22 @@ package {
 			addChild(bitmap);
 			addChild(tileEditor=new TileEditor());
 			addChild(tilesGrid = new Grid(this,37,4));
-			addChild(toolsMenu=new ToolsMenu())
+			addChild(toolsMenu=new ToolsMenu(this))
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
+		}
+		
+		public function onClient(obj:Object) : void {
+			if (obj is ToolsMenu) {
+				switch (toolsMenu.tool) {
+					case (ToolsMenu.TOOLBAR_COST) : 
+						trace(tilesGrid.encode().toString());
+						break;
+					case (ToolsMenu.TOOLBAR_INVITATION) :
+						tilesGrid.undo();
+						break;
+				}
+			}
 		}
 
 		public function cloneCurrentTile() : Sprite {

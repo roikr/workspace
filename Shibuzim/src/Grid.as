@@ -12,6 +12,8 @@ package {
 		private var tileSize:int;
 		private var space:int;
 		private var client:Object;
+		private var xml:XML;
+		private var lastXml:XML;
 		
 		public function Grid(client:Object,tileSize:int,space:int) {
 			this.client = client;
@@ -37,17 +39,38 @@ package {
 				}
 			}
 			
+			xml = <grid/>
+			lastXml = null;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 		}
 		
-		public function applyTile(gridTile:GridTile,tile:Tile) : void {
+		
+		
+		
+		private function removeTile(gridTile:GridTile) : void {
+			gridTile.removeChildAt(0);
+			
+			delete xml.item.(@row==gridTile.y/(tileSize+space) && @column==gridTile.x/(tileSize+space))[0];
+			
+			//delete xml.item.("@row"==(gridTile.y/(tileSize+space)).toString() && "column"==(gridTile.x/(tileSize+space)).toString())[0]
+			
+		}
+		
+		private function applyTile(gridTile:GridTile,tile:Tile) : void {
 			if (gridTile.numChildren) 
-				gridTile.removeChildAt(0);
+				removeTile(gridTile);
 			
 			tile.x = -1;
 			tile.y = -1;
 			tile.scale =  tileSize / 450;
-			gridTile.addChild(tile)			
+			gridTile.addChild(tile)		
+			
+			var item:XML = <item/>;
+			item.@row = gridTile.y / (tileSize+space);
+			item.@column = gridTile.x / (tileSize+space);
+			item.appendChild((gridTile.getChildAt(0) as Tile).encode());
+			xml.appendChild(item);	
+			
 		}
 		
 		private function getGridTileAt(p:Point) : GridTile {
@@ -60,6 +83,17 @@ package {
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
+			
+			switch (client.currentTool) {
+				case (ToolsMenu.TOOLBAR_CURSOR):
+				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
+				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
+				case (ToolsMenu.TOOLBAR_GRID_FILLER) :
+				case (ToolsMenu.TOOLBAR_GRID_ERASER) :
+				case (ToolsMenu.TOOLBAR_TILE_ERASER) : 
+					lastXml = xml.copy();
+					break;
+			}
 			
 			switch (client.currentTool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
@@ -106,17 +140,19 @@ package {
 				
 					for (var i:int=0;i<numChildren;i++) {
 						if ((getChildAt(i) as GridTile).numChildren)
-							(getChildAt(i) as GridTile).removeChildAt(0);
+							removeTile(getChildAt(i) as GridTile);
+							
 						
 					}
 					break;
 					
 				case (ToolsMenu.TOOLBAR_TILE_ERASER) : 
 						if ((e.target as GridTile).numChildren)
-							(e.target as GridTile).removeChildAt(0);
+							removeTile(e.target as GridTile);
+							
 					break;
 					
-			
+				
 					
 				
 				
@@ -134,6 +170,40 @@ package {
 			}
 			 
 			 */
+		}
+		
+		public function undo() : void {
+			for each (var item:XML in lastXml ) {
+				trace (item.toString());
+			}
+		}
+		
+		
+		
+		public function decode(xml:XML) : void{
+			for each (var item:XML in xml ) {
+				trace (item.toString());
+			}
+		}
+		
+		public function encode() : XML {
+			
+			/*
+			var xml:XML = <grid/>
+			for (var i:int=0;i<numChildren;i++) {
+				var sprite:Sprite  = getChildAt(i) as Sprite;
+				if (sprite.numChildren) {
+					var item:XML = <item/>;
+					item.@row = sprite.y / (tileSize+space);
+					item.@column = sprite.x / (tileSize+space);
+					item.appendChild((sprite.getChildAt(0) as Tile).encode());
+					xml.appendChild(item);
+				}
+			}
+			 
+			 */
+			
+			return xml;
 		}
 		
 		

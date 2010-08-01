@@ -25,12 +25,15 @@ package {
 		//private var client:Object;
 		private var _tool:int;
 		
-		public function ToolsMenu() { // client:Object
-			//this.client = client;
+		private var client:Object;
+		
+		public function ToolsMenu(client:Object) { // client:Object
+			this.client = client;
 			y=235;
 			x=856;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			tool = 0;
+			
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
@@ -38,6 +41,8 @@ package {
 			p = this.globalToLocal(p);
 			
 			this.tool = (p.y-3) / 28;
+			
+			client.onClient(this);
 			
 			//client.usingTool(tool);
 		}
