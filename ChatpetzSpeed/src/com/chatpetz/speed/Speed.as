@@ -20,8 +20,6 @@ package com.chatpetz.speed{
 		private var photoBitmap2:Bitmap;
 		private var score:int;
 		private var feedback:Feedback;
-		private var prepareTimer:Timer;
-		private var chatpetTimer:Timer;
 		private var clearTimer:Timer;
 		private var taskTimer:Timer;
 		private var level:int;
@@ -29,6 +27,8 @@ package com.chatpetz.speed{
 		private var timer:Timer;
 		private var rightAnswers:Array;
 		private var wrongAnswers:Array;
+		
+		private var bPrepare:Boolean; // just to know where we are onBeepCompleted
 		
 		
 		
@@ -52,13 +52,8 @@ package com.chatpetz.speed{
 			feedback = new Feedback();
 			
 			
-			prepareTimer = new Timer(1200,1);
-			prepareTimer.addEventListener(TimerEvent.TIMER,onPrepare);
 			
-			chatpetTimer = new Timer(1090,1);
-			chatpetTimer.addEventListener(TimerEvent.TIMER,onChatpet)
-			
-			
+				
 			clearTimer = new Timer(750,1);
 			clearTimer.addEventListener(TimerEvent.TIMER,onClear);
 			
@@ -107,15 +102,23 @@ package com.chatpetz.speed{
 		private function prepare() : void {
 			board.prepare(Math.floor(9*Math.random()));
 			
-			prepareTimer.start();
-			play(board.getAnimalCode());
+			//prepareTimer.start();
+			bPrepare = true;
+			SoundManager.playBeep(board.getAnimalCode(),1.0,this);
 		}
 		
-		private function onPrepare(e:TimerEvent) : void {
-			board.addEventListener(MouseEvent.CLICK, onClick);
-			taskTimer.start();
-			board.go();
+		public function onBeepCompleted(obj:Object) : void {
+			if (bPrepare) {
+				bPrepare = false;
+				board.addEventListener(MouseEvent.CLICK, onClick);
+				taskTimer.start();
+				board.go();
+			} else {
+				board.clear();
+				clearTimer.start();
+			}
 		}
+		
 
 		private function onTaskTimer(e:TimerEvent) : void {
 			board.removeEventListener(MouseEvent.CLICK, onClick);
@@ -137,26 +140,26 @@ package com.chatpetz.speed{
 					successes++;
 					score+=100;
 					updateDisplay();
-					chatpetTimer.delay = chooseAndPlay(rightAnswers);
+					SoundManager.chooseAndPlayBeep(rightAnswers,1.0,this);
+					
 				} else {
 					feedback.gotoAndStop(3);
-					chatpetTimer.delay = chooseAndPlay(wrongAnswers);
+					SoundManager.chooseAndPlayBeep(wrongAnswers,1.0,this);
+					
 				}
 				
 				board.removeEventListener(MouseEvent.CLICK, onClick);
 				
 				taskTimer.stop();
-				chatpetTimer.start();
+				
 				
 			} 
 				
 		}
 		
-		private function onChatpet(e:TimerEvent) : void {
-			board.clear();
-			clearTimer.start();
-			
-		}
+		
+		
+		
 		
 		private function onClear(e:TimerEvent) : void {
 			removeChild(feedback);
@@ -200,7 +203,7 @@ package com.chatpetz.speed{
 		}
 		
 		public function exit() : void {
-			prepareTimer.reset();
+			
 			taskTimer.reset();
 			clearTimer.reset();
 			timer.reset();
@@ -222,19 +225,7 @@ package com.chatpetz.speed{
 			}
 		}
 		
-		public function play(code:int,probability:Number=1.0) : int {
-			if (gameManager) {
-				return gameManager.playChatpetzCode(code,probability);
-			}
-			return 0;
-		}
 		
-		public function chooseAndPlay(arr:Array,probability:Number=1.0) : int  {
-			if (gameManager) {
-				return gameManager.chooseAndPlayChatpetzCode(arr,probability);
-			}
-			return 0;
-		}
 		
 	}
 }
