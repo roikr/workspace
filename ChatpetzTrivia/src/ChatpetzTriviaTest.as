@@ -6,8 +6,8 @@ package {
 	public class ChatpetzTriviaTest extends TestingGameManager {
 		public function ChatpetzTriviaTest() {
 			super();
-			SoundManager.setTestChatpetz(true)
-			SoundManager.setMainChatpet("PARPARA")
+			SoundManager.setTestChatpetz(false)
+			SoundManager.setMainChatpet("PIFF")
 			new BeepsImporter();
 			load("ChatpetzTrivia.swf");
 			

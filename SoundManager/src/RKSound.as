@@ -1,5 +1,6 @@
 package {
 	import flash.events.Event;
+	import flash.events.IOErrorEvent;
 	import flash.media.Sound;
 	import flash.media.SoundChannel;
 	import flash.net.URLRequest;
@@ -12,11 +13,14 @@ package {
 		private var sound:Sound;
 		private var channel:SoundChannel;
 		private var client:Object;
+		
 		private var loop:Boolean;
+		
 		
 		public function RKSound(name:String,client:Object,stream:Boolean,loop:Boolean) {
 			
 			this.client = client;
+			
 			this.loop = loop;
 			
 			if (stream) {
@@ -36,7 +40,7 @@ package {
 				sound = new Cls() as Sound;
 			}
   				
-			
+			sound.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
 			
   			channel = sound.play();
   			
@@ -46,12 +50,17 @@ package {
   			
   		}
   		
+  		private function errorHandler(errorEvent:IOErrorEvent):void {
+            trace( "The sound could not be loaded: " + errorEvent.text);
+        }
+  		
   		private function onSoundComplete(e:Event) : void {
   			if (loop) {
   				channel = sound.play(); 
   				channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
   			}
   			if (client) {
+  				trace("RKSound::onSoundComplete "+client)
   				client.onSoundComplete(this);
   			}
   		
