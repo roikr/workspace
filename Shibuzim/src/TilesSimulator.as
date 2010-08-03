@@ -22,18 +22,24 @@ package {
 			addChild(tileEditor=new TileEditor());
 			addChild(tilesGrid = new Grid(this,37,4));
 			addChild(toolsMenu=new ToolsMenu(this))
+			addChild(new Tabs());
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
 		}
 		
 		public function onClient(obj:Object) : void {
 			if (obj is ToolsMenu) {
-				switch (toolsMenu.tool) {
+				switch (toolsMenu.immediateTool) {
+					case ToolsMenu.TOOLBAR_GRID_ERASER:
+					case ToolsMenu.TOOLBAR_GRID_FILLER:
+					case ToolsMenu.TOOLBAR_UNDO:
+						tilesGrid.applyTool(toolsMenu.immediateTool)	
+						break;
 					case (ToolsMenu.TOOLBAR_COST) : 
 						trace(tilesGrid.encode().toString());
 						break;
 					case (ToolsMenu.TOOLBAR_INVITATION) :
-						tilesGrid.undo();
+						
 						break;
 				}
 			}
@@ -46,7 +52,7 @@ package {
 		
 		
 		public function get currentTool() : int {
-			return toolsMenu.tool;
+			return toolsMenu.selectedTool;
 		}
 	}
 }

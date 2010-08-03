@@ -102,7 +102,8 @@ package {
 			return new ref();
 		}
 		
-		public static function decode(xml:XML) : void{
+		public static function decode(xml:XML) : TileLayer {
+			return new TileLayer(xml.@shape,xml.@color);
 			
 		}
 		

@@ -88,7 +88,15 @@ package {
 			return tile;
 		}
 		
-		public static function decode(xml:XML) : void{
+		public static function decode(xml:XML) : Tile {
+			var list:XMLList = xml.layer;
+			var tile:Tile = new Tile();
+			for each(var layer:XML in list) {
+				tile.addChild(TileLayer.decode(layer));
+				
+			}
+			
+			return tile;
 			
 		}
 		

@@ -17,13 +17,15 @@ package {
 		public static const TOOLBAR_GRID_ERASER:int = 5;
 		public static const TOOLBAR_ROW_FILLER:int = 6;
 		public static const TOOLBAR_COLUMN_FILLER:int = 7;
-		public static const TOOLBAR_NONE:int = 8;
+		public static const TOOLBAR_UNDO:int = 8;
 		public static const TOOLBAR_COST:int = 9;
 		public static const TOOLBAR_INVITATION:int = 10;
 		
 		
 		//private var client:Object;
-		private var _tool:int;
+		
+		private var _selectedTool:int;
+		private var _immediateTool:int;
 		
 		private var client:Object;
 		
@@ -42,20 +44,45 @@ package {
 			
 			this.tool = (p.y-3) / 28;
 			
-			client.onClient(this);
+			
 			
 			//client.usingTool(tool);
 		}
 		
 		public function set tool(tool:int) : void {
-			_tool = tool;
-			for (var i:int = 0;i<numChildren;i++ )
-				(this.getChildAt(i) as MovieClip).gotoAndStop(1);
-			(this.getChildAt(10-tool) as MovieClip).gotoAndStop(2);
+			switch(tool) {
+				case ToolsMenu.TOOLBAR_CURSOR:
+				case ToolsMenu.TOOLBAR_ROW_FILLER :
+				case ToolsMenu.TOOLBAR_COLUMN_FILLER :
+				case ToolsMenu.TOOLBAR_TILE_ERASER : 
+				case ToolsMenu.TOOLBAR_INK:
+				case ToolsMenu.TOOLBAR_MAGNIFIER:
+					_selectedTool = tool;
+					for (var i:int = 0;i<numChildren;i++ ) {
+						(this.getChildAt(i) as MovieClip).gotoAndStop(1);
+					}
+					(this.getChildAt(10-tool) as MovieClip).gotoAndStop(2);
+					break;
+					
+				case ToolsMenu.TOOLBAR_GRID_FILLER :
+				case ToolsMenu.TOOLBAR_GRID_ERASER :
+				case ToolsMenu.TOOLBAR_COST:
+				case ToolsMenu.TOOLBAR_UNDO:
+				case ToolsMenu.TOOLBAR_INVITATION:
+					_immediateTool = tool;
+					client.onClient(this);
+					break;
+			}
+			
+			
 		}
 		
-		public function get tool() : int {
-			return _tool;
+		public function get selectedTool() : int {
+			return _selectedTool;
+		}
+		
+		public function get immediateTool() : int {
+			return _immediateTool;
 		}
 		
 	}

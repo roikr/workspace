@@ -83,8 +83,11 @@ package {
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
+			applyTool(client.currentTool,e);
+		}
 			
-			switch (client.currentTool) {
+		public function applyTool(tool:int,e:MouseEvent = null) : void {
+			switch (tool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
 				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
 				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
@@ -95,7 +98,7 @@ package {
 					break;
 			}
 			
-			switch (client.currentTool) {
+			switch (tool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
 					var tile:Tile = client.cloneCurrentTile();
 					if (tile) 
@@ -138,18 +141,23 @@ package {
 					
 				case (ToolsMenu.TOOLBAR_GRID_ERASER) :
 				
-					for (var i:int=0;i<numChildren;i++) {
-						if ((getChildAt(i) as GridTile).numChildren)
-							removeTile(getChildAt(i) as GridTile);
-							
-						
-					}
+					clear();
 					break;
 					
 				case (ToolsMenu.TOOLBAR_TILE_ERASER) : 
 						if ((e.target as GridTile).numChildren)
 							removeTile(e.target as GridTile);
 							
+					break;
+					
+				case ToolsMenu.TOOLBAR_UNDO:
+					if (lastXml) {
+						decode(lastXml);
+						lastXml = null;
+					}
+					//for each (var item:XML in lastXml ) {
+					//	trace (item.toString());
+					//}
 					break;
 					
 				
@@ -172,18 +180,30 @@ package {
 			 */
 		}
 		
-		public function undo() : void {
-			for each (var item:XML in lastXml ) {
-				trace (item.toString());
+		
+		
+		public function clear() : void {
+			for (var i:int=0;i<numChildren;i++) {
+				if ((getChildAt(i) as GridTile).numChildren)
+					removeTile(getChildAt(i) as GridTile);
 			}
 		}
 		
 		
-		
 		public function decode(xml:XML) : void{
-			for each (var item:XML in xml ) {
-				trace (item.toString());
+			clear();
+			for each (var item:XML in xml.item ) {
+				var tile:Tile = Tile.decode(item.tile[0]);
+				tile.x = -1;
+				tile.y = -1;
+				tile.scale =  tileSize / 450;
+				var point:Point = new Point(item.@column*(tileSize+space),item.@row*(tileSize+space));
+				point = this.localToGlobal(point);
+				var gridTile:GridTile = getGridTileAt(point);
+				gridTile.addChild(tile);
+				//trace (item.toString());
 			}
+			this.xml = xml;
 		}
 		
 		public function encode() : XML {
