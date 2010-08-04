@@ -60,9 +60,9 @@ package {
 			if (gridTile.numChildren) 
 				removeTile(gridTile);
 			
-			tile.x = -1;
-			tile.y = -1;
-			tile.scale =  tileSize / 450;
+			//tile.x = -1;
+			//tile.y = -1;
+			tile.scale =  tileSize / 457;
 			gridTile.addChild(tile)		
 			
 			var item:XML = <item/>;

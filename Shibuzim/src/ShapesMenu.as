@@ -53,7 +53,7 @@ package {
 				_shapeNum = 28 + (row-6) * 4 + column;
 			}
 			
-			//trace(_shapeNum);
+			trace(_shapeNum+1);
 			
 			client.onClient(this);
 		}

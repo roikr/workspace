@@ -38,27 +38,56 @@ package {
 				}
 			}
 			else {
+				
+				
 				var test:Sprite = new Sprite();
 				var newShape:Sprite = TileLayer.createShape(shapeNum);
 				test.addChild(newShape);
-						
-				for (var i=0;i<numChildren;i++) {
-					var num:uint = (getChildAt(i) as TileLayer).shapeNum;
+				var i:int;
+				var num:int;
+				var array:Array = new Array();
+				
+				for (i=0;i<numChildren;i++) {
+					
+					num = (getChildAt(i) as TileLayer).shapeNum;
 					var shape:Sprite = TileLayer.createShape(num);
 					test.addChild(shape);
-					
-					if (RKUtilities.hitTest(shape,newShape)) {
-						//trace(testLayer.shapeNum,newLayer.shapeNum);
-						removeChild(getChildAt(i) as TileLayer);
-						
-					}
+					if (RKUtilities.hitTest(shape,newShape)) 
+						array.push(num);
 					test.removeChild(shape);
-					
 				}
+				
+				for each(num in array) {
+					for (var j:int;j<numChildren;j++) {
+						if (num == (getChildAt(j) as TileLayer).shapeNum) {
+							removeChild(getChildAt(j) as TileLayer);	
+							break;
+						}
+					}
+				}
+					
+				
+						//trace(testLayer.shapeNum,newLayer.shapeNum);
+									
+
 				lastLayer = new TileLayer(shapeNum,color);	
 				lastLayer.scale = _scale;
 				addChild(lastLayer);
 				
+				/*
+				var newLayer:TileLayer = new TileLayer(shapeNum,color);
+				newLayer.scale = _scale;
+				addChild(newLayer);
+				for (var i:int=0;i<numChildren;i++) {
+					var tempLayer:TileLayer = getChildAt(i) as TileLayer;
+					if (tempLayer!=newLayer && RKUtilities.hitTest(tempLayer,newLayer)) {
+						removeChild(newLayer);
+						return;
+					}
+				}
+				lastLayer = newLayer;
+				 * 
+				 */
 				
 			}
 		}

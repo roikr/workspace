@@ -28,8 +28,8 @@ package {
 			addChild(shapesMenu = new ShapesMenu(this))
 			
 			addChild(tile = new Tile());
-			tile.x = 6;
-			tile.y = 6;
+			tile.x = 10;
+			tile.y = 10;
 			tile.scale = 0.3;
 			//tile.scaleX = 0.3;
 			//tile.scaleY = 0.3;
