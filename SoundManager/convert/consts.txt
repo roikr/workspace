@@ -1,10 +1,3 @@
-package {
-
-	/**
-	 * @author roikr
-	 */
-	public class ChatpetzCodes {
-		
 		public static const WORLD_CLICK_AVATAR_1 : int = 33;
 		public static const WORLD_CLICK_AVATAR_2 : int = 38;
 		public static const ROOM_EATING_1 : int = 41;
@@ -119,10 +112,3 @@ package {
 		public static const CONTROL_RINGTONE_SYNC : int = 249;
 		public static const CONTROL_VOLUME_DOWN : int = 250;
 		public static const CONTROL_VOLUME_UP : int = 251;
-
-		
-
-	}
-		
-		
-}

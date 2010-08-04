@@ -44,7 +44,7 @@ package {
 			
   			channel = sound.play();
   			
-  			if (client)
+  			if (client || loop)
   				channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
   			
   			

@@ -1,0 +1,6 @@
+in order to add beeps you have to:
+1. check that they are exported in sn2_8.fla - you can check sn2_8.swc
+2. add them in ChatpetzBeeps importer array
+3. compile ChatpetzCodesLibrary
+4. add them in BeepsImporter array
+5. update the consts file and as

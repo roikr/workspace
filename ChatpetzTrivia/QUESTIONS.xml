@@ -13,7 +13,7 @@
         <answer>Soccer</answer>
         <answer>Pool</answer>
     </question>
-    <question correct="1">
+    <question correct="0">
         <body>What animal can run even a few hours after it was born?</body>
         <answer>Giraffe</answer>
         <answer>Chatpet</answer>
@@ -41,21 +41,21 @@
         <answer>Collar Bear</answer>
         <answer>Dollar Bear</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>How many continents are there in the world?</body>
         <answer>2,666</answer>
         <answer>13,000,001</answer>
         <answer>7</answer>
         <answer>7 and a half</answer>
     </question>
-    <question correct="0">
+    <question correct="3">
         <body>What is glass made of?</body>
         <answer>Metal</answer>
         <answer>Windows</answer>
         <answer>Water</answer>
         <answer>Sand</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>What is Ketchup made of?</body>
         <answer>Red finger paint</answer>
         <answer>Red Tomatoes</answer>
@@ -69,28 +69,28 @@
         <answer>Aardvark</answer>
         <answer>Amoeba</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>What animal only moves for 5 minutes every day?</body>
         <answer>Politician</answer>
         <answer>Kuala</answer>
         <answer>Sloth</answer>
         <answer>Mermaid</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What does the Anteater eat?</body>
         <answer>Aunts</answer>
         <answer>Rice</answer>
         <answer>Ants</answer>
         <answer>Snacks</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>What kind of flightless bird has a horn?</body>
         <answer>Ostrich with a glued horn</answer>
         <answer>Kazuar</answer>
         <answer>Penguin</answer>
         <answer>Superman</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What kind of an animal is a dolphin?</body>
         <answer>Whale</answer>
         <answer>Fish</answer>
@@ -118,7 +118,7 @@
         <answer>Greenish</answer>
         <answer>Off white</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>How many seconds are there in one minute?</body>
         <answer>59</answer>
         <answer>60</answer>
@@ -132,14 +132,14 @@
         <answer>Wood, like paper!</answer>
         <answer>Lava, like lava?</answer>
     </question>
-    <question correct="0">
+    <question correct="3">
         <body>What language do they speak in Switzerland?</body>
         <answer>French</answer>
         <answer>German</answer>
         <answer>Romansh</answer>
         <answer>All of them! Weird…</answer>
     </question>
-    <question correct="0">
+    <question correct="3">
         <body>What is the heaviest animal in the world?</body>
         <answer>A very fat bear</answer>
         <answer>Pink Whale</answer>
@@ -153,56 +153,56 @@
         <answer>German Shepherd</answer>
         <answer>St. Bernard</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>Where in the world are Pyramids?</body>
         <answer>Israel</answer>
         <answer>Egypt</answer>
         <answer>Mars</answer>
         <answer>The mall</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>Where can you find the Eiffel Tower?</body>
         <answer>London, Germany</answer>
         <answer>Paris, France</answer>
         <answer>Berlin, Dorothy</answer>
         <answer>French, Fries</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What is the oldest and tallest tree in the world?</body>
         <answer>The Joshua Tree</answer>
         <answer>The Treepazoid</answer>
         <answer>The Sequoia Tree</answer>
         <answer>Weeping Willow</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What is 100 x 100?</body>
         <answer>A million</answer>
         <answer>A thousand</answer>
         <answer>Ten thousand</answer>
         <answer>Three</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What animal lives in the sea and sleeps with one eye open?</body>
         <answer>Stingray</answer>
         <answer>Octopus</answer>
         <answer>Dolphin</answer>
         <answer>Yellow Submarine</answer>
     </question>
-    <question correct="0">
+    <question correct="3">
         <body>Who are the four members of the Beatles?</body>
         <answer>Optimus Prime, Megatron, Soundwave and Bumblebee</answer>
         <answer>Donatello, Rafael, Leonardo and Michelangelo</answer>
         <answer>Simba, Nala, Scar and Mufasa</answer>
         <answer>John, Paul, George and Ringo</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What’s the name of the first dog in space?</body>
         <answer>Scooby Doo</answer>
         <answer>Marmaduke</answer>
         <answer>Laika</answer>
         <answer>Beethoven</answer>
     </question>
-    <question correct="0">
+    <question correct="3">
         <body>What do they eat in Italy?</body>
         <answer>Pizza</answer>
         <answer>Spaghetti</answer>
@@ -223,28 +223,28 @@
         <answer>Chile’s Bell Pepper</answer>
         <answer>Sweden’s Aard Yorn Fjord!</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>What is paper usually made of?</body>
         <answer>Glass</answer>
         <answer>Clouds</answer>
         <answer>Wood</answer>
         <answer>Chicken</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>What is the world’s biggest city?</body>
         <answer>New York, USA</answer>
         <answer>Tokyo, Japan</answer>
         <answer>Dublin, Ireland</answer>
         <answer>Emerald City, Land of Oz</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>Which one of these isn’t a taste?</body>
         <answer>Bitter</answer>
         <answer>Sweet</answer>
         <answer>Hot</answer>
         <answer>Salty</answer>
     </question>
-    <question correct="0">
+    <question correct="2">
         <body>How many teeth do people usually have?</body>
         <answer>40</answer>
         <answer>4,000,000</answer>
@@ -265,14 +265,14 @@
         <answer>Lion</answer>
         <answer>Ant-lion</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>Which of these numbers is an odd number?</body>
         <answer>2</answer>
         <answer>3</answer>
         <answer>10</answer>
         <answer>6</answer>
     </question>
-    <question correct="0">
+    <question correct="1">
         <body>Who was the first man on the moon?</body>
         <answer>Buzz Lightyears</answer>
         <answer>Neil Armstrong</answer>

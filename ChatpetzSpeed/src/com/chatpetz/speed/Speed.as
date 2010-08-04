@@ -104,7 +104,7 @@ package com.chatpetz.speed{
 			
 			//prepareTimer.start();
 			bPrepare = true;
-			SoundManager.playBeep(board.getAnimalCode(),1.0,this);
+			SoundManager.playBeep(board.getAnimalCode(),this);
 		}
 		
 		public function onBeepCompleted(obj:Object) : void {
@@ -140,11 +140,11 @@ package com.chatpetz.speed{
 					successes++;
 					score+=100;
 					updateDisplay();
-					SoundManager.chooseAndPlayBeep(rightAnswers,1.0,this);
+					SoundManager.chooseAndPlayBeep(rightAnswers,this);
 					
 				} else {
 					feedback.gotoAndStop(3);
-					SoundManager.chooseAndPlayBeep(wrongAnswers,1.0,this);
+					SoundManager.chooseAndPlayBeep(wrongAnswers,this);
 					
 				}
 				
@@ -207,7 +207,7 @@ package com.chatpetz.speed{
 			taskTimer.reset();
 			clearTimer.reset();
 			timer.reset();
-			SoundManager.stopMusic(SpeedSounds.SPEED_MUSIC_A);
+			SoundManager.stopMusic(SpeedSounds.SPEED_MUSIC_C);
 		}
 		
 		private function onTimer(e:TimerEvent) : void {

@@ -17,6 +17,7 @@ package {
 		
 		public function open() : void {
 			success.gotoAndPlay("open")
+			SoundManager.playSound(TriviaSounds.OPENING_STONES_SOUND);
 			success.bPlay.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			
 		}

@@ -9,7 +9,7 @@ package {
 	public class Beep {
 		
 		private var sound:RKSound;
-		private var code:int;
+		private var _code:int;
 		private var client:Object;
 		private var timer:Timer;
 		
@@ -19,7 +19,7 @@ package {
 		
 		public function Beep(code:int,client:Object) {
 			
-			this.code = code;
+			_code = code;
 			this.client = client;
 			
 			var str:String = ""+code.toString();
@@ -59,8 +59,8 @@ package {
 		}
 		
 		public function onSoundComplete(obj:Object) : void {
-			if (code<192) {
-    			var currentDuration:int =SoundsDurations.duration(SoundManager.getMainChatpet(), code);
+			if (_code<192) {
+    			var currentDuration:int =SoundsDurations.duration(SoundManager.getMainChatpet(), _code);
     			timer = new Timer(currentDuration,1);
     			timer.addEventListener(TimerEvent.TIMER,onTimer);
     			timer.start();
@@ -69,7 +69,7 @@ package {
     		}
     		
     		if (Beep.bTestChatpetz) {
-				new RKSound("mp3/" + SoundManager.getMainChatpet() + "/" + SoundManager.getMainChatpet()+code.toString()+".mp3",null,true,false);
+				new RKSound("mp3/" + SoundManager.getMainChatpet() + "/" + SoundManager.getMainChatpet()+_code.toString()+".mp3",null,true,false);
  
   			}
 		}
@@ -87,7 +87,9 @@ package {
   			Beep.bTestChatpetz = test;
   		}
   		
-  		
+  		public function get code() : int {
+  			return _code;
+  		}
 
 		
 		

@@ -55,10 +55,12 @@ package {
   		 * 
   		 */
   		 
-  		 public static function playBeep(code:int,probability:Number=1.0,client:Object=null) : Beep {
+  		 public static function playBeep(code:int,client:Object,probability:Number=1.0) : Beep {
   		 	
   		 	if(probability<1 && Math.random() < probability) // || getIsChatpetTaking())
   		 		return null;
+  		 		
+  		 		
   		 		
   		 	return new Beep(code,client)
   		}
@@ -66,9 +68,9 @@ package {
   		
   		
 
-		public static function chooseAndPlayBeep(arr:Array,probability:Number=1.0,client:Object=null) : Beep {
+		public static function chooseAndPlayBeep(arr:Array,client:Object,probability:Number=1.0) : Beep {
   			var index:int = Math.floor(Math.random()*arr.length);
-  			return playBeep(arr[index],probability,client);
+  			return playBeep(arr[index],client,probability);
   		 }
   		 
   		 public static function onClient() : void {
@@ -106,7 +108,7 @@ package {
 					break;	
 			}
 			
-			playBeep(code);
+			playBeep(code,SoundManager);
 				
 				/*
 			var str:String = ""+code.toString();
@@ -119,6 +121,10 @@ package {
     		sound.play();
     		 
     		 */
+  		}
+  		
+  		public static function onBeepCompleted(obj:Object) : void {
+  			
   		}
   		
   		public static function setTestChatpetz(test:Boolean) : void {
