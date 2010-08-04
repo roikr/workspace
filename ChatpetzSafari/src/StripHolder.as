@@ -261,5 +261,9 @@ package {
 			var index:int = animalsNames.indexOf(name);
 			return animalsCodes[index];
 		}
+		
+		public function get velocity() : int {
+			return velX;
+		}
 	}
 }

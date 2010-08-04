@@ -6,11 +6,17 @@ package {
 	import flash.events.TimerEvent;
 	import flash.geom.Point;
 	import flash.utils.Timer;
+	import flash.utils.getQualifiedClassName;
 
 	/**
 	 * @author roikr
 	 */
 	public class Safari extends Sprite implements IChatpetzGame{
+		
+		private static const BEEP_STATE_IDLE:int = 0;
+		private static const BEEP_STATE_CALL:int = 1;
+		private static const BEEP_STATE_FEEDBACK:int = 2;
+		private var beepState:int;
 		
 		private var background : Background;
 		private var camera : Camera;
@@ -36,6 +42,8 @@ package {
 		private var bAnimalAnimated:Boolean;
 		
 		private var bStarted:Boolean;
+		
+		private var lastStars: int;
 		
 		public function Safari() {
 			SoundManager.setLibrary("SafariSounds");
@@ -84,11 +92,14 @@ package {
 			
 			//e.stopImmediatePropagation();
 			
+			
 			replay();
 			
 		}
 		
 		public function replay() : void {
+			
+			lastStars = 0;
 			addEventListener(MouseEvent.CLICK,takeSnapshot);
 			
 			camera.reset();
@@ -153,24 +164,31 @@ package {
 				camera.y = camPos.y;
 				if (currentAnimal) {
 					var p:Point = new Point (currentAnimal.x,currentAnimal.y);
-					p = currentAnimal.parent.localToGlobal(p);
+					var layer:Sprite = currentAnimal.parent as Sprite;
+					p = layer.localToGlobal(p);
+					p = this.globalToLocal(p);
 					//trace(p.x)
-					if (p.x<1000 && !bAnimalCalled) {
+					var code:int = StripHolder.getAnimalCode(currentAnimal);
+					var beepDistance:int = background.currentLayer.velocity*25* Beep.getDuration(code) / 1000; //  layer velocity [pixel/frame]
+					//trace(getQualifiedClassName(currentAnimal)+", x: "+p.x+", distance: " +beepDistance)
+					if (p.x - beepDistance  < 890-150 && !bAnimalCalled) { 
 						bAnimalCalled = true;
-						if (gameManager)
-							//gameManager.chooseAndPlayChatpetzCode(new Array(StripHolder.getAnimalCode(currentAnimal),ChatpetzCodes.SAFARI_GAME_I_CAN_SEE_YOU))
-							gameManager.playChatpetzCode(StripHolder.getAnimalCode(currentAnimal))
+						SoundManager.playBeep(	code, this)
+						beepState = BEEP_STATE_CALL;
 						
+					/*	
 					} else if (p.x<700 && !bAnimalAnimated) {
 						
 						currentAnimal.startAnimation();
 						bAnimalAnimated = true;
+						 
+					*/
 					} else if (p.x<0) {
 						currentAnimal = null
 					}
 				}
 				
-				if (!currentAnimal) {
+				if (!currentAnimal && beepState == BEEP_STATE_IDLE) {
 					bAnimalCalled = false;
 					bAnimalAnimated = false;
 					currentAnimal =  background.addAnimal();
@@ -182,6 +200,16 @@ package {
 			}
 		}
 		
+		public function onBeepCompleted(obj:Object) : void {
+			switch (beepState) {
+				case BEEP_STATE_CALL: 
+					currentAnimal.startAnimation();
+					break;
+			}
+			
+			beepState = BEEP_STATE_IDLE;
+		}
+
 		private function takeSnapshot(e:Event) : void {
 			
 			
@@ -197,8 +225,16 @@ package {
 				//feedback.dtPoints.text  = photo.getScore().toString();
 				feedback.gotoAndStop(photo.getFeedbackFrame());
 				
-				if (photo.isPerfectShot() && gameManager)
-					gameManager.chooseAndPlayChatpetzCode(new Array(ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1,ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_2))
+				if (photo.isPerfectShot()) {
+					beepState = BEEP_STATE_FEEDBACK;
+					SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1,ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_2)	, this);
+					SoundManager.playSound(SafariSounds.RIGHT_SOUND);	
+				}
+				
+				if (photo.getFeedbackFrame() == 4) {
+					SoundManager.playSound(SafariSounds.WRONG1_SOUND);
+				}
+					
 				
 				if (feedbackTimer.running) {
 					feedbackTimer.reset();
@@ -208,12 +244,48 @@ package {
 				
 				feedbackTimer.start();
 				
+				setStars(score/50);
+				
 				if (gameManager) {
 					gameManager.setScore(score);
-					gameManager.setStars(score/100);
+					
 				}
 				
 			}
+		}
+		
+		private function setStars(stars:int) : void {
+			
+			
+			switch (lastStars % 3 + 3 * (stars % 3)) {
+				case 0:
+					SoundManager.playSound(SafariSounds.FULL_CLOUD_SOUND);
+					break;
+				case 1:
+					SoundManager.playSound(SafariSounds.FULL_CLOUD_2_3_SOUND);
+					break;
+				case 2:
+					SoundManager.playSound(SafariSounds.FULL_CLOUD_1_3_SOUND);
+					break;
+				case 3:
+					SoundManager.playSound(SafariSounds.CLOUD_1_3_SOUND);
+					break;
+				case 6:
+					SoundManager.playSound(SafariSounds.CLOUD_2_3_SOUND);
+					break;
+				case 7:
+					SoundManager.playSound(SafariSounds.CLOUD_1_3_SOUND);
+					break;				
+			}
+			
+			lastStars = stars;
+			
+			if (gameManager) {
+				gameManager.setStars(score/50);
+			}
+			
+			
+			
 		}
 		
 		private function onFeedbackTimer(e:TimerEvent) : void {

@@ -18,8 +18,7 @@ package {
 		private var data:BitmapData;
 		private var zoom:Number;
 		private var bitmap:Bitmap;
-		private var cameraSound:GameSound;
-		private var focusSound:GameSound;
+		private var focusSound:RKSound;
 		private var focus:Number;
 		private var photos:Array;
 		private var animal:Animal;
@@ -37,8 +36,7 @@ package {
 			addChild(cameraInterface = new CameraInterface());
 			cameraInterface.dtPhotos.text = "0/"+maxPhotos.toString();
 			
-			cameraSound = new GameSound("sounds.CameraSound");
-			focusSound = new GameSound("sounds.FocusSound");
+			
 			
 			focus = 0;
 			photos = new Array();
@@ -66,10 +64,11 @@ package {
 				focus = 0;
 			
 			if (focus > 0 && focus < 1) {
-				if	(!focusSound.isPlaying()) 
-					focusSound.play();
+				if	(focusSound==null || !focusSound.playing) {
+					focusSound = SoundManager.playSound(SafariSounds.CAMERA_FOCUS_SOUND);
+				}
 			} else {
-				if (focusSound.isPlaying())
+				if (focusSound!=null && focusSound.playing)
 					focusSound.stop();	
 			}
 			
@@ -104,8 +103,8 @@ package {
 			if (animal && animal == lastAnimal)
 				return false;
 				
-			cameraSound.play();
-			
+			SoundManager.playSound(SafariSounds.CAMERA_SHOT_SOUND);
+				
 			
 			
 			var photoData : BitmapData = new BitmapData(data.width,data.height,false);

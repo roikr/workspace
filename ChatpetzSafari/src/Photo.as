@@ -33,13 +33,13 @@ package {
 			score = 50;
 			
 			if (distance < 20)
-				score += 100;
+				score += 50;
 				
 			if (focus == 1) 
 				score += 50;
 				
-			if (bChatpet)
-				focus += 200;
+			//if (bChatpet)
+			//	score += 50;
 				
 			if (focus == 1) {
 				frame = distance < 20 ? 1 : 3;

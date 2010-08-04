@@ -1,4 +1,4 @@
-package com.chatpetz.speed{
+package com.chatpetz.speed {
 	import flash.display.Bitmap;
 	import flash.display.SimpleButton;
 	import flash.display.Sprite;
@@ -6,7 +6,7 @@ package com.chatpetz.speed{
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
-
+	
 	/**
 	 * @author roikr
 	 */
@@ -30,11 +30,11 @@ package com.chatpetz.speed{
 		
 		private var bPrepare:Boolean; // just to know where we are onBeepCompleted
 		
-		
+		private var lastStars:int;
 		
 		public function Speed() {
 			SoundManager.setLibrary("SpeedSounds");
-			SoundManager.playMusic(SpeedSounds.SPEED_MUSIC_C);
+			SoundManager.playMusic(SpeedSounds.SPEED_MUSIC);
 			
 			addChild(new Background());
 			//addChild(interfaceBar = new Interface());
@@ -90,6 +90,7 @@ package com.chatpetz.speed{
 			gameManager = manager;
 			
 			successes = 0;
+			lastStars = 0;
 			
 			addChild(board = new Board(9));
 			prepare();
@@ -141,10 +142,12 @@ package com.chatpetz.speed{
 					score+=100;
 					updateDisplay();
 					SoundManager.chooseAndPlayBeep(rightAnswers,this);
-					
+					SoundManager.playSound(SpeedSounds.CARDS_WRONG_SOUND)
+					setStars(successes*3);
 				} else {
 					feedback.gotoAndStop(3);
 					SoundManager.chooseAndPlayBeep(wrongAnswers,this);
+					SoundManager.playSound(SpeedSounds.CARDS_WRONG_SOUND);
 					
 				}
 				
@@ -207,7 +210,7 @@ package com.chatpetz.speed{
 			taskTimer.reset();
 			clearTimer.reset();
 			timer.reset();
-			SoundManager.stopMusic(SpeedSounds.SPEED_MUSIC_C);
+			SoundManager.stopMusic(SpeedSounds.SPEED_MUSIC);
 		}
 		
 		private function onTimer(e:TimerEvent) : void {
@@ -220,9 +223,45 @@ package com.chatpetz.speed{
 			if (gameManager) {
 				gameManager.setLevel(level);
 				gameManager.setScore(score);
-				gameManager.setStars(successes*3);
+				
 				gameManager.setTime(timer.currentCount);
 			}
+			
+			
+		}
+		
+		private function setStars(stars:int) : void {
+			
+			
+			switch (lastStars % 3 + 3 * (stars % 3)) {
+				case 0:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;
+				case 1:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;
+				case 2:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;
+				case 3:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;
+				case 6:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;
+				case 7:
+					SoundManager.playSound(SpeedSounds.FULL_CLOUD_SOUND);
+					break;			
+			}
+			
+			lastStars = stars;
+			
+			if (gameManager) {
+				gameManager.setStars(stars);
+			}
+			
+			
+			
 		}
 		
 		

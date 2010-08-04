@@ -15,6 +15,7 @@ package {
 		private var client:Object;
 		
 		private var loop:Boolean;
+		private var _playing:Boolean;
 		
 		
 		public function RKSound(name:String,client:Object,stream:Boolean,loop:Boolean) {
@@ -43,9 +44,10 @@ package {
 			sound.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
 			
   			channel = sound.play();
+  			_playing = true;
   			
-  			if (client || loop)
-  				channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
+  			
+  			channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
   			
   			
   		}
@@ -55,19 +57,31 @@ package {
         }
   		
   		private function onSoundComplete(e:Event) : void {
-  			if (loop) {
-  				channel = sound.play(); 
-  				channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
-  			}
+  			
+  			
   			if (client) {
   				trace("RKSound::onSoundComplete "+client)
   				client.onSoundComplete(this);
   			}
+  			
+  			if (loop) {
+  				channel = sound.play(); 
+  				channel.addEventListener(Event.SOUND_COMPLETE, onSoundComplete);
+  			} else {
+  				_playing = false;
+  			}
+  			
   		
 		}
 		
 		public function stop() : void {
+			_playing = false;
 			channel.stop();
+		}
+		
+		public function get playing() : Boolean {
+			return _playing;
+			
 		}
 	}
 }

@@ -75,8 +75,8 @@ package {
 			game.help();
 		}
 		
-		public function setStars(stars:Number) : void {
-			testUI.laStars.text = stars.toPrecision(2);
+		public function setStars(stars:int) : void {
+			testUI.laStars.text = stars.toString();
 		}
 
 		public function setScore(score:int) : void {

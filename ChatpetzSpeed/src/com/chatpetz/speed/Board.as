@@ -85,8 +85,9 @@ package com.chatpetz.speed {
 		
 		public function go() : void {
 			boardInterface.mcClock.gotoAndPlay(2);
+			SoundManager.playSound(SpeedSounds.CARDS_IN_SOUND)
 		}
-		
+
 		
 		
 		public function testAnimal(holder:CardHolder) : Boolean {

@@ -30,6 +30,7 @@ package {
 		
 		
 		private var question:int;
+		private var lastStars:int;
 		
 		
 		public function ChatpetzTrivia() {
@@ -66,6 +67,7 @@ package {
 			gameManager = manager;
 			intro.open();
 			score = 0;
+			lastStars = 0;
 			level = 1;
 			if (gameManager)
 				gameManager.setLevel(level);
@@ -89,6 +91,7 @@ package {
 			if (answer) {
 				corrects+=1;
 				score+=10;
+				setStars(corrects);
 			}
 			
 			/*
@@ -105,10 +108,43 @@ package {
 					
 			
 			if (gameManager) {
-				gameManager.setStars(corrects);
 				gameManager.setScore(score);
 			}
 				
+			
+		}
+		
+		private function setStars(stars:int) : void {
+			
+			
+			switch (lastStars % 3 + 3 * (stars % 3)) {
+				case 0:
+					SoundManager.playSound(TriviaSounds.FULL_CLOUD_SOUND);
+					break;
+				case 1:
+					SoundManager.playSound(TriviaSounds.FULL_CLOUD_SOUND);
+					break;
+				case 2:
+					SoundManager.playSound(TriviaSounds.FULL_CLOUD_SOUND);
+					break;
+				case 3:
+					SoundManager.playSound(TriviaSounds.CLOUD_1_3_SOUND);
+					break;
+				case 6:
+					SoundManager.playSound(TriviaSounds.CLOUD_2_3_SOUND);
+					break;
+				case 7:
+					SoundManager.playSound(TriviaSounds.CLOUD_1_3_SOUND);
+					break;			
+			}
+			
+			lastStars = stars;
+			
+			if (gameManager) {
+				gameManager.setStars(stars);
+			}
+			
+			
 			
 		}
 		

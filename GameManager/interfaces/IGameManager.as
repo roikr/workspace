@@ -12,6 +12,6 @@ package {
 		function setScore(score:int) : void;
 		function setLevel(level:int) : void;
 		function setTime(time:int) : void;
-		function setStars(stars:Number) : void;
+		function setStars(stars:int) : void;
 	}
 }

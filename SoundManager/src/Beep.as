@@ -91,8 +91,13 @@ package {
   			return _code;
   		}
 
+		public static function getDuration(code:int) : int {
+			return code<192 ? 1090+SoundsDurations.duration(SoundManager.getMainChatpet(), code) : 1090;
+		}
 		
-		
+		public function get duration() : int {
+			return _code<192 ? 1090+SoundsDurations.duration(SoundManager.getMainChatpet(), _code) : 1090;
+		}
 		
 		
 	}

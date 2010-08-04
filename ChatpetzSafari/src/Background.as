@@ -19,6 +19,7 @@ package {
 		private var river:StripHolder;
 		private var second:StripHolder;
 		private var first:StripHolder;
+		private var _currentLayer:StripHolder;
 		
 		
 		
@@ -39,7 +40,12 @@ package {
 		}
 		
 		public function addAnimal() : Animal {
-			return Math.random()>0.5 ? near.addAnimal() : river.addAnimal();
+			_currentLayer = Math.random()>0.5 ? near : river;
+			return _currentLayer.addAnimal() ;
+		}
+		
+		public function get currentLayer() : StripHolder {
+			return _currentLayer;
 		}
 		
 		
