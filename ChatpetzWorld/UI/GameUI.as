@@ -64,26 +64,36 @@ package {
 		}
 
 		public function open() : void {
-			
-			gotoAndPlay("open");
 			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			gotoAndPlay("open");
+			
 			this.mcLowerCreature.gotoAndStop(1);
 			//this.mcUpperCreature.gotoAndStop(1);
 			
 		}
 		
 		private function close() : void {
-			gotoAndPlay("close");
+			
+			
 			bClosePanel.addEventListener(MouseEvent.MOUSE_DOWN,onClosePanel);
 			if (gameManager)
 				gameManager.unload();
 			bOpened = false;
+			SoundManager.setLibrary("WorldSounds");
+			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			gotoAndPlay("close");
+			
 		}
 
 		private function onEnterFrame(e:Event) : void {
 			if (this.currentLabel=="idle") {
 				removeEventListener(Event.ENTER_FRAME,onEnterFrame);
 				configureListener();
+			}
+			
+			if (this.currentFrameLabel=="sound") {
+				removeEventListener(Event.ENTER_FRAME,onEnterFrame);
+				SoundManager.playSound(WorldSounds.CLOUDS_MOONEY_SOUND);
 			}
 		}
 		

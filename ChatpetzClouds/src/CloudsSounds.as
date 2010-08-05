@@ -4,6 +4,7 @@ package {
 	 * @author roikr
 	 */
 	public class CloudsSounds {
+		[Embed(source="../sounds/FULL_CLOUD.mp3")] private static var FULL_CLOUD:Class;
 		[Embed(source="../sounds/CHAIMS_01.mp3")] private static var CHAIMS_01:Class;
 		[Embed(source="../sounds/POP_01.mp3")] private static var POP_01:Class;
 		[Embed(source="../sounds/POP_02.mp3")] private static var POP_02:Class;
@@ -17,8 +18,8 @@ package {
 		[Embed(source="../sounds/SWISH_02.mp3")] private static var SWISH_02:Class;
 		[Embed(source="../sounds/TAKE_CREAM_01.mp3")] private static var TAKE_CREAM_01:Class;
 		[Embed(source="../sounds/WRONG.mp3")] private static var WRONG:Class;
-		//[Embed(source="../sounds/CLOUD_CREAM_GAME_01.mp3")] private static var CLOUD_CREAM_GAME_01:Class;
 		
+		public static const FULL_CLOUD_SOUND : String = "FULL_CLOUD";
 		public static const DROP_RAINBOW : String = "CHAIMS_01";
 		public static const COMIC_BULB : String = "POP_01";
 		public static const TAKE_UMBRELLA : String = "POP_02";

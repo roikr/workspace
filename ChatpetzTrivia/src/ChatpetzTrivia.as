@@ -189,7 +189,7 @@ package {
 		}
 		
 		public function exit() : void {
-			SoundManager.stopMusic(TRIVIA_MUSIC_A);
+			SoundManager.stopSound(TRIVIA_MUSIC_A);
 			timer.stop();
 		}
 	}

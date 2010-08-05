@@ -7,7 +7,8 @@ package {
 		public function ChatpetzSafariTest() {
 			super();
 			SoundManager.setTestChatpetz(false)
-			SoundManager.setMainChatpet("PIFF")
+			SoundManager.mainChatpet="PIFF";
+			SoundManager.playMainChatpetBeep(this);
 			new BeepsImporter();
 			
 			load("Safari.swf");

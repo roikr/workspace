@@ -13,6 +13,13 @@ package {
 	 */
 	public class ChatpetzClouds extends Sprite implements IChatpetzGame {
 		
+		private static const BEEP_STATE_IDLE:int = 0;
+		private static const BEEP_STATE_TIME_ALERT:int = 1;
+		private static const BEEP_STATE_SERVED:int = 2;
+		private static const BEEP_STATE_DROP:int = 2;
+		private var beepState:int;
+		
+		
 		private var levels:XML = <levels><level number="1" item1="1" item2="0"/></levels>;
 		private var assets:ChatpetzCloudsAssets;
 		private var currentCloud:int;
@@ -26,6 +33,8 @@ package {
 		private var score:int;
 		private var level:int;
 		private var timer:Timer;
+		
+		private var lastStars:int;
 		
 		
 		
@@ -68,6 +77,7 @@ package {
 			SoundManager.setLibrary("CloudsSounds");
 			SoundManager.playMusic(CloudsSounds.CLOUDS_MUSIC);
 			score = 0;
+			lastStars = 0;
 			level = 1;
 			
 			timer = new Timer(500,100);
@@ -79,28 +89,69 @@ package {
 			if (gameManager) {
 				gameManager.setLevel(level);
 				gameManager.setScore(score);
-				gameManager.setStars(cloudsServed*3);
+				
 				gameManager.setTime(timer.currentCount);
 			}
 		}
 		
-		public function play(code:int,probability:Number=1.0) : void {
-			if (gameManager) {
-				gameManager.playChatpetzCode(code,probability);
+		
+		
+		private function setStars(stars:int) : void {
+			
+			
+			switch (lastStars % 3 + 3 * (stars % 3)) {
+				case 0:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;
+				case 1:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;
+				case 2:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;
+				case 3:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;
+				case 6:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;
+				case 7:
+					SoundManager.playSound(CloudsSounds.FULL_CLOUD_SOUND);
+					break;				
 			}
+			
+			lastStars = stars;
+			
+			if (gameManager) {
+				gameManager.setStars(stars);
+			}
+			
+			
+			
 		}
 		
-		public function chooseAndPlay(arr:Array,probability:Number=1.0) : void {
-			if (gameManager) {
-				gameManager.chooseAndPlayChatpetzCode(arr,probability);
+		
+		public function onBeepCompleted(obj:Object) : void {
+			switch (beepState) {
+				case BEEP_STATE_TIME_ALERT: 
+					break;
+				case BEEP_STATE_SERVED:
+					break;
+				case BEEP_STATE_DROP:
+					break;
 			}
+			
+			beepState = BEEP_STATE_IDLE;
 		}
+		
 		
 		
 		private function onTimer(e:TimerEvent) : void {
 			updateDisplay();
-			if (timer.currentCount == 90) 
-				chooseAndPlay(new Array(ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_1,ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_2));
+			if (timer.currentCount == 90) {
+				beepState = BEEP_STATE_TIME_ALERT;
+				SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_1,ChatpetzCodes.CLOUDS_GAME_TIME_ALERT_2),this);
+			}
 		}
 
 		private function onTimerComplete(e:TimerEvent) : void {
@@ -134,7 +185,7 @@ package {
 			customersManager.stop();
 			assets.mcPipe.removeEventListener(Event.ENTER_FRAME,onPipeEnterFrame);
 			pipeTimer.stop();
-			SoundManager.stopMusic(CloudsSounds.CLOUDS_MUSIC);
+			SoundManager.stopSound(CloudsSounds.CLOUDS_MUSIC);
 			timer.stop();
 		}
 		
@@ -147,17 +198,26 @@ package {
 		}
 		
 		public function cloudServed(bOK:Boolean) : void {
+			
+			beepState = BEEP_STATE_SERVED;
 			if (bOK) {
 				cloudsServed++;
 				score+=100;
+				setStars(cloudsServed*3);
 				updateDisplay();
-				chooseAndPlay(new Array(ChatpetzCodes.CLOUDS_GAME_SERVE_1,ChatpetzCodes.CLOUDS_GAME_SERVE_2));
 				
-				if (cloudsServed % 10 == 0)
-					play(ChatpetzCodes.CLOUDS_GAME_SERVE_10);
+				
+				if (cloudsServed % 10 == 0) {
+					SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_SERVE_10,this);
+				} else {
+					SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.CLOUDS_GAME_SERVE_1,ChatpetzCodes.CLOUDS_GAME_SERVE_2), this);
+				}
+				
+				
 			}
-			else
-				play(ChatpetzCodes.CLOUDS_WRONG_ORDER);
+			else {
+				SoundManager.playBeep(ChatpetzCodes.CLOUDS_WRONG_ORDER,this);
+			}
 				
 			//assets.dtClouds.text = cloudsServed.toString();
 		}
@@ -233,11 +293,14 @@ package {
 						SoundManager.playSound(CloudsSounds.DROP_RAIN);
 					else if(ingredient.currentLabel=="R") {
 						SoundManager.playSound(CloudsSounds.DROP_RAINBOW);
-						play(ChatpetzCodes.CLOUDS_GAME_DROP_RAINBOW);
+						if (SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_DROP_RAINBOW, this,0.25))
+							beepState = BEEP_STATE_DROP;
 					}
 					else if(ingredient.currentLabel=="U") {
 						SoundManager.playSound(CloudsSounds.DROP_UMBRELLA);
-						play(ChatpetzCodes.CLOUDS_GAME_DROP_UMBRELLA);
+						if (SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_DROP_UMBRELLA, this,0.25))
+							beepState = BEEP_STATE_DROP;
+						
 					}
 					else if(ingredient.currentLabel=="H" || ingredient.currentLabel=="S")
 						SoundManager.playSound(CloudsSounds.DROP_ICECREAM);

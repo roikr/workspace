@@ -90,6 +90,10 @@ package {
 		public function setTime(time:int) : void {
 			testUI.laTime.text = time.toString();
 		}
+		
+		public function onBeepCompleted(obj:Object) : void {
+			
+		}
 
 	}
 }

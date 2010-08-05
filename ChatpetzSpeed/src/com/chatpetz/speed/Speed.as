@@ -210,7 +210,7 @@ package com.chatpetz.speed {
 			taskTimer.reset();
 			clearTimer.reset();
 			timer.reset();
-			SoundManager.stopMusic(SpeedSounds.SPEED_MUSIC);
+			SoundManager.stopSound(SpeedSounds.SPEED_MUSIC);
 		}
 		
 		private function onTimer(e:TimerEvent) : void {

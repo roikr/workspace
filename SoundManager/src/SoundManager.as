@@ -14,23 +14,27 @@ package {
 		private static var sounds:Dictionary = new Dictionary();
 		private static var _library:String = "WorldSounds";
 		
-		private static var mainChatpet:String = "PIFF";
+		private static var _mainChatpet:String = "PIFF";
 		
   		public static function setLibrary(library:String) : void {
   			_library = library;
   		}
   		
-  		public static function playSound(name:String,client:Object=null,stream:Boolean=false) : RKSound {
-  			return new RKSound(stream ? _library+"/"+name +".mp3": _library+"_"+name,client,stream,false);
+  		public static function playSound(name:String,client:Object=null,stream:Boolean=false,loop:Boolean = false) : RKSound {
+  			var sound:RKSound = new RKSound(stream ? _library+"/"+name +".mp3": _library+"_"+name,client,stream,loop);
+  			if (loop) 
+  				sounds[name] = sound;
+  	
+  			return sound;
   		}
   		
-  		public static function playMusic(name:String) : void {
-  			
-  		 	sounds[name] = new RKSound("music/"+name+".mp3" ,null,true,true);
-    		
+  		public static function playMusic(name:String) : RKSound {
+  			var sound:RKSound = new RKSound("music/"+name+".mp3" ,null,true,true);
+  		 	sounds[name] = sound;
+    		return sound; 
   		}
   		
-  		public static function stopMusic(name:String) : void {
+  		public static function stopSound(name:String) : void {
   			
   			var sound:RKSound = sounds[name];
   		 	if (sound) {
@@ -57,7 +61,7 @@ package {
   		 
   		 public static function playBeep(code:int,client:Object,probability:Number=1.0) : Beep {
   		 	
-  		 	if(probability<1 && Math.random() < probability) // || getIsChatpetTaking())
+  		 	if(probability<1 && Math.random() > probability || Beep.getIsChatpetTalking()) // || getIsChatpetTaking())
   		 		return null;
   		 		
   		 		
@@ -79,13 +83,29 @@ package {
   		
   		
   		
-  		public static function getMainChatpet() : String {
-  			return mainChatpet;
+  		public static function get mainChatpet() : String {
+  			return _mainChatpet;
   		}
   		
-  		public static function setMainChatpet(name:String) : void {
+  		public static function set mainChatpet(name:String) : void {
   			
-  			mainChatpet = name.toUpperCase();
+  			_mainChatpet = name.toUpperCase();
+  			
+				
+				/*
+			var str:String = ""+code.toString();
+   			while( str.length < 3 )
+      		 str="0" + str;
+  		 	
+  		 	//var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
+  		 	var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
+    		var sound:Sound = new Cls() as Sound;
+    		sound.play();
+    		 
+    		 */
+  		}
+  		
+  		public static function playMainChatpetBeep(client:Object) : Beep {
   			var code:int;
   			switch (mainChatpet) {
 				case "PIZZ":
@@ -108,23 +128,11 @@ package {
 					break;	
 			}
 			
-			playBeep(code,SoundManager);
-				
-				/*
-			var str:String = ""+code.toString();
-   			while( str.length < 3 )
-      		 str="0" + str;
-  		 	
-  		 	//var Cls:Class = getDefinitionByName("ChatpetzBeeps_sn2_8_"+str) as Class;
-  		 	var Cls:Class = getDefinitionByName("sn2_8_"+str) as Class;
-    		var sound:Sound = new Cls() as Sound;
-    		sound.play();
-    		 
-    		 */
+			return playBeep(code,client);
   		}
   		
   		public static function onBeepCompleted(obj:Object) : void {
-  			
+  			trace ("SoundManager::onBeepCompleted - shouldn't get here")
   		}
   		
   		public static function setTestChatpetz(test:Boolean) : void {

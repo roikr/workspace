@@ -7,7 +7,8 @@ package {
 		public function ChatpetzTriviaTest() {
 			super();
 			SoundManager.setTestChatpetz(false)
-			SoundManager.setMainChatpet("PIFF")
+			SoundManager.mainChatpet="PIFF";
+			SoundManager.playMainChatpetBeep(this);
 			new BeepsImporter();
 			load("ChatpetzTrivia.swf");
 			

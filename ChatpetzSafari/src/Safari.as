@@ -147,7 +147,7 @@ package {
 			removeEventListener(Event.ENTER_FRAME,onEnterFrame)
 			feedbackTimer.stop();
 			timer.stop();
-			SoundManager.stopMusic(SafariSounds.SAFARI_MUSIC);
+			SoundManager.stopSound(SafariSounds.SAFARI_MUSIC);
 		}
 		
 		
@@ -281,7 +281,7 @@ package {
 			lastStars = stars;
 			
 			if (gameManager) {
-				gameManager.setStars(score/50);
+				gameManager.setStars(stars);
 			}
 			
 			

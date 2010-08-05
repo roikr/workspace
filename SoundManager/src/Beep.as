@@ -24,7 +24,7 @@ package {
 			
 			var str:String = ""+code.toString();
    			while( str.length < 3 )
-      		 str="0" + str;
+      			str="0" + str;
   		 	
   		 
   		 	sound =  new RKSound("sn2_8_"+str,this,false,false);
@@ -60,18 +60,21 @@ package {
 		
 		public function onSoundComplete(obj:Object) : void {
 			if (_code<192) {
-    			var currentDuration:int =SoundsDurations.duration(SoundManager.getMainChatpet(), _code);
+    			var currentDuration:int =SoundsDurations.duration(SoundManager.mainChatpet, _code);
     			timer = new Timer(currentDuration,1);
     			timer.addEventListener(TimerEvent.TIMER,onTimer);
     			timer.start();
+    			
+    			if (Beep.bTestChatpetz) {
+					new RKSound("mp3/" + SoundManager.mainChatpet + "/" + SoundManager.mainChatpet+_code.toString()+".mp3",null,true,false);
+  				}
+    			
     		} else {
     			Beep.bChatpetIsTalking = false;
+    			client.onBeepCompleted(this);
     		}
     		
-    		if (Beep.bTestChatpetz) {
-				new RKSound("mp3/" + SoundManager.getMainChatpet() + "/" + SoundManager.getMainChatpet()+_code.toString()+".mp3",null,true,false);
- 
-  			}
+    		
 		}
 		
 		private function onTimer(e:Event) : void {
@@ -92,13 +95,15 @@ package {
   		}
 
 		public static function getDuration(code:int) : int {
-			return code<192 ? 1090+SoundsDurations.duration(SoundManager.getMainChatpet(), code) : 1090;
+			return code<192 ? 1090+SoundsDurations.duration(SoundManager.mainChatpet, code) : 1090;
 		}
 		
 		public function get duration() : int {
-			return _code<192 ? 1090+SoundsDurations.duration(SoundManager.getMainChatpet(), _code) : 1090;
+			return _code<192 ? 1090+SoundsDurations.duration(SoundManager.mainChatpet, _code) : 1090;
 		}
 		
-		
+		public static function getIsChatpetTalking() : Boolean {
+			return bChatpetIsTalking;
+		}
 	}
 }

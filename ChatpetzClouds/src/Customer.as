@@ -61,7 +61,12 @@ package {
 			asset.gotoAndPlay("leave");
 			asset.mcBubble.mcSign.gotoAndPlay("x");
 			SoundManager.playSound(CloudsSounds.COMIC_WRONG);
-			client.getClient().play(ChatpetzCodes.CLOUDS_GAME_UNSERVED);
+			SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_UNSERVED, this)
+			
+			
+		}
+		
+		public function onBeepCompleted(obj:Object) : void {
 			
 		}
 

@@ -1,5 +1,4 @@
 package {
-	import flash.events.MouseEvent;
 	import it.gotoandplay.smartfoxserver.SFSEvent;
 	import it.gotoandplay.smartfoxserver.SmartFoxClient;
 
@@ -17,16 +16,23 @@ package {
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
 
-	/**
+	/*
 	 * @author roikr
 	 */
 	public class ChatpetzWorld extends Sprite {
 		
+		private static const BEEP_STATE_IDLE:int = 0;
+		private static const BEEP_STATE_CONTROL:int = 1;
+		private static const BEEP_STATE_ENTER_ROOM:int = 2;
+		private static const BEEP_STATE_DESCRIBE:int = 3;
+		
+		private var beepState:int;
 		
 		private var myUsername:String;
 		private var smartFox:SmartFoxClient;
@@ -158,7 +164,15 @@ package {
 		}
 		
 		
-		
+		public function onBeepCompleted(obj:Object) : void {
+			switch (beepState) {
+				case BEEP_STATE_CONTROL: 
+					
+					break;
+			}
+			
+			beepState = BEEP_STATE_IDLE;
+		}
 		//-------------------------------------------------------
 		// 1. Handle SmartFoxServer connection & login
 		//-------------------------------------------------------
@@ -211,7 +225,8 @@ package {
 				logTrace("Successfully logged in as " + myUsername);
 				
 			
-				SoundManager.setMainChatpet("PIFF");
+				SoundManager.mainChatpet="PIFF";
+				
 				
 				
 			}
@@ -242,7 +257,7 @@ package {
 				initializeOpenSpace();
 			}
 			else
-				loadMap("Home");
+				loadMap("Moon");
 			
 			// This event also causes the RoomList to be populated
 		}
@@ -320,9 +335,12 @@ package {
 				case "Africa":
 					
 					
-					SoundManager.playBeep(ChatpetzCodes.WORLD_CLICK_AFRICA);
+					
 					break;
 			}
+			
+			if (SoundManager.playMainChatpetBeep(this))
+				beepState = BEEP_STATE_CONTROL;
 			
 			openSpace.loadMap(sfsRoomToJoin);
 			
@@ -337,7 +355,6 @@ package {
 		}
 		
 		public function getBack() : void {
-			SoundManager.setLibrary("WorldSounds");
 			openSpace.loadMap(currentMap);
 			worldUI.open();
 		}
@@ -360,7 +377,7 @@ package {
 		private function onOpenSpaceInitialized(evt:OpenSpaceEvent):void {
 			bOpenSpaceInitialized = true;
 			logTrace("OpenSpace.INITIALIZED event received");
-			loadMap("Home");
+			loadMap("Moon");
 		}
 		
 		/**
@@ -455,18 +472,23 @@ package {
 			//if (mc)
 			//	mc.gotoAndPlay(1);
 			
+			var code:int = 0;
+			
 			switch (currentMap) {
 				case "Home":
-					SoundManager.playBeep(ChatpetzCodes.WORLD_ENTER_ROOM);
+					code = ChatpetzCodes.WORLD_ENTER_ROOM;
 					break;
 				case "Moon":
-					SoundManager.playBeep(ChatpetzCodes.WORLD_CLICK_MOON);
+					SoundManager.playMusic(WorldSounds.MOONBASE_MUSIC);
+					code = ChatpetzCodes.WORLD_CLICK_MOON;
 					break;
 				case "Africa":
-					
+					code = ChatpetzCodes.WORLD_CLICK_AFRICA;
 					SoundManager.playMusic(WorldSounds.AFRICA_MUSIC);
 					break;
 			}
+			if (SoundManager.playBeep(code, this)) 
+				beepState = BEEP_STATE_ENTER_ROOM
 			
 			
 		}
@@ -539,13 +561,13 @@ package {
 			{
 				if (trigger.target == "moonSpaceShip") // Change map
 				{
-					
 					playMovie("MoonToEarthMC")
-					unloadMap();
-					
+					SoundManager.playSound(WorldSounds.SPACESHIP_TAKEOFF2_SOUND);
+					unloadMap();	
 				} else if (trigger.target == "earthSpaceShip") // Change map
 				{
 					playMovie("EarthToMoonMC")
+					SoundManager.playSound(WorldSounds.SPACESHIP_TAKEOFF2_SOUND);
 					unloadMap();
 					
 				} else if (trigger.target == "home") // Change map
@@ -587,20 +609,27 @@ package {
 				}
 				else if (trigger.target == "giraffe") 
 				{
-					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_GIRAFFE)
-					
+					if (SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_GIRAFFE,this))
+						beepState = BEEP_STATE_DESCRIBE;
 				} else if (trigger.target == "tiger") 
 				{
-					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TIGER)
+					if (SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TIGER,this))
+						beepState = BEEP_STATE_DESCRIBE;
+						
 				} else if (trigger.target == "termites") 
 				{
-					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TERMITES)
+					if (SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_TERMITES,this))
+						beepState = BEEP_STATE_DESCRIBE;
 				} else if (trigger.target == "bug") 
 				{
-					SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_BUG)
+					trace("bug");
+					if (SoundManager.playBeep(ChatpetzCodes.AFRICA_CLICK_BUG,this))
+						beepState = BEEP_STATE_DESCRIBE;
 				}  else if (trigger.target == "creatureRoom") 
 				{
-					SoundManager.chooseAndPlayBeep( new Array(ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_1,ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_2));
+					if (SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_1,ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_2),this))
+						beepState = BEEP_STATE_DESCRIBE;
+					
 				}
 			
 			} else if (evt.type == MapInteractionEvent.SKIN_ROLL_OVER)
@@ -616,11 +645,40 @@ package {
 						trace(trigger.target+" not found")
 				}
 				
+				switch (trigger.target) {
+					case "door":
+					case "shop":
+						SoundManager.playSound(WorldSounds.DOOR_OPEN_SOUND);
+						break;
+					case "cloud":
+						SoundManager.playSound(WorldSounds.CLOUDCREAM_ON_SOUND);
+						break;
+				}
+				
+				
+				
 			}
 			else if (evt.type == MapInteractionEvent.SKIN_ROLL_OUT)
 			{
-				if (skinsNames.indexOf(trigger.target)!=-1) 
-					(getMovieClipOnBackground(trigger.target) as MovieClip).gotoAndPlay("out");		
+				if (skinsNames.indexOf(trigger.target)!=-1) {
+					var mc:MovieClip = (getMovieClipOnBackground(trigger.target) as MovieClip);
+					if (mc)
+						mc.gotoAndPlay("out");
+					else
+						trace(trigger.target+" not found")		
+				}
+					
+				
+				switch (trigger.target) {
+					case "door":
+					case "shop":
+						SoundManager.playSound(WorldSounds.DOOR_CLOSE_SOUND);
+						break;
+					case "cloud":
+						SoundManager.playSound(WorldSounds.CLOUDCREAM_OFF_SOUND);
+						break;
+				}
+				
 			}
 			
 			
@@ -747,7 +805,9 @@ package {
 		 // ================ AVATAR CONTROLS ================
 		public function onAvatarDown(chatpet:String) : void {
 			avatarManager.changePlayerAvatarSkin(chatpet);
-			SoundManager.setMainChatpet(chatpet);
+			SoundManager.mainChatpet=chatpet;
+			if (SoundManager.playMainChatpetBeep(this))
+				beepState = BEEP_STATE_CONTROL;
 			//ChatpetzBeeps.chooseAndPlay(new Array(ChatpetzCodes.WORLD_SWITCH_CHATPET,ChatpetzCodes.WORLD_USE_CHATPET));
 		}
 

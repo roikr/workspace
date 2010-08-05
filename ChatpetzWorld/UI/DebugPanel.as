@@ -33,7 +33,8 @@ package {
 			panel.cbLog.addEventListener(Event.CHANGE, onLogChange);
 			panel.cbVoices.addEventListener(Event.CHANGE,onVoicesChange);
 			
-			panel.list.addEventListener(Event.CHANGE,onListChange);
+			panel.list.visible = false;
+			//panel.list.addEventListener(Event.CHANGE,onListChange);
 		}
 		
 		private function onLogChange(e:Event) : void {
@@ -46,14 +47,22 @@ package {
 			
 		}
 		
+		
 		private function onListChange(e:Event) : void {
 			var item:SimpleCollectionItem  = panel.list.selectedItem as SimpleCollectionItem;
 			if (item) {
-				SoundManager.setMainChatpet(item.data);
+				SoundManager.mainChatpet=item.data;
+				SoundManager.playMainChatpetBeep(this);
 				
 			}
 			
 		}
+		
+		public function onBeepCompleted(obj:Object) : void {
+			
+		}
+		 
+		 
 		
 		public function logMessage(txt:String):void
 		{

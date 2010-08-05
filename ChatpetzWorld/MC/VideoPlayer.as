@@ -27,8 +27,10 @@ package {
 		}
 		
 		private function onSkip(e:Event) : void {
-			
+			this.flvPlayer.autoPlay = false;
+			this.flvPlayer.pause();
 			this.flvPlayer.stop();
+			
 			client.exit(this);
 		}
 		

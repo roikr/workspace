@@ -24,7 +24,7 @@ package {
 		}
 		
 		public function start() : void {
-			timer = new Timer(1500,0);
+			timer = new Timer(5000,0);
 			timer.addEventListener(TimerEvent.TIMER,onTimer);
 			timer.start();
 		}
