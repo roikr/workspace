@@ -38,10 +38,16 @@ package {
 				}
 			}
 			else {
+				var unusual:int = -1;
+				for (i=0;i<numChildren;i++) {
+					unusual = (getChildAt(i) as TileLayer).unusual;
+					if (unusual!=-1)
+						break;
+				}
 				
 				
 				var test:Sprite = new Sprite();
-				var newShape:Sprite = TileLayer.createShape(shapeNum);
+				var newShape:Sprite = TileLayer.createShape(shapeNum,unusual);
 				test.addChild(newShape);
 				var i:int;
 				var num:int;
@@ -65,12 +71,18 @@ package {
 						}
 					}
 				}
+				
+				for (i=0;i<numChildren;i++) {
+					unusual = (getChildAt(i) as TileLayer).unusual;
+					if (unusual!=-1)
+						break;
+				}
 					
 				
 						//trace(testLayer.shapeNum,newLayer.shapeNum);
 									
 
-				lastLayer = new TileLayer(shapeNum,color);	
+				lastLayer = new TileLayer(shapeNum,color,unusual);	
 				lastLayer.scale = _scale;
 				addChild(lastLayer);
 				

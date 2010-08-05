@@ -20,11 +20,15 @@ package {
 		
 		private static var shapes:Array = [Shape1,Shape2,Shape3,Shape4,Shape5,Shape6,Shape7,Shape8,Shape9,Shape10,Shape11,Shape12,Shape13,
 			Shape14,Shape15,Shape16,Shape17,Shape18,Shape19,Shape20,Shape21,Shape22,Shape23,Shape24,Shape25,Shape26,Shape27,Shape28,Shape29,Shape30,
-			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36];
+			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
+			
+		private static var unusuals:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
 		
 		
-		public function TileLayer(shapeNum:uint,color:uint = 0) {
-			_shapeNum = shapeNum;
+		public function TileLayer(shapeNum:uint,color:uint = 0,unusual:int = -1) {
+			
+			_shapeNum = getRealShapeNum(shapeNum,unusual);
+				
 			this.color = color;
 			var ref:Class = shapes[_shapeNum] as Class;
 			var instance:Sprite = new ref();
@@ -64,6 +68,20 @@ package {
 			return _shapeNum;
 		}
 		
+		public function get unusual() : int {
+			var res:int = -1;
+			switch (shapeNum+1) {
+				case 8:
+				case 9:
+					res = shapeNum;
+					break;
+				default:
+					break;
+			}
+			return res;
+		}
+		
+				
 		public function setColor(color:uint) : void {
 			if (texture && !bBlackNWhite) {
 				removeChild(texture);
@@ -97,8 +115,31 @@ package {
 			
 		}
 		
-		public static function createShape(shapeNum:uint) : Sprite {
-			var ref:Class = shapes[shapeNum] as Class;
+	
+		
+		private static function getRealShapeNum(shapeNum:uint,unusual:int) : int {
+			 var _shapeNum:int = shapeNum;
+			 if (unusual != -1) {
+			 	switch (shapeNum+1) {
+			 		case 15:
+			 		case 16:
+			 		case 17:
+			 		case 25:
+			 			var name:String = "Shape"+(shapeNum+1).toString()+"_"+( unusual+1).toString();
+						var index:int = unusuals.indexOf(name);
+						_shapeNum = shapes.length - unusuals.length+index;
+						trace(name," ",index,_shapeNum);
+					break;
+			 		
+			 	}
+				
+			}
+			return _shapeNum;
+		}
+		
+		
+		public static function createShape(shapeNum:uint,unusual:int=-1) : Sprite {
+			var ref:Class = shapes[getRealShapeNum(shapeNum,unusual)] as Class;
 			return new ref();
 		}
 		
