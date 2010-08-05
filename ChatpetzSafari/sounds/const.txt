@@ -1,0 +1,10 @@
+		public static const 1_3_CLOUD_SOUND : String = "1_3_CLOUD";
+		public static const 1_3_FULL_CLOUD_SOUND : String = "1_3_FULL_CLOUD";
+		public static const 2_3_CLOUD_SOUND : String = "2_3_CLOUD";
+		public static const 2_3_FULL_CLOUD_SOUND : String = "2_3_FULL_CLOUD";
+		public static const CAMERA_FOCUS_SOUND : String = "CAMERA_FOCUS";
+		public static const CAMERA_SHOT_SOUND : String = "CAMERA_SHOT";
+		public static const FULL_CLOUD_SOUND : String = "FULL_CLOUD";
+		public static const RIGHT_SOUND : String = "RIGHT";
+		public static const WRONG1_SOUND : String = "WRONG1";
+		public static const WRONG2_SOUND : String = "WRONG2";

@@ -1,0 +1,3 @@
+		[Embed(source="../sounds/CARDS_IN.mp3")] private static var CARDS_IN:Class;
+		[Embed(source="../sounds/CARDS_WRONG.mp3")] private static var CARDS_WRONG:Class;
+		[Embed(source="../sounds/FULL_CLOUD.mp3")] private static var FULL_CLOUD:Class;

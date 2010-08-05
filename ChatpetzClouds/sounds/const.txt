@@ -1,0 +1,13 @@
+public static const DROP_RAINBOW : String = "CHAIMS_01";
+public static const COMIC_BULB : String = "POP_01";
+public static const TAKE_UMBRELLA : String = "POP_02";
+public static const DROP_ICECREAM : String = "PUT_CREAM_01";
+public static const DROP_UMBRELLA : String = "PUT_CREAM_02";
+public static const DROP_RAIN : String = "RAIN_01";
+public static const SPACESHIP_LAND : String = "SPACESHIP_IN_01";
+public static const SPACESHIP_TAKEOFF : String = "SPACESHIP_OUT_01";
+public static const CLOUD_OUT : String = "STEAM_01";
+public static const TAKE_CLOUD : String = "SWISH_01";
+public static const TAKE_RAIN_BOW : String = "SWISH_02";
+public static const TAKE_ICECREAM : String = "TAKE_CREAM_01";
+public static const COMIC_WRONG : String = "WRONG";

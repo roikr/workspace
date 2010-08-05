@@ -1,0 +1,10 @@
+		[Embed(source="../sounds/1_3_CLOUD.mp3")] private static var 1_3_CLOUD:Class;
+		[Embed(source="../sounds/1_3_FULL_CLOUD.mp3")] private static var 1_3_FULL_CLOUD:Class;
+		[Embed(source="../sounds/2_3_CLOUD.mp3")] private static var 2_3_CLOUD:Class;
+		[Embed(source="../sounds/2_3_FULL_CLOUD.mp3")] private static var 2_3_FULL_CLOUD:Class;
+		[Embed(source="../sounds/CAMERA_FOCUS.mp3")] private static var CAMERA_FOCUS:Class;
+		[Embed(source="../sounds/CAMERA_SHOT.mp3")] private static var CAMERA_SHOT:Class;
+		[Embed(source="../sounds/FULL_CLOUD.mp3")] private static var FULL_CLOUD:Class;
+		[Embed(source="../sounds/RIGHT.mp3")] private static var RIGHT:Class;
+		[Embed(source="../sounds/WRONG1.mp3")] private static var WRONG1:Class;
+		[Embed(source="../sounds/WRONG2.mp3")] private static var WRONG2:Class;

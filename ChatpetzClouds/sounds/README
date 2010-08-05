@@ -1,0 +1,13 @@
+1. create audio file list
+
+ls *mp3 | awk -F "." '{print $1}' > list.txt
+
+
+2. add action before files to list.txt > def.text
+
+3. create constants 
+awk '{ printf "public static const %s : String = \"%s\";\n",$1,$2}' def.txt > const.txt
+
+
+4. create embedding declerations
+ls *mp3 | awk -F "." '{ printf "[Embed(source=\"../sounds/%s.mp3\")] private static var %s:Class;\n",$1,$1}' > library.txt

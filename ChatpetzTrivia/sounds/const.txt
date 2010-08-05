@@ -1,0 +1,11 @@
+		public static const CLOUD_1_3_SOUND : String = "CLOUD_1_3";
+		public static const CLOUD_2_3_SOUND : String = "CLOUD_2_3";
+		public static const CORRECT_ANSWER_SOUND : String = "CORRECT_ANSWER";
+		public static const FULL_CLOUD_SOUND : String = "FULL_CLOUD";
+		public static const FULL_CLOUD2_SOUND : String = "FULL_CLOUD2";
+		public static const OPENING_STONES_SOUND : String = "OPENING_STONES";
+		public static const RIGHT_SOUND : String = "RIGHT";
+		public static const STONES_IN_SOUND : String = "STONES_IN";
+		public static const STONES_OUT_SOUND : String = "STONES_OUT";
+		public static const WRONG_SOUND : String = "WRONG";
+		public static const WRONG_ANSWER_SOUND : String = "WRONG_ANSWER";
