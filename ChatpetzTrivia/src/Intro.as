@@ -24,6 +24,7 @@ package {
 		
 		private function onMouseDown(e:Event) : void {
 			intro.gotoAndPlay("close");
+			SoundManager.playSound(TriviaSounds.READY_GO_SOUND);
 			intro.addEventListener(Event.ENTER_FRAME, onEnterFrame)
 		}
 		

@@ -16,7 +16,7 @@ package {
 		
 		public function open() : void {
 			gameOver.gotoAndPlay("open")
-			SoundManager.playSound(TriviaSounds.OPENING_STONES_SOUND);
+			//SoundManager.playSound(TriviaSounds.OPENING_STONES_SOUND);
 			gameOver.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		}
 		

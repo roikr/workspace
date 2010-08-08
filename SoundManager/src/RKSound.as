@@ -3,6 +3,7 @@ package {
 	import flash.events.IOErrorEvent;
 	import flash.media.Sound;
 	import flash.media.SoundChannel;
+	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
 	import flash.utils.getDefinitionByName;
 
@@ -18,7 +19,7 @@ package {
 		private var _playing:Boolean;
 		
 		
-		public function RKSound(name:String,client:Object,stream:Boolean,loop:Boolean) {
+		public function RKSound(name:String,client:Object,stream:Boolean,loop:Boolean,volume:Number = 1.0) {
 			
 			this.client = client;
 			
@@ -44,6 +45,7 @@ package {
 			sound.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
 			
   			channel = sound.play();
+  			channel.soundTransform = new SoundTransform(volume);
   			_playing = true;
   			
   			

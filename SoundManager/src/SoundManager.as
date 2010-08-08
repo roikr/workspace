@@ -20,8 +20,8 @@ package {
   			_library = library;
   		}
   		
-  		public static function playSound(name:String,client:Object=null,stream:Boolean=false,loop:Boolean = false) : RKSound {
-  			var sound:RKSound = new RKSound(stream ? _library+"/"+name +".mp3": _library+"_"+name,client,stream,loop);
+  		public static function playSound(name:String,client:Object=null,stream:Boolean=false,loop:Boolean = false,volume:Number = 1.0) : RKSound {
+  			var sound:RKSound = new RKSound(stream ? _library+"/"+name +".mp3": _library+"_"+name,client,stream,loop,volume);
   			if (loop) 
   				sounds[name] = sound;
   	

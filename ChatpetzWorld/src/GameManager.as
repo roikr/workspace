@@ -89,7 +89,7 @@ package {
 		private function progressHandler(e:ProgressEvent) : void {
 			//trace("progressHandler: "+e.bytesLoaded+"/"+e.bytesTotal);
 			var per:Number = e.bytesLoaded/e.bytesTotal;
-			trace(per);
+			//trace(per);
 			loadingMC.mcLoadingBar.gotoAndStop(int(per*99)+1);
 		}
 

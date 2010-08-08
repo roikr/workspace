@@ -11,6 +11,10 @@ package com.chatpetz.speed {
 	 * @author roikr
 	 */
 	public class Speed extends Sprite implements IChatpetzGame {
+		private static const BEEP_STATE_IDLE:int = 0;
+		private static const BEEP_STATE_PREPARE:int = 1;
+		private static const BEEP_STATE_TOUCH:int = 2;
+		private var beepState:int;
 		
 		private var gameManager:IGameManager;
 		private var board : Board;
@@ -28,7 +32,7 @@ package com.chatpetz.speed {
 		private var rightAnswers:Array;
 		private var wrongAnswers:Array;
 		
-		private var bPrepare:Boolean; // just to know where we are onBeepCompleted
+		
 		
 		private var lastStars:int;
 		
@@ -88,6 +92,7 @@ package com.chatpetz.speed {
 		
 		public function start(manager:IGameManager) : void {
 			gameManager = manager;
+			beepState = BEEP_STATE_IDLE;
 			
 			successes = 0;
 			lastStars = 0;
@@ -104,25 +109,32 @@ package com.chatpetz.speed {
 			board.prepare(Math.floor(9*Math.random()));
 			
 			//prepareTimer.start();
-			bPrepare = true;
+			
 			SoundManager.playBeep(board.getAnimalCode(),this);
+			beepState = BEEP_STATE_PREPARE; 
 		}
 		
 		public function onBeepCompleted(obj:Object) : void {
-			if (bPrepare) {
-				bPrepare = false;
-				board.addEventListener(MouseEvent.CLICK, onClick);
-				taskTimer.start();
-				board.go();
-			} else {
-				board.clear();
-				clearTimer.start();
+			switch (beepState) {
+				case BEEP_STATE_PREPARE:
+				
+					board.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+					taskTimer.start();
+					board.go();
+					break;
+				case BEEP_STATE_TOUCH:
+			
+					board.clear();
+					clearTimer.start();
+					break;
 			}
+			
+			beepState = BEEP_STATE_IDLE;
 		}
-		
 
+		
 		private function onTaskTimer(e:TimerEvent) : void {
-			board.removeEventListener(MouseEvent.CLICK, onClick);
+			board.removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 			addChild(feedback);
 			feedback.gotoAndStop(2);
 			
@@ -131,18 +143,19 @@ package com.chatpetz.speed {
 			
 		}
 		
-		private function onClick(e:MouseEvent) : void {
+		private function onMouseDown(e:MouseEvent) : void {
 			if (e.target is CardHolder) {
 				addChild(feedback);
 				
+				beepState = BEEP_STATE_TOUCH;
 				//interfaceBar.clock.stop();
 				if (board.testAnimal(e.target as CardHolder)) {
 					feedback.gotoAndStop(1);
 					successes++;
 					score+=100;
 					updateDisplay();
+					
 					SoundManager.chooseAndPlayBeep(rightAnswers,this);
-					SoundManager.playSound(SpeedSounds.CARDS_WRONG_SOUND)
 					setStars(successes*3);
 				} else {
 					feedback.gotoAndStop(3);
@@ -151,7 +164,7 @@ package com.chatpetz.speed {
 					
 				}
 				
-				board.removeEventListener(MouseEvent.CLICK, onClick);
+				board.removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 				
 				taskTimer.stop();
 				
@@ -194,19 +207,19 @@ package com.chatpetz.speed {
 		public function help() : void {
 			var instruction:Instruction = new Instruction();
 			addChild(instruction);
-			instruction.bPlay.addEventListener(MouseEvent.CLICK,helpDone);
+			instruction.bPlay.addEventListener(MouseEvent.MOUSE_DOWN,helpDone);
 		}
 		
 		private function helpDone(e:Event) : void {
 			var instruction:Instruction  = (e.target as SimpleButton).parent as Instruction;
-			instruction.bPlay.removeEventListener(MouseEvent.CLICK,start);
+			instruction.bPlay.removeEventListener(MouseEvent.MOUSE_DOWN,start);
 			removeChild(instruction); 
 			
 			e.stopImmediatePropagation();
 		}
 		
 		public function exit() : void {
-			
+			beepState = BEEP_STATE_IDLE;
 			taskTimer.reset();
 			clearTimer.reset();
 			timer.reset();

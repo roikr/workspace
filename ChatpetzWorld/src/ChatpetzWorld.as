@@ -319,6 +319,9 @@ package {
 		 */
 		public function loadMap(sfsRoomToJoin:String):void
 		{
+			SoundManager.stopAllSounds();
+			SoundManager.playSound(WorldSounds.DIP_WHITE_TRANS_SOUND);
+			
 			if (container.spMCContainer.numChildren)
 				container.spMCContainer.removeChildAt(0);
 			
@@ -459,7 +462,7 @@ package {
 			if (container.spMCContainer.numChildren)
 				container.spMCContainer.removeChildAt(0);
 			
-			SoundManager.stopAllSounds();
+			
 			logTrace("OpenSpace.MAP_RENDERED event received");
 			openSpace.mapScrollingEnabled = false;
 			//if (viewStack.selectedChild!=openSpaceCanvas)
@@ -476,6 +479,7 @@ package {
 			
 			switch (currentMap) {
 				case "Home":
+					SoundManager.playMusic(WorldSounds.MOONBASE_MUSIC);
 					code = ChatpetzCodes.WORLD_ENTER_ROOM;
 					break;
 				case "Moon":
@@ -648,10 +652,14 @@ package {
 				switch (trigger.target) {
 					case "door":
 					case "shop":
-						SoundManager.playSound(WorldSounds.DOOR_OPEN_SOUND);
+						SoundManager.playSound(WorldSounds.DOOR_OPEN_SOUND,null,false,false,0.3);
 						break;
 					case "cloud":
-						SoundManager.playSound(WorldSounds.CLOUDCREAM_ON_SOUND);
+						SoundManager.playSound(WorldSounds.CLOUDCREAM_ON_SOUND,null,false,false,0.3);
+						break;
+					case "freezer":
+						SoundManager.playSound(WorldSounds.FRIDGE_OPEN_SOUND);
+						SoundManager.playSound(WorldSounds.FRIDGE_LOOP_SOUND,null,false,true);
 						break;
 				}
 				
@@ -672,11 +680,14 @@ package {
 				switch (trigger.target) {
 					case "door":
 					case "shop":
-						SoundManager.playSound(WorldSounds.DOOR_CLOSE_SOUND);
+						SoundManager.playSound(WorldSounds.DOOR_CLOSE_SOUND,null,false,false,0.3);
 						break;
 					case "cloud":
-						SoundManager.playSound(WorldSounds.CLOUDCREAM_OFF_SOUND);
+						SoundManager.playSound(WorldSounds.CLOUDCREAM_OFF_SOUND,null,false,false,0.3);
 						break;
+					case "freezer":
+						SoundManager.stopSound(WorldSounds.FRIDGE_LOOP_SOUND);
+						SoundManager.playSound(WorldSounds.FRIDGE_CLOSE_SOUND);
 				}
 				
 			}

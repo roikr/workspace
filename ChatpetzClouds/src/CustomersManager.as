@@ -31,6 +31,10 @@ package {
 		
 		public function stop() : void {
 			timer.stop();
+			for (var i:int=0;i<positions.length;i++)
+				if (positions[i].customer) {
+					positions[i].customer.stop();
+				}
 		}
 		
 		private function onTimer(e:Event) : void {

@@ -91,7 +91,7 @@ package {
 			if (answer) {
 				corrects+=1;
 				score+=10;
-				setStars(corrects);
+				setStars(corrects*3);
 			}
 			
 			/*

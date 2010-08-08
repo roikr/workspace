@@ -20,6 +20,7 @@ package {
 			var ref:Class = getDefinitionByName(movie) as Class;
 			addChild(mc = new ref() as MovieClip);
 			mc.addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			SoundManager.stopAllSounds();
 			
 		}
 		

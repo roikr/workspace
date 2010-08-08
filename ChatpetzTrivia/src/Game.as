@@ -7,10 +7,11 @@ package {
 	 */
 	public class Game {
 		
-		private static const GAME_STATE_ANSWER:int=0;
-		private static const GAME_STATE_HELP:int=1;
+		private static const BEEP_STATE_IDLE:int = 0;
+		private static const BEEP_STATE_ANSWER:int=1;
+		private static const BEEP_STATE_HELP:int=2;
 		
-		private var gameState:int;
+		private var beepState:int;
 		
 		private var game:GameMC;
 		private var client:ChatpetzTrivia;
@@ -353,7 +354,7 @@ package {
 		}
 		
 		public function open(question:int) : void {
-			
+			beepState = BEEP_STATE_IDLE;
 			
 			var list:XMLList = questions.question;
 			currentQuestion = questions.question[(question-1) % list.length()];
@@ -421,22 +422,24 @@ package {
 				client.updateScore(false);
 			}
 			
-			gameState = GAME_STATE_ANSWER;
+			beepState = BEEP_STATE_ANSWER;
 		}
 		
 		public function onBeepCompleted(obj:Object) : void {
-			switch(gameState) {
-				case GAME_STATE_ANSWER:
+			switch(beepState) {
+				case BEEP_STATE_ANSWER:
 					close();
 					break;
 			}
+			
+			beepState = BEEP_STATE_IDLE;
 		}
-		
+
 		
 		
 		
 		private function onHelp(e:Event) : void {
-			gameState = GAME_STATE_HELP;
+			beepState = BEEP_STATE_HELP;
 			switch(int(currentQuestion.@correct)) {
 				case 0:
 				case 2:
@@ -454,6 +457,7 @@ package {
 		}
 		
 		public function close() : void {
+			beepState = BEEP_STATE_IDLE;
 			currentSound.stop();
 			game.dtBody.text="";
 			game.dtA.text = "";
@@ -461,7 +465,7 @@ package {
 			game.dtC.text = "";
 			game.dtD.text = "";
 			game.gotoAndPlay("close");
-			SoundManager.playSound(TriviaSounds.STONES_OUT_SOUND);
+			//SoundManager.playSound(TriviaSounds.STONES_OUT_SOUND);
 			
 			game.bA.removeEventListener(MouseEvent.MOUSE_DOWN,onAnswer);
 			game.bB.removeEventListener(MouseEvent.MOUSE_DOWN,onAnswer);

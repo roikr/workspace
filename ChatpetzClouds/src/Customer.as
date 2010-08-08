@@ -57,12 +57,11 @@ package {
 		}
 		
 		private function onTimerComplete(e:Event) : void {
-			timer.stop();
 			asset.gotoAndPlay("leave");
 			asset.mcBubble.mcSign.gotoAndPlay("x");
 			SoundManager.playSound(CloudsSounds.COMIC_WRONG);
 			SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_UNSERVED, this)
-			
+			stop();
 			
 		}
 		
@@ -87,6 +86,11 @@ package {
 				return true;	
 			} else
 				return false;
+		}
+		
+		public function stop() : void {
+			timer.stop();
+			asset.removeEventListener(Event.ENTER_FRAME,onEnterFrame);
 		}
 	
 	}

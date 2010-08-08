@@ -16,7 +16,7 @@ package {
 		private static const BEEP_STATE_IDLE:int = 0;
 		private static const BEEP_STATE_TIME_ALERT:int = 1;
 		private static const BEEP_STATE_SERVED:int = 2;
-		private static const BEEP_STATE_DROP:int = 2;
+		private static const BEEP_STATE_DROP:int = 3;
 		private var beepState:int;
 		
 		
@@ -40,6 +40,7 @@ package {
 		
 		public function ChatpetzClouds() {
 			super();
+			trace("ChatpetzClouds loaded")
 		
 			addChild(assets= new ChatpetzCloudsAssets());
 			//assets.mcCloudClip1.buttonMode = true;
@@ -170,6 +171,7 @@ package {
 		
 		
 		public function start(manager:IGameManager) : void {
+			trace("ChatpetzClouds started")
 			gameManager = manager;
 			customersManager = new CustomersManager(this,assets);
 			customersManager.start();
