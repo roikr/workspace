@@ -1,7 +1,6 @@
 package {
-	import flash.display.Shape;
 	import flash.display.Sprite;
-	import flash.filters.BitmapFilter;
+	import flash.display.Stage;
 	import flash.filters.BitmapFilterQuality;
 	import flash.filters.DropShadowFilter;
 	import flash.geom.Matrix;
@@ -11,16 +10,17 @@ package {
 	 */
 	public class TileLayer extends Sprite {
 		
-		private var color:uint;
+		private var _color:uint;
 		private var _shapeNum:uint;
 		private var texture:Sprite;
 		private var _mask:Sprite;
 		private var bBlackNWhite:Boolean;
 		private var xml:XML;
 		
+		
 		private static var shapes:Array = [Shape1,Shape2,Shape3,Shape4,Shape5,Shape6,Shape7,Shape8,Shape9,Shape10,Shape11,Shape12,Shape13,
 			Shape14,Shape15,Shape16,Shape17,Shape18,Shape19,Shape20,Shape21,Shape22,Shape23,Shape24,Shape25,Shape26,Shape27,Shape28,Shape29,Shape30,
-			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
+			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape37,Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
 			
 		private static var unusuals:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
 		
@@ -29,7 +29,7 @@ package {
 			
 			_shapeNum = getRealShapeNum(shapeNum,unusual);
 				
-			this.color = color;
+			_color = color;
 			var ref:Class = shapes[_shapeNum] as Class;
 			var instance:Sprite = new ref();
 			
@@ -40,10 +40,10 @@ package {
 			switch (_shapeNum+1) {
 				case 29:
 				case 30:
-				case 33:
 				case 34:
 				case 35:
 				case 36:
+				case 37:
 					
 					bBlackNWhite = true;
 					texture = instance;
@@ -53,7 +53,7 @@ package {
 				default:
 					bBlackNWhite = false;
 					_mask = instance;
-					texture = new TileTexture(color);
+					texture = new TileTexture(ColorPicker.getColor(color));
 					texture.addChild(_mask);
 					addChild(texture);
 				
@@ -62,11 +62,16 @@ package {
 			
 			texture.mask =  _mask;
 			texture.filters = [new DropShadowFilter(0.5,45,0,1.0,1,1,0.25,BitmapFilterQuality.HIGH)];
+			
+			
+			
 		}
 		
 		public function get shapeNum() : uint {
 			return _shapeNum;
 		}
+		
+		
 		
 		public function get unusual() : int {
 			var res:int = -1;
@@ -81,17 +86,21 @@ package {
 			return res;
 		}
 		
+		public function get color() : uint {
+			return _color;
+		}
 				
-		public function setColor(color:uint) : void {
+		public function set color(color:uint) : void {
 			if (texture && !bBlackNWhite) {
 				removeChild(texture);
-				this.color = color;
-				texture = new TileTexture(color);
+				_color = color;
+				texture = new TileTexture(ColorPicker.getColor(color));
 				addChild(texture);
 				texture.addChild(_mask);
 				texture.mask = _mask;
 				texture.filters = [new DropShadowFilter(1.0)];
 				xml.@color=color;
+				
 			}
 		}
 		
@@ -151,6 +160,7 @@ package {
 		public function encode() : XML {
 			return xml;
 		}
+		
 		
 	}
 }

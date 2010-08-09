@@ -12,7 +12,7 @@ package {
 		[Embed(source='../assets/editor.png')]
         private var EditorPNG:Class;
         private var bitmap:Bitmap = new EditorPNG() ;
-		private var tile:Tile;
+		private var _tile:Tile;
 		private var colorPicker:ColorPicker;
 		private var shapesMenu:ShapesMenu;
 		
@@ -23,19 +23,34 @@ package {
 			
 			addChild(bitmap)
 			
-			//addChild(new TilesMenu(this));
-			addChild(colorPicker = new ColorPicker(this))
+			
+		    addChild(colorPicker = new ColorPicker())
 			addChild(shapesMenu = new ShapesMenu(this))
-			
-			addChild(tile = new Tile());
-			tile.x = 10;
-			tile.y = 10;
-			tile.scale = 0.3;
-			//tile.scaleX = 0.3;
-			//tile.scaleY = 0.3;
+			tile = new Tile();
 			
 			
-			//tileView.x+=240;
+			var sp:Sprite = new Sprite();
+			sp.graphics.beginFill(0xFF0000);
+			sp.graphics.drawRect(0, 0, 0.3*460, 0.3*460);
+			sp.alpha = 0.0;
+			sp.x = 10;
+			sp.y = 10;
+			addChild(sp);
+			sp.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
+			
+			
+			
+			
+		}
+		
+		private function onMouseDown(e:MouseEvent) : void {
+			
+			var layer:TileLayer = _tile.getLayerByPoint(new Point(e.stageX,e.stageY));
+			
+			if (layer) {
+				_tile.applyLayer(layer.shapeNum,colorPicker.color)
+				//trace(layer.shapeNum)
+			}
 		}
 		
 		public function onClient(obj:Object) : void {
@@ -43,24 +58,32 @@ package {
 				//var p:Point = new Point(e.stageX,e.stageY);
 				
 
-				tile.applyLayer(shapesMenu.shape,colorPicker.color);
-			} else if (obj is ColorPicker) {
-				tile.setColor(colorPicker.color)
-			}
+				_tile.applyLayer(shapesMenu.shape,colorPicker.color);
+			} 
+			
+			//else if (obj is ColorPicker) {
+			//	tile.setColor(colorPicker.color)
+			//}
 		}
 		
 		
 		
-		/*
-		public function onTileMenuDown(tileName:String) : void {
-			if (tileView.doesTileExist(tileName))
-				tileView.removeTile(tileName);
-			else
-				tileView.addTile(tileName);
+		
+		public function get tile() : Tile {
+			return _tile;
 		}
-		*/
-		public function cloneCurrentTile() : Sprite {
-			return tile.cloneTile();
+		
+		public function set tile(_tile:Tile) : void {
+			if (this._tile) {
+				this.addChildAt(_tile,getChildIndex(this._tile));
+				removeChild(this._tile);
+			} else
+				addChild(_tile);
+			
+			_tile.x = 10;
+			_tile.y = 10;
+			_tile.scale = 0.3;
+			this._tile = _tile;
 		}
 		
 	}

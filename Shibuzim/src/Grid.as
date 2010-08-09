@@ -1,4 +1,5 @@
 package {
+	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
@@ -11,11 +12,11 @@ package {
 		private var columns:int;
 		private var tileSize:int;
 		private var space:int;
-		private var client:Object;
+		private var client:TilesSimulator;
 		private var xml:XML;
 		private var lastXml:XML;
 		
-		public function Grid(client:Object,tileSize:int,space:int) {
+		public function Grid(client:TilesSimulator,tileSize:int,space:int) {
 			this.client = client;
 			rows = 452 / (tileSize+space);
 			columns = 619 / (tileSize+space);
@@ -100,41 +101,41 @@ package {
 			
 			switch (tool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
-					var tile:Tile = client.cloneCurrentTile();
+					var tile:Tile = client.tile.cloneTile();
 					if (tile) 
 						applyTile(e.target as GridTile,tile)
 					break;
 					
 				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
 				
-					if (client.cloneCurrentTile()) {
+					if (client.tile) {
 						for (var i:int = 0;i<columns;i++) {
 						
 							var p:Point = new Point(i*(tileSize+space),0);
 							p = this.localToGlobal(p);
 							p.y = e.stageY; 
-							applyTile(getGridTileAt(p),client.cloneCurrentTile());
+							applyTile(getGridTileAt(p),client.tile.cloneTile());
 						}
 					}
 					break;
 					
 				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
 				
-					if (client.cloneCurrentTile()) {
+					if (client.tile) {
 						for (var i:int = 0;i<rows;i++) {
 							var p:Point = new Point(0,i*(tileSize+space));
 							p = this.localToGlobal(p);
 							p.x = e.stageX; 
-							applyTile(getGridTileAt(p),client.cloneCurrentTile());
+							applyTile(getGridTileAt(p),client.tile.cloneTile());
 						}
 					}
 					break;
 					
 				case (ToolsMenu.TOOLBAR_GRID_FILLER) :
 				
-					if (client.cloneCurrentTile()) {
+					if (client.tile) {
 						for (var i:int=0;i<numChildren;i++) {
-							applyTile(getChildAt(i) as GridTile,client.cloneCurrentTile());
+							applyTile(getChildAt(i) as GridTile,client.tile.cloneTile());
 						}
 					}
 					break;
@@ -159,6 +160,15 @@ package {
 					//	trace (item.toString());
 					//}
 					break;
+					
+				case ToolsMenu.TOOLBAR_INK :
+					var gridTile:GridTile = (e.target as GridTile);
+					if (gridTile.numChildren)  {
+						client.tile = (gridTile.getChildAt(0) as Tile).cloneTile();
+					}
+					break;
+					
+				
 					
 				
 					

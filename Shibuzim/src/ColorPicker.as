@@ -8,13 +8,13 @@ package {
 	public class ColorPicker extends ColorPickerMC {
 		
 		
-		private var client:Object;
-		private var bitmapData:BitmapData;
+		//private var client:Object;
+		private static var bitmapData:BitmapData;
 		private var _color:uint;
 		
 		
-		public function ColorPicker(client:Object) {
-			this.client = client;
+		public function ColorPicker() {
+			//this.client = client;
 			x = 10; //12 
 			y = 392; //393
 			bitmapData = new BitmapData(this.width,this.height,false);
@@ -43,14 +43,35 @@ package {
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
+			var row:int = e.localY / 14;
+			var column : int = e.localX /14;
 			
-			_color  =bitmapData.getPixel(e.localX,e.localY);	
-			client.onClient(this);
+			_color = 100 + row*10+column;
+			if (_color > 124)
+				_color += 77;
+			
+			trace(_color);
+			
+			//_color  =bitmapData.getPixel(e.localX,e.localY);	
+			//client.onClient(this);
 			//trace(_colorPos);
 		}
 		
 		public function get color () : uint {
+			
+			
 			return _color;
+		}
+		
+		public static function getColor(color:uint) : uint {
+			if (color>124)
+				color-=77;
+			color-=100;
+			
+			var row:int = color / 10;
+			var column : int = color % 10;
+			
+			return bitmapData.getPixel(column*14+5,row*14+5);
 		}
 	}
 }

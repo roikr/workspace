@@ -8,4 +8,5 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/toolbar.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/colors.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/tabs.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/price.swc</AS3Classpath>
 </AS3Classpath>

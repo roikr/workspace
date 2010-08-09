@@ -1,4 +1,5 @@
 package {
+	import flash.events.MouseEvent;
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 
@@ -14,15 +15,17 @@ package {
 		private var tilesGrid:Grid;
 		private var tileEditor:TileEditor;
 		private var toolsMenu:ToolsMenu;
-		
+		private var price:Price;
 		
 		
 		public function TilesSimulator() {
 			addChild(bitmap);
-			addChild(tileEditor=new TileEditor());
+			
 			addChild(tilesGrid = new Grid(this,37,4));
 			addChild(toolsMenu=new ToolsMenu(this))
+			
 			addChild(new Tabs());
+			addChild(tileEditor=new TileEditor());
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
 		}
@@ -37,6 +40,14 @@ package {
 						break;
 					case (ToolsMenu.TOOLBAR_COST) : 
 						trace(tilesGrid.encode().toString());
+						if (!price) {
+							price = new Price();
+							price.x = 860;
+							price.y = 500;
+							price.price = 34;
+							addChild(price);
+							price.addEventListener(MouseEvent.MOUSE_DOWN, onPrice)
+						}
 						break;
 					case (ToolsMenu.TOOLBAR_INVITATION) :
 						
@@ -44,9 +55,20 @@ package {
 				}
 			}
 		}
+		
+		private function onPrice(e:MouseEvent) : void {
+			price.removeEventListener(MouseEvent.MOUSE_DOWN,onPrice);
+			removeChild(price);
+			price = null;
+			
+		}
 
-		public function cloneCurrentTile() : Sprite {
-			return tileEditor.cloneCurrentTile();
+		public function get tile() : Tile {
+			return tileEditor.tile;	
+		}
+		
+		public function set tile(tile:Tile) : void  {
+			tileEditor.tile = tile;
 		}
 		
 		

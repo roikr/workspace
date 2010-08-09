@@ -1,12 +1,12 @@
 package {
 	import flash.display.Sprite;
+	import flash.geom.Point;
 
 	/**
 	 * @author roikr
 	 */
 	public class Tile extends Sprite {
 		
-		private var lastLayer:TileLayer = null;
 		private var _scale : Number = 1;
 		private var xml:XML;
 		
@@ -29,13 +29,11 @@ package {
 			xml = null;
 			var layer:TileLayer = getLayer(shapeNum);
 			if (layer) {
-				removeChild(layer)
-				if (layer == lastLayer) {
-					if (numChildren)
-						lastLayer = getChildAt(0) as TileLayer ;
-					else
-						lastLayer = null;
-				}
+				if (layer.color == color) 
+					removeChild(layer)
+				else
+					layer.color = color;
+				
 			}
 			else {
 				var unusual:int = -1;
@@ -66,7 +64,7 @@ package {
 				for each(num in array) {
 					for (var j:int;j<numChildren;j++) {
 						if (num == (getChildAt(j) as TileLayer).shapeNum) {
-							removeChild(getChildAt(j) as TileLayer);	
+							removeChild(getChildAt(j) as TileLayer)	
 							break;
 						}
 					}
@@ -82,9 +80,9 @@ package {
 						//trace(testLayer.shapeNum,newLayer.shapeNum);
 									
 
-				lastLayer = new TileLayer(shapeNum,color,unusual);	
-				lastLayer.scale = _scale;
-				addChild(lastLayer);
+				var newLayer : TileLayer = new TileLayer(shapeNum,color,unusual);	
+				newLayer.scale = _scale;
+				addChild(newLayer);
 				
 				/*
 				var newLayer:TileLayer = new TileLayer(shapeNum,color);
@@ -104,12 +102,7 @@ package {
 			}
 		}
 		
-		public function setColor(color:uint) : void {
-			if (lastLayer) {
-				lastLayer.setColor(color);
-			}
-		}
-		
+	
 		
 		public function set scale(x:Number) : void {
 			_scale = x;
@@ -150,5 +143,29 @@ package {
 			}
 			return xml;
 		}
+		
+		public function getLayerByPoint(pnt:Point) : TileLayer {
+		
+			for (var i:int = 0;i<numChildren;i++) {
+				
+				var layer:TileLayer = getChildAt(i) as TileLayer;
+				
+				
+				
+				var shape:Sprite = TileLayer.createShape(layer.shapeNum);
+				stage.addChild(shape);	
+				var p:Point = layer.globalToLocal(pnt);
+				var hit:Boolean = shape.hitTestPoint(p.x,p.y,true);
+				stage.removeChild(shape);
+				if (hit)
+					return layer;
+				
+			}
+			return null;
+			
+		}
+		
+		
+		
 	}
 }
