@@ -12,23 +12,31 @@ package {
         private var BackgroundPNG:Class;
         private var bitmap:Bitmap = new BackgroundPNG() ;
 		
-		private var tilesGrid:Grid;
+		private var grids:Array;
+		private var currentGrid:Grid;
 		private var tileEditor:TileEditor;
 		private var toolsMenu:ToolsMenu;
 		private var price:Price;
 		
 		
+		
 		public function TilesSimulator() {
 			addChild(bitmap);
 			
-			addChild(tilesGrid = new Grid(this,37,4));
+			grids = new Array();
+			grids.push(new Grid(this,38,3));
+			grids.push(new Grid(this,27,3));
+			grids.push(new Grid(this,22,2));
+			currentGrid = grids[0] as Grid;
+			addChild(currentGrid );
 			addChild(toolsMenu=new ToolsMenu(this))
 			
-			addChild(new Tabs());
+			addChild(new Tabs(this));
 			addChild(tileEditor=new TileEditor());
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
 		}
+		
 		
 		public function onClient(obj:Object) : void {
 			if (obj is ToolsMenu) {
@@ -36,10 +44,10 @@ package {
 					case ToolsMenu.TOOLBAR_GRID_ERASER:
 					case ToolsMenu.TOOLBAR_GRID_FILLER:
 					case ToolsMenu.TOOLBAR_UNDO:
-						tilesGrid.applyTool(toolsMenu.immediateTool)	
+						currentGrid.applyTool(toolsMenu.immediateTool)	
 						break;
 					case (ToolsMenu.TOOLBAR_COST) : 
-						trace(tilesGrid.encode().toString());
+						trace(currentGrid.encode().toString());
 						if (!price) {
 							price = new Price();
 							price.x = 860;
@@ -53,6 +61,16 @@ package {
 						
 						break;
 				}
+			} else if (obj is Tabs) {
+				var newGrid : Grid = (grids[(obj as Tabs).tab]);
+				if (newGrid!=currentGrid) {
+					var index:int = this.getChildIndex(currentGrid);
+					this.addChildAt(newGrid, index);
+					this.removeChild(currentGrid);
+					currentGrid = newGrid;
+				}
+				
+				
 			}
 		}
 		

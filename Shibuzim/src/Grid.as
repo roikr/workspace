@@ -41,6 +41,8 @@ package {
 			}
 			
 			xml = <grid/>
+			xml.@size = tileSize;
+			xml.@space = space;
 			lastXml = null;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 		}
@@ -204,8 +206,8 @@ package {
 			clear();
 			for each (var item:XML in xml.item ) {
 				var tile:Tile = Tile.decode(item.tile[0]);
-				tile.x = -1;
-				tile.y = -1;
+				//tile.x = -1;
+				//tile.y = -1;
 				tile.scale =  tileSize / 450;
 				var point:Point = new Point(item.@column*(tileSize+space),item.@row*(tileSize+space));
 				point = this.localToGlobal(point);

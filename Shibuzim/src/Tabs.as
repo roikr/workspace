@@ -7,7 +7,12 @@ package {
 	 * @author roikr
 	 */
 	public class Tabs extends TabsMC {
-		public function Tabs() {
+		
+		private var client:Object;
+		private var _tab:int;
+		
+		public function Tabs(client:Object) {
+			this.client = client;
 			y = 548;
 			x = 549;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
@@ -21,16 +26,24 @@ package {
 			
 			tab  = p.x/99;
 			
-			
+			client.onClient(this);
 			
 			
 		}
 		
-		private function set tab(tabNum:int) : void {
+		public function set tab(tabNum:int) : void {
+			
+			tabNum = Math.min(tabNum,2);
+			
 			for (var i:int = 0;i<numChildren;i++ ) {
 				(this.getChildAt(i) as MovieClip).gotoAndStop(1);
 			}
 			(this.getChildAt(2-tabNum) as MovieClip).gotoAndStop(2);
+			_tab = tabNum;
+		}
+		
+		public function get tab() : int {
+			return _tab;
 		}
 	}
 }
