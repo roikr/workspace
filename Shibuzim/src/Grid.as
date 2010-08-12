@@ -52,8 +52,10 @@ package {
 		
 		private function removeTile(gridTile:GridTile) : void {
 			gridTile.removeChildAt(0);
-			
+			//var item:XML = xml.item.(@row==gridTile.y/(tileSize+space) && @column==gridTile.x/(tileSize+space))[0];
+			//trace("item to remove: "+ item);
 			delete xml.item.(@row==gridTile.y/(tileSize+space) && @column==gridTile.x/(tileSize+space))[0];
+			//trace("remain" + xml)
 			
 			//delete xml.item.("@row"==(gridTile.y/(tileSize+space)).toString() && "column"==(gridTile.x/(tileSize+space)).toString())[0]
 			
@@ -87,6 +89,7 @@ package {
 		
 		private function onMouseDown(e:MouseEvent) : void {
 			applyTool(client.currentTool,e);
+			client.onClient(this);
 		}
 			
 		public function applyTool(tool:int,e:MouseEvent = null) : void {
@@ -112,8 +115,8 @@ package {
 				
 					if (client.tile) {
 						for (var i:int = 0;i<columns;i++) {
-						
-							var p:Point = new Point(i*(tileSize+space),0);
+							
+							var p:Point = new Point(i*(tileSize+space)+tileSize/2,tileSize/2);
 							p = this.localToGlobal(p);
 							p.y = e.stageY; 
 							applyTile(getGridTileAt(p),client.tile.cloneTile());
@@ -125,7 +128,7 @@ package {
 				
 					if (client.tile) {
 						for (var i:int = 0;i<rows;i++) {
-							var p:Point = new Point(0,i*(tileSize+space));
+							var p:Point = new Point(tileSize/2,i*(tileSize+space)+tileSize/2);
 							p = this.localToGlobal(p);
 							p.x = e.stageX; 
 							applyTile(getGridTileAt(p),client.tile.cloneTile());
@@ -209,7 +212,7 @@ package {
 				//tile.x = -1;
 				//tile.y = -1;
 				tile.scale =  tileSize / 450;
-				var point:Point = new Point(item.@column*(tileSize+space),item.@row*(tileSize+space));
+				var point:Point = new Point(item.@column*(tileSize+space)+tileSize/2,item.@row*(tileSize+space)+tileSize/2);
 				point = this.localToGlobal(point);
 				var gridTile:GridTile = getGridTileAt(point);
 				gridTile.addChild(tile);

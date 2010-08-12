@@ -37,6 +37,7 @@ package {
 			xml.@color=color;
 			xml.@shape=shapeNum;
 			
+			
 			switch (_shapeNum+1) {
 				case 29:
 				case 30:
@@ -159,6 +160,10 @@ package {
 		
 		public function encode() : XML {
 			return xml;
+		}
+		
+		public function isEqual(layer:TileLayer) : Boolean {
+			return layer.shapeNum == shapeNum && layer.color == color;
 		}
 		
 		

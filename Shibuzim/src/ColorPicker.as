@@ -35,8 +35,8 @@ package {
 			
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			
-			
-			_color  =bitmapData.getPixel(2,2);	
+			_color = 100;
+			//_color  =bitmapData.getPixel(2,2);	
 			//_colorPos = new Point(39,470); // not connected to display list yet
 			
 			

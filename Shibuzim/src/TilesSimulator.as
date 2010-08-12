@@ -24,9 +24,9 @@ package {
 			addChild(bitmap);
 			
 			grids = new Array();
-			grids.push(new Grid(this,38,3));
-			grids.push(new Grid(this,27,3));
 			grids.push(new Grid(this,22,2));
+			grids.push(new Grid(this,27,3));
+			grids.push(new Grid(this,38,3));
 			currentGrid = grids[0] as Grid;
 			addChild(currentGrid );
 			addChild(toolsMenu=new ToolsMenu(this))
@@ -40,6 +40,7 @@ package {
 		
 		public function onClient(obj:Object) : void {
 			if (obj is ToolsMenu) {
+				
 				switch (toolsMenu.immediateTool) {
 					case ToolsMenu.TOOLBAR_GRID_ERASER:
 					case ToolsMenu.TOOLBAR_GRID_FILLER:
@@ -47,21 +48,31 @@ package {
 						currentGrid.applyTool(toolsMenu.immediateTool)	
 						break;
 					case (ToolsMenu.TOOLBAR_COST) : 
-						trace(currentGrid.encode().toString());
+						//trace(currentGrid.encode().toString());
 						if (!price) {
 							price = new Price();
 							price.x = 860;
 							price.y = 500;
-							price.price = 34;
 							addChild(price);
 							price.addEventListener(MouseEvent.MOUSE_DOWN, onPrice)
 						}
 						break;
 					case (ToolsMenu.TOOLBAR_INVITATION) :
-						
+						(new Order(currentGrid.encode())).describe();
+						trace(currentGrid.encode().toString());
 						break;
 				}
-			} else if (obj is Tabs) {
+				
+				if (price) {
+					price.price = (new Order(currentGrid.encode())).price;
+				}
+				
+			} else if (obj is Grid) {
+				if (price) {
+					price.price = (new Order(currentGrid.encode())).price;
+				}
+			}
+			else if (obj is Tabs) {
 				var newGrid : Grid = (grids[(obj as Tabs).tab]);
 				if (newGrid!=currentGrid) {
 					var index:int = this.getChildIndex(currentGrid);

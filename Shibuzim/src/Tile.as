@@ -165,6 +165,20 @@ package {
 			
 		}
 		
+		public function isEqual(tile:Tile) : Boolean {
+			if (tile.numChildren != numChildren)
+				return false;
+				
+			for (var i:int = 0;i<numChildren;i++) {
+				for (var j:int = 0;j<numChildren;j++) {
+					if ((getChildAt(i) as TileLayer).isEqual(tile.getChildAt(j) as TileLayer)) 
+						break;
+				}
+				if (j==numChildren)
+					return false;
+			}
+			return true;
+		}
 		
 		
 	}
