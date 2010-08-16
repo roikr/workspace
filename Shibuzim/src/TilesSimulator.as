@@ -17,6 +17,7 @@ package {
 		private var tileEditor:TileEditor;
 		private var toolsMenu:ToolsMenu;
 		private var price:Price;
+		private var layer:TileLayer;
 		
 		
 		
@@ -27,14 +28,41 @@ package {
 			grids.push(new Grid(this,22,2));
 			grids.push(new Grid(this,27,3));
 			grids.push(new Grid(this,38,3));
-			currentGrid = grids[0] as Grid;
+			currentGrid = grids[2] as Grid;
 			addChild(currentGrid );
 			addChild(toolsMenu=new ToolsMenu(this))
 			
 			addChild(new Tabs(this));
-			addChild(tileEditor=new TileEditor());
+			addChild(tileEditor=new TileEditor(this));
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
+			stage.addEventListener(MouseEvent.MOUSE_UP,onMouseUp)
+			
+		}
+		
+		public function onMouseUp(e:MouseEvent) : void {
+			//trace(e.target,e.currentTarget)
+			currentGrid.resetGrid();
+			if (layer) {
+				stopDragLayer(e.target);
+			}
+		}
+		
+		public function startDragLayer(layer:TileLayer) : void {
+			this.layer=layer;
+			layer.scale = 0.3;
+			addChild(layer);
+			layer.x = stage.mouseX-460*0.3/2;
+			layer.y = stage.mouseY-460*0.3/2;
+			layer.startDrag();
+		}
+		
+		public function stopDragLayer(obj:Object) : void {
+			if (obj is EditorPane || obj is ShapesPane) {
+				tileEditor.tile.applyLayer(layer.shapeNum,layer.color);
+			}
+			removeChild(layer);
+			layer=null;
 		}
 		
 		
@@ -80,8 +108,8 @@ package {
 					this.removeChild(currentGrid);
 					currentGrid = newGrid;
 				}
-				
-				
+			} else if (obj is TileLayer) {
+				startDragLayer(obj as TileLayer);
 			}
 		}
 		
@@ -105,5 +133,9 @@ package {
 		public function get currentTool() : int {
 			return toolsMenu.selectedTool;
 		}
+		
+		
+		
+		
 	}
 }

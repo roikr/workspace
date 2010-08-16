@@ -15,9 +15,11 @@ package {
 		private var _tile:Tile;
 		private var colorPicker:ColorPicker;
 		private var shapesMenu:ShapesMenu;
+		private var client:Object;
 		
 		
-		public function TileEditor() {
+		public function TileEditor(client:Object) {
+			this.client = client;
 			x = 20;
 			y = 75;
 			
@@ -29,12 +31,8 @@ package {
 			tile = new Tile();
 			
 			
-			var sp:Sprite = new Sprite();
-			sp.graphics.beginFill(0xFF0000);
-			sp.graphics.drawRect(0, 0, 0.3*460, 0.3*460);
-			sp.alpha = 0.0;
-			sp.x = 10;
-			sp.y = 10;
+			var sp:EditorPane = new EditorPane();
+			
 			addChild(sp);
 			sp.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
 			
@@ -53,12 +51,25 @@ package {
 			}
 		}
 		
+		
+		
 		public function onClient(obj:Object) : void {
 			if (obj is ShapesMenu) {
 				//var p:Point = new Point(e.stageX,e.stageY);
 				
-
-				_tile.applyLayer(shapesMenu.shape,colorPicker.color);
+				client.onClient(new TileLayer(shapesMenu.shape,colorPicker.color));
+				/*
+				switch(shapesMenu.eventType) {
+					case MouseEvent.CLICK:
+						_tile.applyLayer(shapesMenu.shape,colorPicker.color);
+						break;
+					case MouseEvent.MOUSE_DOWN:
+						client.onClient(new TileLayer(shapesMenu.shape,colorPicker.color));
+						break;
+				}
+				 * 
+				 */
+				
 			} 
 			
 			//else if (obj is ColorPicker) {

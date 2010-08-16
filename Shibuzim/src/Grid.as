@@ -1,5 +1,5 @@
 package {
-	import flash.display.DisplayObjectContainer;
+	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
@@ -15,16 +15,22 @@ package {
 		private var client:TilesSimulator;
 		private var xml:XML;
 		private var lastXml:XML;
+		private var _x:Number;
+		private var _y:Number;
+		
 		
 		public function Grid(client:TilesSimulator,tileSize:int,space:int) {
+			
 			this.client = client;
 			rows = 452 / (tileSize+space);
 			columns = 619 / (tileSize+space);
 			this.tileSize = tileSize;
 			this.space = space;
 			
-			x = 209;
-			y = 75 + (473 - (rows*(tileSize+space)-space))/2;
+			x=_x = 209;
+			y=_y = 75 + (473 - (rows*(tileSize+space)-space))/2;
+			
+			
 			
 			for (var i:int=0;i<rows;i++) {
 				for (var j:int=0;j<columns;j++) {
@@ -40,12 +46,20 @@ package {
 				}
 			}
 			
+			var mask:Shape = new Shape();
+			mask.graphics.beginFill(0x000000);
+			mask.graphics.drawRect(x, y, width, height)
+			this.mask = mask;
+			
 			xml = <grid/>
 			xml.@size = tileSize;
 			xml.@space = space;
 			lastXml = null;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
+			
+			
 		}
+		
 		
 		
 		
@@ -90,6 +104,15 @@ package {
 		private function onMouseDown(e:MouseEvent) : void {
 			applyTool(client.currentTool,e);
 			client.onClient(this);
+		}
+		
+		public function resetGrid() : void {
+			if (client.currentTool == ToolsMenu.TOOLBAR_MAGNIFIER) {
+				x = _x;
+				y = _y;
+				scaleX = 1;
+				scaleY = 1;
+			}
 		}
 			
 		public function applyTool(tool:int,e:MouseEvent = null) : void {
@@ -164,6 +187,19 @@ package {
 					//for each (var item:XML in lastXml ) {
 					//	trace (item.toString());
 					//}
+				case ToolsMenu.TOOLBAR_MAGNIFIER:
+					var p:Point = new Point(e.stageX,e.stageY);
+					var lp = this.globalToLocal(p);
+					
+					
+					scaleX = 460*0.3/tileSize;
+					scaleY = 460*0.3/tileSize;
+					
+					var gp:Point = this.localToGlobal(lp);
+					//trace (p,gp)
+					
+					x=_x+(p.x-gp.x);
+					y=_y+(p.y-gp.y);
 					break;
 					
 				case ToolsMenu.TOOLBAR_INK :

@@ -16,7 +16,7 @@ package {
 			y = 548;
 			x = 549;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
-			tab = 0;
+			tab = 2;
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
