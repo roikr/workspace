@@ -10,14 +10,14 @@ package {
 		
 		
 		public static const TOOLBAR_CURSOR:int = 0;
-		public static const TOOLBAR_MAGNIFIER:int = 1;
-		public static const TOOLBAR_INK: int = 2;
-		public static const TOOLBAR_TILE_ERASER:int = 3;
-		public static const TOOLBAR_GRID_FILLER:int = 4;
-		public static const TOOLBAR_GRID_ERASER:int = 5;
-		public static const TOOLBAR_ROW_FILLER:int = 6;
-		public static const TOOLBAR_COLUMN_FILLER:int = 7;
-		public static const TOOLBAR_UNDO:int = 8;
+		public static const TOOLBAR_ROW_FILLER:int = 1;
+		public static const TOOLBAR_COLUMN_FILLER:int = 2;
+		public static const TOOLBAR_GRID_FILLER:int = 3;
+		public static const TOOLBAR_INK: int = 4;
+		public static const TOOLBAR_TILE_ERASER:int = 5;
+		public static const TOOLBAR_GRID_ERASER:int = 6;
+		public static const TOOLBAR_UNDO:int = 7;
+		public static const TOOLBAR_MAGNIFIER:int = 8;
 		public static const TOOLBAR_COST:int = 9;
 		public static const TOOLBAR_INVITATION:int = 10;
 		

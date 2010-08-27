@@ -107,6 +107,10 @@ package {
 					this.addChildAt(newGrid, index);
 					this.removeChild(currentGrid);
 					currentGrid = newGrid;
+					
+					if (price) {
+						price.price = (new Order(currentGrid.encode())).price;
+					}
 				}
 			} else if (obj is TileLayer) {
 				startDragLayer(obj as TileLayer);
