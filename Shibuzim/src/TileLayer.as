@@ -12,6 +12,7 @@ package {
 		
 		private var _color:uint;
 		private var _shapeNum:uint;
+		private var _alternative:uint;
 		private var texture:Sprite;
 		private var _mask:Sprite;
 		private var bBlackNWhite:Boolean;
@@ -20,22 +21,27 @@ package {
 		
 		private static var shapes:Array = [Shape1,Shape2,Shape3,Shape4,Shape5,Shape6,Shape7,Shape8,Shape9,Shape10,Shape11,Shape12,Shape13,
 			Shape14,Shape15,Shape16,Shape17,Shape18,Shape19,Shape20,Shape21,Shape22,Shape23,Shape24,Shape25,Shape26,Shape27,Shape28,Shape29,Shape30,
-			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape37,Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
+			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape37];
 			
-		private static var unusuals:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
+		private static var alternatives : Array = [Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
+			
+		private static var alternativesNames:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
 		
 		
-		public function TileLayer(shapeNum:uint,color:uint = 0,unusual:int = -1) {
+		public function TileLayer(shapeNum:uint,color:uint = 0,alternative:uint = 0) {
 			
-			_shapeNum = getRealShapeNum(shapeNum,unusual);
+			_shapeNum = shapeNum;
+			_alternative = alternative;
 				
 			_color = color;
-			var ref:Class = shapes[_shapeNum] as Class;
+			var ref:Class = getShapeClass(shapeNum,alternative);
 			var instance:Sprite = new ref();
 			
 			xml=<layer/>
 			xml.@color=color;
 			xml.@shape=shapeNum;
+			if (_alternative)
+				xml.@alt=_alternative;
 			
 			
 			switch (_shapeNum+1) {
@@ -64,28 +70,9 @@ package {
 			texture.mask =  _mask;
 			texture.filters = [new DropShadowFilter(0.5,45,0,1.0,1,1,0.25,BitmapFilterQuality.HIGH)];
 			
-			
-			
-		}
-		
-		public function get shapeNum() : uint {
-			return _shapeNum;
 		}
 		
 		
-		
-		public function get unusual() : int {
-			var res:int = -1;
-			switch (shapeNum+1) {
-				case 8:
-				case 9:
-					res = shapeNum;
-					break;
-				default:
-					break;
-			}
-			return res;
-		}
 		
 		public function get color() : uint {
 			return _color;
@@ -106,7 +93,7 @@ package {
 		}
 		
 		public function cloneLayer() : TileLayer {
-			return new TileLayer(_shapeNum,color);
+			return new TileLayer(_shapeNum,color,_alternative);
 		}
 		
 		
@@ -126,7 +113,34 @@ package {
 		}
 		
 	
+		private static function getShapeClass(shapeNum:uint,alternative:uint) : Class {
+			if (alternative) {
+				switch (shapeNum+1) {
+			 		case 15:
+			 		case 16:
+			 		case 17:
+			 		case 25:
+						var name:String = "Shape"+(shapeNum+1).toString()+"_"+( alternative+1).toString();
+						var index:int = alternativesNames.indexOf(name);
+						trace("alternative: ",name);
+						return alternatives[index] as Class;
+						break;
+				}
+			}
+			
+			trace("shape: ",shapeNum);
+			return shapes[shapeNum];
+		}
 		
+		public function get shapeNum() : uint {
+			return _shapeNum;
+		}
+		
+		public static function isAlternative(shapeNum:uint) : Boolean {
+			return shapeNum+1 ==8 || shapeNum+1 == 9 ;
+		}
+		
+		/*
 		private static function getRealShapeNum(shapeNum:uint,unusual:int) : int {
 			 var _shapeNum:int = shapeNum;
 			 if (unusual != -1) {
@@ -145,16 +159,25 @@ package {
 				
 			}
 			return _shapeNum;
+		}*/
+		
+		public static function createShape(shapeNum:uint,alternative:uint) : Sprite {
+			var ref:Class = getShapeClass(shapeNum,alternative);
+			return new  ref as Sprite;
 		}
 		
-		
+		/*
 		public static function createShape(shapeNum:uint,unusual:int=-1) : Sprite {
 			var ref:Class = shapes[getRealShapeNum(shapeNum,unusual)] as Class;
 			return new ref();
 		}
+		 * 
+		 */
 		
 		public static function decode(xml:XML) : TileLayer {
-			return new TileLayer(xml.@shape,xml.@color);
+			var alt:uint = xml.hasOwnProperty("@alt") ? xml.@alt : 0;
+			trace("decode: "+alt);
+			return new TileLayer(xml.@shape,xml.@color,alt);
 			
 		}
 		
@@ -164,6 +187,10 @@ package {
 		
 		public function isEqual(layer:TileLayer) : Boolean {
 			return layer.shapeNum == shapeNum && layer.color == color;
+		}
+		
+		public function hasSameShape(layer:TileLayer) : Boolean {
+			return layer.shapeNum == shapeNum;
 		}
 		
 		

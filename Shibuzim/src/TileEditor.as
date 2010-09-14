@@ -46,7 +46,7 @@ package {
 			var layer:TileLayer = _tile.getLayerByPoint(new Point(e.stageX,e.stageY));
 			
 			if (layer) {
-				_tile.applyLayer(layer.shapeNum,colorPicker.color)
+				_tile.applyLayer(layer,colorPicker.color)
 				//trace(layer.shapeNum)
 			}
 		}

@@ -1,7 +1,6 @@
 package {
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
-	import flash.geom.Point;
 
 	/**
 	 * @author roikr
@@ -10,9 +9,12 @@ package {
 		
 		public var tile:Tile ;
 		public function TileTest() {
+			
+			var picker:ColorPicker = new ColorPicker();
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			tile = new Tile();
-			tile.applyLayer(0,0x3355AA)
+			var layer:TileLayer = new TileLayer(0, 0,0);
+			tile.applyLayer(layer,0x3355AA)
 			addChild(tile);
 			x = 50;
 			y = 0;

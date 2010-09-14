@@ -184,6 +184,7 @@ package {
 						decode(lastXml);
 						lastXml = null;
 					}
+					break;
 					//for each (var item:XML in lastXml ) {
 					//	trace (item.toString());
 					//}

@@ -9,25 +9,37 @@ package {
 		
 		private var _scale : Number = 1;
 		private var xml:XML;
+		private var _alternative: uint;
 		
 		public function Tile() {
 			mouseChildren = false;
-			
+			_alternative = 0;
 		}
 		
-		private function getLayer(shapeNum:uint) : TileLayer {
+		private function getLayer(tileLayer:TileLayer) : TileLayer {
 			for (var i:int = 0;i<numChildren;i++) {
 				var layer:TileLayer = getChildAt(i) as TileLayer;
-				if (layer.shapeNum == shapeNum)
+				if (layer.hasSameShape(tileLayer))
 					return  layer
 			}
 			
 			return null
 		}
 		
-		public function applyLayer(shapeNum:uint,color:uint = 0) : void {
+		private function updateAlternative() : void {
+			_alternative = 0;
+			for (var i:int=0;i<numChildren;i++) {
+					if (TileLayer.isAlternative(((getChildAt(i) as TileLayer).shapeNum)))
+						_alternative = (getChildAt(i) as TileLayer).shapeNum;
+					if (_alternative)
+						break;
+				}
+		}
+		
+		public function applyLayer(tileLayer:TileLayer,color:uint = 0) : void {
 			xml = null;
-			var layer:TileLayer = getLayer(shapeNum);
+			var shapeNum:uint = tileLayer.shapeNum;
+			var layer:TileLayer = getLayer(tileLayer);
 			if (layer) {
 				if (layer.color == color) 
 					removeChild(layer)
@@ -36,16 +48,14 @@ package {
 				
 			}
 			else {
-				var unusual:int = -1;
-				for (i=0;i<numChildren;i++) {
-					unusual = (getChildAt(i) as TileLayer).unusual;
-					if (unusual!=-1)
-						break;
-				}
+				
+				
+				
+				updateAlternative();
 				
 				
 				var test:Sprite = new Sprite();
-				var newShape:Sprite = TileLayer.createShape(shapeNum,unusual);
+				var newShape:Sprite = TileLayer.createShape(shapeNum,_alternative);
 				test.addChild(newShape);
 				var i:int;
 				var num:int;
@@ -54,7 +64,7 @@ package {
 				for (i=0;i<numChildren;i++) {
 					
 					num = (getChildAt(i) as TileLayer).shapeNum;
-					var shape:Sprite = TileLayer.createShape(num);
+					var shape:Sprite = TileLayer.createShape(num,_alternative);
 					test.addChild(shape);
 					if (RKUtilities.hitTest(shape,newShape)) 
 						array.push(num);
@@ -70,17 +80,13 @@ package {
 					}
 				}
 				
-				for (i=0;i<numChildren;i++) {
-					unusual = (getChildAt(i) as TileLayer).unusual;
-					if (unusual!=-1)
-						break;
-				}
-					
+				updateAlternative();
+				
 				
 						//trace(testLayer.shapeNum,newLayer.shapeNum);
 									
 
-				var newLayer : TileLayer = new TileLayer(shapeNum,color,unusual);	
+				var newLayer : TileLayer = new TileLayer(shapeNum,color,_alternative);	
 				newLayer.scale = _scale;
 				addChild(newLayer);
 				
@@ -115,7 +121,8 @@ package {
 			var tile:Tile = null;
 			if (numChildren) {
 				tile = new Tile();
-				for (var i:int = 0;i<numChildren;i++) {
+				for (var i : int = 0;i < numChildren;i++) {
+					tile._alternative = this._alternative;
 					tile.addChild((getChildAt(i) as TileLayer).cloneLayer())
 				}
 			}
@@ -123,11 +130,15 @@ package {
 		}
 		
 		public static function decode(xml:XML) : Tile {
-			var list:XMLList = xml.layer;
+			var list : XMLList = xml.layer;
+			
 			var tile:Tile = new Tile();
+			tile._alternative = 0;
 			for each(var layer:XML in list) {
-				tile.addChild(TileLayer.decode(layer));
-				
+				var tileLayer:TileLayer = TileLayer.decode(layer);
+				tile.addChild(tileLayer);
+				if (!tile._alternative && TileLayer.isAlternative(tileLayer.shapeNum))
+					tile._alternative = tileLayer.shapeNum;
 			}
 			
 			return tile;
@@ -149,10 +160,8 @@ package {
 			for (var i:int = 0;i<numChildren;i++) {
 				
 				var layer:TileLayer = getChildAt(i) as TileLayer;
-				
-				
-				
-				var shape:Sprite = TileLayer.createShape(layer.shapeNum);
+					
+				var shape:Sprite = TileLayer.createShape(layer.shapeNum,0);
 				stage.addChild(shape);	
 				var p:Point = layer.globalToLocal(pnt);
 				var hit:Boolean = shape.hitTestPoint(p.x,p.y,true);
