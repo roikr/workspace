@@ -1,6 +1,7 @@
 package {
 	import flash.display.BitmapData;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 
 	/**
 	 * @author roikr
@@ -39,7 +40,7 @@ package {
 			//_color  =bitmapData.getPixel(2,2);	
 			//_colorPos = new Point(39,470); // not connected to display list yet
 			
-			
+			new SmartTooltip(this);
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
@@ -72,6 +73,20 @@ package {
 			var column : int = color % 10;
 			
 			return bitmapData.getPixel(column*14+5,row*14+5);
+		}
+		
+		public function getTooltipText(pnt:Point) : String {
+			pnt = globalToLocal(pnt);
+			
+			
+			var row:int = pnt.y / 14;
+			var column : int = pnt.x /14;
+			
+			var color:int = 100 + row*10+column;
+			if (color > 124)
+				color += 77;
+				
+			return color.toString(); 
 		}
 	}
 }

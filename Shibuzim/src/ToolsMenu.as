@@ -35,7 +35,7 @@ package {
 			x=856;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			tool = 0;
-			
+			new SmartTooltip(this);
 		}
 		
 		private function onMouseDown(e:MouseEvent) : void {
@@ -83,6 +83,50 @@ package {
 		
 		public function get immediateTool() : int {
 			return _immediateTool;
+		}
+		
+		public function getTooltipText(pnt:Point) : String {
+			pnt = globalToLocal(pnt);
+			var str:String;
+			var tool:int = (pnt.y-3) / 28;
+			
+			switch ( tool) {
+				case ToolsMenu.TOOLBAR_CURSOR:
+					str= 'בחירה'
+					break;
+				case ToolsMenu.TOOLBAR_ROW_FILLER :
+					str= 'מלוי שורה'
+					break;
+				case ToolsMenu.TOOLBAR_COLUMN_FILLER :
+					str= 'מלוי טור'
+					break;
+				case ToolsMenu.TOOLBAR_TILE_ERASER : 
+					str= 'מחיקת אריח'
+					break;
+				case ToolsMenu.TOOLBAR_INK:
+					str= 'מלוי שורה'
+					break;
+				case ToolsMenu.TOOLBAR_MAGNIFIER:
+					str= 'הגדלה'
+					break;
+				case ToolsMenu.TOOLBAR_GRID_FILLER :
+					str= 'מלוי משטח'
+					break;
+				case ToolsMenu.TOOLBAR_GRID_ERASER :
+					str= 'מחיקת משטח'
+					break;
+				case ToolsMenu.TOOLBAR_COST:
+					str= 'מחיר'
+					break;
+				case ToolsMenu.TOOLBAR_UNDO:
+					str= 'ביטול פעולה אחרונה'
+					break;
+				case ToolsMenu.TOOLBAR_INVITATION:
+					str = 'שלח הזמנה'
+					break;
+				
+			}
+			return str;
 		}
 		
 	}
