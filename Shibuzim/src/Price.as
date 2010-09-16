@@ -1,5 +1,4 @@
 package {
-	import flash.events.MouseEvent;
 
 	/**
 	 * @author roikr
@@ -10,7 +9,7 @@ package {
 		}
 		
 		public function set price(_price:uint) : void {
-			this.dtPrice.text = _price.toString(); 
+			this.dtPrice.text = _price.toString() + ' ש"ח כולל מע"מ'; 
 		}
 		
 		
