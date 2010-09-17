@@ -104,7 +104,7 @@ package {
 					str= 'מחיקת אריח'
 					break;
 				case ToolsMenu.TOOLBAR_INK:
-					str= 'מלוי שורה'
+					str= 'בחירת אריח'
 					break;
 				case ToolsMenu.TOOLBAR_MAGNIFIER:
 					str= 'הגדלה'
