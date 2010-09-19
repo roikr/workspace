@@ -9,7 +9,7 @@ package {
 	 * @author roikr
 	 */
 	public class TileLayer extends Sprite {
-		
+				
 		private var _color:uint;
 		private var _shapeNum:uint;
 		private var _alternative:uint;
@@ -191,6 +191,85 @@ package {
 		
 		public function hasSameShape(layer:TileLayer) : Boolean {
 			return layer.shapeNum == shapeNum;
+		}
+		
+		public static function canContain(shapeNum:uint) : Boolean {
+			return shapeNum+1 < 15;
+		}
+		
+		public function canContain(shapeNum:uint) : Boolean {
+			switch (this.shapeNum+1) {
+				case 1:
+					switch (shapeNum+1) {
+						case 18:
+						case 19:
+						case 20:
+						case 21:
+						case 28:
+							return true;
+							break;
+						
+					}
+					break;
+				case 2: 
+					switch (shapeNum+1) {
+						case 22:
+						case 27:
+						case 29:
+						case 34:
+						case 36:
+							return true;
+							break;
+										
+					}
+					break;
+				case 3: 
+				case 10:
+				case 20:
+					switch (shapeNum+1) {
+						case 23:
+						case 26:
+						case 30:
+						case 35:
+						case 37:
+							return true;
+							break;		
+					}
+					break;
+				case 4:
+				case 12:
+				case 14:
+				case 16:
+				case 19:
+					return shapeNum+1 == 24 
+						
+					break;
+				case 5:
+				case 13:
+				case 17:
+				case 18:
+				
+					return  shapeNum+1 == 31 || shapeNum+1 == 32 || shapeNum+1 == 33
+				
+					break;
+				
+				case 7:
+				case 8:
+				case 9:
+					switch (shapeNum+1) {
+						case 15:
+						case 16:
+						case 17:
+						case 25:
+							return true;
+							break;
+					}
+					break;
+				
+					
+			}
+
+			return false;
 		}
 		
 		

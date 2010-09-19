@@ -26,7 +26,7 @@ package {
 			
 			this.target = target;
 			
-			timer  = new Timer(1000,1);
+			timer  = new Timer(500,1);
 			timer.addEventListener(TimerEvent.TIMER,onTimer);
 			
 			//var fmt:TextFormat = new TextFormat();		

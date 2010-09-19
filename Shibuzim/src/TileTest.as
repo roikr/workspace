@@ -13,8 +13,8 @@ package {
 			var picker:ColorPicker = new ColorPicker();
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 			tile = new Tile();
-			var layer:TileLayer = new TileLayer(0, 0,0);
-			tile.applyLayer(layer,0x3355AA)
+			//var layer:TileLayer = new TileLayer(0, 0,0);
+			tile.addLayer(0,0x3355AA)
 			addChild(tile);
 			x = 50;
 			y = 0;

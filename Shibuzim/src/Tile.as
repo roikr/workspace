@@ -16,6 +16,7 @@ package {
 			_alternative = 0;
 		}
 		
+		
 		private function getLayer(tileLayer:TileLayer) : TileLayer {
 			for (var i:int = 0;i<numChildren;i++) {
 				var layer:TileLayer = getChildAt(i) as TileLayer;
@@ -36,9 +37,105 @@ package {
 				}
 		}
 		
-		public function applyLayer(tileLayer:TileLayer,color:uint = 0) : void {
+		
+		
+		
+		
+		
+		
+		public function addLayer(shapeNum:uint,color:uint) : void {
+			
+			
+			xml = null;
+			
+			var i:int;
+			for (i = numChildren-1 ; i>=0 ;i--) {
+				if ((getChildAt(i) as TileLayer).canContain(shapeNum)) {
+					while (numChildren > i+1)
+						removeChildAt(numChildren-1);
+				
+					var layer:TileLayer = new TileLayer(shapeNum,color,_alternative);
+					layer.scale = _scale;
+					addChild(layer);
+					return;
+				}
+			}
+			
+			
+				
+			if (TileLayer.canContain(shapeNum)) {
+				while (numChildren )
+					removeChildAt(0);
+					
+				var layer:TileLayer = new TileLayer(shapeNum,color,_alternative);
+				layer.scale = _scale
+				_alternative = TileLayer.isAlternative(shapeNum) ? shapeNum : 0
+				addChild(layer);
+			}
+				
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+/*	
+		public function addLayer(tileLayer:TileLayer,color:uint) : void {
+			
 			xml = null;
 			var shapeNum:uint = tileLayer.shapeNum;
+
+			if (numChildren && TileLayer.size(tileLayer.shapeNum) == TileLayer.BIG_SHAPE) {
+				while (numChildren)
+					removeChildAt(0)
+			}
+				
+			
+			updateAlternative();
+			
+			
+			var test:Sprite = new Sprite();
+			var newShape:Sprite = TileLayer.createShape(shapeNum,_alternative);
+			test.addChild(newShape);
+			var i:int;
+			var num:int;
+			var array:Array = new Array();
+			
+			for (i=0;i<numChildren;i++) {
+				
+				num = (getChildAt(i) as TileLayer).shapeNum;
+				var shape:Sprite = TileLayer.createShape(num,_alternative);
+				test.addChild(shape);
+				if (RKUtilities.hitTest(shape,newShape)) 
+					array.push(num);
+				test.removeChild(shape);
+			}
+			
+			for each(num in array) {
+				for (var j:int;j<numChildren;j++) {
+					if (num == (getChildAt(j) as TileLayer).shapeNum) {
+						removeChild(getChildAt(j) as TileLayer)	
+						break;
+					}
+				}
+			}
+			
+			updateAlternative();
+			
+			var newLayer : TileLayer = new TileLayer(shapeNum,color,_alternative);	
+			newLayer.scale = _scale;
+			addChild(newLayer);
+			
+		}
+		 * 
+		 */
+		
+		public function updateLayer(tileLayer:TileLayer,color:uint) : void {
+			xml = null;
+			
 			var layer:TileLayer = getLayer(tileLayer);
 			if (layer) {
 				if (layer.color == color) 
@@ -47,67 +144,7 @@ package {
 					layer.color = color;
 				
 			}
-			else {
-				
-				
-				
-				updateAlternative();
-				
-				
-				var test:Sprite = new Sprite();
-				var newShape:Sprite = TileLayer.createShape(shapeNum,_alternative);
-				test.addChild(newShape);
-				var i:int;
-				var num:int;
-				var array:Array = new Array();
-				
-				for (i=0;i<numChildren;i++) {
-					
-					num = (getChildAt(i) as TileLayer).shapeNum;
-					var shape:Sprite = TileLayer.createShape(num,_alternative);
-					test.addChild(shape);
-					if (RKUtilities.hitTest(shape,newShape)) 
-						array.push(num);
-					test.removeChild(shape);
-				}
-				
-				for each(num in array) {
-					for (var j:int;j<numChildren;j++) {
-						if (num == (getChildAt(j) as TileLayer).shapeNum) {
-							removeChild(getChildAt(j) as TileLayer)	
-							break;
-						}
-					}
-				}
-				
-				updateAlternative();
-				
-				
-						//trace(testLayer.shapeNum,newLayer.shapeNum);
-									
-
-				var newLayer : TileLayer = new TileLayer(shapeNum,color,_alternative);	
-				newLayer.scale = _scale;
-				addChild(newLayer);
-				
-				/*
-				var newLayer:TileLayer = new TileLayer(shapeNum,color);
-				newLayer.scale = _scale;
-				addChild(newLayer);
-				for (var i:int=0;i<numChildren;i++) {
-					var tempLayer:TileLayer = getChildAt(i) as TileLayer;
-					if (tempLayer!=newLayer && RKUtilities.hitTest(tempLayer,newLayer)) {
-						removeChild(newLayer);
-						return;
-					}
-				}
-				lastLayer = newLayer;
-				 * 
-				 */
-				
-			}
 		}
-		
 	
 		
 		public function set scale(x:Number) : void {

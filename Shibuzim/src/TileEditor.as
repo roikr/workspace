@@ -46,7 +46,7 @@ package {
 			var layer:TileLayer = _tile.getLayerByPoint(new Point(e.stageX,e.stageY));
 			
 			if (layer) {
-				_tile.applyLayer(layer,colorPicker.color)
+				_tile.updateLayer(layer,colorPicker.color)
 				//trace(layer.shapeNum)
 			}
 		}
@@ -56,8 +56,10 @@ package {
 		public function onClient(obj:Object) : void {
 			if (obj is ShapesMenu) {
 				//var p:Point = new Point(e.stageX,e.stageY);
-				
-				client.onClient(new TileLayer(shapesMenu.shape,colorPicker.color));
+				var layer:TileLayer = new TileLayer(shapesMenu.shape,colorPicker.color)
+				layer.mouseEnabled = false; // TODO: I don't know why, but shape 29 makes problem without that
+				layer.mouseChildren = false;
+				client.onClient(layer);
 				/*
 				switch(shapesMenu.eventType) {
 					case MouseEvent.CLICK:
