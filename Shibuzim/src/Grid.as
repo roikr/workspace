@@ -116,6 +116,17 @@ package {
 		}
 			
 		public function applyTool(tool:int,e:MouseEvent = null) : void {
+			
+			switch (tool) {
+				case (ToolsMenu.TOOLBAR_CURSOR):
+				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
+				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
+				case (ToolsMenu.TOOLBAR_GRID_FILLER) :
+					if (!client.tile.isCompleted())
+						return;
+					break;
+			}
+			
 			switch (tool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
 				case (ToolsMenu.TOOLBAR_ROW_FILLER) :

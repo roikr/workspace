@@ -37,7 +37,9 @@ package {
 				}
 		}
 		
-		
+		public function isCompleted() : Boolean {
+			return numChildren && (getChildAt(numChildren-1) as TileLayer).isLastPart();
+		}
 		
 		
 		
@@ -133,9 +135,11 @@ package {
 		 * 
 		 */
 		
+		
 		public function updateLayer(tileLayer:TileLayer,color:uint) : void {
 			xml = null;
-			
+			tileLayer.color = color;
+			/*	
 			var layer:TileLayer = getLayer(tileLayer);
 			if (layer) {
 				if (layer.color == color) 
@@ -144,6 +148,8 @@ package {
 					layer.color = color;
 				
 			}
+			 * 
+			 */
 		}
 	
 		

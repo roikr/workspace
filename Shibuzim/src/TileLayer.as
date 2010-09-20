@@ -224,7 +224,6 @@ package {
 					}
 					break;
 				case 3: 
-				case 10:
 				case 20:
 					switch (shapeNum+1) {
 						case 23:
@@ -236,20 +235,32 @@ package {
 							break;		
 					}
 					break;
+				case 10:
+					switch (shapeNum+1) {
+						case 23:
+						case 30:
+						case 35:
+						case 37:
+							return true;
+							break;		
+					}
+					break;
 				case 4:
 				case 12:
-				case 14:
 				case 16:
 				case 19:
+					return shapeNum+1 == 33
+					break;
+				
+				case 14:
 					return shapeNum+1 == 24 
-						
 					break;
 				case 5:
 				case 13:
 				case 17:
 				case 18:
 				
-					return  shapeNum+1 == 31 || shapeNum+1 == 32 || shapeNum+1 == 33
+					return  shapeNum+1 == 31 || shapeNum+1 == 32 
 				
 					break;
 				
@@ -270,6 +281,21 @@ package {
 			}
 
 			return false;
+		}
+		
+		
+		public function isLastPart() : Boolean {
+			switch 	(shapeNum+1) {
+				case 6:
+				case 11:
+				case 15:
+					return true;
+					break;
+				default:
+					return shapeNum+1>20
+					break;			
+			}
+		
 		}
 		
 		
