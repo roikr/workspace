@@ -1,9 +1,9 @@
 package {
 	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.filters.BitmapFilterQuality;
 	import flash.filters.DropShadowFilter;
 	import flash.geom.Matrix;
+	import flash.geom.Point;
 
 	/**
 	 * @author roikr
@@ -13,6 +13,7 @@ package {
 		private var _color:uint;
 		private var _shapeNum:uint;
 		private var _alternative:uint;
+		private var _corner:uint;
 		private var texture:Sprite;
 		private var _mask:Sprite;
 		private var bBlackNWhite:Boolean;
@@ -28,7 +29,7 @@ package {
 		private static var alternativesNames:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
 		
 		
-		public function TileLayer(shapeNum:uint,color:uint = 0,alternative:uint = 0) {
+		public function TileLayer(shapeNum:uint,color:uint = 0,alternative:uint = 0,corner:uint = 0) {
 			
 			_shapeNum = shapeNum;
 			_alternative = alternative;
@@ -42,6 +43,16 @@ package {
 			xml.@shape=shapeNum;
 			if (_alternative)
 				xml.@alt=_alternative;
+				
+			if (isSpongeAlternative(_alternative) && isSpongeFiller()) {
+				xml.@corner = corner;
+				_corner = corner;
+				
+			}
+				
+				
+				
+				
 			
 			
 			switch (_shapeNum+1) {
@@ -70,6 +81,7 @@ package {
 			texture.mask =  _mask;
 			texture.filters = [new DropShadowFilter(0.5,45,0,1.0,1,1,0.25,BitmapFilterQuality.HIGH)];
 			
+			
 		}
 		
 		
@@ -93,15 +105,55 @@ package {
 		}
 		
 		public function cloneLayer() : TileLayer {
-			return new TileLayer(_shapeNum,color,_alternative);
+			return new TileLayer(_shapeNum,color,_alternative,_corner);
 		}
 		
+		public function getOffset() : Point {
+			var p:Point = new Point();
+			switch (_corner) {
+				case 0:
+				case 2:
+					p.x=-120;
+					break;
+				case 1:
+				case 3:
+					p.x=120;
+					break;
+			}
+			
+			switch (_corner) {
+				case 0:
+				case 1:
+					p.y=-120;
+					break;
+				case 2:
+				case 3:
+					p.y=120;
+					break;
+			}
+			
+			return p;
+		}
 		
 		
 		public function set scale(x:Number) : void {
 			var m:Matrix = new Matrix();
 			m.scale( x, x );
-			transform.matrix = m;
+			
+			var t:Matrix = new Matrix();
+			if (isSpongeAlternative(_alternative) && isSpongeFiller()) {
+						
+				var p:Point = getOffset();
+				t.translate(p.x, p.y)
+				//trace("corner alternative",_corner,p.x,p.y)
+			} 
+
+			
+			t.concat(m);	
+			
+			
+			
+			transform.matrix = t;
 			
 			var distance:Number = 0.5;
 			var blur:Number = 1;
@@ -122,13 +174,15 @@ package {
 			 		case 25:
 						var name:String = "Shape"+(shapeNum+1).toString()+"_"+( alternative+1).toString();
 						var index:int = alternativesNames.indexOf(name);
-						trace("alternative: ",name);
+						//trace("TileLayer::getShapeClass alternative: ",name);
 						return alternatives[index] as Class;
 						break;
+					
+					
 				}
 			}
 			
-			trace("shape: ",shapeNum);
+			//trace("TileLayer::getShapeClass shape: ",shapeNum);
 			return shapes[shapeNum];
 		}
 		
@@ -136,9 +190,22 @@ package {
 			return _shapeNum;
 		}
 		
-		public static function isAlternative(shapeNum:uint) : Boolean {
-			return shapeNum+1 ==8 || shapeNum+1 == 9 ;
+		public function get corner() : uint {
+			return _corner;
 		}
+		
+		public static function isAlternative(shapeNum:uint) : Boolean {
+			return shapeNum+1 ==8 || shapeNum+1 == 9 || isSpongeAlternative(shapeNum);
+		}
+		
+		public static function isSpongeAlternative(shapeNum:uint) : Boolean {
+			return shapeNum+1==12 || shapeNum+1 == 13;
+		}
+		
+		public function isSpongeFiller() : Boolean {
+			return shapeNum+1>=31 && shapeNum+1 <= 33;
+		}
+		
 		
 		/*
 		private static function getRealShapeNum(shapeNum:uint,unusual:int) : int {
@@ -176,8 +243,9 @@ package {
 		
 		public static function decode(xml:XML) : TileLayer {
 			var alt:uint = xml.hasOwnProperty("@alt") ? xml.@alt : 0;
-			trace("decode: "+alt);
-			return new TileLayer(xml.@shape,xml.@color,alt);
+			var corner:uint = xml.hasOwnProperty("@corner") ? xml.@corner : 0;
+			//trace("decode: "+alt);
+			return new TileLayer(xml.@shape,xml.@color,alt,corner);
 			
 		}
 		
@@ -297,6 +365,8 @@ package {
 			}
 		
 		}
+		
+		
 		
 		
 	}

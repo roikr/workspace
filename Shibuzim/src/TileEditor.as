@@ -15,6 +15,7 @@ package {
 		private var _tile:Tile;
 		private var colorPicker:ColorPicker;
 		private var shapesMenu:ShapesMenu;
+		private var _pane :EditorPane;
 		private var client:Object;
 		
 		
@@ -31,10 +32,10 @@ package {
 			tile = new Tile();
 			
 			
-			var sp:EditorPane = new EditorPane();
+			_pane = new EditorPane();
 			
-			addChild(sp);
-			sp.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
+			addChild(_pane);
+			_pane.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
 			
 			
 			
@@ -84,6 +85,10 @@ package {
 		
 		public function get tile() : Tile {
 			return _tile;
+		}
+		
+		public function get pane() : EditorPane {
+			return _pane;
 		}
 		
 		public function set tile(_tile:Tile) : void {

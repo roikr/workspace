@@ -42,7 +42,7 @@ package {
 		
 		public function onMouseUp(e:MouseEvent) : void {
 			//trace(e.target,e.currentTarget)
-			currentGrid.resetGrid();
+			currentGrid.resetGrid(); // reset the magnifier scaling
 			if (layer) {
 				stopDragLayer(e.target);
 			}
@@ -59,7 +59,14 @@ package {
 		
 		public function stopDragLayer(obj:Object) : void {
 			if (obj is EditorPane || obj is ShapesPane) {
-				tileEditor.tile.addLayer(layer.shapeNum,layer.color);
+				if (tileEditor.tile.isSponge() && layer.isSpongeFiller()) {
+					if (obj is EditorPane) {
+						tileEditor.tile.addLayer(layer.shapeNum,layer.color,tileEditor.pane.getCorner());
+					}
+				} else {
+					tileEditor.tile.addLayer(layer.shapeNum,layer.color);
+				}
+				
 			}
 			removeChild(layer);
 			layer=null;

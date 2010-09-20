@@ -41,11 +41,13 @@ package {
 			return numChildren && (getChildAt(numChildren-1) as TileLayer).isLastPart();
 		}
 		
+		public function isSponge() : Boolean {
+			return TileLayer.isSpongeAlternative(_alternative)
+		}
 		
 		
 		
-		
-		public function addLayer(shapeNum:uint,color:uint) : void {
+		public function addLayer(shapeNum:uint,color:uint,corner:int=0) : void {
 			
 			
 			xml = null;
@@ -53,10 +55,21 @@ package {
 			var i:int;
 			for (i = numChildren-1 ; i>=0 ;i--) {
 				if ((getChildAt(i) as TileLayer).canContain(shapeNum)) {
-					while (numChildren > i+1)
-						removeChildAt(numChildren-1);
+					if (isSponge()) {
+						for (var j:int=i+1;j<numChildren;j++) {
+							if ((getChildAt(j) as TileLayer).corner == corner) {
+								removeChildAt(j);
+								break;
+							}
+						}
+							
+					} else {
+					
+						while (numChildren > i+1)
+							removeChildAt(numChildren-1);
+					}
 				
-					var layer:TileLayer = new TileLayer(shapeNum,color,_alternative);
+					var layer:TileLayer = new TileLayer(shapeNum,color,_alternative,corner);
 					layer.scale = _scale;
 					addChild(layer);
 					return;
@@ -69,10 +82,12 @@ package {
 				while (numChildren )
 					removeChildAt(0);
 					
-				var layer:TileLayer = new TileLayer(shapeNum,color,_alternative);
+				var layer:TileLayer = new TileLayer(shapeNum,color);
 				layer.scale = _scale
 				_alternative = TileLayer.isAlternative(shapeNum) ? shapeNum : 0
 				addChild(layer);
+				
+				
 			}
 				
 			
@@ -138,7 +153,15 @@ package {
 		
 		public function updateLayer(tileLayer:TileLayer,color:uint) : void {
 			xml = null;
-			tileLayer.color = color;
+			
+			if (tileLayer.color!=color) {
+				tileLayer.color = color;
+			} else if (!TileLayer.canContain(tileLayer.shapeNum)) {
+				removeChild(tileLayer)
+			}
+			
+			
+			
 			/*	
 			var layer:TileLayer = getLayer(tileLayer);
 			if (layer) {
