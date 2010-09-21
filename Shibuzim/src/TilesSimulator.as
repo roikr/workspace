@@ -59,13 +59,17 @@ package {
 		
 		public function stopDragLayer(obj:Object) : void {
 			if (obj is EditorPane || obj is ShapesPane) {
+				/*
 				if (tileEditor.tile.isSponge() && layer.isSpongeFiller()) {
 					if (obj is EditorPane) {
 						tileEditor.tile.addLayer(layer.shapeNum,layer.color,tileEditor.pane.getCorner());
 					}
 				} else {
-					tileEditor.tile.addLayer(layer.shapeNum,layer.color);
-				}
+				 * 
+				 */
+				tileEditor.tile.addLayer(layer.shapeNum,layer.color);
+				
+				
 				
 			}
 			removeChild(layer);

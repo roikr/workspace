@@ -41,13 +41,16 @@ package {
 			return numChildren && (getChildAt(numChildren-1) as TileLayer).isLastPart();
 		}
 		
+		/*
 		public function isSponge() : Boolean {
 			return TileLayer.isSpongeAlternative(_alternative)
 		}
+		 * 
+		 */
 		
 		
 		
-		public function addLayer(shapeNum:uint,color:uint,corner:int=0) : void {
+		public function addLayer(shapeNum:uint,color:uint) : void {
 			
 			
 			xml = null;
@@ -55,6 +58,7 @@ package {
 			var i:int;
 			for (i = numChildren-1 ; i>=0 ;i--) {
 				if ((getChildAt(i) as TileLayer).canContain(shapeNum)) {
+					/*
 					if (isSponge()) {
 						for (var j:int=i+1;j<numChildren;j++) {
 							if ((getChildAt(j) as TileLayer).corner == corner) {
@@ -63,15 +67,26 @@ package {
 							}
 						}
 							
-					} else {
+					} else { */
 					
-						while (numChildren > i+1)
-							removeChildAt(numChildren-1);
-					}
-				
-					var layer:TileLayer = new TileLayer(shapeNum,color,_alternative,corner);
+					while (numChildren > i+1)
+						removeChildAt(numChildren-1);
+					
+					/*
+					if (isSponge()) {
+						for (var j:int=0;j<4;j++) {
+							var layer:TileLayer = new TileLayer(shapeNum,color,_alternative,j);
+							layer.scale = _scale;
+							addChild(layer);
+						}
+					} else {
+					 * 
+					 */
+					var layer:TileLayer = new TileLayer(shapeNum,color,_alternative);
 					layer.scale = _scale;
 					addChild(layer);
+					
+					
 					return;
 				}
 			}
@@ -227,7 +242,7 @@ package {
 				
 				var layer:TileLayer = getChildAt(i) as TileLayer;
 					
-				var shape:Sprite = TileLayer.createShape(layer.shapeNum,0);
+				var shape:Sprite = TileLayer.createShape(layer.shapeNum,_alternative);
 				stage.addChild(shape);	
 				var p:Point = layer.globalToLocal(pnt);
 				var hit:Boolean = shape.hitTestPoint(p.x,p.y,true);

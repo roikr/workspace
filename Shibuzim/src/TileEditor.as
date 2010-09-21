@@ -48,7 +48,7 @@ package {
 			
 			if (layer) {
 				_tile.updateLayer(layer,colorPicker.color)
-				//trace(layer.shapeNum)
+				trace("TileEditor onMouseDown",layer.shapeNum)
 			}
 		}
 		

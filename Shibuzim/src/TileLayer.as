@@ -13,7 +13,7 @@ package {
 		private var _color:uint;
 		private var _shapeNum:uint;
 		private var _alternative:uint;
-		private var _corner:uint;
+		//private var _corner:uint;
 		private var texture:Sprite;
 		private var _mask:Sprite;
 		private var bBlackNWhite:Boolean;
@@ -24,12 +24,12 @@ package {
 			Shape14,Shape15,Shape16,Shape17,Shape18,Shape19,Shape20,Shape21,Shape22,Shape23,Shape24,Shape25,Shape26,Shape27,Shape28,Shape29,Shape30,
 			Shape31,Shape32,Shape33,Shape34,Shape35,Shape36,Shape37];
 			
-		private static var alternatives : Array = [Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9];
+		private static var alternatives : Array = [Shape15_8,Shape15_9,Shape16_8,Shape16_9,Shape17_8,Shape17_9,Shape25_8,Shape25_9,Shape31_13,Shape32_13,Shape33_12];
 			
-		private static var alternativesNames:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9"];
+		private static var alternativesNames:Array = ["Shape15_8","Shape15_9","Shape16_8","Shape16_9","Shape17_8","Shape17_9","Shape25_8","Shape25_9","Shape31_13","Shape32_13","Shape33_12"];
 		
 		
-		public function TileLayer(shapeNum:uint,color:uint = 0,alternative:uint = 0,corner:uint = 0) {
+		public function TileLayer(shapeNum:uint,color:uint = 0,alternative:uint = 0) { // ,corner:uint = 0
 			
 			_shapeNum = shapeNum;
 			_alternative = alternative;
@@ -44,11 +44,14 @@ package {
 			if (_alternative)
 				xml.@alt=_alternative;
 				
+			/*
 			if (isSpongeAlternative(_alternative) && isSpongeFiller()) {
 				xml.@corner = corner;
 				_corner = corner;
 				
 			}
+			 * 
+			 */
 				
 				
 				
@@ -105,9 +108,10 @@ package {
 		}
 		
 		public function cloneLayer() : TileLayer {
-			return new TileLayer(_shapeNum,color,_alternative,_corner);
+			return new TileLayer(_shapeNum,color,_alternative); // ,_corner
 		}
 		
+		/*
 		public function getOffset() : Point {
 			var p:Point = new Point();
 			switch (_corner) {
@@ -134,26 +138,28 @@ package {
 			
 			return p;
 		}
-		
+		*/
 		
 		public function set scale(x:Number) : void {
 			var m:Matrix = new Matrix();
 			m.scale( x, x );
 			
+			/*
 			var t:Matrix = new Matrix();
+			
 			if (isSpongeAlternative(_alternative) && isSpongeFiller()) {
 						
 				var p:Point = getOffset();
 				t.translate(p.x, p.y)
 				//trace("corner alternative",_corner,p.x,p.y)
 			} 
-
+			
 			
 			t.concat(m);	
+			*/
 			
 			
-			
-			transform.matrix = t;
+			transform.matrix = m; // t
 			
 			var distance:Number = 0.5;
 			var blur:Number = 1;
@@ -172,9 +178,12 @@ package {
 			 		case 16:
 			 		case 17:
 			 		case 25:
+			 		case 31:
+			 		case 32:
+			 		case 33:
 						var name:String = "Shape"+(shapeNum+1).toString()+"_"+( alternative+1).toString();
 						var index:int = alternativesNames.indexOf(name);
-						//trace("TileLayer::getShapeClass alternative: ",name);
+						trace("TileLayer getShapeClass alternative: ",name);
 						return alternatives[index] as Class;
 						break;
 					
@@ -190,10 +199,18 @@ package {
 			return _shapeNum;
 		}
 		
+		/*
 		public function get corner() : uint {
 			return _corner;
 		}
+		 * 
+		 */
 		
+		public static function isAlternative(shapeNum:uint) : Boolean {
+			return shapeNum+1 ==8 || shapeNum+1 == 9 || shapeNum+1==12 || shapeNum+1 == 13;
+		}
+		
+		/*
 		public static function isAlternative(shapeNum:uint) : Boolean {
 			return shapeNum+1 ==8 || shapeNum+1 == 9 || isSpongeAlternative(shapeNum);
 		}
@@ -205,7 +222,7 @@ package {
 		public function isSpongeFiller() : Boolean {
 			return shapeNum+1>=31 && shapeNum+1 <= 33;
 		}
-		
+		*/
 		
 		/*
 		private static function getRealShapeNum(shapeNum:uint,unusual:int) : int {
@@ -243,9 +260,9 @@ package {
 		
 		public static function decode(xml:XML) : TileLayer {
 			var alt:uint = xml.hasOwnProperty("@alt") ? xml.@alt : 0;
-			var corner:uint = xml.hasOwnProperty("@corner") ? xml.@corner : 0;
+			//var corner:uint = xml.hasOwnProperty("@corner") ? xml.@corner : 0;
 			//trace("decode: "+alt);
-			return new TileLayer(xml.@shape,xml.@color,alt,corner);
+			return new TileLayer(xml.@shape,xml.@color,alt); // ,corner
 			
 		}
 		
