@@ -305,10 +305,10 @@ package {
 					break;
 				case 10:
 					switch (shapeNum+1) {
-						case 23:
-						case 30:
-						case 35:
-						case 37:
+						case 22:
+						case 29:
+						case 34:
+						case 36:
 							return true;
 							break;		
 					}
