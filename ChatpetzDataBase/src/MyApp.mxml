@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" initialize="startSfs()">
+	<mx:Script>
+        <![CDATA[
+            import mx.collections.ArrayCollection;
+            import mx.rpc.events.ResultEvent;
+            import mx.rpc.events.FaultEvent;
+            import mx.controls.Alert;
+            
+            private var dataBase:ChatpetzDataBase;
+
+			private function startSfs():void{
+				dataBase = new ChatpetzDataBase(this);              
+            }
+           
+
+            private function faultHandler(event:FaultEvent):void{
+                Alert.show(event.fault.faultCode + " , " + event.fault.faultString);
+            }
+
+			public function dataReceived(data:Object) : void {
+				
+				trace(data.list);
+				datagrid_id.dataProvider = data.list;
+                datagrid_id.visible = true;
+			}
+            
+        ]]>
+    </mx:Script>
+	
+
+	<mx:DataGrid id="datagrid_id" visible="false">
+        <mx:columns>
+            <mx:DataGridColumn dataField="CODE" headerText="Code" width="100"/>
+            <mx:DataGridColumn dataField="ID" headerText="id" width="100"/>
+            <mx:DataGridColumn dataField="MOONEYS" headerText="Mooneys" width="100"/>
+            <mx:DataGridColumn dataField="PASSWORD" headerText="Password" width="100"/>
+            <mx:DataGridColumn dataField="USER" headerText="User" width="100"/>
+               
+        </mx:columns>
+    </mx:DataGrid>
+</mx:Application>

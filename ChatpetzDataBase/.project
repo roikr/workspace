@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ChatpetzDataBase</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.powerflasher.fdt.core.FlashBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.powerflasher.fdt.core.FlashNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>ChatpetzServer</name>
+			<type>2</type>
+			<locationURI>ChatpetzServer</locationURI>
+		</link>
+		<link>
+			<name>sfsAPI</name>
+			<type>2</type>
+			<locationURI>sfsAPI</locationURI>
+		</link>
+		<link>
+			<name>sfsExtensions</name>
+			<type>2</type>
+			<locationURI>sfsExtensions</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
