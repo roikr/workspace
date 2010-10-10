@@ -39,6 +39,7 @@ package {
 			SoundManager.playMusic(TRIVIA_MUSIC_A);
 			
 			addChild(gameAssets = new WhoWantsGame())
+			
 			gameAssets.mcLight.mouseEnabled = false;
 			intro = new Intro(gameAssets.mcIntro,this);
 			game = new Game(gameAssets.mcGame,this);
@@ -65,6 +66,7 @@ package {
 		
 		public function start(manager : IGameManager) : void {
 			gameManager = manager;
+			gameAssets.mcAvatar.addChild(gameManager.getAvatar());
 			intro.open();
 			score = 0;
 			lastStars = 0;

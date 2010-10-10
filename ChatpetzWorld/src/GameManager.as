@@ -1,5 +1,9 @@
 package {
 	import fl.containers.UILoader;
+
+	import com.smartfoxserver.openspace.engine.model.avatar.Avatar;
+
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.ProgressEvent;
@@ -83,7 +87,15 @@ package {
 			gameUI.setTime(time);
 		}
 		
-		
+		public function getAvatar() : MovieClip {
+			var mc:MovieClip = new MovieClip;;
+			var avatar:Avatar = world.getMyAvatar();
+			avatar.x = -20;
+			avatar.y = 20;
+			mc.addChild(avatar);
+			return mc;
+			//return new MovieClip();
+		}
 		
 
 		private function progressHandler(e:ProgressEvent) : void {

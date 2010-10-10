@@ -20,14 +20,18 @@ package {
 		
 		
 		private function onLoginButton(e:Event) : void {
-			if (itPassword.text == "8213496")
+			//if (itPassword.text == "8213496")
 				
-				client.exit(this); //.itName.text, this.itPassword.text);
+			client.exit(this); //.itName.text, this.itPassword.text);
 			
 		}
 		
 		public function getUser() : String {
 			return this.itName.text;
+		}
+		
+		public function getPwd() : String {
+			return this.itPassword.text;
 		}
 	}
 }

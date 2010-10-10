@@ -1,8 +1,8 @@
 package {
-	import flash.events.TextEvent;
 	import flash.display.SimpleButton;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.TextEvent;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 
@@ -39,7 +39,7 @@ package {
 			
 			bHome.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.loadMap("Home");});
 			bMoon.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.loadMap("Moon");});
-			bMap.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.loadMap("Africa");});
+			bMap.addEventListener(MouseEvent.MOUSE_DOWN,function(e:Event):void {world.playMC(new EarthMap(world));});
 			
 			
 			itChat.addEventListener(TextEvent.TEXT_INPUT,onTextInput);

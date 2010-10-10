@@ -1,4 +1,5 @@
 package {
+	import flash.display.MovieClip;
 
 	/**
 	 * @author roikr
@@ -13,5 +14,6 @@ package {
 		function setLevel(level:int) : void;
 		function setTime(time:int) : void;
 		function setStars(stars:int) : void;
+		function getAvatar() : MovieClip;
 	}
 }

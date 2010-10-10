@@ -1,12 +1,12 @@
 package {
 	import it.gotoandplay.smartfoxserver.SFSEvent;
-	import it.gotoandplay.smartfoxserver.SmartFoxClient;
 
 	import de.polygonal.ds.Array2;
 
 	import com.smartfoxserver.openspace.components.flash.OpenSpace;
 	import com.smartfoxserver.openspace.engine.control.events.MapInteractionEvent;
 	import com.smartfoxserver.openspace.engine.control.events.OpenSpaceEvent;
+	import com.smartfoxserver.openspace.engine.model.avatar.Avatar;
 	import com.smartfoxserver.openspace.shared.control.events.LoggerEvent;
 	import com.smartfoxserver.openspace.shared.model.other.Trigger;
 
@@ -27,6 +27,8 @@ package {
 	 */
 	public class ChatpetzWorld extends Sprite {
 		
+		private var client:ChatpetzClient; // smart fox server's client
+		
 		private static const BEEP_STATE_IDLE:int = 0;
 		private static const BEEP_STATE_CONTROL:int = 1;
 		private static const BEEP_STATE_ENTER_ROOM:int = 2;
@@ -34,8 +36,8 @@ package {
 		
 		private var beepState:int;
 		
-		private var myUsername:String;
-		private var smartFox:SmartFoxClient;
+		
+		
 		
 		private var loadCounter1:int;
 		//private var loadCounter2:int;
@@ -57,19 +59,16 @@ package {
 		private var bOpenSpaceInitialized:Boolean = false;
 		private var avatarManager:AvatarManager;
 		private var skinsNames : Array = ["boat","card","cave","door","earthSpaceShip","moonSpaceShip","freezer","home","cloud","shop","bug","tiger","giraffe","termites","board","creatureRoom"];
-		
+		private var avatar:Avatar;
 		
 		private var loadingMC:LoadingMC;
 		
 		public function ChatpetzWorld() {
 			super();
 			new BeepsImporter();
-			smartFox = new SmartFoxClient();
-			smartFox.addEventListener(SFSEvent.onConnection, onSFSConnection);
-			smartFox.addEventListener(SFSEvent.onConnectionLost, onSFSConnectionLost);
-			smartFox.addEventListener(SFSEvent.onLogin, onSFSLogin);
-			smartFox.addEventListener(SFSEvent.onRoomListUpdate, onSFSRoomListUpdate);
-			smartFox.defaultZone="chatpetz";
+			
+			client = new ChatpetzClient(this,"chatpetz")
+			
 			
 			openSpace = new OpenSpace();
 			openSpace.configPath = "config/OpenSpace_client.xml";
@@ -126,8 +125,8 @@ package {
 						break;
 				}
 			} else if (obj is LoginScreen) {
-				myUsername = (obj as LoginScreen).getUser();
-				smartFox.connect("chatpetz.com");
+				client.connect((obj as LoginScreen).getUser(),(obj as LoginScreen).getPwd())
+				
 				
 				
 			} else  if (obj is MoviePlayer) {
@@ -180,26 +179,15 @@ package {
 		/**
 		 * On successfull connection, login is attempted.
 		 */
-		private function onSFSConnection(evt:SFSEvent):void
+		public function onServerConnection():void
 		{
-			if (evt.params.success)
-			{
-				logTrace("Connection successful, now performaing login");
-				smartFox.login(smartFox.defaultZone, myUsername, "");
-				
-				
-			}
-			else
-			{
-				
-				logTrace("Can't connect to " + smartFox.ipAddress + ":" + smartFox.port);
-			}
+			
 		}
 		
 		/**
 		 * Connection lost event handler.
 		 */
-		private function onSFSConnectionLost(evt:SFSEvent):void
+		public function onServerConnectionLost():void
 		{
 			logTrace("Connection lost");
 			if (worldUI.getIsOpen())
@@ -215,36 +203,24 @@ package {
 		 * Login event handler.
 		 * On successfull login, nothing happens because we have to wait for the roomlist to be available.
 		 */
-		private function onSFSLogin(evt:SFSEvent):void
+		public function onServerLogin():void
 		{
-			if (evt.params.success)
-			{
-				container.spMCContainer.removeChildAt(0);
-				myUsername = evt.params.name;
-				//loginPanel.ti_username.text = evt.params.name;
-				logTrace("Successfully logged in as " + myUsername);
-				
 			
-				SoundManager.mainChatpet="PIFF";
-				
-				
-				
-			}
-			else
-			{
-				
-				logTrace("Login error: " + evt.params.error);
-				
-				smartFox.disconnect();
-			}
+			container.spMCContainer.removeChildAt(0);
+			
+			//loginPanel.ti_username.text = evt.params.name;
+			
+			
+		
+			SoundManager.mainChatpet="PIFF";
 		}
 		
 		/**
 		 * On room list received, OpenSpace is initialized.
 		 */
-		private function onSFSRoomListUpdate(evt:SFSEvent):void
+		public function onServerRoomListUpdate():void
 		{
-			logTrace("Roomlist received, now a map can be loaded");
+			logTrace("onServerRoomListUpdate");
 			
 			//bt_reload.enabled = true;
 			//bt_reset.enabled = true;
@@ -297,7 +273,7 @@ package {
 			openSpace.addEventListener(LoggerEvent.WARNING, onLoggerEvent);
 			openSpace.addEventListener(LoggerEvent.ERROR, onLoggerEvent);
 			
-			openSpace.init(smartFox); //, null);
+			openSpace.init(client.smartFox); //, null);
 			
 			
 			
@@ -459,6 +435,13 @@ package {
 		 */
 		private function onOpenSpaceMapRendered(evt:OpenSpaceEvent):void
 		{
+			avatar = openSpace.getMyAvatar();
+			/*
+			trace(getQualifiedClassName(avatar))
+			trace(describeType(avatar).toString())
+			
+			var avatar2:Avatar = getMyAvatar();
+			*/
 			if (container.spMCContainer.numChildren)
 				container.spMCContainer.removeChildAt(0);
 			
@@ -508,7 +491,7 @@ package {
 			container.spMCContainer.addChild(new MoviePlayer(movie,this));
 		}
 		
-		private function playMC(mc:MovieClip) : void {
+		public function playMC(mc:MovieClip) : void {
 			container.spMCContainer.addChild(mc);
 		}
 		
@@ -804,11 +787,13 @@ package {
 		private function logMessage(txt:String):void
 		{
 			debugPanel.logMessage(txt);
+			trace(txt)
 		}
 		
 		public function logTrace(txt:String):void
 		{
 			debugPanel.logTrace(txt); 
+			trace(txt)
 		}	
 		
 		
@@ -823,10 +808,16 @@ package {
 		}
 
 		public function sendMessage(msg:String) : void {
-			smartFox.sendPublicMessage(msg);
+			client.sendMessage(msg);
 		}
 		
-		
+		public function getMyAvatar() : Avatar {
+			//openSpace.getMyAvatar();
+			//var ClassReference:Class = getDefinitionByName("com.smartfoxserver.openspace.engine.model.avatar::ChatpetzAvatar") as Class;
+            //var instance:Object = new ClassReference();
+			//var avatar:Avatar = new ClassReference() as Avatar;
+			return avatar;
+		}
 		
 		
 	}

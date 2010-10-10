@@ -1,4 +1,5 @@
 package {
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -89,6 +90,14 @@ package {
 		
 		public function setTime(time:int) : void {
 			testUI.laTime.text = time.toString();
+		}
+		
+		public function getAvatar() : MovieClip {
+			var mc:MovieClip = new MovieClip;
+			mc.graphics.beginFill(0x4466AA);
+			mc.graphics.drawEllipse(-50, -150, 100, 150);
+			return mc
+;			
 		}
 		
 		public function onBeepCompleted(obj:Object) : void {
