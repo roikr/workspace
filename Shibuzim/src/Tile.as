@@ -49,6 +49,7 @@ package {
 		 */
 		
 		public function canAdd(shapeNum:uint) : Boolean {
+			
 			for (var i:int = numChildren-1 ; i>=0 ;i--) {
 				if ((getChildAt(i) as TileLayer).canContain(shapeNum)) {
 					return true;

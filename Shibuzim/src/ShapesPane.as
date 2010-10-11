@@ -18,7 +18,7 @@ package {
 			view = new Sprite();
 			addChild(view);
 			
-			view.alpha = 0.1;
+			view.alpha = 0.2;
 			hit.alpha = 0.0;
 			
 			mouseChildren = false; // I need that the target of the mouseup event will be shapespane (simulator)
@@ -42,7 +42,7 @@ package {
 				graphics = tile.canAdd(i) ? hit.graphics : view.graphics;
 				
 				graphics.beginFill(0x000000);
-				graphics.drawRect(29*(i%5), 29*int(i/5), 26, 26)
+				graphics.drawRect(29*(i%5)+1, 29*int(i/5)+1, 24, 24)
 				
 			}
 			
@@ -50,14 +50,14 @@ package {
 				graphics = tile.canAdd(i+14) ? hit.graphics : view.graphics;
 				
 				graphics.beginFill(0x000000);
-				graphics.drawRect(29*(i%5), 29*(3+int(i/5)), 26, 26)
+				graphics.drawRect(29*(i%5)+1, 29*(3+int(i/5))+1, 24, 24)
 				
 			}
 			
 			for (i=0;i<9;i++) {
 				graphics = tile.canAdd(i+28) ? hit.graphics : view.graphics;
 				graphics.beginFill(0x000000);
-				graphics.drawRect(29*(i%5), 29*(6+int(i/5)), 26, 26)
+				graphics.drawRect(29*(i%5)+1, 29*(6+int(i/5))+1, 24, 24)
 				
 			}
 		}
