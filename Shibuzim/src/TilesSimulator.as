@@ -67,8 +67,8 @@ package {
 				} else {
 				 * 
 				 */
-				tileEditor.tile.addLayer(layer.shapeNum,layer.color);
 				
+				tileEditor.addLayer(layer.shapeNum,layer.color)
 				
 				
 			}
@@ -135,13 +135,10 @@ package {
 			
 		}
 
-		public function get tile() : Tile {
-			return tileEditor.tile;	
+		public function get editor() : TileEditor {
+			return tileEditor;	
 		}
 		
-		public function set tile(tile:Tile) : void  {
-			tileEditor.tile = tile;
-		}
 		
 		
 		

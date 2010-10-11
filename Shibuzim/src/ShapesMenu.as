@@ -15,9 +15,10 @@ package {
 		private var _shapeNum : int;
 		private var client:Object;
 		private var shapes:ShapesPane;
+		private var _tile:Tile;
 		//private var _eventType:String;
 		
-		public function ShapesMenu(client:Object) {
+		public function ShapesMenu(client:Object,tile:Tile) {
 			addChild(bitmap);
 			addChild(shapes=new ShapesPane())
 			
@@ -25,8 +26,11 @@ package {
 			x = 10;
 			y = 158;
 			
+			_tile = tile;
+			update();
 			
 			shapes.addEventListener(MouseEvent.MOUSE_DOWN,onMouseEvent);
+			
 			
 			
 		}
@@ -64,6 +68,7 @@ package {
 			//trace(_shapeNum+1);
 			
 			client.onClient(this);
+			
 		}
 		
 		/*
@@ -75,6 +80,10 @@ package {
 		
 		public function get shape() : int {
 			return _shapeNum;
+		}
+		
+		public function update() : void {
+			shapes.updateBy(_tile)
 		}
 	}
 }

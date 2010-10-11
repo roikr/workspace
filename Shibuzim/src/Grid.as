@@ -122,8 +122,10 @@ package {
 				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
 				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
 				case (ToolsMenu.TOOLBAR_GRID_FILLER) :
-					if (!client.tile.isCompleted())
+					if (!client.editor.tile.isCompleted()) {
+						client.editor.alert = true;
 						return;
+					}
 					break;
 			}
 			
@@ -140,41 +142,41 @@ package {
 			
 			switch (tool) {
 				case (ToolsMenu.TOOLBAR_CURSOR):
-					var tile:Tile = client.tile.cloneTile();
+					var tile:Tile = client.editor.tile.cloneTile();
 					if (tile) 
 						applyTile(e.target as GridTile,tile)
 					break;
 					
 				case (ToolsMenu.TOOLBAR_ROW_FILLER) :
 				
-					if (client.tile) {
+					if (client.editor.tile) {
 						for (var i:int = 0;i<columns;i++) {
 							
 							var p:Point = new Point(i*(tileSize+space)+tileSize/2,tileSize/2);
 							p = this.localToGlobal(p);
 							p.y = e.stageY; 
-							applyTile(getGridTileAt(p),client.tile.cloneTile());
+							applyTile(getGridTileAt(p),client.editor.tile.cloneTile());
 						}
 					}
 					break;
 					
 				case (ToolsMenu.TOOLBAR_COLUMN_FILLER) :
 				
-					if (client.tile) {
+					if (client.editor.tile) {
 						for (var i:int = 0;i<rows;i++) {
 							var p:Point = new Point(tileSize/2,i*(tileSize+space)+tileSize/2);
 							p = this.localToGlobal(p);
 							p.x = e.stageX; 
-							applyTile(getGridTileAt(p),client.tile.cloneTile());
+							applyTile(getGridTileAt(p),client.editor.tile.cloneTile());
 						}
 					}
 					break;
 					
 				case (ToolsMenu.TOOLBAR_GRID_FILLER) :
 				
-					if (client.tile) {
+					if (client.editor.tile) {
 						for (var i:int=0;i<numChildren;i++) {
-							applyTile(getChildAt(i) as GridTile,client.tile.cloneTile());
+							applyTile(getChildAt(i) as GridTile,client.editor.tile.cloneTile());
 						}
 					}
 					break;
@@ -217,7 +219,7 @@ package {
 				case ToolsMenu.TOOLBAR_INK :
 					var gridTile:GridTile = (e.target as GridTile);
 					if (gridTile.numChildren)  {
-						client.tile = (gridTile.getChildAt(0) as Tile).cloneTile();
+						client.editor.tile = (gridTile.getChildAt(0) as Tile).cloneTile();
 					}
 					break;
 					

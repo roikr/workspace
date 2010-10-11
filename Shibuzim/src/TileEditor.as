@@ -17,6 +17,7 @@ package {
 		private var shapesMenu:ShapesMenu;
 		private var _pane :EditorPane;
 		private var client:Object;
+		private var _indicator:TileIndicator;
 		
 		
 		public function TileEditor(client:Object) {
@@ -26,18 +27,18 @@ package {
 			
 			addChild(bitmap)
 			
-			
-		    addChild(colorPicker = new ColorPicker())
-			addChild(shapesMenu = new ShapesMenu(this))
 			tile = new Tile();
+		    addChild(colorPicker = new ColorPicker())
+			addChild(shapesMenu = new ShapesMenu(this,tile))
+			
 			
 			
 			_pane = new EditorPane();
-			
 			addChild(_pane);
 			_pane.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown)
 			
-			
+			_indicator = new TileIndicator();
+			addChild(_indicator)
 			
 			
 		}
@@ -50,6 +51,7 @@ package {
 				_tile.updateLayer(layer,colorPicker.color)
 				trace("TileEditor onMouseDown",layer.shapeNum)
 			}
+			
 		}
 		
 		
@@ -102,6 +104,17 @@ package {
 			_tile.y = 10;
 			_tile.scale = 0.3;
 			this._tile = _tile;
+		}
+		
+		public function addLayer(shapeNum:uint,color:uint) : void {
+			tile.addLayer(shapeNum,color);
+			shapesMenu.update();	
+			_indicator.completed = tile.isCompleted();
+			_indicator.alert = false;
+		}
+		
+		public function set alert(_alert:Boolean) : void {
+			_indicator.alert = _alert;
 		}
 		
 	}
