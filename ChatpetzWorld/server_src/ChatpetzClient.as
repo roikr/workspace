@@ -10,8 +10,8 @@ package {
 	public class ChatpetzClient {
 		private var _smartFox:SmartFoxClient;
 		private var _client:Object;
-		private var myUsername:String;
-		private var myPassword:String;
+		private var _username:String;
+		private var _password:String;
 		
 		public function ChatpetzClient(client:Object,defaultZone:String) {
 			super();
@@ -40,10 +40,10 @@ package {
 		}
 		
 		public function connect(username:String,password:String) : void {
-			myUsername = username;
-			myPassword = password;
-			//smartFox.connect("chatpetz.com");
-			smartFox.connect("127.0.0.1",9339);
+			_username = username;
+			_password = password;
+			smartFox.connect("chatpetz.com");
+			//smartFox.connect("127.0.0.1",9339);
 		}
 		
 		public function sendMessage(msg:String) : void {
@@ -55,7 +55,7 @@ package {
 			if (evt.params.success)
 			{
 				_client.logTrace("Connection successful, now performaing login");
-				smartFox.login(smartFox.defaultZone, myUsername, myPassword);
+				smartFox.login(smartFox.defaultZone, _username, _password);
 			}
 			else
 			{		
@@ -80,7 +80,7 @@ package {
 			if (evt.params.success)
 			{
 				_client.onServerLogin();
-				_client.logTrace("Successfully logged in as " + myUsername);
+				_client.logTrace("Successfully logged in as " + _username);
 			}
 			else
 			{		
@@ -139,8 +139,10 @@ package {
 	        {
 	                // Login Successful
 				_client.logTrace("Login Successful");
-				smartFox.myUserId = 1;
-				smartFox.myUserName = myUsername;
+				smartFox.myUserId = data.id;
+				smartFox.myUserName = data.name;
+				trace("myUserId: " + smartFox.myUserId + ", myUserName: " + smartFox.myUserName)
+				
 	            smartFox.getRoomList();
 	                
 	        }

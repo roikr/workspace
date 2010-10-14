@@ -169,9 +169,8 @@
 		Zones Configuration.
 	-->
 	<Zones>	
-	
-		        
-        <Zone name="chatpetz" uCountUpdate="true" maxUsers="10" customLogin="false">
+        
+        <Zone name="chatpetz" uCountUpdate="true" maxUsers="10" customLogin="true">
             <Rooms>
                 <Room name="Moon" maxUsers="10" isPrivate="false" isTemp="false" uCountUpdate="true">
                     <Vars>
@@ -189,43 +188,48 @@
                     </Vars>
                 </Room>
             </Rooms>
+            
+            <DatabaseManager active="true">
+				<Driver>org.gjt.mm.mysql.Driver</Driver>
+				<ConnectionString>jdbc:mysql://mysql.chatpetz.com:3306/chatpetz</ConnectionString>
+			
+				
+				<UserName>roikr</UserName>
+				<Password>8213496</Password>
+				
+				<TestSQL><![CDATA[SELECT NOW()]]></TestSQL>
+				
+				<MaxActive>10</MaxActive>
+				<MaxIdle>10</MaxIdle>
+				
+				<OnExhaustedPool>fail</OnExhaustedPool>
+				<BlockTime>5000</BlockTime>
+					
+			</DatabaseManager>
+
+            
 
             <Extensions>
                 <extension name="__$OpenSpace$__" className="com.smartfoxserver.openspace.OpenSpaceExtension" type="java" />
+                <extension name="h2db_ext"  className="chatpetzDb.as" type="script" /> 
              </Extensions>
              
             <AutoReloadExtensions>true</AutoReloadExtensions>
             
         </Zone>
         
-        <!--Zone name="h2dbzone" customLogin="true">
-			<AutoReloadExtensions>true</AutoReloadExtensions>
+        <!--Comment>
+            <Driver>org.gjt.mm.mysql.Driver</Driver>
+            <ConnectionString>jdbc:mysql://127.0.0.1:3306/chatpetz</ConnectionString>
 			
-			<Rooms>
-				<Room name="Lobby" maxUsers="10" isPrivate="false" isTemp="false" autoJoin="true" />
-			</Rooms>
-			
-			<DatabaseManager active="true">
-				<Driver>org.h2.Driver</Driver>
-				<ConnectionString>jdbc:h2:tcp://localhost:9009/examples</ConnectionString>
 				
-				<UserName>sa</UserName>
-				<Password></Password>
-				
-					 
-                
-				<MaxActive>10</MaxActive>
-				<MaxIdle>10</MaxIdle>
-				
-				<OnExhaustedPool>fail</OnExhaustedPool>
-				<BlockTime>5000</BlockTime>
-			</DatabaseManager>
-			
-			<Extensions>
-				<extension name="h2db_ext"  className="chatpetzDb.as" type="script" /> 
-			</Extensions>
-		</Zone-->
+            <UserName>root</UserName>
+            <Password></Password>
+
+        <Comment-->
         
+		        
+                
         
 	
 	</Zones>
