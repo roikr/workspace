@@ -58,6 +58,7 @@ package {
 		}
 		
 		public function stopDragLayer(obj:Object) : void {
+			//trace(obj)
 			if (obj is EditorPane || obj is ShapesPane) {
 				/*
 				if (tileEditor.tile.isSponge() && layer.isSpongeFiller()) {

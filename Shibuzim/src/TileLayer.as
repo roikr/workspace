@@ -172,27 +172,44 @@ package {
 		
 	
 		private static function getShapeClass(shapeNum:uint,alternative:uint) : Class {
-			if (alternative) {
-				switch (shapeNum+1) {
-			 		case 15:
-			 		case 16:
-			 		case 17:
-			 		case 25:
-			 		case 31:
-			 		case 32:
-			 		case 33:
-						var name:String = "Shape"+(shapeNum+1).toString()+"_"+( alternative+1).toString();
-						var index:int = alternativesNames.indexOf(name);
-						trace("TileLayer getShapeClass alternative: ",name);
-						return alternatives[index] as Class;
-						break;
+			var bAlternative:Boolean = false;
+			
+			switch (alternative+1) {
+				case 8:
+				case 9: 
+					switch (shapeNum+1) {
+				 		case 15:
+				 		case 16:
+				 		case 17:
+				 		case 25:
+			 				bAlternative = true;
+			 				break;
+					}
+					break;
+				case 12:
+					bAlternative = shapeNum+1 == 33;
+					break;
+				case 13:
+					switch (shapeNum+1) {
+				 		case 31:
+				 		case 32:
+			 				bAlternative = true;
+			 				break;
+					}
+					break;
+			}
 					
-					
-				}
+				
+			if (bAlternative) {
+				var name:String = "Shape"+(shapeNum+1).toString()+"_"+( alternative+1).toString();
+				var index:int = alternativesNames.indexOf(name);
+				trace("TileLayer getShapeClass alternative: ",name);
+				return alternatives[index] as Class;
+			} else {	
+				return shapes[shapeNum];		
 			}
 			
 			//trace("TileLayer::getShapeClass shape: ",shapeNum);
-			return shapes[shapeNum];
 		}
 		
 		public function get shapeNum() : uint {
