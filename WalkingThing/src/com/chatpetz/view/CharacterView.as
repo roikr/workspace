@@ -1,16 +1,17 @@
 package com.chatpetz.view {
+	import com.chatpetz.model.Character;
+
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flash.utils.describeType;
 	import flash.utils.getDefinitionByName;
 
 	/**
 	 * @author roikr
 	 */
-	public class Character extends Sprite {
+	public class CharacterView extends Sprite {
 		
-		protected var step:Number;
+		protected var _step:Number;
 		protected var asset:MovieClip;
 		
 		protected var destination:int;
@@ -19,11 +20,15 @@ package com.chatpetz.view {
 		protected var characterName:String;
 		protected var importer:Array = [Pammy,Parpara,Piff,Pizz,Poggy,Popo];
 		
-		public function Character() {
+		public function CharacterView(character:Character) {
 			
-			step = 10;
+			_step = 10;
 			bWalking = false;
-			characterName = "Parpara";
+			currentCharacter = character;
+		}
+		
+		public function set currentCharacter(character:Character) : void {
+			characterName = character.skin;
 			draw();
 		}
 		
@@ -64,7 +69,7 @@ package com.chatpetz.view {
 		
 		protected function onEnterFrame(e:Event) : void {
 			if (Math.abs(destination - x) > 10) {
-				x+=  bPositiveDir ? step : -step;
+				x+=  bPositiveDir ? _step : -_step;
 			} else {
 				stopWalking();
 			}
@@ -73,6 +78,18 @@ package com.chatpetz.view {
 		protected function set direction(bPositiveDir:Boolean) : void {
 			this.bPositiveDir = bPositiveDir;
 			asset.scaleX = bPositiveDir ? 1 : -1;
+		}
+		
+		public function get isWalking() : Boolean {
+			return bWalking;
+		}
+		
+		public function get isWalkingRight() : Boolean {
+			return bPositiveDir;
+		}
+		
+		public function get step() : Number {
+			return _step;	
 		}
 		
 	}

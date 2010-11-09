@@ -1,7 +1,10 @@
 package com.chatpetz {
 	import com.chatpetz.controller.CreateRoomCommand;
-	import com.chatpetz.view.Room;
+	import com.chatpetz.model.Model;
+	import com.chatpetz.view.ChangeAvatarMediator;
+	import com.chatpetz.view.ChangeAvatarView;
 	import com.chatpetz.view.RoomMediator;
+	import com.chatpetz.view.RoomView;
 
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
@@ -17,10 +20,21 @@ package com.chatpetz {
 		}
 		
 		override public function startup() : void {
+			
+			injector.mapSingleton(Model);
+			
 			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, CreateRoomCommand,ContextEvent,true)
 			
-			mediatorMap.mapView(Room, RoomMediator);
+			
+			mediatorMap.mapView(ChangeAvatarView,ChangeAvatarMediator);
+			
+			
+			
+			mediatorMap.mapView(RoomView, RoomMediator);
+			mediatorMap.mapView(WalkingThing, ApplicationMediator);
+			
 			super.startup();
+			
 		}
 	}
 }

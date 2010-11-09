@@ -1,5 +1,5 @@
 package com.chatpetz.controller {
-	import com.chatpetz.view.Room;
+	import com.chatpetz.view.RoomView;
 
 	import org.robotlegs.mvcs.Command;
 
@@ -8,9 +8,10 @@ package com.chatpetz.controller {
 	 */
 	public class CreateRoomCommand extends Command {
 		
+		
 		override public function execute() : void {
-			var room : Room = new Room();
-			contextView.addChild(room);
+			dispatch(new RoomEvent(RoomEvent.ROOM_CREATED, new RoomView()))
+
 		}
 		
 		
