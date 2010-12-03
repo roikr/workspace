@@ -8,18 +8,18 @@ package {
 	 */
 	public class ToolsMenu extends ToolbarMC {
 		
-		
-		public static const TOOLBAR_CURSOR:int = 0;
-		public static const TOOLBAR_ROW_FILLER:int = 1;
-		public static const TOOLBAR_COLUMN_FILLER:int = 2;
-		public static const TOOLBAR_GRID_FILLER:int = 3;
-		public static const TOOLBAR_INK: int = 4;
-		public static const TOOLBAR_TILE_ERASER:int = 5;
-		public static const TOOLBAR_GRID_ERASER:int = 6;
-		public static const TOOLBAR_UNDO:int = 7;
-		public static const TOOLBAR_MAGNIFIER:int = 8;
-		public static const TOOLBAR_COST:int = 9;
-		public static const TOOLBAR_INVITATION:int = 10;
+		public static const TOOLBAR_VIDEO:int = 0;
+		public static const TOOLBAR_CURSOR:int = 1;
+		public static const TOOLBAR_ROW_FILLER:int = 2;
+		public static const TOOLBAR_COLUMN_FILLER:int = 3;
+		public static const TOOLBAR_GRID_FILLER:int = 4;
+		public static const TOOLBAR_INK: int = 5;
+		public static const TOOLBAR_TILE_ERASER:int = 6;
+		public static const TOOLBAR_GRID_ERASER:int = 7;
+		public static const TOOLBAR_UNDO:int = 8;
+		public static const TOOLBAR_MAGNIFIER:int = 9;
+		public static const TOOLBAR_COST:int = 10;
+		public static const TOOLBAR_INVITATION:int = 11;
 		
 		
 		//private var client:Object;
@@ -31,10 +31,10 @@ package {
 		
 		public function ToolsMenu(client:Object) { // client:Object
 			this.client = client;
-			y=235;
+			y=206;
 			x=856;
 			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
-			tool = 0;
+			tool = TOOLBAR_CURSOR;
 			new SmartTooltip(this);
 		}
 		
@@ -61,9 +61,10 @@ package {
 					for (var i:int = 0;i<numChildren;i++ ) {
 						(this.getChildAt(i) as MovieClip).gotoAndStop(1);
 					}
-					(this.getChildAt(10-tool) as MovieClip).gotoAndStop(2);
+					(this.getChildAt(11-tool) as MovieClip).gotoAndStop(2);
 					break;
 					
+				case ToolsMenu.TOOLBAR_VIDEO:
 				case ToolsMenu.TOOLBAR_GRID_FILLER :
 				case ToolsMenu.TOOLBAR_GRID_ERASER :
 				case ToolsMenu.TOOLBAR_COST:
@@ -91,6 +92,9 @@ package {
 			var tool:int = (pnt.y-3) / 28;
 			
 			switch ( tool) {
+				case ToolsMenu.TOOLBAR_VIDEO:
+					str= 'סרט הדרכה'
+					break;
 				case ToolsMenu.TOOLBAR_CURSOR:
 					str= 'בחירה'
 					break;
@@ -122,7 +126,7 @@ package {
 					str= 'ביטול פעולה אחרונה'
 					break;
 				case ToolsMenu.TOOLBAR_INVITATION:
-					str = 'שלח הזמנה'
+					str = 'שמור/שלח הזמנה'
 					break;
 				
 			}

@@ -24,6 +24,7 @@ package {
 		private var tabs:Tabs;
 		
 		private var _log:TextField;
+		private var videoPlayer:VideoPlayer;
 		
 		
 		public function TilesSimulator() {
@@ -43,7 +44,7 @@ package {
 			addChild(tabs = new Tabs(this));
 			addChild(tileEditor=new TileEditor(this));
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
-			
+					
 			
 			stage.addEventListener(MouseEvent.MOUSE_UP,onMouseUp)
 			
@@ -142,6 +143,9 @@ package {
 						service.list = order.describe();
 						service.show();
 						break;
+					case ToolsMenu.TOOLBAR_VIDEO:
+						addChild(new VideoPlayer("help.flv",this));
+						break;
 				}
 				
 				if (price) {
@@ -166,6 +170,9 @@ package {
 				var newGrid : Grid = (grids[tabs.tab]);
 				newGrid.decode(xml);
 				changeGrid();
+			} else if (obj is VideoPlayer) {
+				removeChild(obj as VideoPlayer);
+				
 			}
 		}
 		
