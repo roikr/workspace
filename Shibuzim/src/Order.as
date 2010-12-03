@@ -51,9 +51,12 @@ package {
 			
 		}
 		
-		public function describe() : void {
+		public function describe() : String {
+			var desc:String = "";
 			for each (var layer:Layer in layers)
-				trace (layer.description());
+				desc+=layer.description()+'\n'
+			
+			return desc;
 		}
 	}
 }

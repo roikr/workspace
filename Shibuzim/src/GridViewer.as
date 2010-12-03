@@ -6,72 +6,54 @@ package {
 	 * @author roikr
 	 */
 	public class GridViewer extends Sprite {
-		
-		private var rows:int;
-		private var columns:int;
-		private var tileSize:int;
-		private var space:int;
+			
 		private var colorPicker:ColorPicker;
 		
+			
+			
 		
-		public function GridViewer(xml:XML) {
+		public function GridViewer() {
+		
+			//addChild(new GridViewer(xml));
+			//var order:Order = new Order(xml);
+			//order.describe();
+			//trace(xml)
 			
-			colorPicker = new ColorPicker(); // we need to instanciate the bitmapData of it
 			
-			
-			tileSize = xml.@size;
-			space = xml.@space;
-			
-			rows = 452 / (tileSize+space);
-			columns = 619 / (tileSize+space);
-			
-			this.opaqueBackground = 0xf9f6ef;
-			
-			//y = (473 - (rows*(tileSize+space)-space))/2;
-			
-			for (var i:int=0;i<rows;i++) {
-				for (var j:int=0;j<columns;j++) {
-					var gridTile:GridTile = new GridTile(tileSize);
-					
-					
-					gridTile.x = (tileSize+space)*j
-					gridTile.y = (tileSize+space)*i
-					gridTile.mouseChildren = false;
-					addChild(gridTile);
-					
-					//graphics.drawRect((tileSize+space)*j, (tileSize+space)*i, tileSize, tileSize)
-				}
+			var flashVars=this.loaderInfo.parameters;
+			var nodeNum:Number = 1071;
+			if (flashVars.node) {
+				nodeNum = Number(flashVars.node)
+				//tf.text = node;
 			}
 			
-			decode(xml);
+			
+			new ShibuzimService(this,nodeNum);
 			
 		}
 		
-		private function getGridTileAt(p:Point) : GridTile {
-			for (var i:int=0;i<numChildren;i++) {
-				var tile:GridTile = getChildAt(i) as GridTile;
-				if (tile.hitTestPoint(p.x, p.y))
-					return tile;
+		public function onClient(obj:Object) : void {
+			if (obj is ShibuzimService) {
+				
+				var xml:XML = new XML((obj as ShibuzimService).code);
+				
+				colorPicker = new ColorPicker(); // we need to instanciate the bitmapData of it
+				var grid:Grid = new Grid(xml.@type);
+				grid.draw(new Point(0,0));
+				grid.decode(xml);
+				
+				addChild(grid);
+				
+				scaleX = 0.45;
+				scaleY = 0.45;
+				
 			}
-			return null;
 		}
 		
-		
-		
-		public function decode(xml:XML) : void{
-			//clear();
-			for each (var item:XML in xml.item ) {
-				var tile:Tile = Tile.decode(item.tile[0]);
-				//tile.x = -1;
-				//tile.y = -1;
-				tile.scale =  tileSize / 450;
-				var point:Point = new Point(item.@column*(tileSize+space),item.@row*(tileSize+space));
-				point = this.localToGlobal(point);
-				var gridTile:GridTile = getGridTileAt(point);
-				gridTile.addChild(tile);
-				//trace (item.toString());
-			}
-			//this.xml = xml;
+		public function set log(str:String) : void {
+			//trace(str);
 		}
+		
+			
 	}
 }

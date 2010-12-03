@@ -1,7 +1,9 @@
 package {
-	import flash.events.MouseEvent;
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	import flash.text.TextField;
 
 	/**
 	 * @author roikr
@@ -18,26 +20,61 @@ package {
 		private var toolsMenu:ToolsMenu;
 		private var price:Price;
 		private var layer:TileLayer;
+		private var service:ShibuzimService;
+		private var tabs:Tabs;
 		
+		private var _log:TextField;
 		
 		
 		public function TilesSimulator() {
 			addChild(bitmap);
 			
 			grids = new Array();
-			grids.push(new Grid(this,22,2));
-			grids.push(new Grid(this,27,3));
-			grids.push(new Grid(this,38,3));
+			addGrid(0);
+			addGrid(1);
+			addGrid(2);
+			//grids.push(new Grid(this,0));
+			//grids.push(new Grid(this,1));
+			//grids.push(new Grid(this,2));
 			currentGrid = grids[2] as Grid;
 			addChild(currentGrid );
 			addChild(toolsMenu=new ToolsMenu(this))
 			
-			addChild(new Tabs(this));
+			addChild(tabs = new Tabs(this));
 			addChild(tileEditor=new TileEditor(this));
 			toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
 			
+			
 			stage.addEventListener(MouseEvent.MOUSE_UP,onMouseUp)
 			
+			
+			_log=new TextField();
+			_log.width = 900;
+			_log.height = 200;
+			_log.y = 590;
+			_log.text = "";
+			addChild(_log)
+			
+			var flashVars=this.loaderInfo.parameters;
+			var nodeNum:Number = 0;
+			if (flashVars.node) {
+				nodeNum = Number(flashVars.node)
+				//tf.text = node;
+			}
+			
+			
+			addChild(service = new ShibuzimService(this,nodeNum))
+			
+		}
+		
+		private function addGrid(type:int) : void {
+			var grid = new Grid(type,this)
+			grid.draw(new Point(209,75 + (473 - grid.gridHeight)/2))
+			grids.push(grid);
+		}
+		
+		public function set log(str:String) : void {
+			_log.text+='\n'+str;
 		}
 		
 		public function onMouseUp(e:MouseEvent) : void {
@@ -98,8 +135,12 @@ package {
 						}
 						break;
 					case (ToolsMenu.TOOLBAR_INVITATION) :
-						(new Order(currentGrid.encode())).describe();
-						trace(currentGrid.encode().toString());
+						var order:Order =new Order(currentGrid.encode());
+						
+						//trace(currentGrid.encode().toString());
+						service.code = currentGrid.encode().toString();
+						service.list = order.describe();
+						service.show();
 						break;
 				}
 				
@@ -113,8 +154,24 @@ package {
 				}
 			}
 			else if (obj is Tabs) {
-				var newGrid : Grid = (grids[(obj as Tabs).tab]);
-				if (newGrid!=currentGrid) {
+				changeGrid();
+				
+			} else if (obj is TileLayer) {
+				startDragLayer(obj as TileLayer);
+			} else if (obj is ShibuzimService) {
+				
+				var xml:XML = new XML(service.code);
+				tabs.tab = xml.@type;
+				
+				var newGrid : Grid = (grids[tabs.tab]);
+				newGrid.decode(xml);
+				changeGrid();
+			}
+		}
+		
+		private function changeGrid() : void {
+			var newGrid : Grid = (grids[tabs.tab]);
+			if (newGrid!=currentGrid) {
 					var index:int = this.getChildIndex(currentGrid);
 					this.addChildAt(newGrid, index);
 					this.removeChild(currentGrid);
@@ -124,9 +181,6 @@ package {
 						price.price = (new Order(currentGrid.encode())).price;
 					}
 				}
-			} else if (obj is TileLayer) {
-				startDragLayer(obj as TileLayer);
-			}
 		}
 		
 		private function onPrice(e:MouseEvent) : void {

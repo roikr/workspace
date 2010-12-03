@@ -12,25 +12,68 @@ package {
 		private var columns:int;
 		private var tileSize:int;
 		private var space:int;
-		private var client:TilesSimulator;
+		private var client:Object;
 		private var xml:XML;
 		private var lastXml:XML;
 		private var _x:Number;
 		private var _y:Number;
 		
 		
-		public function Grid(client:TilesSimulator,tileSize:int,space:int) {
+		public function Grid(gridType:int,client:Object = null) {
 			
 			this.client = client;
+			
+			var tileSize:int;
+			var space:int;
+			
+			switch (gridType) {
+				case 0:
+					tileSize = 22;
+					space = 2;
+					break;
+					
+				case 1:
+					tileSize = 27;
+					space = 3;
+					break;
+					
+				case 2:
+					tileSize = 38;
+					space = 3;
+					break;
+			}
+			
+			
 			rows = 452 / (tileSize+space);
 			columns = 619 / (tileSize+space);
 			this.tileSize = tileSize;
 			this.space = space;
 			
-			x=_x = 209;
-			y=_y = 75 + (473 - (rows*(tileSize+space)-space))/2;
+			//pos = new Point(209,75 + (473 - gridHeight)/2)
+			
+			//x=_x = 209;
+			//y=_y = 75 + (473 - gridHeight)/2;
 			
 			
+			
+			
+			xml = <grid/>
+			xml.@size = tileSize;
+			xml.@space = space;
+			xml.@type = gridType;
+			lastXml = null;
+			
+			if (client) {
+				addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
+			}
+			
+			
+		}
+		
+		public function draw(p:Point) : void {
+			
+			x=_x = p.x;
+			y=_y = p.y;
 			
 			for (var i:int=0;i<rows;i++) {
 				for (var j:int=0;j<columns;j++) {
@@ -50,17 +93,12 @@ package {
 			mask.graphics.beginFill(0x000000);
 			mask.graphics.drawRect(x, y, width, height)
 			this.mask = mask;
-			
-			xml = <grid/>
-			xml.@size = tileSize;
-			xml.@space = space;
-			lastXml = null;
-			addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
-			
-			
 		}
 		
 		
+		public function get gridHeight() : Number {
+			return rows*(tileSize+space)-space;
+		}
 		
 		
 		
