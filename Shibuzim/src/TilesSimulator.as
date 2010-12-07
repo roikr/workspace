@@ -23,9 +23,12 @@ package {
 		private var service:ShibuzimService;
 		private var tabs:Tabs;
 		
-		private var _log:TextField;
+		//private var _log:Log;
 		private var videoPlayer:VideoPlayer;
 		
+		public function set log(str : String) : void {
+			//_log.logArea.text += '\n' + str;
+		}
 		
 		public function TilesSimulator() {
 			addChild(bitmap);
@@ -49,12 +52,8 @@ package {
 			stage.addEventListener(MouseEvent.MOUSE_UP,onMouseUp)
 			
 			
-			_log=new TextField();
-			_log.width = 900;
-			_log.height = 200;
-			_log.y = 590;
-			_log.text = "";
-			addChild(_log)
+			
+			//addChild(_log=new Log())
 			
 			var flashVars=this.loaderInfo.parameters;
 			var nodeNum:Number = 0;
@@ -74,9 +73,7 @@ package {
 			grids.push(grid);
 		}
 		
-		public function set log(str:String) : void {
-			_log.text+='\n'+str;
-		}
+		
 		
 		public function onMouseUp(e:MouseEvent) : void {
 			//trace(e.target,e.currentTarget)
@@ -144,7 +141,7 @@ package {
 						service.show();
 						break;
 					case ToolsMenu.TOOLBAR_VIDEO:
-						addChild(new VideoPlayer("help.flv",this));
+						addChild(new VideoPlayer("help.f4v",this));
 						break;
 				}
 				

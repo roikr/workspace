@@ -1,6 +1,9 @@
 package {
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.net.URLRequest;
+	import flash.net.navigateToURL;
 
 	/**
 	 * @author roikr
@@ -8,6 +11,8 @@ package {
 	public class ShibuzimService extends Sprite {
 		
 		private var form:Form;
+		private var message:Message;
+		private var order:Boolean;
 		
 		private var baseURL:String="http://www.shibuzim.co.il";
 		private var gateway:String=baseURL+"/services/amfphp";
@@ -30,8 +35,13 @@ package {
 			
 			
 			form=new Form();
-			form.submit.addEventListener( MouseEvent.CLICK, onNodeSubmit );
-			form.cancel.addEventListener(MouseEvent.CLICK,function () {hide();})
+			message = new Message();
+			form.save.addEventListener( MouseEvent.CLICK, onNodeSubmit );
+			form.send.addEventListener( MouseEvent.CLICK, onNodeSubmit );
+			form.cancel.addEventListener(MouseEvent.CLICK,function () : void {removeChild(form);})
+			
+			message.shibuzim.addEventListener(MouseEvent.CLICK,function () : void {removeChild(message);;})
+			message.home.addEventListener(MouseEvent.CLICK,function () : void {navigateToURL(new URLRequest(baseURL),"_self");;})
 			
 
 			drupal=new DrupalService(gateway,apiKey);
@@ -51,12 +61,13 @@ package {
 		
 		
 		public function show() : void {
-			form.xml.text = _code;
-			form.list.text = _list;
+			
 			addChild(form);
+			form.mcMust.visible = false;
 		}
 		
 		public function set code(_code:String) : void {
+			
 			this._code = _code;
 		}
 		
@@ -65,12 +76,11 @@ package {
 		}
 		
 		public function set list(_list:String) : void {
+		
 			this._list = _list;
 		}
 		
-		private function hide() : void {
-			removeChild(form);
-		}
+		
 		
 		function onConnect( result:Object ) {
 			log="connected";
@@ -92,12 +102,16 @@ package {
 			}
 			if (user&&user.userid>0) {
 				//clearing status
-				log="";
+				//log="";
 			}
 		}
 		
 		function loadNode( nid:Number ) {
 			drupal.serviceCall( "node.get", onNodeLoad, null, nid );
+		}
+		
+		function value(obj:Object) : String {
+			return obj[0]["value"] ? String(obj[0]["value"]) : ""
 		}
 		
 		function onNodeLoad( node:Object ) {
@@ -111,21 +125,21 @@ package {
 			//        We can use it as a code like yyyy-mm-dd--????
 			//        It doesn't have to be unique, but it should help
 			//        finding out what is what.
-			form.title.text=node.title;
-			form.desc.text=node.field_artwork_desc[0]["value"];
-			form.author.text=node.field_artwork_author[0]["value"];
-			form.email.text=node.field_author_email[0]["value"];
-			form.order.selected=node.field_order_now[0]["value"] == "yes";
-			form.phone1.text=node.field_author_phone1[0]["value"];
-			form.phone2.text=node.field_author_phone2[0]["value"];
-			form.address.text=node.field_author_address[0]["value"];
-			form.city.text=node.field_author_city[0]["value"];
-			form.zip.text=node.field_author_zip[0]["value"];
-			form.country.text=node.field_author_country[0]["value"];
-			_code = form.xml.text=node.field_xml_code[0]["value"];
-			_list = form.list.text = node.field_parts_list[0]["value"];
+			log="title: " + node.title;
+			log="desc: " + value(node.field_artwork_desc);
+			form.author.text=value(node.field_artwork_author);
+			form.email.text=value(node.field_author_email);
+			log="order: "+ value(node.field_order_now);
+			form.phone1.text=value(node.field_author_phone1);
+			form.phone2.text=value(node.field_author_phone2);
+			form.address.text=value(node.field_author_address);
+			form.city.text=value(node.field_author_city);
+			form.zip.text=value(node.field_author_zip);
+			form.country.text=value(node.field_author_country);
+			//log = value(node.field_xml_code);
+			//log = value(node.field_parts_list);
 			
-		
+			_code = value(node.field_xml_code);
 		   // Roee - I wanted to logout the flash-shi user, but there is a problem.
 		   //        commenting out for now and will solve later. Dubi
 			//if (user&&user.name=='flash-shi') {
@@ -137,20 +151,31 @@ package {
 		
 		function onNodeSubmit( event:MouseEvent ) {
 			
-			_code = form.xml.text;
-			_list = form.list.text;
-			log = "onNodeSubmit"
-			log = "with user: "+user.userid;
+			order = event.target == form.send;
 			
-			if (user&&user.userid==0) {
-				log = user.userid;
-				var username:String='flash-shi';
-				var password:String='L3tMi0rder!';
-				drupal.serviceCall( "user.login", setUserSaveNode, onUserError, username, password );
-			} else {
-				saveNode();
+			if (form.author.text.length && form.email.text.length && form.city.length && form.country.text.length 
+					&& (form.phone1.text.length || !order)) {
+			
+				
+				
+				log = "onNodeSubmit"
+				log = "with user: "+user.userid;
+				
+				if (user&&user.userid==0) {
+					log = user.userid;
+					var username:String='flash-shi';
+					var password:String='L3tMi0rder!';
+					drupal.serviceCall( "user.login", setUserSaveNode, onUserError, username, password );
+				} else {
+					saveNode();
+				}
+			}  else {
+				// Roee - here, you may want to tell the user about mandatory fields
+				//        either by using the status line or any other visual method
+				log="mandatory field";
+				form.mcMust.visible = true;
 			}
-			//hide();
+			
 			
 		}
 		
@@ -159,13 +184,18 @@ package {
 			saveNode();
 		}
 		
+		
+	
+		public static function cleanText(str:String) : String {
+			// Roee - I am not sure if the following chars cleaning is needed here
+			//        but for real text input fields(name,email,phone,etc.)
+			//        it won't harm, so I added an example here. Dubi
+			return str.replace(/[\t\n\r\f]/,'');
+		}
+		
+		
+		
 		function saveNode() {
-			// Roee - here the node gets saved with the data in the
-			//        form fields as well as the XML of the simulator
-		
-			// adding "FW:" to title just in order to see change during API testing
-			var titleText:String="FW: "+form.title.text;
-		
 			
 			// field_order_now gets either "no" or "yes"
 			// "no"  :  means save only
@@ -173,61 +203,41 @@ package {
 			//var order_nowText=field_order_now.text;
 		
 			
+			var newNode:Object=new Object  ;
+	
+			newNode.type="tiles_artwork";
+	
+			newNode.title=form.author.text;
 			
-		
-			// Roee - I am not sure if the following chars cleaning is needed here
-			//        but for real text input fields(name,email,phone,etc.)
-			//        it won't harm, so I added an example here. Dubi
-			titleText=titleText.replace(/[\t\n\r\f]/,'');
-		
-			// Roee - here, you need to check all mandatory input fields
-			//        the following "if" is an example for titleText only.
-			if (titleText.length) {
-				var newNode:Object=new Object  ;
-		
-				// Roee - here you need to set condition for when to update (rather than create).
-				//        when updating the cuurent node, must use the same ID,
-				//        otherwise, a new node will be created.
-				// the condition here is fake (always true), hence only update takes place
-				if (form.update.selected) {
-					newNode.nid=currentNode.nid;
-				}
-		
-				newNode.type="tiles_artwork";
-		
-				newNode.title=form.desc.text;
-		
-				newNode.field_artwork_desc=new Array({value:form.desc.text});
-		
-				newNode.field_artwork_author=new Array({value:form.author.text});
-		
-				newNode.field_author_email=new Array({value:form.email.text});
+			log = cleanText(form.author.text);
+	
+			newNode.field_artwork_desc=new Array({value:cleanText(form.author.text)});
+	
+			newNode.field_artwork_author=new Array({value:cleanText(form.author.text)});
+	
+			newNode.field_author_email=new Array({value:cleanText(form.email.text)});
 
-				newNode.field_order_now = new Array({value:form.order.selected ? "yes" : "no"});
-		
-				newNode.field_author_phone1=new Array({value:form.phone1.text});
-		
-				newNode.field_author_phone2=new Array({value:form.phone2.text});
-		
-				newNode.field_author_address=new Array({value:form.address.text});
-		
-				newNode.field_author_city=new Array({value:form.city.text});
-		
-				newNode.field_author_zip=new Array({value:form.zip.text});
-		
-				newNode.field_author_country=new Array({value:form.country.text});
-		
-				newNode.field_xml_code=new Array({value:_code});
+			newNode.field_order_now = new Array({value:order ? "yes" : "no"});
+	
+			newNode.field_author_phone1=new Array({value:cleanText(form.phone1.text)});
+	
+			newNode.field_author_phone2=new Array({value:cleanText(form.phone2.text)});
+	
+			newNode.field_author_address=new Array({value:cleanText(form.address.text)});
+	
+			newNode.field_author_city=new Array({value:cleanText(form.city.text)});
+	
+			newNode.field_author_zip=new Array({value:cleanText(form.zip.text)});
+	
+			newNode.field_author_country=new Array({value:cleanText(form.country.text)});
+	
+			newNode.field_xml_code=new Array({value:_code});
+			
+			newNode.field_parts_list = new Array({value:_list});
 				
-				newNode.field_parts_list = new Array({value:_list});
-					
-				
-				drupal.serviceCall("node.save", onNodeCreate, onNodeError, newNode);
-			} else {
-				// Roee - here, you may want to tell the user about mandatory fields
-				//        either by using the status line or any other visual method
-				log="title is mandatory";
-			}
+			
+			drupal.serviceCall("node.save", onNodeCreate, onNodeError, newNode);
+		
 		}
 		
 		
@@ -237,9 +247,13 @@ package {
 		
 		
 		function onNodeCreate( nodeId:Number ) {
-			hide();
-			log = "node created"
+			
+			log = "node created: " + nodeId.toString();
 			//drupal.serviceCall( "node.get", onNodeLoad, null, nodeId );
+			removeChild(form);
+			message.mcSave.visible = !order;
+			message.mcSend.visible = order;
+			addChild(message);
 		}
 		
 		function onError( error:Object ) {
@@ -259,7 +273,6 @@ package {
 		
 		function set log(str:String) {
 			
-			form.log.text+=str+'\n';
 			_client.log=str;
 		}
 	}
