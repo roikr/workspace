@@ -126,7 +126,7 @@ package {
 					str= 'ביטול פעולה אחרונה'
 					break;
 				case ToolsMenu.TOOLBAR_INVITATION:
-					str = 'שמור/שלח הזמנה'
+					str = 'שמירה / הזמנה'
 					break;
 				
 			}
