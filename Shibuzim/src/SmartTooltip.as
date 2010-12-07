@@ -19,6 +19,7 @@ package {
 		private var timer:Timer;
 		private var target:Object;
 		private var tf:TextField;
+		private var pnt:Point;
 		
 		
 		
@@ -59,22 +60,28 @@ package {
 		
 		
 		public function onMouseOver(e:Event) : void {
-			//trace("over")
+			//trace("over",e.target.y,e.currentTarget.y)
+			
 			target.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			target.addEventListener(MouseEvent.MOUSE_OUT,onMouseOut);
 			timer.start();
+			pnt = new Point(target.stage.mouseX,target.stage.mouseY);
+			
 		}
 		
 		public function onMouseMove(e:Event) : void {
 			//trace("move")
+			
 			timer.reset();
 			timer.start();
-			
+			pnt = new Point(target.stage.mouseX,target.stage.mouseY);
+		
 			
 		}
 		
 		public function onMouseOut(e:Event) : void {
 			//trace("out")
+			
 			target.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			target.removeEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 			timer.reset();
@@ -86,12 +93,13 @@ package {
 		
 		
 		public function onTimer(e:Event) : void {
+			trace("SmartTooltip::onTimer")
 			target.stage.addChild(this);
-			var pnt:Point = new Point(stage.mouseX,stage.mouseY);
+			
 			tf.text = target.getTooltipText(pnt);
 			
-			x = stage.mouseX - 10 - tf.width;
-			y = stage.mouseY + 10;
+			x = pnt.x - 10 - tf.width;
+			y = pnt.y + 10;
 		}
 		
 	}
