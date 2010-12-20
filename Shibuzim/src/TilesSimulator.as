@@ -150,6 +150,10 @@ package {
 				}
 				
 			} else if (obj is Grid) {
+				if (toolsMenu.selectedTool == ToolsMenu.TOOLBAR_INK) {
+					toolsMenu.tool = ToolsMenu.TOOLBAR_CURSOR;
+				}
+				
 				if (price) {
 					price.price = (new Order(currentGrid.encode())).price;
 				}

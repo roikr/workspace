@@ -27,9 +27,12 @@ package {
 			
 			addChild(bitmap)
 			
-			tile = new Tile();
+			
 		    addChild(colorPicker = new ColorPicker())
-			addChild(shapesMenu = new ShapesMenu(this,tile))
+			addChild(shapesMenu = new ShapesMenu(this))
+			tile = new Tile();
+			
+
 			
 			
 			
@@ -104,6 +107,8 @@ package {
 			_tile.y = 10;
 			_tile.scale = 0.3;
 			this._tile = _tile;
+			
+			shapesMenu.update()
 		}
 		
 		public function addLayer(shapeNum:uint,color:uint) : void {

@@ -141,7 +141,7 @@ package {
 		
 		private function onMouseDown(e:MouseEvent) : void {
 			applyTool(client.currentTool,e);
-			client.onClient(this);
+			
 		}
 		
 		public function resetGrid() : void {
@@ -258,17 +258,20 @@ package {
 					var gridTile:GridTile = (e.target as GridTile);
 					if (gridTile.numChildren)  {
 						client.editor.tile = (gridTile.getChildAt(0) as Tile).cloneTile();
+						client.onClient(this);
 					}
 					break;
-					
-				
-					
-				
-					
-				
-				
-			
 			}
+			
+			switch (tool) {			
+				case ToolsMenu.TOOLBAR_INK :
+					break;
+					
+				default:
+					client.onClient(this);
+					break;
+			}	
+				
 			/*
 			if (e.target is Grid) {
 				var tile:Tile = client.cloneCurrentTile();

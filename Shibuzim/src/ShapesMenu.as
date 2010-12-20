@@ -15,10 +15,9 @@ package {
 		private var _shapeNum : int;
 		private var client:Object;
 		private var shapes:ShapesPane;
-		private var _tile:Tile;
 		//private var _eventType:String;
 		
-		public function ShapesMenu(client:Object,tile:Tile) {
+		public function ShapesMenu(client:Object) {
 			addChild(bitmap);
 			addChild(shapes=new ShapesPane())
 			
@@ -26,8 +25,7 @@ package {
 			x = 10;
 			y = 158;
 			
-			_tile = tile;
-			update();
+			//update();
 			
 			shapes.addEventListener(MouseEvent.MOUSE_DOWN,onMouseEvent);
 			
@@ -83,7 +81,7 @@ package {
 		}
 		
 		public function update() : void {
-			shapes.updateBy(_tile)
+			shapes.updateBy(client.tile)
 		}
 	}
 }

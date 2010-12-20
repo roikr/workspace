@@ -1,5 +1,4 @@
 package {
-	import flash.display.Shape;
 	import flash.display.Sprite;
 
 	/**

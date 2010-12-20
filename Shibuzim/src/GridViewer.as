@@ -20,7 +20,7 @@ package {
 			//trace(xml)
 			
 			
-			var flashVars=this.loaderInfo.parameters;
+			var flashVars : Object =this.loaderInfo.parameters;
 			var nodeNum:Number = 1071;
 			if (flashVars.node) {
 				nodeNum = Number(flashVars.node)
