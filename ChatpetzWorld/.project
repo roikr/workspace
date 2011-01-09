@@ -16,11 +16,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>ChatpetzCodesLibrary</name>
-			<type>2</type>
-			<location>/Users/roikr/Developer/FDT/ChatpetzCodesLibrary/bin</location>
-		</link>
-		<link>
 			<name>GameInterfaces</name>
 			<type>2</type>
 			<location>/Users/roikr/Developer/FDT/GameManager/interfaces</location>

@@ -7,7 +7,6 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">interfaces</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">manager</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">manager/TestingGameUILib.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">ChatpetzCodesLibrary</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">ChatpetzCodesLibrary/ChatpetzCodesLibrary.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/interfaces2.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/layers.swc</AS3Classpath>
@@ -21,4 +20,5 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/raccoon.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/Butterfly.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">src/monkey.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">SoundManager/HIGH_BAND.swc</AS3Classpath>
 </AS3Classpath>

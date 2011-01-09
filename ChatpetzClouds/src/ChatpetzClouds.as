@@ -212,7 +212,7 @@ package {
 				if (cloudsServed % 10 == 0) {
 					SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_SERVE_10,this);
 				} else {
-					SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.CLOUDS_GAME_SERVE_1,ChatpetzCodes.CLOUDS_GAME_SERVE_2), this);
+					SoundManager.playBeep(ChatpetzCodes.CLOUDS_GAME_SERVE_1, this);
 				}
 				
 				

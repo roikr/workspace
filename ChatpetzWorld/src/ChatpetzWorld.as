@@ -65,7 +65,7 @@ package {
 		
 		public function ChatpetzWorld() {
 			super();
-			new BeepsImporter();
+			new HighBand();
 			
 			client = new ChatpetzClient(this,"chatpetz")
 			
@@ -212,7 +212,7 @@ package {
 			
 			
 		
-			SoundManager.mainChatpet="PIFF";
+			SoundManager.mainChatpet="PARPARA";
 		}
 		
 		/**
@@ -614,7 +614,7 @@ package {
 						beepState = BEEP_STATE_DESCRIBE;
 				}  else if (trigger.target == "creatureRoom") 
 				{
-					if (SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_1,ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_2),this))
+					if (SoundManager.playBeep(ChatpetzCodes.WORLD_CLICK_MULTI_EYED_ALIEN_1,this))
 						beepState = BEEP_STATE_DESCRIBE;
 					
 				}

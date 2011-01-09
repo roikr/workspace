@@ -70,23 +70,13 @@ package com.chatpetz.speed {
 			
 			rightAnswers = new Array();
 			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_1);
-			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_2);
-			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_3);
-			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_4);
 			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_5);
 			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_DOMINANT_1);
-			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_DOMINANT_2);
-			rightAnswers.push(ChatpetzCodes.CARD_GAME_RIGHT_ANSWER_DOMINANT_3);
-			
+					
 			
 			wrongAnswers = new Array();
 			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_1);
-			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_2);
-			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_3);
-			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_4);
 			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_DOMINANT_1);
-			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_DOMINANT_2);
-			wrongAnswers.push(ChatpetzCodes.CARD_GAME_WRONG_ANSWER_DOMINANT_3);
 		}
 
 		

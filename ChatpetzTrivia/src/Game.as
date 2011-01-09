@@ -333,23 +333,14 @@ package {
 			
 			rightAnswers = new Array();
 			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_1)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_2)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_3)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_4)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_5)
+			
 			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_6)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_7)
-			rightAnswers.push(ChatpetzCodes.TRIVIA_GAME_RIGHT_ANSWER_8)
 			
 			wrongAnswers = new Array();
 			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_1)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_2)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_3)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_4)
+			
 			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_5)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_6)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_7)
-			wrongAnswers.push(ChatpetzCodes.TRIVIA_GAME_WRONG_ANSWER_8)
+			
 			
 		}
 		

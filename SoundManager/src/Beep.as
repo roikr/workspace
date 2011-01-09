@@ -27,7 +27,7 @@ package {
       			str="0" + str;
   		 	
   		 
-  		 	sound =  new RKSound("sn2_8_"+str,this,false,false);
+  		 	sound =  new RKSound("HIGH_BAND.WAV_"+str+".wav",this,false,false);
 			Beep.bChatpetIsTalking = true;
   		 	
   		 	/*

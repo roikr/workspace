@@ -227,7 +227,8 @@ package {
 				
 				if (photo.isPerfectShot()) {
 					beepState = BEEP_STATE_FEEDBACK;
-					SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1,ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_2)	, this);
+					SoundManager.playBeep(	ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1, this)
+					//SoundManager.chooseAndPlayBeep(new Array(ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_1,ChatpetzCodes.SAFARI_GAME_PERFECT_SHOT_2)	, this);
 					SoundManager.playSound(SafariSounds.RIGHT_SOUND);	
 				}
 				
