@@ -127,6 +127,7 @@ package {
 			//        finding out what is what.
 			log="title: " + node.title;
 			log="desc: " + value(node.field_artwork_desc);
+			
 			form.author.text=value(node.field_artwork_author);
 			form.email.text=value(node.field_author_email);
 			log="order: "+ value(node.field_order_now);
@@ -153,8 +154,8 @@ package {
 			
 			order = event.target == form.send;
 			
-			if (form.author.text.length && form.email.text.length && form.city.length && form.country.text.length 
-					&& (form.phone1.text.length || !order)) {
+			if (form.code.text.length  && form.city.length && form.country.text.length 
+					&& ((form.phone1.text.length  && form.email.text.length) || !order)    ) {
 			
 				
 				
@@ -207,13 +208,15 @@ package {
 	
 			newNode.type="tiles_artwork";
 	
-			newNode.title=form.author.text;
+			newNode.title="title - "+form.code.text;
 			
-			log = cleanText(form.author.text);
+			log = cleanText(form.code.text);
 	
-			newNode.field_artwork_desc=new Array({value:cleanText(form.author.text)});
+			//newNode.field_artwork_desc=new Array({value:cleanText(form.author.text)});
 	
-			newNode.field_artwork_author=new Array({value:cleanText(form.author.text)});
+			//newNode.field_artwork_author=new Array({value:cleanText(form.author.text)});
+			
+			newNode.field_personal_code = new Array({value:cleanText(form.code.text)});
 	
 			newNode.field_author_email=new Array({value:cleanText(form.email.text)});
 
@@ -234,6 +237,8 @@ package {
 			newNode.field_xml_code=new Array({value:_code});
 			
 			newNode.field_parts_list = new Array({value:_list});
+			newNode.field_tiles_order = new Array({value:_list});
+			
 				
 			
 			drupal.serviceCall("node.save", onNodeCreate, onNodeError, newNode);
