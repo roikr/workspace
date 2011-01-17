@@ -135,9 +135,16 @@ package {
 					case (ToolsMenu.TOOLBAR_INVITATION) :
 						var order:Order =new Order(currentGrid.encode());
 						
-						//trace(currentGrid.encode().toString());
+						/*
+						trace(currentGrid.encode().toString());
+						trace(order.describe_layers());
+						trace(order.describe_tiles());
+						 * 
+						 */
+						
 						service.code = currentGrid.encode().toString();
-						service.list = order.describe();
+						service.partsList = order.describe_layers();
+						service.tilesOrder = order.describe_tiles();
 						service.show();
 						break;
 					case ToolsMenu.TOOLBAR_VIDEO:

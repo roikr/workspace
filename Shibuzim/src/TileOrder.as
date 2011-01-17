@@ -64,7 +64,14 @@ package {
 			return true;
 		}
 		
-		
+		public function describe() : String {
+			var desc:String = "";
+			for each (var layer:Layer in layers) {
+				desc+='\t'+layer.describe()+'\n';
+			}
+			
+			return desc;
+		}
 	
 		
 	}

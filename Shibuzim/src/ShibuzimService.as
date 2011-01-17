@@ -25,7 +25,8 @@ package {
 		private var drupal:DrupalService;
 		
 		private var _code:String;
-		private var _list:String;
+		private var _partsList:String;
+		private var _tilesOrder:String
 		
 		private var _client:Object;
 		
@@ -75,9 +76,13 @@ package {
 			return _code;
 		}
 		
-		public function set list(_list:String) : void {
+		public function set partsList(_partsList:String) : void {
+			this._partsList = _partsList;
+		}
 		
-			this._list = _list;
+		public function set tilesOrder(_tilesOrder:String) : void {
+		
+			this._tilesOrder = _tilesOrder;
 		}
 		
 		
@@ -126,9 +131,9 @@ package {
 			//        It doesn't have to be unique, but it should help
 			//        finding out what is what.
 			log="title: " + node.title;
-			log="desc: " + value(node.field_artwork_desc);
+			//log="desc: " + value(node.field_artwork_desc);
 			
-			form.author.text=value(node.field_artwork_author);
+			form.code.text=value(node.field_personal_code);
 			form.email.text=value(node.field_author_email);
 			log="order: "+ value(node.field_order_now);
 			form.phone1.text=value(node.field_author_phone1);
@@ -236,8 +241,8 @@ package {
 	
 			newNode.field_xml_code=new Array({value:_code});
 			
-			newNode.field_parts_list = new Array({value:_list});
-			newNode.field_tiles_order = new Array({value:_list});
+			newNode.field_parts_list = new Array({value:_partsList});
+			newNode.field_tiles_order = new Array({value:_tilesOrder});
 			
 				
 			

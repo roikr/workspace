@@ -26,8 +26,12 @@ package {
 			return shape==xml.@shape && color==xml.@color;
 		}
 		
-		public function description() : String {
-			return count +" x [ " + shape + ", " + color + " ] ";
+		public function describeAndCount() : String {
+			return shape+'\t'+color+'\t'+count; //count +" x [ " + shape + ", " + color + " ] ";
+		}
+		
+		public function describe() : String {
+			return shape+'\t'+color;
 		}
 	}
 }
