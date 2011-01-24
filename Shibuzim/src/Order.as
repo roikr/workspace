@@ -7,13 +7,16 @@ package {
 		
 		private var layers:Array;
 		private var tiles:Array;
+		private var positions:Array;
 		
 		
 		public function Order(xml:XML) {
 			layers = new Array;
 			tiles = new Array;
+			positions = new Array;
 			
-			var counter:int = 0;
+			
+			
 			for each (var item:XML in xml.item ) {
 				var tileXML : XML = item.tile[0];
 				
@@ -22,17 +25,18 @@ package {
 						var tile:TileOrder = tiles[i] as TileOrder;
 					
 						if (tile.isEqual(tileXML))  {
-							tiles[counter] = i;
+							positions.push(new TilePosition(item.@row,item.@column,i));
 							tile.count++;
 							break;
 						}
 					}
 				}
 					
-				if (i==tiles.length)
+				if (i==tiles.length) {
 					tiles.push(new TileOrder(tileXML))
+					positions.push(new TilePosition(item.@row,item.@column,i));
+				}
 						
-				counter++;
 				
 				for each(var layerXML:XML in item.tile[0].layer) {
 					var j:uint;
@@ -49,6 +53,27 @@ package {
 				}
 			}
 			
+			positions.sortOn(["id","row","column"], Array.NUMERIC);
+			
+			positions[0].bSource = true;
+			
+			for (var i:uint = 1; i<positions.length;i++) {
+				positions[i].bSource = positions[i].id!=positions[i-1].id;	
+			}
+
+			positions.sortOn(["row", "column"], Array.NUMERIC);
+			
+			var counter:int = 1;
+			for each (var pos:TilePosition in positions) {
+				
+				if (pos.bSource) {
+					tiles[pos.id].id = counter;
+					counter++;
+				}
+				
+				
+				
+			}
 			
 		}
 		
@@ -69,20 +94,21 @@ package {
 		}
 		
 		public function describe_tiles() : String {
-			var desc:String = "tile\tshape\tcolor\n";
-			var counter:int = 1;
-			for each (var obj:Object in tiles) {
+			var desc:String = "tile\trow\tcolumn\tshape\tcolor\n";
+			
+			
+			for each (var pos:TilePosition in positions) {
 				
-				if (obj is TileOrder) {
-					desc+='\n'+counter+'\n'
-					desc+=(obj as TileOrder).describe()+'\n';
+				if (pos.bSource) {
+					desc += tiles[pos.id].id + '\t' + (pos.row+1) + '\t' + (pos.column+1) + '\n' + tiles[pos.id].describe() + '\n'
+					
 				}
 				else {
-					var num:int = (obj as int)+1;
-					desc+=counter + " same as tile "+num+'\n';
+					desc += '\t' + (pos.row+1) + '\t' + (pos.column+1) + "\tsame as tile "+tiles[pos.id].id+'\n'
+					
 				}
 				
-				counter++;
+				
 			}
 			
 			return desc;

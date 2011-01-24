@@ -8,6 +8,7 @@ package {
 		private var layers:Array;
 		public var _price:uint;
 		public var count:uint;
+		public var id:uint;
 		
 		public function TileOrder(xml:XML) : void {
 			layers = new Array;
@@ -67,7 +68,7 @@ package {
 		public function describe() : String {
 			var desc:String = "";
 			for each (var layer:Layer in layers) {
-				desc+='\t'+layer.describe()+'\n';
+				desc+="\t\t\t"+layer.describe()+'\n';
 			}
 			
 			return desc;

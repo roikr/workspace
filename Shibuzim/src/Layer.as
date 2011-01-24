@@ -27,11 +27,11 @@ package {
 		}
 		
 		public function describeAndCount() : String {
-			return shape+'\t'+color+'\t'+count; //count +" x [ " + shape + ", " + color + " ] ";
+			return (shape+1).toString()+'\t'+color+'\t'+count; //count +" x [ " + shape + ", " + color + " ] ";
 		}
 		
 		public function describe() : String {
-			return shape+'\t'+color;
+			return (shape+1).toString()+'\t'+color;
 		}
 	}
 }

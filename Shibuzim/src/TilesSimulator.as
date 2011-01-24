@@ -139,7 +139,6 @@ package {
 						trace(currentGrid.encode().toString());
 						trace(order.describe_layers());
 						trace(order.describe_tiles());
-						 * 
 						 */
 						
 						service.code = currentGrid.encode().toString();
