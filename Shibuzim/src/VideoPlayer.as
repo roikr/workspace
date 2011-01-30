@@ -1,6 +1,7 @@
 package {
 	import fl.video.VideoEvent;
 	import fl.video.VideoState;
+
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 
@@ -19,12 +20,18 @@ package {
 			this.client = client;
 			this.flvPlayer.source = video;
 			this.flvPlayer.addEventListener(VideoEvent.COMPLETE, onVideoComplete)
+			this.flvPlayer.addEventListener(VideoEvent.STATE_CHANGE, onStateChange)
 			
 			this.bSkip.addEventListener(MouseEvent.MOUSE_DOWN, onSkip)
+			
 		}
 		
 		private function onVideoComplete(e:Event) : void {
 			client.onClient(this);
+		}
+		
+		private function onStateChange(e : VideoEvent) : void {
+			mcWait.visible = e.state != VideoState.PLAYING;
 		}
 		
 		private function onSkip(e : Event) : void {
