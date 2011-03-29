@@ -1,9 +1,8 @@
 package {
-	import it.gotoandplay.smartfoxserver.SFSEvent;
-
 	import de.polygonal.ds.Array2;
 
 	import com.smartfoxserver.openspace.components.flash.OpenSpace;
+	import com.smartfoxserver.openspace.engine.control.events.AvatarEvent;
 	import com.smartfoxserver.openspace.engine.control.events.MapInteractionEvent;
 	import com.smartfoxserver.openspace.engine.control.events.OpenSpaceEvent;
 	import com.smartfoxserver.openspace.engine.model.avatar.Avatar;
@@ -17,10 +16,12 @@ package {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.TimerEvent;
 	import flash.geom.Point;
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
+	import flash.utils.Timer;
 
 	/*
 	 * @author roikr
@@ -63,6 +64,10 @@ package {
 		
 		private var loadingMC:LoadingMC;
 		
+		private var clickTimer:Timer;
+		private var clickedAvatar:String;
+		private var bIsClickedMine:Boolean;
+		
 		public function ChatpetzWorld() {
 			super();
 			new HighBand();
@@ -104,8 +109,8 @@ package {
 		
 		private function onLandingClick(e:Event) : void {
 			removeChild(e.currentTarget.parent);
-			container.spMCContainer.addChild(new VideoPlayer("intro.f4v",this));
-			
+			//container.spMCContainer.addChild(new VideoPlayer("intro.f4v",this));
+			container.spMCContainer.addChild(new LoginScreen(this));
 			addChild(container);
 			addChild(worldUI = new WorldUI(this));
 			addChild(gameManager = new GameManager(this,container));	
@@ -273,12 +278,50 @@ package {
 			openSpace.addEventListener(LoggerEvent.WARNING, onLoggerEvent);
 			openSpace.addEventListener(LoggerEvent.ERROR, onLoggerEvent);
 			
+			openSpace.addEventListener(AvatarEvent.CLICK,onAvatarClick);
+			
 			openSpace.init(client.smartFox); //, null);
 			
 			
 			
 			//worldInterface.configureListener();
 		}
+		
+		public function onAvatarClick(e:AvatarEvent) : void {
+			//trace("avatar clicked: " + e.params.id);
+			var avatar:Avatar = openSpace.getAvatarById(e.params.id);
+			var chatpet:String = avatar.skin.chatpet;
+			//trace("chatpet: "+chatpet+", mine: "+avatar.isMyAvatar);
+			clickedAvatar = chatpet.toUpperCase();
+			bIsClickedMine = avatar.isMyAvatar;
+			
+			if (clickTimer == null) {
+				clickTimer = new Timer(250,1);
+				clickTimer.addEventListener(TimerEvent.TIMER_COMPLETE,onClickTimer);
+				clickTimer.start();
+			} else {
+				clickTimer.stop();
+				clickTimer.removeEventListener(TimerEvent.TIMER_COMPLETE,onClickTimer);
+				clickTimer = null;
+				new AvatarTrigger(clickedAvatar,bIsClickedMine,true)
+			}	
+			
+		}
+		
+		
+		
+		public function onClickTimer(e:Event) : void {
+			new AvatarTrigger(clickedAvatar,bIsClickedMine,false)
+			clickTimer = null;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		public function scrollRight()  : void{
 			openSpace.panView(400, 0);
