@@ -9,7 +9,8 @@ package {
 		private var tuner:GameTuner;
 		
 		public function GameTuneTest() {
-			tuner = new GameTuner(this);
+			tuner = GameTuner.getInstance();
+			tuner.load(this);
 			
 		}
 		
@@ -18,6 +19,7 @@ package {
 				trace(tuner.numSamples);
 				trace(tuner.paramValue(1, 1));
 			}
+			tuner.start();
 		}
 		
 	}
