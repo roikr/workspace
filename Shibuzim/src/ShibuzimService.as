@@ -38,7 +38,7 @@ package {
 			form=new Form();
 			message = new Message();
 			form.save.addEventListener( MouseEvent.CLICK, onNodeSubmit );
-			form.send.addEventListener( MouseEvent.CLICK, onNodeSubmit );
+//			form.send.addEventListener( MouseEvent.CLICK, onNodeSubmit );
 			form.cancel.addEventListener(MouseEvent.CLICK,function () : void {removeChild(form);})
 			
 			message.shibuzim.addEventListener(MouseEvent.CLICK,function () : void {removeChild(message);;})
@@ -157,7 +157,7 @@ package {
 		
 		function onNodeSubmit( event:MouseEvent ) {
 			
-			order = event.target == form.send;
+			order = false ; //event.target == form.send;
 			
 			if (form.code.text.length  && form.city.length && form.country.text.length 
 					&& ((form.phone1.text.length  && form.email.text.length) || !order)    ) {

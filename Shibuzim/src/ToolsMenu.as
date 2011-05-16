@@ -18,8 +18,8 @@ package {
 		public static const TOOLBAR_GRID_ERASER:int = 7;
 		public static const TOOLBAR_UNDO:int = 8;
 		public static const TOOLBAR_MAGNIFIER:int = 9;
-		public static const TOOLBAR_COST:int = 10;
-		public static const TOOLBAR_INVITATION:int = 11;
+		public static const TOOLBAR_INVITATION:int = 10;
+		public static const TOOLBAR_COST:int = 11;
 		
 		
 		//private var client:Object;
@@ -126,7 +126,8 @@ package {
 					str= 'ביטול פעולה אחרונה'
 					break;
 				case ToolsMenu.TOOLBAR_INVITATION:
-					str = 'שמירה / הזמנה'
+					str = 'שמירה'
+					//  'שמירה / הזמנה'
 					break;
 				
 			}

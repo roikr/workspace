@@ -3,7 +3,8 @@ package {
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
-	import flash.text.TextField;
+	import flash.net.URLRequest;
+	import flash.net.navigateToURL;
 
 	/**
 	 * @author roikr
@@ -147,7 +148,8 @@ package {
 						service.show();
 						break;
 					case ToolsMenu.TOOLBAR_VIDEO:
-						addChild(new VideoPlayer("help.f4v",this));
+						navigateToURL(new URLRequest("http://www.shibuzim.co.il/clip/help"),"_blank")
+						//addChild(new VideoPlayer("help.f4v",this));
 						break;
 				}
 				
