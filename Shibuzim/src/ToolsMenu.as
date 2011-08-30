@@ -61,7 +61,7 @@ package {
 					for (var i:int = 0;i<numChildren;i++ ) {
 						(this.getChildAt(i) as MovieClip).gotoAndStop(1);
 					}
-					(this.getChildAt(11-tool) as MovieClip).gotoAndStop(2);
+					(this.getChildAt(10-tool) as MovieClip).gotoAndStop(2);
 					break;
 					
 				case ToolsMenu.TOOLBAR_VIDEO:
